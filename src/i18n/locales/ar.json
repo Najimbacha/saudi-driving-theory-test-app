@@ -859,7 +859,9 @@
       "review": "مراجعات مستحقة",
       "reviewDesc": "قائمة المراجعة المتكررة",
       "daily": "تدريب يومي",
-      "dailyDesc": "مجموعة تدريب يومية سريعة"
+      "dailyDesc": "مجموعة تدريب يومية سريعة",
+      "quick": "????? ???? (10 ?????)",
+      "quickDesc": "?????? ????? ?? 10 ?????"
     },
     "all": "All",
     "accuracy": "الدقة",
@@ -868,7 +870,8 @@
     "weakAreas": "Weak Areas",
     "dueReviews": "Due Reviews",
     "startDaily": "Start Daily",
-    "reviewMistakes": "Review Mistakes"
+    "reviewMistakes": "Review Mistakes",
+    "startQuick": "???? ??????"
   },
   "results": {
     "title": "Results",

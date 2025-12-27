@@ -878,7 +878,9 @@
       "review": "Due Reviews",
       "reviewDesc": "Spaced repetition review queue",
       "daily": "Daily Practice",
-      "dailyDesc": "Quick daily practice set"
+      "dailyDesc": "Quick daily practice set",
+      "quick": "Quick 10",
+      "quickDesc": "A fast 10-question mix"
     },
     "all": "All",
     "accuracy": "Accuracy",
@@ -887,7 +889,8 @@
     "weakAreas": "Weak Areas",
     "dueReviews": "Due Reviews",
     "startDaily": "Start Daily",
-    "reviewMistakes": "Review Mistakes"
+    "reviewMistakes": "Review Mistakes",
+    "startQuick": "Start Quick"
   },
   "results": {
     "title": "Results",

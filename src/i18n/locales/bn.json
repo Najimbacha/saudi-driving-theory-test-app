@@ -859,7 +859,9 @@
       "review": "পর্যালোচনা বাকি",
       "reviewDesc": "স্পেসড রিপিটিশন রিভিউ কিউ",
       "daily": "দৈনিক অনুশীলন",
-      "dailyDesc": "দ্রুত দৈনিক অনুশীলন সেট"
+      "dailyDesc": "দ্রুত দৈনিক অনুশীলন সেট",
+      "quick": "???? ??",
+      "quickDesc": "???? ???????? ????? ???????"
     },
     "all": "সব",
     "accuracy": "নির্ভুলতা",
@@ -868,7 +870,8 @@
     "weakAreas": "Weak Areas",
     "dueReviews": "Due Reviews",
     "startDaily": "Start Daily",
-    "reviewMistakes": "Review Mistakes"
+    "reviewMistakes": "Review Mistakes",
+    "startQuick": "???? ???? ????"
   },
   "results": {
     "title": "??",

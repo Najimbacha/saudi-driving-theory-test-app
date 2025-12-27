@@ -11,7 +11,8 @@ import {
   Clock, 
   Layers,
   BookOpen,
-  Star
+  Star,
+  Zap
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -25,7 +26,7 @@ import questionsData from '@/data/questions.json';
 import { getSignSrc } from '@/data/signAssets';
 import Confetti from 'react-confetti';
 
-type PracticeMode = 'all' | 'mistakes' | 'weak' | 'review' | 'daily' | 'category';
+type PracticeMode = 'all' | 'mistakes' | 'weak' | 'review' | 'daily' | 'quick' | 'category';
 type QuizState = 'setup' | 'playing' | 'result';
 
 interface ModeConfig {
@@ -71,6 +72,13 @@ const PRACTICE_MODES: ModeConfig[] = [
     titleKey: 'practice.modes.daily', 
     descKey: 'practice.modes.dailyDesc',
     color: 'bg-yellow-500/10 text-yellow-500'
+  },
+  { 
+    id: 'quick', 
+    icon: <Zap className="h-5 w-5" />, 
+    titleKey: 'practice.modes.quick', 
+    descKey: 'practice.modes.quickDesc',
+    color: 'bg-emerald-500/10 text-emerald-500'
   },
 ];
 
@@ -152,6 +160,9 @@ export default function Practice() {
         pool = [...reviewQuestions];
         break;
       case 'daily':
+        pool = [...questionsData.questions];
+        break;
+      case 'quick':
         pool = [...questionsData.questions];
         break;
       case 'category':
@@ -320,6 +331,10 @@ export default function Practice() {
                     count = Math.min(5, questionsData.questions.length);
                     disabled = count === 0;
                     break;
+                  case 'quick':
+                    count = Math.min(10, questionsData.questions.length);
+                    disabled = count === 0;
+                    break;
                 }
 
                 return (
@@ -352,17 +367,20 @@ export default function Practice() {
                       </CardHeader>
                       {mode === modeConfig.id && !disabled && (
                         <CardContent className="pt-0">
-                          {modeConfig.id === 'daily' ? (
+                          {modeConfig.id === 'daily' || modeConfig.id === 'quick' ? (
                             <div className="flex gap-2">
                               <Button
                                 variant="default"
                                 size="sm"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  startPractice('daily', count);
+                                  startPractice(modeConfig.id, count);
                                 }}
                               >
-                                {t('practice.startDaily', 'Start Daily')} ({count})
+                                {modeConfig.id === 'daily'
+                                  ? t('practice.startDaily', 'Start Daily')
+                                  : t('practice.startQuick', 'Start Quick')
+                                } ({count})
                               </Button>
                             </div>
                           ) : (

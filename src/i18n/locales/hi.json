@@ -859,7 +859,9 @@
       "review": "देय समीक्षाएं",
       "reviewDesc": "अंतराल पुनरावृत्ति समीक्षा कतार",
       "daily": "दैनिक अभ्यास",
-      "dailyDesc": "त्वरित दैनिक अभ्यास सेट"
+      "dailyDesc": "त्वरित दैनिक अभ्यास सेट",
+      "quick": "????? 10",
+      "quickDesc": "10 ?????? ?? ???? ?????????"
     },
     "all": "सभी",
     "accuracy": "सटीकता",
@@ -868,7 +870,8 @@
     "weakAreas": "Weak Areas",
     "dueReviews": "Due Reviews",
     "startDaily": "Start Daily",
-    "reviewMistakes": "Review Mistakes"
+    "reviewMistakes": "Review Mistakes",
+    "startQuick": "????? ???? ????"
   },
   "results": {
     "title": "Results",
