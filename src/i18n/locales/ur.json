@@ -1131,5 +1131,9 @@
     "install": "انسٹال کریں",
     "notNow": "ابھی نہیں",
     "offline": "آف لائن بھی دستیاب"
+  },
+  "flashcards": {
+    "tapToFlip": "Tap to flip",
+    "tapToFlipBack": "Tap to flip back"
   }
 }

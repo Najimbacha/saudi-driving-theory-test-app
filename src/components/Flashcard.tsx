@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RotateCcw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SignIcon from '@/components/signs/SignIcon';
 
 interface FlashcardProps {
@@ -23,6 +24,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
   onFlip,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { t } = useTranslation();
 
   const handleFlip = () => {
     const newFlipped = !isFlipped;
@@ -55,7 +57,7 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             </p>
             <div className="absolute bottom-4 flex items-center gap-2 text-muted-foreground text-sm">
               <RotateCcw className="w-4 h-4" />
-              <span>Tap to flip</span>
+              <span>{t('flashcards.tapToFlip')}</span>
             </div>
           </div>
         </div>
@@ -68,12 +70,12 @@ export const Flashcard: React.FC<FlashcardProps> = ({
             <p className="text-center text-lg leading-relaxed opacity-90">{back}</p>
             {tip && (
               <div className="mt-4 p-3 bg-primary-foreground/10 rounded-xl">
-                <p className="text-sm text-center opacity-80">💡 {tip}</p>
+                <p className="text-sm text-center opacity-80">{tip}</p>
               </div>
             )}
             <div className="absolute bottom-4 flex items-center gap-2 text-primary-foreground/60 text-sm">
               <RotateCcw className="w-4 h-4" />
-              <span>Tap to flip back</span>
+              <span>{t('flashcards.tapToFlipBack')}</span>
             </div>
           </div>
         </div>

@@ -84,7 +84,9 @@
     "allCaughtUpDesc": "You've reviewed all due cards. Come back later for more practice.",
     "resetProgress": "Reset Progress",
     "again": "Again",
-    "gotIt": "Got It!"
+    "gotIt": "Got It!",
+    "tapToFlip": "Tap to flip",
+    "tapToFlipBack": "Tap to flip back"
   },
   "quiz": {
     "title": "Practice Quiz",

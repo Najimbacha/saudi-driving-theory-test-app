@@ -1131,5 +1131,9 @@
     "install": "Install",
     "notNow": "Not now",
     "offline": "You are offline. Some features may be limited."
+  },
+  "flashcards": {
+    "tapToFlip": "Tap to flip",
+    "tapToFlipBack": "Tap to flip back"
   }
 }
