@@ -1,0 +1,157 @@
+{
+  "achievements": [
+    {
+      "id": "first_steps",
+      "icon": "rocket",
+      "points": 10,
+      "category": "progress",
+      "requirement": { "type": "quizzes_completed", "value": 1 }
+    },
+    {
+      "id": "quiz_enthusiast",
+      "icon": "target",
+      "points": 50,
+      "category": "progress",
+      "requirement": { "type": "quizzes_completed", "value": 10 }
+    },
+    {
+      "id": "quiz_master",
+      "icon": "crown",
+      "points": 200,
+      "category": "progress",
+      "requirement": { "type": "quizzes_completed", "value": 50 }
+    },
+    {
+      "id": "perfect_score",
+      "icon": "star",
+      "points": 100,
+      "category": "accuracy",
+      "requirement": { "type": "perfect_quiz", "value": 1 }
+    },
+    {
+      "id": "sharp_shooter",
+      "icon": "crosshair",
+      "points": 75,
+      "category": "accuracy",
+      "requirement": { "type": "accuracy_above", "value": 80 }
+    },
+    {
+      "id": "precision_master",
+      "icon": "medal",
+      "points": 150,
+      "category": "accuracy",
+      "requirement": { "type": "accuracy_above", "value": 90 }
+    },
+    {
+      "id": "on_fire_3",
+      "icon": "flame",
+      "points": 50,
+      "category": "streak",
+      "requirement": { "type": "streak_days", "value": 3 }
+    },
+    {
+      "id": "dedicated_7",
+      "icon": "zap",
+      "points": 100,
+      "category": "streak",
+      "requirement": { "type": "streak_days", "value": 7 }
+    },
+    {
+      "id": "champion_30",
+      "icon": "trophy",
+      "points": 500,
+      "category": "streak",
+      "requirement": { "type": "streak_days", "value": 30 }
+    },
+    {
+      "id": "signs_expert",
+      "icon": "alert-triangle",
+      "points": 100,
+      "category": "mastery",
+      "requirement": { "type": "category_accuracy", "category": "signs", "value": 90 }
+    },
+    {
+      "id": "rules_master",
+      "icon": "book-open",
+      "points": 100,
+      "category": "mastery",
+      "requirement": { "type": "category_accuracy", "category": "rules", "value": 90 }
+    },
+    {
+      "id": "safety_pro",
+      "icon": "shield-check",
+      "points": 100,
+      "category": "mastery",
+      "requirement": { "type": "category_accuracy", "category": "safety", "value": 90 }
+    },
+    {
+      "id": "exam_ready",
+      "icon": "graduation-cap",
+      "points": 250,
+      "category": "exam",
+      "requirement": { "type": "exam_passed", "value": 1 }
+    },
+    {
+      "id": "exam_ace",
+      "icon": "award",
+      "points": 300,
+      "category": "exam",
+      "requirement": { "type": "exam_passed", "value": 5 }
+    },
+    {
+      "id": "daily_champion",
+      "icon": "calendar-check",
+      "points": 150,
+      "category": "daily",
+      "requirement": { "type": "daily_goals_completed", "value": 7 }
+    },
+    {
+      "id": "early_bird",
+      "icon": "sunrise",
+      "points": 25,
+      "category": "special",
+      "requirement": { "type": "time_of_day", "start": 5, "end": 7 }
+    },
+    {
+      "id": "night_owl",
+      "icon": "moon",
+      "points": 25,
+      "category": "special",
+      "requirement": { "type": "time_of_day", "start": 22, "end": 24 }
+    },
+    {
+      "id": "quick_learner",
+      "icon": "brain",
+      "points": 75,
+      "category": "progress",
+      "requirement": { "type": "questions_answered", "value": 100 }
+    },
+    {
+      "id": "knowledge_seeker",
+      "icon": "book",
+      "points": 150,
+      "category": "progress",
+      "requirement": { "type": "questions_answered", "value": 500 }
+    },
+    {
+      "id": "driving_expert",
+      "icon": "car",
+      "points": 300,
+      "category": "progress",
+      "requirement": { "type": "questions_answered", "value": 1000 }
+    }
+  ],
+  "levels": [
+    { "level": 1, "name": "beginner", "minXP": 0 },
+    { "level": 2, "name": "learner", "minXP": 100 },
+    { "level": 3, "name": "intermediate", "minXP": 300 },
+    { "level": 4, "name": "advanced", "minXP": 600 },
+    { "level": 5, "name": "expert", "minXP": 1000 },
+    { "level": 6, "name": "master", "minXP": 1500 },
+    { "level": 7, "name": "champion", "minXP": 2500 }
+  ],
+  "dailyGoal": {
+    "questionsTarget": 10,
+    "bonusXP": 20
+  }
+}

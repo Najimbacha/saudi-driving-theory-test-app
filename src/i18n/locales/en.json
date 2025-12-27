@@ -1,0 +1,1152 @@
+{
+  "app": {
+    "name": "Saudi Driving Theory Test",
+    "tagline": "Master driving theory with confidence",
+    "offline": "Works 100% Offline"
+  },
+  "nav": {
+    "home": "Home",
+    "signs": "Signs",
+    "practice": "Practice",
+    "exam": "Practice Test",
+    "learn": "Learn",
+    "favorites": "Favorites",
+    "stats": "Statistics",
+    "settings": "Settings",
+    "achievements": "Achievements"
+  },
+  "onboarding": {
+    "welcome": "Welcome",
+    "selectLanguage": "Select Your Language",
+    "languageNote": "You can change this anytime in settings",
+    "getStarted": "Get Started",
+    "offlineReady": "Ready to learn offline!",
+    "offlineDesc": "All content works without internet connection"
+  },
+  "home": {
+    "greeting": "Ready to Learn?",
+    "subtitle": "Practice anytime, anywhere - no internet needed",
+    "learnSigns": "Traffic Signs",
+    "learnSignsDesc": "Learn all traffic signs",
+    "learnRules": "Rules & Regulations",
+    "learnRulesDesc": "Road rules and safety",
+    "practice": "Practice Quiz",
+    "practiceDesc": "Test your knowledge",
+    "mockExam": "Practice Test",
+    "mockExamDesc": "Full theory practice",
+    "favorites": "Favorites",
+    "favoritesDesc": "Your saved items",
+    "stats": "Your Progress",
+    "statsDesc": "Track your learning",
+    "violationPoints": "Traffic Violation Points",
+    "violationPointsDesc": "Learn the point system",
+    "trafficFines": "Traffic Fines & Penalties",
+    "trafficFinesDesc": "Educational guide"
+  },
+  "signs": {
+    "title": "Traffic Signs",
+    "search": "Search signs...",
+    "categories": {
+      "all": "All Signs",
+      "warning": "Warning",
+      "regulatory": "Regulatory",
+      "mandatory": "Mandatory",
+      "guide": "Guide"
+    },
+    "showing": "Showing {{from}}-{{to}} of {{total}} signs",
+    "practiceCategory": "Practice this category",
+    "page": "Page {{current}} / {{total}}",
+    "mastery": {
+      "new": "New",
+      "learning": "Learning",
+      "reviewing": "Reviewing",
+      "mastered": "Mastered"
+    },
+    "meaning": "Meaning",
+    "tip": "Quick Tip",
+    "addToFavorites": "Add to Favorites",
+    "removeFromFavorites": "Remove from Favorites",
+    "flashcards": "Flashcards",
+    "related": "Related Signs"
+  },
+  "flashcards": {
+    "title": "Flashcards",
+    "sessionComplete": "Session Complete!",
+    "accuracy": "Accuracy",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "overallProgress": "Overall Progress",
+    "mastered": "Mastered",
+    "reviewing": "Reviewing",
+    "learning": "Learning",
+    "practiceMore": "Practice More",
+    "allCaughtUp": "All Caught Up!",
+    "allCaughtUpDesc": "You've reviewed all due cards. Come back later for more practice.",
+    "resetProgress": "Reset Progress",
+    "again": "Again",
+    "gotIt": "Got It!"
+  },
+  "quiz": {
+    "title": "Practice Quiz",
+    "selectCategory": "Select Category",
+    "selectDifficulty": "Select Difficulty",
+    "selectQuestions": "Number of Questions",
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "categories": {
+      "all": "All Topics",
+      "signs": "Traffic Signs",
+      "rules": "Road Rules",
+      "safety": "Safety",
+      "signals": "Signals",
+      "markings": "Road Markings",
+      "violation_points": "Traffic Violation Points (Practice)",
+      "traffic_fines": "Traffic Fines (Practice)"
+    },
+    "start": "Start Quiz",
+    "question": "Question",
+    "of": "of",
+    "next": "Next",
+    "submit": "Submit Answer",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "explanation": "Explanation",
+    "timeLeft": "Time Left",
+    "q": {
+      "q1": {
+        "text": "What does a red octagonal sign mean?",
+        "a": "Stop completely",
+        "b": "Slow down",
+        "c": "Give way",
+        "d": "No entry",
+        "explain": "A red octagonal sign is a STOP sign. You must come to a complete stop."
+      },
+      "q2": {
+        "text": "What is the speed limit in residential areas in Saudi Arabia?",
+        "a": "30 km/h",
+        "b": "40 km/h",
+        "c": "50 km/h",
+        "d": "60 km/h",
+        "explain": "The speed limit in residential areas is typically 40 km/h unless otherwise posted."
+      },
+      "q3": {
+        "text": "When should you use your vehicle's headlights?",
+        "a": "Only at night",
+        "b": "During rain, fog, or low visibility",
+        "c": "Only in tunnels",
+        "d": "Never during daytime",
+        "explain": "Use headlights during rain, fog, sandstorms, or any condition with reduced visibility."
+      },
+      "q4": {
+        "text": "What does a flashing yellow traffic light mean?",
+        "a": "Stop immediately",
+        "b": "Speed up to pass",
+        "c": "Proceed with caution",
+        "d": "U-turn allowed",
+        "explain": "A flashing yellow light means proceed with caution. Slow down and be prepared to stop."
+      },
+      "q5": {
+        "text": "What do double solid yellow lines in the center of the road indicate?",
+        "a": "Overtaking is allowed",
+        "b": "No overtaking from either direction",
+        "c": "Pedestrian crossing ahead",
+        "d": "Road narrows ahead",
+        "explain": "Double solid yellow lines mean no passing is allowed from either direction."
+      },
+      "q6": {
+        "text": "What is the maximum speed limit on highways in Saudi Arabia?",
+        "a": "100 km/h",
+        "b": "120 km/h",
+        "c": "140 km/h",
+        "d": "80 km/h",
+        "explain": "The maximum speed limit on highways in Saudi Arabia is typically 120 km/h for cars."
+      },
+      "q7": {
+        "text": "Who is required to wear a seatbelt in Saudi Arabia?",
+        "a": "Only the driver",
+        "b": "Driver and front passenger",
+        "c": "All occupants of the vehicle",
+        "d": "Only on highways",
+        "explain": "All occupants of a vehicle are required to wear seatbelts in Saudi Arabia."
+      },
+      "q8": {
+        "text": "What does a triangular sign with the point facing down mean?",
+        "a": "Stop",
+        "b": "Give way / Yield",
+        "c": "No entry",
+        "d": "Speed limit",
+        "explain": "An inverted triangle (point down) is a yield/give way sign. You must give priority to other traffic."
+      },
+      "q9": {
+        "text": "At a roundabout, who has the right of way?",
+        "a": "Vehicles entering the roundabout",
+        "b": "Vehicles already in the roundabout",
+        "c": "Larger vehicles",
+        "d": "Vehicles coming from the right only",
+        "explain": "Vehicles already circulating in the roundabout have the right of way."
+      },
+      "q10": {
+        "text": "What is the safe following distance rule?",
+        "a": "1 second rule",
+        "b": "2-3 second rule",
+        "c": "5 second rule",
+        "d": "10 second rule",
+        "explain": "Maintain a 2-3 second gap from the vehicle ahead. Increase this in bad weather."
+      },
+      "q11": {
+        "text": "What must you do when a traffic light turns red?",
+        "a": "Stop before the stop line",
+        "b": "Slow down but proceed if clear",
+        "c": "Speed up to cross quickly",
+        "d": "Flash headlights and proceed",
+        "explain": "You must come to a complete stop before the stop line when the traffic light is red."
+      },
+      "q12": {
+        "text": "What does a red circle with a white horizontal bar mean?",
+        "a": "No parking",
+        "b": "No entry",
+        "c": "No stopping",
+        "d": "Speed limit ends",
+        "explain": "A red circle with a white horizontal bar is the 'No Entry' sign. Vehicles cannot enter."
+      },
+      "q13": {
+        "text": "Where is overtaking prohibited?",
+        "a": "On straight roads with good visibility",
+        "b": "Near curves, hills, intersections, and pedestrian crossings",
+        "c": "Only on highways",
+        "d": "Overtaking is always allowed",
+        "explain": "Overtaking is prohibited near curves, hills, intersections, pedestrian crossings, and where marked."
+      },
+      "q14": {
+        "text": "What should you do when an emergency vehicle approaches with sirens?",
+        "a": "Speed up to get out of the way",
+        "b": "Continue at the same speed",
+        "c": "Pull over to the right and stop",
+        "d": "Stop in your current lane",
+        "explain": "Pull over to the right side of the road and stop to allow emergency vehicles to pass."
+      },
+      "q15": {
+        "text": "What do white zebra stripes on the road indicate?",
+        "a": "Parking area",
+        "b": "Pedestrian crossing",
+        "c": "Speed bump ahead",
+        "d": "No stopping zone",
+        "explain": "White zebra stripes indicate a pedestrian crossing. Drivers must yield to pedestrians."
+      },
+      "q16": {
+        "text": "How far from a fire hydrant must you park?",
+        "a": "1 meter",
+        "b": "3 meters",
+        "c": "5 meters",
+        "d": "10 meters",
+        "explain": "You must park at least 5 meters away from a fire hydrant to allow emergency access."
+      },
+      "q17": {
+        "text": "What does it mean when a traffic police officer extends their arm horizontally?",
+        "a": "Stop for vehicles approaching from that direction",
+        "b": "Proceed quickly",
+        "c": "U-turn allowed",
+        "d": "Parking allowed",
+        "explain": "An extended arm means stop for vehicles approaching from that direction."
+      },
+      "q18": {
+        "text": "What should you do if your tire blows out while driving?",
+        "a": "Brake hard immediately",
+        "b": "Grip the steering firmly, ease off the gas, and slow down gradually",
+        "c": "Turn sharply to the side of the road",
+        "d": "Speed up to maintain control",
+        "explain": "Hold the steering wheel firmly, gradually ease off the accelerator, and slow down safely."
+      },
+      "q19": {
+        "text": "A circular sign with a red border and black number '60' means:",
+        "a": "Minimum speed 60 km/h",
+        "b": "Maximum speed 60 km/h",
+        "c": "Speed limit ends",
+        "d": "Distance to next city 60 km",
+        "explain": "A red-bordered circular sign with a number indicates the maximum speed limit."
+      },
+      "q20": {
+        "text": "Is using a mobile phone while driving allowed in Saudi Arabia?",
+        "a": "Yes, at any time",
+        "b": "No, it is strictly prohibited",
+        "c": "Only on highways",
+        "d": "Only for emergencies",
+        "explain": "Using a handheld mobile phone while driving is strictly prohibited in Saudi Arabia."
+      },
+      "q21": {
+        "text": "How do wet roads affect braking distance?",
+        "a": "Braking distance decreases",
+        "b": "Braking distance stays the same",
+        "c": "Braking distance can double or more",
+        "d": "No effect on braking",
+        "explain": "Wet roads reduce tire traction, which can double or triple your braking distance."
+      },
+      "q22": {
+        "text": "What does a blue circular sign with white arrows in a circle mean?",
+        "a": "Roundabout ahead",
+        "b": "No U-turn",
+        "c": "One-way street",
+        "d": "Parking area",
+        "explain": "A blue circular sign with white circular arrows indicates a roundabout ahead."
+      },
+      "q23": {
+        "text": "What do white arrows painted on the road indicate?",
+        "a": "Speed limit",
+        "b": "Direction you must travel in that lane",
+        "c": "Parking allowed",
+        "d": "Bus lane",
+        "explain": "Road arrows indicate the permitted direction(s) of travel for that lane."
+      },
+      "q24": {
+        "text": "What is the minimum age to obtain a driving license in Saudi Arabia?",
+        "a": "16 years",
+        "b": "17 years",
+        "c": "18 years",
+        "d": "21 years",
+        "explain": "You must be at least 18 years old to obtain a private driving license in Saudi Arabia."
+      },
+      "q25": {
+        "text": "What does a green arrow signal at a traffic light mean?",
+        "a": "Proceed cautiously in any direction",
+        "b": "Stop immediately",
+        "c": "You may proceed in the direction of the arrow",
+        "d": "Give way to pedestrians only",
+        "explain": "A green arrow allows you to proceed safely in the direction the arrow points."
+      },
+      "q26": {
+        "text": "Where should children under 10 years old sit in a vehicle?",
+        "a": "Front passenger seat",
+        "b": "Back seat with proper restraint",
+        "c": "Driver's lap",
+        "d": "Standing in the back",
+        "explain": "Children under 10 must sit in the back seat with appropriate child restraints."
+      },
+      "q27": {
+        "text": "A yellow diamond sign with a curved arrow indicates:",
+        "a": "Road curves ahead",
+        "b": "U-turn permitted",
+        "c": "One-way street",
+        "d": "Merge ahead",
+        "explain": "Yellow diamond signs are warning signs. A curved arrow warns of a curve ahead."
+      },
+      "q28": {
+        "text": "When parking uphill with a curb, which way should your front wheels point?",
+        "a": "Toward the curb",
+        "b": "Away from the curb",
+        "c": "Straight ahead",
+        "d": "It doesn't matter",
+        "explain": "When parking uphill with a curb, turn wheels away from curb so the car rolls into the curb if brakes fail."
+      },
+      "q29": {
+        "text": "What is the best action if you feel drowsy while driving?",
+        "a": "Open the window and continue",
+        "b": "Turn up the radio",
+        "c": "Pull over safely and rest",
+        "d": "Drink coffee and continue",
+        "explain": "If drowsy, the only safe action is to pull over and rest. Temporary fixes don't work."
+      },
+      "q30": {
+        "text": "When should you use hazard warning lights?",
+        "a": "When parking illegally",
+        "b": "When your vehicle has broken down or is stationary and causing an obstruction",
+        "c": "When driving in heavy traffic",
+        "d": "While overtaking",
+        "explain": "Use hazard lights when your vehicle is broken down, in an emergency, or obstructing traffic."
+      },
+      "q31": {
+        "text": "What does a circular sign with a red border, blue background, and red diagonal line mean?",
+        "a": "No parking",
+        "b": "No entry",
+        "c": "No overtaking",
+        "d": "No U-turn",
+        "explain": "A blue circle with red border and single diagonal line means no parking."
+      },
+      "q32": {
+        "text": "On a multi-lane road, which lane is for overtaking?",
+        "a": "Right lane (in Saudi Arabia)",
+        "b": "Left lane",
+        "c": "Any lane",
+        "d": "Emergency lane",
+        "explain": "In Saudi Arabia, the left lane is for overtaking. Return to the right after passing."
+      },
+      "q33": {
+        "text": "What is a blind spot?",
+        "a": "An area where your vision is blocked by the sun",
+        "b": "An area not visible in your mirrors that requires a head check",
+        "c": "The dashboard area",
+        "d": "The road behind you",
+        "explain": "A blind spot is an area around your vehicle not visible in mirrors. Always check by turning your head."
+      },
+      "q34": {
+        "text": "What does 'BUS' written in a lane indicate?",
+        "a": "Bus stop ahead",
+        "b": "Lane reserved for buses only",
+        "c": "Buses have priority",
+        "d": "School zone",
+        "explain": "BUS marked on a lane means it is reserved for buses only during operating hours."
+      },
+      "q35": {
+        "text": "What is the typical speed limit in school zones when children are present?",
+        "a": "20 km/h",
+        "b": "30 km/h",
+        "c": "40 km/h",
+        "d": "50 km/h",
+        "explain": "School zones typically have a 30 km/h speed limit when children are present."
+      },
+      "q36": {
+        "text": "When is it appropriate to use your horn?",
+        "a": "To express frustration in traffic",
+        "b": "To warn others of danger or your presence",
+        "c": "To greet friends",
+        "d": "Late at night in residential areas",
+        "explain": "Use your horn only to warn other road users of danger or to make your presence known."
+      },
+      "q37": {
+        "text": "What should you do at a railway crossing when the barrier is down?",
+        "a": "Go around the barrier if no train is visible",
+        "b": "Wait until the barrier is fully raised",
+        "c": "Proceed slowly if the train has passed",
+        "d": "Flash headlights and proceed",
+        "explain": "Always wait until the barrier is fully raised before proceeding at a railway crossing."
+      },
+      "q38": {
+        "text": "What does a blue square sign with a white walking figure indicate?",
+        "a": "No pedestrians allowed",
+        "b": "Pedestrian crossing or pedestrian zone",
+        "c": "Jogging track",
+        "d": "School zone",
+        "explain": "Blue signs with pedestrian symbols indicate pedestrian crossings or zones."
+      },
+      "q39": {
+        "text": "What is the legal blood alcohol limit for driving in Saudi Arabia?",
+        "a": "0.05%",
+        "b": "0.08%",
+        "c": "Zero - alcohol is prohibited",
+        "d": "0.02%",
+        "explain": "Alcohol is completely prohibited in Saudi Arabia. There is zero tolerance for driving under the influence."
+      },
+      "q40": {
+        "text": "What is the primary purpose of an airbag?",
+        "a": "To replace seatbelts",
+        "b": "To cushion occupants during a collision",
+        "c": "To improve fuel efficiency",
+        "d": "To make the car look modern",
+        "explain": "Airbags cushion occupants and reduce impact forces during a collision. They work with seatbelts, not as replacements."
+      },
+      "q41": {
+        "text": "What does a broken white line in the center of the road mean?",
+        "a": "No overtaking allowed",
+        "b": "Overtaking allowed when safe",
+        "c": "Pedestrian crossing",
+        "d": "Road under construction",
+        "explain": "A broken white line indicates you may cross it to overtake when it is safe to do so."
+      },
+      "q42": {
+        "text": "When should you use fog lights?",
+        "a": "At night on well-lit roads",
+        "b": "Only in heavy fog or severely reduced visibility",
+        "c": "Whenever it rains",
+        "d": "To look cool",
+        "explain": "Use fog lights only in conditions of heavy fog, mist, or when visibility is seriously reduced."
+      },
+      "q43": {
+        "text": "What does a blue rectangular sign with a white arrow pointing up mean?",
+        "a": "One-way street ahead",
+        "b": "Go straight only",
+        "c": "No entry ahead",
+        "d": "Uphill slope",
+        "explain": "A blue rectangular sign with a white arrow pointing ahead indicates a one-way street."
+      },
+      "q44": {
+        "text": "What is aquaplaning (hydroplaning)?",
+        "a": "When your engine overheats",
+        "b": "When tires lose contact with the road due to water",
+        "c": "A type of car wash",
+        "d": "Driving in the rain",
+        "explain": "Aquaplaning occurs when tires ride on top of water, losing contact with the road surface."
+      },
+      "q45": {
+        "text": "Who has priority at a zebra crossing?",
+        "a": "Vehicles",
+        "b": "Pedestrians",
+        "c": "Whoever arrives first",
+        "d": "Larger vehicles",
+        "explain": "Pedestrians have priority at zebra crossings. Drivers must stop to let them cross."
+      },
+      "q46": {
+        "text": "How far before turning should you signal?",
+        "a": "At the moment of turning",
+        "b": "At least 30 meters before",
+        "c": "1 kilometer before",
+        "d": "No need to signal",
+        "explain": "Signal at least 30 meters before turning to give other road users adequate warning."
+      },
+      "q47": {
+        "text": "When driving at night, what should you do when another vehicle approaches with high beams on?",
+        "a": "Flash your high beams back",
+        "b": "Look at the right edge of the road",
+        "c": "Speed up to pass quickly",
+        "d": "Close your eyes briefly",
+        "explain": "Look toward the right edge of the road to avoid being blinded by oncoming high beams."
+      },
+      "q48": {
+        "text": "What does a sign with black diagonal stripes on white background mean?",
+        "a": "Road closed",
+        "b": "End of all restrictions",
+        "c": "Danger zone",
+        "d": "Reduced visibility",
+        "explain": "Black diagonal stripes on white indicate the end of all previously applicable restrictions."
+      },
+      "q49": {
+        "text": "What must you do when entering a tunnel?",
+        "a": "Turn on headlights and remove sunglasses",
+        "b": "Speed up to exit quickly",
+        "c": "Use hazard lights",
+        "d": "Nothing special required",
+        "explain": "Always turn on headlights when entering a tunnel and remove sunglasses to adjust to the lower light."
+      },
+      "q50": {
+        "text": "How often should you check your tire pressure?",
+        "a": "Once a year",
+        "b": "At least once a month and before long trips",
+        "c": "Only when tires look flat",
+        "d": "During oil changes only",
+        "explain": "Check tire pressure at least monthly and before any long journey for safety and fuel efficiency."
+      },
+      "vp-001": {
+        "text": "According to traffic regulations, how many points can lead to license suspension within a Hijri year?",
+        "a": "12 points",
+        "b": "18 points",
+        "c": "24 points",
+        "d": "30 points",
+        "explain": "In general practice, accumulating 24 points can lead to suspension."
+      },
+      "vp-002": {
+        "text": "What happens the first time a driver reaches 24 points within a Hijri year?",
+        "a": "Warning only",
+        "b": "License suspension for 3 months",
+        "c": "License suspension for 6 months",
+        "d": "Permanent revocation",
+        "explain": "First time reaching 24 points results in a 3-month suspension."
+      },
+      "vp-003": {
+        "text": "What is the penalty the second time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 1 year",
+        "b": "License suspension for 6 months",
+        "c": "Permanent revocation",
+        "d": "Fine only",
+        "explain": "Second time reaching 24 points results in a 6-month suspension."
+      },
+      "vp-004": {
+        "text": "What is the penalty the third time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 1 year",
+        "b": "License suspension for 6 months",
+        "c": "License suspension for 3 months",
+        "d": "Permanent revocation",
+        "explain": "Third time reaching 24 points results in a 1-year suspension."
+      },
+      "vp-005": {
+        "text": "What happens the fourth time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 6 months",
+        "b": "License suspension for 1 year",
+        "c": "Permanent revocation of the license",
+        "d": "Warning only",
+        "explain": "Fourth time reaching 24 points leads to permanent revocation."
+      },
+      "vp-006": {
+        "text": "In general practice, the 24-point limit is calculated within which period?",
+        "a": "Calendar year (Gregorian)",
+        "b": "Hijri year",
+        "c": "Monthly cycle",
+        "d": "No time limit",
+        "explain": "The 24-point limit is calculated within a Hijri year."
+      },
+      "vp-007": {
+        "text": "How many points are assigned for driving a vehicle under the influence (Alcohol/Drugs)?",
+        "a": "12",
+        "b": "24",
+        "c": "8",
+        "d": "6",
+        "explain": "Driving under the influence carries 24 points."
+      },
+      "vp-008": {
+        "text": "How many points are assigned for drifting?",
+        "a": "24",
+        "b": "12",
+        "c": "8",
+        "d": "6",
+        "explain": "Drifting carries 24 points."
+      },
+      "vp-009": {
+        "text": "How many points are assigned for running a red traffic light?",
+        "a": "12",
+        "b": "8",
+        "c": "6",
+        "d": "4",
+        "explain": "Running a red light carries 12 points."
+      },
+      "vp-010": {
+        "text": "How many points are assigned for driving in the opposite direction of traffic?",
+        "a": "12",
+        "b": "8",
+        "c": "6",
+        "d": "4",
+        "explain": "Driving in the opposite direction carries 12 points."
+      },
+      "vp-011": {
+        "text": "How many points are assigned for weaving through traffic on public roads?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Weaving through traffic carries 8 points."
+      },
+      "vp-012": {
+        "text": "How many points are assigned for not complying with a traffic officer’s manual signal?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Not complying with the officer’s signal carries 8 points."
+      },
+      "vp-013": {
+        "text": "How many points are assigned for driving a vehicle without brakes or lights?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Driving without brakes or lights carries 8 points."
+      },
+      "vp-014": {
+        "text": "How many points are assigned for not stopping completely at a stop sign?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Not stopping at a stop sign carries 6 points."
+      },
+      "vp-015": {
+        "text": "Failing to observe right-of-way rules results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Failing to observe right-of-way carries 6 points."
+      },
+      "vp-016": {
+        "text": "Exceeding the speed limit by more than 25 km/h results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Speeding more than 25 km/h carries 6 points."
+      },
+      "vp-017": {
+        "text": "Not yielding to cars inside a roundabout results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Not yielding in roundabouts carries 6 points."
+      },
+      "vp-018": {
+        "text": "Overtaking in prohibited areas results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Overtaking in prohibited areas carries 6 points."
+      },
+      "vp-019": {
+        "text": "Stopping on railway tracks results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Stopping on railway tracks carries 6 points."
+      },
+      "vp-020": {
+        "text": "Exceeding the speed limit by up to 25 km/h results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Speeding up to 25 km/h carries 4 points."
+      },
+      "vp-021": {
+        "text": "Driving on lanes not designated for the vehicle results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Driving on non-designated lanes carries 4 points."
+      },
+      "vp-022": {
+        "text": "Overtaking school buses while students are boarding or disembarking results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Overtaking school buses carries 4 points."
+      },
+      "vp-023": {
+        "text": "Not covering the load and cargo during transport results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Uncovered load carries 4 points."
+      },
+      "vp-024": {
+        "text": "Modifying vehicle structure or body without proper authorization results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Unauthorized modification carries 4 points."
+      },
+      "vp-025": {
+        "text": "Not wearing a seatbelt results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Not wearing a seatbelt carries 2 points."
+      },
+      "vp-026": {
+        "text": "Using a hand-held mobile phone while driving results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Using a hand-held mobile phone carries 2 points."
+      },
+      "vp-027": {
+        "text": "Not wearing a helmet while riding motorized bikes results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Not wearing a helmet carries 2 points."
+      },
+      "tf-001": {
+        "text": "In general practice, what is the main purpose of traffic fines?",
+        "a": "To improve road safety and reduce accidents",
+        "b": "To increase vehicle sales",
+        "c": "To replace driving training",
+        "d": "To reward risky driving",
+        "explain": "Fines are intended to encourage safer driving habits."
+      },
+      "tf-002": {
+        "text": "Which type of violation usually carries the highest fine?",
+        "a": "Very serious violations that endanger lives",
+        "b": "Minor parking issues",
+        "c": "Minor paperwork errors",
+        "d": "Temporary weather delays",
+        "explain": "Very serious violations typically carry the highest fines."
+      },
+      "tf-003": {
+        "text": "Why can fines increase for repeated violations?",
+        "a": "To discourage repeated unsafe behavior",
+        "b": "To reduce road signs",
+        "c": "To shorten driving lessons",
+        "d": "To increase fuel use",
+        "explain": "Repeat violations usually lead to higher penalties to encourage compliance."
+      },
+      "tf-004": {
+        "text": "Are traffic fines intended to improve road safety?",
+        "a": "Yes, they encourage safer driving",
+        "b": "No, they are only for revenue",
+        "c": "No, they replace driver training",
+        "d": "No, they are optional",
+        "explain": "Fines are designed to promote safer driving."
+      },
+      "tf-005": {
+        "text": "Minor traffic violations usually result in:",
+        "a": "Low fines",
+        "b": "Jail time",
+        "c": "License cancellation",
+        "d": "No action",
+        "explain": "Minor violations generally carry lower fines."
+      },
+      "tf-006": {
+        "text": "In practice, not wearing a seatbelt usually results in:",
+        "a": "A moderate fine",
+        "b": "No penalty",
+        "c": "Vehicle replacement",
+        "d": "License cancellation",
+        "explain": "Seatbelt violations are typically treated as moderate."
+      },
+      "tf-007": {
+        "text": "Using a hand-held mobile phone while driving usually results in:",
+        "a": "A moderate to high fine",
+        "b": "No penalty",
+        "c": "Warning only",
+        "d": "Vehicle replacement",
+        "explain": "Phone use while driving is treated as more serious."
+      },
+      "tf-008": {
+        "text": "Serious violations like running a red light are usually punished with:",
+        "a": "Higher fines",
+        "b": "Verbal warning only",
+        "c": "Fuel penalty",
+        "d": "No consequence",
+        "explain": "Dangerous behavior usually carries higher fines."
+      },
+      "tf-009": {
+        "text": "Light speeding is generally categorized as:",
+        "a": "A moderate violation",
+        "b": "A very serious violation",
+        "c": "A minor parking issue",
+        "d": "No violation",
+        "explain": "Light speeding is typically treated as moderate."
+      },
+      "tf-010": {
+        "text": "Parking issues are generally considered:",
+        "a": "Minor violations with lower fines",
+        "b": "Very serious violations",
+        "c": "Always criminal offenses",
+        "d": "No violation",
+        "explain": "Parking issues are usually categorized as minor."
+      },
+      "tf-011": {
+        "text": "Excessive speeding is generally considered:",
+        "a": "A serious violation with higher fines",
+        "b": "A minor violation",
+        "c": "No violation",
+        "d": "Only a warning",
+        "explain": "Excessive speeding is treated as serious."
+      },
+      "tf-012": {
+        "text": "Very serious violations usually lead to:",
+        "a": "Heavy fines and additional penalties",
+        "b": "No action",
+        "c": "Free training only",
+        "d": "Vehicle upgrades",
+        "explain": "Very serious violations can carry heavier fines and penalties."
+      }
+    }
+  },
+  "exam": {
+    "title": "Practice Test",
+    "description": "Theory practice session",
+    "duration": "Duration",
+    "minutes": "minutes",
+    "questions": "questions",
+    "passingScore": "Target Score",
+    "startExam": "Start Practice",
+    "endExam": "End Practice",
+    "confirmEnd": "Are you sure you want to end the practice session?",
+    "timeUp": "Time's Up!",
+    "review": "Review Answers",
+    "selectMode": "Select Practice Mode",
+    "selectModeDesc": "Choose the practice format that suits your preparation level",
+    "modes": {
+      "quick": "Quick",
+      "standard": "Standard",
+      "full": "Full"
+    },
+    "exam": "Practice",
+    "passThreshold": "Target",
+    "enableTimer": "Enable Timer",
+    "timerDesc": "Practice with a timer",
+    "submit": "Submit Practice",
+    "results": "Practice Results",
+    "passed": "Great job! Practice complete.",
+    "failed": "Keep Practicing!",
+    "correctAnswers": "correct answers",
+    "reviewAnswers": "Review Answers",
+    "tryAgain": "Try Again",
+    "backToResults": "Back",
+    "explanation": "Explanation"
+  },
+  "practice": {
+    "byMode": "By Mode",
+    "byCategory": "By Category",
+    "modes": {
+      "all": "All Questions",
+      "allDesc": "Practice from the complete question bank",
+      "mistakes": "My Mistakes",
+      "mistakesDesc": "Review questions you got wrong",
+      "weak": "Weak Areas",
+      "weakDesc": "Focus on categories with low accuracy",
+      "review": "Due Reviews",
+      "reviewDesc": "Spaced repetition review queue",
+      "daily": "Daily Practice",
+      "dailyDesc": "Quick daily practice set"
+    },
+    "all": "All",
+    "accuracy": "Accuracy",
+    "learningStats": "Learning Stats",
+    "mistakeCount": "Mistakes",
+    "weakAreas": "Weak Areas",
+    "dueReviews": "Due Reviews",
+    "startDaily": "Start Daily",
+    "reviewMistakes": "Review Mistakes"
+  },
+  "results": {
+    "title": "Results",
+    "score": "Your Score",
+    "passed": "Great job! Practice complete.",
+    "failed": "Keep Practicing!",
+    "correct": "Correct Answers",
+    "incorrect": "Incorrect Answers",
+    "accuracy": "Accuracy",
+    "time": "Time Taken",
+    "tryAgain": "Try Again",
+    "reviewAnswers": "Review Answers",
+    "backHome": "Back to Home"
+  },
+  "learn": {
+    "title": "Learn Driving Theory",
+    "lessons": "Lessons",
+    "progress": "Progress",
+    "continue": "Continue Learning",
+    "completed": "Completed",
+    "topics": {
+      "speedLimits": "Speed Limits",
+      "rightOfWay": "Right of Way",
+      "signals": "Traffic Signals",
+      "markings": "Road Markings",
+      "safety": "Safety Rules"
+    }
+  },
+  "favorites": {
+    "title": "Favorites",
+    "empty": "No favorites yet",
+    "emptyDesc": "Save questions and signs to review later",
+    "questions": "Questions",
+    "signs": "Signs"
+  },
+  "stats": {
+    "title": "Your Statistics",
+    "quizzesTaken": "Quizzes Taken",
+    "bestScore": "Best Score",
+    "accuracy": "Average Accuracy",
+    "streak": "Current Streak",
+    "days": "days",
+    "noStats": "No statistics yet",
+    "noStatsDesc": "Complete quizzes to see your progress"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "sound": "Sound Effects",
+    "vibration": "Vibration",
+    "removeAds": "Remove Ads",
+    "restorePurchase": "Restore Purchase",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "about": "About",
+    "version": "Version"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "level": "Level",
+    "nextLevel": "Next Level",
+    "unlocked": "Unlocked",
+    "locked": "Locked",
+    "total": "Total",
+    "progress": "Progress",
+    "badges": {
+      "first_steps": {
+        "name": "First Steps",
+        "desc": "Complete your first quiz"
+      },
+      "quiz_enthusiast": {
+        "name": "Quiz Enthusiast",
+        "desc": "Complete 10 quizzes"
+      },
+      "quiz_master": {
+        "name": "Quiz Master",
+        "desc": "Complete 50 quizzes"
+      },
+      "perfect_score": {
+        "name": "Perfect Score",
+        "desc": "Get 100% on any quiz"
+      },
+      "sharp_shooter": {
+        "name": "Sharp Shooter",
+        "desc": "Maintain 80%+ accuracy"
+      },
+      "precision_master": {
+        "name": "Precision Master",
+        "desc": "Maintain 90%+ accuracy"
+      },
+      "on_fire_3": {
+        "name": "On Fire",
+        "desc": "3-day learning streak"
+      },
+      "dedicated_7": {
+        "name": "Dedicated Learner",
+        "desc": "7-day learning streak"
+      },
+      "champion_30": {
+        "name": "Champion",
+        "desc": "30-day learning streak"
+      },
+      "signs_expert": {
+        "name": "Signs Expert",
+        "desc": "90%+ accuracy in traffic signs"
+      },
+      "rules_master": {
+        "name": "Rules Master",
+        "desc": "90%+ accuracy in road rules"
+      },
+      "safety_pro": {
+        "name": "Safety Pro",
+        "desc": "90%+ accuracy in safety"
+      },
+      "exam_ready": {
+        "name": "Practice Ready",
+        "desc": "Complete your first practice session"
+      },
+      "exam_ace": {
+        "name": "Practice Ace",
+        "desc": "Complete 5 practice sessions"
+      },
+      "daily_champion": {
+        "name": "Daily Champion",
+        "desc": "Complete daily goal 7 times"
+      },
+      "early_bird": {
+        "name": "Early Bird",
+        "desc": "Practice before 7am"
+      },
+      "night_owl": {
+        "name": "Night Owl",
+        "desc": "Practice after 10pm"
+      },
+      "quick_learner": {
+        "name": "Quick Learner",
+        "desc": "Answer 100 questions"
+      },
+      "knowledge_seeker": {
+        "name": "Knowledge Seeker",
+        "desc": "Answer 500 questions"
+      },
+      "driving_expert": {
+        "name": "Driving Expert",
+        "desc": "Answer 1000 questions"
+      }
+    },
+    "empty": "No achievements in this category",
+    "dailyGoal": "Daily Goal",
+    "dailyGoalDesc": "Answer {{count}} questions today",
+    "dailyGoalComplete": "Daily Goal Complete!",
+    "categories": {
+      "all": "All",
+      "progress": "Progress",
+      "accuracy": "Accuracy",
+      "streak": "Streak",
+      "mastery": "Mastery",
+      "exam": "Practice",
+      "daily": "Daily",
+      "special": "Special"
+    },
+    "levels": {
+      "beginner": "Beginner",
+      "learner": "Learner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert",
+      "master": "Master",
+      "champion": "Champion"
+    },
+    "badgesLabel": "Badges"
+  },
+  "pwa": {
+    "installTitle": "Install App",
+    "installDescription": "Install for offline access and a better experience",
+    "install": "Install",
+    "notNow": "Not now",
+    "offline": "You are offline. Some features may be limited."
+  },
+  "violationPoints": {
+    "title": "Traffic Violation Point System (Educational)",
+    "intro": "The point system is designed to penalize drivers who commit traffic violations, with each infraction being assigned a specific number of points. As points accumulate, penalties become more severe. The purpose of this system is to encourage safer driving habits and reduce accidents.",
+    "impactTitle": "Understanding the Impact of Accumulating 24 Points (Hijri Year):",
+    "penalties": {
+      "first": "First time reaching 24 points: License suspension for 3 months.",
+      "second": "Second time reaching 24 points: License suspension for 6 months.",
+      "third": "Third time reaching 24 points: License suspension for 1 year.",
+      "fourth": "Fourth time reaching 24 points: Permanent revocation of the driving license."
+    },
+    "closing": "This system encourages drivers to follow traffic regulations and drive responsibly. Driving is a responsibility, and safe behavior helps protect all road users.",
+    "table": {
+      "number": "No.",
+      "violation": "Violation",
+      "points": "Points"
+    }
+  },
+  "violations": {
+    "v01": "Driving a vehicle under the influence (Alcohol/Drugs)",
+    "v02": "Drifting",
+    "v03": "Running a red traffic light",
+    "v04": "Driving in the opposite direction of traffic",
+    "v05": "Weaving through traffic on public roads",
+    "v06": "Not complying with traffic officer’s manual signal",
+    "v07": "Driving a vehicle without brakes or lights",
+    "v08": "Not stopping completely at a stop sign",
+    "v09": "Failing to observe right-of-way rules",
+    "v10": "Exceeding the speed limit by more than 25 km/h",
+    "v11": "Not yielding to cars inside a roundabout",
+    "v12": "Overtaking in prohibited areas",
+    "v13": "Stopping on railway tracks",
+    "v14": "Exceeding the speed limit by up to 25 km/h",
+    "v15": "Driving on lanes not designated for the vehicle",
+    "v16": "Overtaking school buses while students are boarding or disembarking",
+    "v17": "Not covering the load and cargo during transport",
+    "v18": "Modifying vehicle structure or body without proper authorization",
+    "v19": "Not wearing a seatbelt",
+    "v20": "Using a hand-held mobile phone while driving",
+    "v21": "Not wearing a helmet while riding motorized bikes"
+  },
+  "trafficFines": {
+    "title": "Traffic Fines in Saudi Arabia (Educational Guide)",
+    "intro": "Saudi Arabia applies traffic fines to encourage safer driving and reduce accidents. Violations are grouped by how serious they are, and each group generally carries a financial penalty. More serious or repeated violations can lead to higher fines and additional penalties.",
+    "categoriesTitle": "Typical fine categories include:",
+    "categories": {
+      "minor": "Minor violations: Lower fines, usually for parking issues or minor non-compliance.",
+      "moderate": "Moderate violations: Medium fines for behaviors such as not wearing a seatbelt or light speeding.",
+      "serious": "Serious violations: Higher fines for dangerous behavior such as using a mobile phone while driving, running red lights, or excessive speeding.",
+      "verySerious": "Very serious violations: Heavy fines and additional penalties for actions that endanger lives."
+    },
+    "closing": "Drivers are encouraged to follow traffic rules to avoid fines and contribute to safer roads."
+  },
+  "disclaimer": {
+    "educationalGovernment": "Disclaimer: This content is provided for educational practice only and does not represent official government regulations. This app is not affiliated with any government entity."
+  },
+  "ui": {
+    "trafficSign": "Traffic sign",
+    "signUnavailable": "Sign image unavailable"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "back": "Back",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "on": "On",
+    "off": "Off",
+    "home": "Home",
+    "next": "Next",
+    "previous": "Previous",
+    "correct": "Correct",
+    "incorrect": "Incorrect"
+  }
+}

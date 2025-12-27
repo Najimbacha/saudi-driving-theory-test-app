@@ -1,0 +1,1135 @@
+{
+  "app": {
+    "name": "सऊदी ड्राइविंग थ्योरी टेस्ट",
+    "tagline": "Master driving theory with confidence",
+    "offline": "Works 100% Offline"
+  },
+  "nav": {
+    "home": "होम",
+    "signs": "चिन्ह",
+    "practice": "अभ्यास",
+    "exam": "प्रैक्टिस टेस्ट",
+    "learn": "सीखें",
+    "favorites": "पसंदीदा",
+    "stats": "आंकड़े",
+    "settings": "सेटिंग्स",
+    "achievements": "उपलब्धियां"
+  },
+  "onboarding": {
+    "welcome": "Welcome",
+    "selectLanguage": "Select Your Language",
+    "languageNote": "You can change this anytime in settings",
+    "getStarted": "Get Started",
+    "offlineReady": "Ready to learn offline!",
+    "offlineDesc": "All content works without internet connection"
+  },
+  "home": {
+    "greeting": "Ready to Learn?",
+    "subtitle": "Practice anytime, anywhere - no internet needed",
+    "learnSigns": "ट्रैफ़िक साइन",
+    "learnSignsDesc": "Learn all traffic signs",
+    "learnRules": "नियम और विनियम",
+    "learnRulesDesc": "Road rules and safety",
+    "practice": "अभ्यास क्विज़",
+    "practiceDesc": "Test your knowledge",
+    "mockExam": "प्रैक्टिस टेस्ट",
+    "mockExamDesc": "Full theory practice",
+    "favorites": "पसंदीदा",
+    "favoritesDesc": "Your saved items",
+    "stats": "आपकी प्रगति",
+    "statsDesc": "Track your learning",
+    "violationPoints": "ट्रैफिक उल्लंघन अंक",
+    "violationPointsDesc": "Learn the point system",
+    "trafficFines": "ट्रैफिक जुर्माने और दंड",
+    "trafficFinesDesc": "Educational guide"
+  },
+  "signs": {
+    "title": "ट्रैफ़िक साइन",
+    "search": "Search signs...",
+    "categories": {
+      "all": "सभी साइन",
+      "warning": "चेतावनी",
+      "regulatory": "नियामक",
+      "mandatory": "अनिवार्य",
+      "guide": "गाइड"
+    },
+    "showing": "{{total}} में से {{from}}-{{to}} साइन दिखा रहे हैं",
+    "practiceCategory": "इस श्रेणी का अभ्यास करें",
+    "page": "पृष्ठ {{current}} / {{total}}",
+    "mastery": {
+      "new": "नया",
+      "learning": "सीख रहा है",
+      "reviewing": "समीक्षा",
+      "mastered": "निपुण"
+    },
+    "meaning": "अर्थ",
+    "tip": "त्वरित टिप",
+    "addToFavorites": "पसंदीदा में जोड़ें",
+    "removeFromFavorites": "पसंदीदा से हटाएं",
+    "flashcards": "फ्लैशकार्ड",
+    "related": "संबंधित साइन"
+  },
+  "quiz": {
+    "title": "Practice Quiz",
+    "selectCategory": "Select Category",
+    "selectDifficulty": "Select Difficulty",
+    "selectQuestions": "Number of Questions",
+    "difficulty": {
+      "easy": "आसान",
+      "medium": "मध्यम",
+      "hard": "कठिन"
+    },
+    "categories": {
+      "all": "सभी विषय",
+      "signs": "ट्रैफ़िक साइन",
+      "rules": "सड़क के नियम",
+      "safety": "सुरक्षा",
+      "signals": "सिग्नल",
+      "markings": "सड़क चिह्न",
+      "violation_points": "ट्रैफिक उल्लंघन अंक (अभ्यास)",
+      "traffic_fines": "ट्रैफिक जुर्माने (अभ्यास)"
+    },
+    "start": "Start Quiz",
+    "question": "प्रश्न",
+    "of": "का",
+    "next": "अगला",
+    "submit": "Submit Answer",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "explanation": "Explanation",
+    "timeLeft": "Time Left",
+    "q": {
+      "q1": {
+        "text": "लाल अष्टभुज चिन्ह का क्या अर्थ है?",
+        "a": "पूरी तरह रुकें",
+        "b": "धीमा करें",
+        "c": "रास्ता दें",
+        "d": "प्रवेश निषेध",
+        "explain": "लाल अष्टभुज चिन्ह रुकने का संकेत है। आपको पूरी तरह रुकना होगा।"
+      },
+      "q2": {
+        "text": "सऊदी अरब में आवासीय क्षेत्रों में गति सीमा क्या है?",
+        "a": "30 किमी/घंटा",
+        "b": "40 किमी/घंटा",
+        "c": "50 किमी/घंटा",
+        "d": "60 किमी/घंटा",
+        "explain": "आवासीय क्षेत्रों में गति सीमा आमतौर पर 40 किमी/घंटा है जब तक अन्यथा न बताया जाए।"
+      },
+      "q3": {
+        "text": "आपको अपने वाहन की हेडलाइट्स कब इस्तेमाल करनी चाहिए?",
+        "a": "केवल रात में",
+        "b": "बारिश, कोहरे, या कम दृश्यता के दौरान",
+        "c": "केवल सुरंगों में",
+        "d": "दिन में कभी नहीं",
+        "explain": "बारिश, कोहरे, रेतीले तूफान, या कम दृश्यता की किसी भी स्थिति में हेडलाइट्स का उपयोग करें।"
+      },
+      "q4": {
+        "text": "चमकती पीली ट्रैफिक लाइट का क्या मतलब है?",
+        "a": "तुरंत रुकें",
+        "b": "गुजरने के लिए तेज करें",
+        "c": "सावधानी से आगे बढ़ें",
+        "d": "यू-टर्न की अनुमति",
+        "explain": "चमकती पीली रोशनी का मतलब है सावधानी से आगे बढ़ें। धीमा करें और रुकने के लिए तैयार रहें।"
+      },
+      "q5": {
+        "text": "सड़क के बीच में दोहरी पीली लाइनों का क्या मतलब है?",
+        "a": "ओवरटेक की अनुमति है",
+        "b": "किसी भी दिशा से ओवरटेक नहीं",
+        "c": "आगे पैदल यात्री क्रॉसिंग",
+        "d": "आगे सड़क संकरी है",
+        "explain": "दोहरी पीली लाइनों का मतलब है किसी भी दिशा से गुजरने की अनुमति नहीं।"
+      },
+      "q6": {
+        "text": "सऊदी अरब में राजमार्गों पर अधिकतम गति सीमा क्या है?",
+        "a": "100 किमी/घंटा",
+        "b": "120 किमी/घंटा",
+        "c": "140 किमी/घंटा",
+        "d": "80 किमी/घंटा",
+        "explain": "सऊदी अरब में राजमार्गों पर कारों के लिए अधिकतम गति सीमा आमतौर पर 120 किमी/घंटा है।"
+      },
+      "q7": {
+        "text": "सऊदी अरब में सीटबेल्ट किसे पहननी होगी?",
+        "a": "केवल चालक",
+        "b": "चालक और आगे का यात्री",
+        "c": "वाहन के सभी यात्री",
+        "d": "केवल राजमार्गों पर",
+        "explain": "सऊदी अरब में वाहन के सभी यात्रियों को सीटबेल्ट पहननी होगी।"
+      },
+      "q8": {
+        "text": "नीचे की ओर इशारा करता त्रिकोणीय चिन्ह क्या मतलब है?",
+        "a": "रुकें",
+        "b": "रास्ता दें",
+        "c": "प्रवेश निषेध",
+        "d": "गति सीमा",
+        "explain": "उल्टा त्रिकोण रास्ता देने का संकेत है। आपको अन्य यातायात को प्राथमिकता देनी होगी।"
+      },
+      "q9": {
+        "text": "गोल चक्कर पर, किसे रास्ते का अधिकार है?",
+        "a": "गोल चक्कर में प्रवेश करने वाले वाहन",
+        "b": "गोल चक्कर में पहले से मौजूद वाहन",
+        "c": "बड़े वाहन",
+        "d": "केवल दाईं ओर से आने वाले वाहन",
+        "explain": "गोल चक्कर में पहले से मौजूद वाहनों को रास्ते का अधिकार है।"
+      },
+      "q10": {
+        "text": "सुरक्षित फॉलोइंग दूरी का नियम क्या है?",
+        "a": "1 सेकंड का नियम",
+        "b": "2-3 सेकंड का नियम",
+        "c": "5 सेकंड का नियम",
+        "d": "10 सेकंड का नियम",
+        "explain": "आगे के वाहन से 2-3 सेकंड का अंतर रखें। खराब मौसम में इसे बढ़ाएं।"
+      },
+      "q11": {
+        "text": "जब ट्रैफिक लाइट लाल हो जाए तो आपको क्या करना चाहिए?",
+        "a": "स्टॉप लाइन से पहले रुकें",
+        "b": "धीमा करें लेकिन रास्ता साफ हो तो आगे बढ़ें",
+        "c": "जल्दी पार करने के लिए तेज करें",
+        "d": "हेडलाइट्स फ्लैश करें और आगे बढ़ें",
+        "explain": "जब ट्रैफिक लाइट लाल हो तो आपको स्टॉप लाइन से पहले पूरी तरह रुकना होगा।"
+      },
+      "q12": {
+        "text": "सफेद क्षैतिज पट्टी वाले लाल वृत्त का क्या मतलब है?",
+        "a": "पार्किंग निषेध",
+        "b": "प्रवेश निषेध",
+        "c": "रुकना निषेध",
+        "d": "गति सीमा समाप्त",
+        "explain": "सफेद क्षैतिज पट्टी वाला लाल वृत्त 'प्रवेश निषेध' का संकेत है। वाहन प्रवेश नहीं कर सकते।"
+      },
+      "q13": {
+        "text": "ओवरटेक कहाँ निषिद्ध है?",
+        "a": "अच्छी दृश्यता वाली सीधी सड़कों पर",
+        "b": "मोड़, पहाड़ियों, चौराहों और पैदल यात्री क्रॉसिंग के पास",
+        "c": "केवल राजमार्गों पर",
+        "d": "ओवरटेक हमेशा अनुमति है",
+        "explain": "मोड़, पहाड़ियों, चौराहों, पैदल यात्री क्रॉसिंग और चिह्नित स्थानों के पास ओवरटेक निषिद्ध है।"
+      },
+      "q14": {
+        "text": "जब इमरजेंसी वाहन सायरन के साथ पास आए तो आपको क्या करना चाहिए?",
+        "a": "रास्ते से हटने के लिए तेज करें",
+        "b": "उसी गति से जारी रखें",
+        "c": "दाईं ओर खींचकर रुकें",
+        "d": "अपनी वर्तमान लेन में रुकें",
+        "explain": "सड़क के दाईं ओर खींचें और रुकें ताकि इमरजेंसी वाहन गुजर सकें।"
+      },
+      "q15": {
+        "text": "सड़क पर सफेद ज़ेबरा धारियाँ किस चीज़ का संकेत देती हैं?",
+        "a": "पार्किंग क्षेत्र",
+        "b": "पैदल यात्री क्रॉसिंग",
+        "c": "आगे स्पीड बंप",
+        "d": "रुकना निषेध क्षेत्र",
+        "explain": "सफेद ज़ेबरा धारियाँ पैदल यात्री क्रॉसिंग का संकेत देती हैं। चालकों को पैदल यात्रियों को रास्ता देना होगा।"
+      },
+      "q16": {
+        "text": "फायर हाइड्रेंट से कितनी दूर पार्क करना होगा?",
+        "a": "1 मीटर",
+        "b": "3 मीटर",
+        "c": "5 मीटर",
+        "d": "10 मीटर",
+        "explain": "आपातकालीन पहुंच के लिए फायर हाइड्रेंट से कम से कम 5 मीटर दूर पार्क करना होगा।"
+      },
+      "q17": {
+        "text": "जब ट्रैफिक पुलिस अधिकारी अपना हाथ क्षैतिज रूप से फैलाए तो इसका क्या मतलब है?",
+        "a": "उस दिशा से आने वाले वाहनों के लिए रुकें",
+        "b": "जल्दी आगे बढ़ें",
+        "c": "यू-टर्न की अनुमति",
+        "d": "पार्किंग की अनुमति",
+        "explain": "फैला हुआ हाथ का मतलब है उस दिशा से आने वाले वाहनों के लिए रुकें।"
+      },
+      "q18": {
+        "text": "ड्राइविंग के दौरान टायर फटने पर क्या करें?",
+        "a": "तुरंत जोर से ब्रेक लगाएं",
+        "b": "स्टीयरिंग मजबूती से पकड़ें, गैस छोड़ें, और धीरे-धीरे रफ्तार कम करें",
+        "c": "सड़क के किनारे तेजी से मोड़ें",
+        "d": "नियंत्रण बनाए रखने के लिए तेज करें",
+        "explain": "स्टीयरिंग व्हील मजबूती से पकड़ें, धीरे-धीरे एक्सेलेरेटर छोड़ें, और सुरक्षित रूप से धीमा करें।"
+      },
+      "q19": {
+        "text": "लाल बॉर्डर और काले नंबर '60' वाला गोल चिन्ह का मतलब है:",
+        "a": "न्यूनतम गति 60 किमी/घंटा",
+        "b": "अधिकतम गति 60 किमी/घंटा",
+        "c": "गति सीमा समाप्त",
+        "d": "अगले शहर तक दूरी 60 किमी",
+        "explain": "लाल बॉर्डर वाला गोल चिन्ह जिस पर नंबर हो वह अधिकतम गति सीमा दर्शाता है।"
+      },
+      "q20": {
+        "text": "क्या सऊदी अरब में ड्राइविंग करते समय मोबाइल फोन का उपयोग करने की अनुमति है?",
+        "a": "हाँ, कभी भी",
+        "b": "नहीं, यह सख्त मना है",
+        "c": "केवल राजमार्गों पर",
+        "d": "केवल आपातकाल के लिए",
+        "explain": "सऊदी अरब में ड्राइविंग करते समय हाथ में मोबाइल फोन का उपयोग सख्त मना है।"
+      },
+      "q21": {
+        "text": "गीली सड़कें ब्रेकिंग दूरी को कैसे प्रभावित करती हैं?",
+        "a": "ब्रेकिंग दूरी कम हो जाती है",
+        "b": "ब्रेकिंग दूरी वही रहती है",
+        "c": "ब्रेकिंग दूरी दोगुनी या अधिक हो सकती है",
+        "d": "ब्रेकिंग पर कोई प्रभाव नहीं",
+        "explain": "गीली सड़कें टायर की पकड़ कम करती हैं, जो ब्रेकिंग दूरी को दोगुना या तीन गुना कर सकती हैं।"
+      },
+      "q22": {
+        "text": "सर्कल में सफेद तीरों वाले नीले गोल चिन्ह का क्या मतलब है?",
+        "a": "आगे गोल चक्कर",
+        "b": "यू-टर्न निषेध",
+        "c": "वन-वे स्ट्रीट",
+        "d": "पार्किंग क्षेत्र",
+        "explain": "सफेद सर्कुलर तीरों वाला नीला गोल चिन्ह आगे गोल चक्कर का संकेत देता है।"
+      },
+      "q23": {
+        "text": "सड़क पर बने सफेद तीर क्या संकेत देते हैं?",
+        "a": "गति सीमा",
+        "b": "वह दिशा जिसमें आपको उस लेन में जाना होगा",
+        "c": "पार्किंग की अनुमति",
+        "d": "बस लेन",
+        "explain": "सड़क के तीर उस लेन के लिए यात्रा की अनुमत दिशा(ओं) का संकेत देते हैं।"
+      },
+      "q24": {
+        "text": "सऊदी अरब में ड्राइविंग लाइसेंस प्राप्त करने की न्यूनतम उम्र क्या है?",
+        "a": "16 वर्ष",
+        "b": "17 वर्ष",
+        "c": "18 वर्ष",
+        "d": "21 वर्ष",
+        "explain": "सऊदी अरब में प्राइवेट ड्राइविंग लाइसेंस प्राप्त करने के लिए आपकी उम्र कम से कम 18 वर्ष होनी चाहिए।"
+      },
+      "q25": {
+        "text": "ट्रैफिक लाइट पर हरे तीर के सिग्नल का क्या मतलब है?",
+        "a": "किसी भी दिशा में सावधानी से आगे बढ़ें",
+        "b": "तुरंत रुकें",
+        "c": "आप तीर की दिशा में आगे बढ़ सकते हैं",
+        "d": "केवल पैदल यात्रियों को रास्ता दें",
+        "explain": "हरा तीर आपको उस दिशा में सुरक्षित रूप से आगे बढ़ने की अनुमति देता है जहाँ तीर इशारा करता है।"
+      },
+      "q26": {
+        "text": "10 साल से कम उम्र के बच्चों को वाहन में कहाँ बैठना चाहिए?",
+        "a": "आगे की यात्री सीट",
+        "b": "पीछे की सीट पर उचित प्रतिबंध के साथ",
+        "c": "ड्राइवर की गोद में",
+        "d": "पीछे खड़े होकर",
+        "explain": "10 साल से कम उम्र के बच्चों को उचित चाइल्ड सीट के साथ पीछे की सीट पर बैठना होगा।"
+      },
+      "q27": {
+        "text": "घुमावदार तीर वाला पीला हीरा चिन्ह संकेत देता है:",
+        "a": "आगे सड़क मोड़",
+        "b": "यू-टर्न की अनुमति",
+        "c": "वन-वे स्ट्रीट",
+        "d": "आगे मर्ज",
+        "explain": "पीले हीरे के चिन्ह चेतावनी के चिन्ह हैं। घुमावदार तीर आगे मोड़ की चेतावनी देता है।"
+      },
+      "q28": {
+        "text": "कर्ब के साथ चढ़ाई पर पार्क करते समय, आपके आगे के पहिये किस दिशा में होने चाहिए?",
+        "a": "कर्ब की ओर",
+        "b": "कर्ब से दूर",
+        "c": "सीधे आगे",
+        "d": "कोई फर्क नहीं पड़ता",
+        "explain": "कर्ब के साथ चढ़ाई पर पार्क करते समय, पहियों को कर्ब से दूर मोड़ें ताकि ब्रेक फेल होने पर कार कर्ब में जाए।"
+      },
+      "q29": {
+        "text": "ड्राइविंग करते समय नींद आने पर सबसे अच्छा कदम क्या है?",
+        "a": "खिड़की खोलें और जारी रखें",
+        "b": "रेडियो की आवाज बढ़ाएं",
+        "c": "सुरक्षित रूप से किनारे लगें और आराम करें",
+        "d": "कॉफी पिएं और जारी रखें",
+        "explain": "अगर नींद आ रही हो तो एकमात्र सुरक्षित कदम किनारे लगना और आराम करना है। अस्थायी उपाय काम नहीं करते।"
+      },
+      "q30": {
+        "text": "आपको हैजार्ड वार्निंग लाइट्स कब इस्तेमाल करनी चाहिए?",
+        "a": "अवैध पार्किंग करते समय",
+        "b": "जब आपका वाहन खराब हो गया हो या रुका हो और रुकावट बन रहा हो",
+        "c": "भारी ट्रैफिक में ड्राइविंग करते समय",
+        "d": "ओवरटेक करते समय",
+        "explain": "हैजार्ड लाइट्स का उपयोग करें जब आपका वाहन खराब हो, आपातकाल में, या ट्रैफिक में बाधा बन रहा हो।"
+      },
+      "q31": {
+        "text": "लाल बॉर्डर, नीले बैकग्राउंड और लाल तिरछी रेखा वाले गोल चिन्ह का क्या मतलब है?",
+        "a": "पार्किंग निषेध",
+        "b": "प्रवेश निषेध",
+        "c": "ओवरटेक निषेध",
+        "d": "यू-टर्न निषेध",
+        "explain": "लाल बॉर्डर और एक तिरछी रेखा वाला नीला वृत्त पार्किंग निषेध का मतलब है।"
+      },
+      "q32": {
+        "text": "बहु-लेन सड़क पर, ओवरटेक के लिए कौन सी लेन है?",
+        "a": "दाईं लेन (सऊदी अरब में)",
+        "b": "बाईं लेन",
+        "c": "कोई भी लेन",
+        "d": "आपातकालीन लेन",
+        "explain": "सऊदी अरब में, बाईं लेन ओवरटेक के लिए है। गुजरने के बाद दाईं ओर वापस आएं।"
+      },
+      "q33": {
+        "text": "ब्लाइंड स्पॉट क्या है?",
+        "a": "वह क्षेत्र जहाँ सूरज से नजर रुकती है",
+        "b": "वह क्षेत्र जो मिरर में नहीं दिखता और सिर घुमाकर देखना होता है",
+        "c": "डैशबोर्ड क्षेत्र",
+        "d": "आपके पीछे सड़क",
+        "explain": "ब्लाइंड स्पॉट आपके वाहन के आसपास का वह क्षेत्र है जो मिरर में नहीं दिखता। हमेशा सिर घुमाकर जांचें।"
+      },
+      "q34": {
+        "text": "लेन में 'BUS' लिखा होने का क्या मतलब है?",
+        "a": "आगे बस स्टॉप",
+        "b": "केवल बसों के लिए आरक्षित लेन",
+        "c": "बसों को प्राथमिकता है",
+        "d": "स्कूल क्षेत्र",
+        "explain": "लेन पर BUS का मतलब है कि यह ऑपरेटिंग घंटों में केवल बसों के लिए आरक्षित है।"
+      },
+      "q35": {
+        "text": "बच्चों की मौजूदगी में स्कूल जोन में आमतौर पर गति सीमा क्या है?",
+        "a": "20 किमी/घंटा",
+        "b": "30 किमी/घंटा",
+        "c": "40 किमी/घंटा",
+        "d": "50 किमी/घंटा",
+        "explain": "स्कूल जोन में आमतौर पर बच्चों की मौजूदगी में 30 किमी/घंटा की गति सीमा होती है।"
+      },
+      "q36": {
+        "text": "हॉर्न कब इस्तेमाल करना उचित है?",
+        "a": "ट्रैफिक में निराशा व्यक्त करने के लिए",
+        "b": "दूसरों को खतरे या अपनी मौजूदगी की चेतावनी देने के लिए",
+        "c": "दोस्तों का अभिवादन करने के लिए",
+        "d": "आवासीय क्षेत्रों में देर रात",
+        "explain": "हॉर्न केवल अन्य सड़क उपयोगकर्ताओं को खतरे की चेतावनी देने या अपनी मौजूदगी जताने के लिए इस्तेमाल करें।"
+      },
+      "q37": {
+        "text": "रेलवे क्रॉसिंग पर जब बैरियर नीचे हो तो आपको क्या करना चाहिए?",
+        "a": "अगर ट्रेन नज़र न आए तो बैरियर के आसपास जाएं",
+        "b": "बैरियर पूरी तरह उठने तक इंतजार करें",
+        "c": "अगर ट्रेन गुजर गई हो तो धीरे-धीरे आगे बढ़ें",
+        "d": "हेडलाइट्स फ्लैश करें और आगे बढ़ें",
+        "explain": "रेलवे क्रॉसिंग पर आगे बढ़ने से पहले हमेशा बैरियर के पूरी तरह उठने का इंतजार करें।"
+      },
+      "q38": {
+        "text": "सफेद चलती आकृति वाले नीले चौकोर चिन्ह का क्या मतलब है?",
+        "a": "पैदल यात्री निषेध",
+        "b": "पैदल यात्री क्रॉसिंग या पैदल क्षेत्र",
+        "c": "जॉगिंग ट्रैक",
+        "d": "स्कूल क्षेत्र",
+        "explain": "पैदल यात्री प्रतीकों वाले नीले चिन्ह पैदल यात्री क्रॉसिंग या क्षेत्र का संकेत देते हैं।"
+      },
+      "q39": {
+        "text": "सऊदी अरब में ड्राइविंग के लिए खून में अल्कोहल की कानूनी सीमा क्या है?",
+        "a": "0.05%",
+        "b": "0.08%",
+        "c": "शून्य - शराब प्रतिबंधित है",
+        "d": "0.02%",
+        "explain": "सऊदी अरब में शराब पूरी तरह प्रतिबंधित है। नशे में ड्राइविंग के लिए कोई सहनशीलता नहीं।"
+      },
+      "q40": {
+        "text": "एयरबैग का प्राथमिक उद्देश्य क्या है?",
+        "a": "सीटबेल्ट की जगह लेने के लिए",
+        "b": "टक्कर के दौरान यात्रियों को कुशन देने के लिए",
+        "c": "ईंधन दक्षता सुधारने के लिए",
+        "d": "कार को आधुनिक दिखाने के लिए",
+        "explain": "एयरबैग टक्कर के दौरान यात्रियों को कुशन देते हैं और प्रभाव बल कम करते हैं। वे सीटबेल्ट के साथ काम करते हैं, प्रतिस्थापन के रूप में नहीं।"
+      },
+      "q41": {
+        "text": "सड़क के बीच में टूटी हुई सफेद रेखा का क्या मतलब है?",
+        "a": "ओवरटेक निषेध",
+        "b": "सुरक्षित होने पर ओवरटेक की अनुमति",
+        "c": "पैदल यात्री क्रॉसिंग",
+        "d": "सड़क निर्माणाधीन",
+        "explain": "टूटी हुई सफेद रेखा इंगित करती है कि आप सुरक्षित होने पर ओवरटेक के लिए इसे पार कर सकते हैं।"
+      },
+      "q42": {
+        "text": "फॉग लाइट्स कब इस्तेमाल करनी चाहिए?",
+        "a": "अच्छी रोशनी वाली सड़कों पर रात में",
+        "b": "केवल घने कोहरे या गंभीर रूप से कम दृश्यता में",
+        "c": "जब भी बारिश हो",
+        "d": "अच्छा दिखने के लिए",
+        "explain": "फॉग लाइट्स केवल घने कोहरे, धुंध, या जब दृश्यता गंभीर रूप से कम हो तब इस्तेमाल करें।"
+      },
+      "q43": {
+        "text": "ऊपर इशारा करते सफेद तीर वाले नीले आयताकार चिन्ह का क्या मतलब है?",
+        "a": "आगे वन-वे स्ट्रीट",
+        "b": "केवल सीधे जाएं",
+        "c": "आगे प्रवेश निषेध",
+        "d": "चढ़ाई",
+        "explain": "आगे इशारा करते सफेद तीर वाला नीला आयताकार चिन्ह वन-वे स्ट्रीट का संकेत देता है।"
+      },
+      "q44": {
+        "text": "एक्वाप्लानिंग (हाइड्रोप्लानिंग) क्या है?",
+        "a": "जब आपका इंजन ज्यादा गर्म हो जाए",
+        "b": "जब टायर पानी के कारण सड़क से संपर्क खो दें",
+        "c": "कार वॉश का एक प्रकार",
+        "d": "बारिश में ड्राइविंग",
+        "explain": "एक्वाप्लानिंग तब होती है जब टायर पानी के ऊपर चलते हैं और सड़क की सतह से संपर्क खो देते हैं।"
+      },
+      "q45": {
+        "text": "ज़ेबरा क्रॉसिंग पर किसे प्राथमिकता है?",
+        "a": "वाहन",
+        "b": "पैदल यात्री",
+        "c": "जो पहले पहुंचे",
+        "d": "बड़े वाहन",
+        "explain": "ज़ेबरा क्रॉसिंग पर पैदल यात्रियों को प्राथमिकता है। चालकों को उन्हें पार करने देने के लिए रुकना होगा।"
+      },
+      "q46": {
+        "text": "मोड़ने से कितनी दूर पहले आपको सिग्नल देना चाहिए?",
+        "a": "मोड़ने के क्षण",
+        "b": "कम से कम 30 मीटर पहले",
+        "c": "1 किलोमीटर पहले",
+        "d": "सिग्नल की जरूरत नहीं",
+        "explain": "मोड़ने से कम से कम 30 मीटर पहले सिग्नल दें ताकि अन्य सड़क उपयोगकर्ताओं को पर्याप्त चेतावनी मिले।"
+      },
+      "q47": {
+        "text": "रात में ड्राइविंग करते समय, जब दूसरी गाड़ी हाई बीम के साथ आए तो क्या करना चाहिए?",
+        "a": "जवाब में अपनी हाई बीम फ्लैश करें",
+        "b": "सड़क के दाहिने किनारे को देखें",
+        "c": "जल्दी गुजरने के लिए तेज करें",
+        "d": "थोड़ी देर के लिए आँखें बंद करें",
+        "explain": "आने वाली हाई बीम से अंधे होने से बचने के लिए सड़क के दाहिने किनारे की ओर देखें।"
+      },
+      "q48": {
+        "text": "सफेद पृष्ठभूमि पर काली तिरछी धारियों वाले चिन्ह का क्या मतलब है?",
+        "a": "सड़क बंद",
+        "b": "सभी प्रतिबंधों का अंत",
+        "c": "खतरे का क्षेत्र",
+        "d": "कम दृश्यता",
+        "explain": "सफेद पर काली तिरछी धारियाँ पहले की सभी प्रतिबंधों के अंत का संकेत देती हैं।"
+      },
+      "q49": {
+        "text": "सुरंग में प्रवेश करते समय आपको क्या करना चाहिए?",
+        "a": "हेडलाइट्स ऑन करें और सनग्लासेज उतारें",
+        "b": "जल्दी निकलने के लिए तेज करें",
+        "c": "हैजार्ड लाइट्स इस्तेमाल करें",
+        "d": "कुछ खास जरूरी नहीं",
+        "explain": "सुरंग में प्रवेश करते समय हमेशा हेडलाइट्स ऑन करें और कम रोशनी के अनुसार ढलने के लिए सनग्लासेज उतारें।"
+      },
+      "q50": {
+        "text": "टायर का प्रेशर कितनी बार चेक करना चाहिए?",
+        "a": "साल में एक बार",
+        "b": "कम से कम महीने में एक बार और लंबी यात्रा से पहले",
+        "c": "केवल जब टायर फ्लैट दिखें",
+        "d": "केवल ऑयल चेंज के दौरान",
+        "explain": "सुरक्षा और ईंधन दक्षता के लिए कम से कम मासिक और किसी भी लंबी यात्रा से पहले टायर प्रेशर चेक करें।"
+      },
+      "vp-001": {
+        "text": "According to traffic regulations, how many points can lead to license suspension within a Hijri year?",
+        "a": "12 points",
+        "b": "18 points",
+        "c": "24 points",
+        "d": "30 points",
+        "explain": "In general practice, accumulating 24 points can lead to suspension."
+      },
+      "vp-002": {
+        "text": "What happens the first time a driver reaches 24 points within a Hijri year?",
+        "a": "Warning only",
+        "b": "License suspension for 3 months",
+        "c": "License suspension for 6 months",
+        "d": "Permanent revocation",
+        "explain": "First time reaching 24 points results in a 3-month suspension."
+      },
+      "vp-003": {
+        "text": "What is the penalty the second time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 1 year",
+        "b": "License suspension for 6 months",
+        "c": "Permanent revocation",
+        "d": "Fine only",
+        "explain": "Second time reaching 24 points results in a 6-month suspension."
+      },
+      "vp-004": {
+        "text": "What is the penalty the third time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 1 year",
+        "b": "License suspension for 6 months",
+        "c": "License suspension for 3 months",
+        "d": "Permanent revocation",
+        "explain": "Third time reaching 24 points results in a 1-year suspension."
+      },
+      "vp-005": {
+        "text": "What happens the fourth time a driver reaches 24 points within a Hijri year?",
+        "a": "License suspension for 6 months",
+        "b": "License suspension for 1 year",
+        "c": "Permanent revocation of the license",
+        "d": "Warning only",
+        "explain": "Fourth time reaching 24 points leads to permanent revocation."
+      },
+      "vp-006": {
+        "text": "In general practice, the 24-point limit is calculated within which period?",
+        "a": "Calendar year (Gregorian)",
+        "b": "Hijri year",
+        "c": "Monthly cycle",
+        "d": "No time limit",
+        "explain": "The 24-point limit is calculated within a Hijri year."
+      },
+      "vp-007": {
+        "text": "How many points are assigned for driving a vehicle under the influence (Alcohol/Drugs)?",
+        "a": "12",
+        "b": "24",
+        "c": "8",
+        "d": "6",
+        "explain": "Driving under the influence carries 24 points."
+      },
+      "vp-008": {
+        "text": "How many points are assigned for drifting?",
+        "a": "24",
+        "b": "12",
+        "c": "8",
+        "d": "6",
+        "explain": "Drifting carries 24 points."
+      },
+      "vp-009": {
+        "text": "How many points are assigned for running a red traffic light?",
+        "a": "12",
+        "b": "8",
+        "c": "6",
+        "d": "4",
+        "explain": "Running a red light carries 12 points."
+      },
+      "vp-010": {
+        "text": "How many points are assigned for driving in the opposite direction of traffic?",
+        "a": "12",
+        "b": "8",
+        "c": "6",
+        "d": "4",
+        "explain": "Driving in the opposite direction carries 12 points."
+      },
+      "vp-011": {
+        "text": "How many points are assigned for weaving through traffic on public roads?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Weaving through traffic carries 8 points."
+      },
+      "vp-012": {
+        "text": "How many points are assigned for not complying with a traffic officer’s manual signal?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Not complying with the officer’s signal carries 8 points."
+      },
+      "vp-013": {
+        "text": "How many points are assigned for driving a vehicle without brakes or lights?",
+        "a": "8",
+        "b": "6",
+        "c": "4",
+        "d": "2",
+        "explain": "Driving without brakes or lights carries 8 points."
+      },
+      "vp-014": {
+        "text": "How many points are assigned for not stopping completely at a stop sign?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Not stopping at a stop sign carries 6 points."
+      },
+      "vp-015": {
+        "text": "Failing to observe right-of-way rules results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Failing to observe right-of-way carries 6 points."
+      },
+      "vp-016": {
+        "text": "Exceeding the speed limit by more than 25 km/h results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Speeding more than 25 km/h carries 6 points."
+      },
+      "vp-017": {
+        "text": "Not yielding to cars inside a roundabout results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Not yielding in roundabouts carries 6 points."
+      },
+      "vp-018": {
+        "text": "Overtaking in prohibited areas results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Overtaking in prohibited areas carries 6 points."
+      },
+      "vp-019": {
+        "text": "Stopping on railway tracks results in how many points?",
+        "a": "6",
+        "b": "4",
+        "c": "2",
+        "d": "8",
+        "explain": "Stopping on railway tracks carries 6 points."
+      },
+      "vp-020": {
+        "text": "Exceeding the speed limit by up to 25 km/h results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Speeding up to 25 km/h carries 4 points."
+      },
+      "vp-021": {
+        "text": "Driving on lanes not designated for the vehicle results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Driving on non-designated lanes carries 4 points."
+      },
+      "vp-022": {
+        "text": "Overtaking school buses while students are boarding or disembarking results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Overtaking school buses carries 4 points."
+      },
+      "vp-023": {
+        "text": "Not covering the load and cargo during transport results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Uncovered load carries 4 points."
+      },
+      "vp-024": {
+        "text": "Modifying vehicle structure or body without proper authorization results in how many points?",
+        "a": "4",
+        "b": "6",
+        "c": "2",
+        "d": "8",
+        "explain": "Unauthorized modification carries 4 points."
+      },
+      "vp-025": {
+        "text": "Not wearing a seatbelt results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Not wearing a seatbelt carries 2 points."
+      },
+      "vp-026": {
+        "text": "Using a hand-held mobile phone while driving results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Using a hand-held mobile phone carries 2 points."
+      },
+      "vp-027": {
+        "text": "Not wearing a helmet while riding motorized bikes results in how many points?",
+        "a": "2",
+        "b": "4",
+        "c": "6",
+        "d": "8",
+        "explain": "Not wearing a helmet carries 2 points."
+      },
+      "tf-001": {
+        "text": "In general practice, what is the main purpose of traffic fines?",
+        "a": "To improve road safety and reduce accidents",
+        "b": "To increase vehicle sales",
+        "c": "To replace driving training",
+        "d": "To reward risky driving",
+        "explain": "Fines are intended to encourage safer driving habits."
+      },
+      "tf-002": {
+        "text": "Which type of violation usually carries the highest fine?",
+        "a": "Very serious violations that endanger lives",
+        "b": "Minor parking issues",
+        "c": "Minor paperwork errors",
+        "d": "Temporary weather delays",
+        "explain": "Very serious violations typically carry the highest fines."
+      },
+      "tf-003": {
+        "text": "Why can fines increase for repeated violations?",
+        "a": "To discourage repeated unsafe behavior",
+        "b": "To reduce road signs",
+        "c": "To shorten driving lessons",
+        "d": "To increase fuel use",
+        "explain": "Repeat violations usually lead to higher penalties to encourage compliance."
+      },
+      "tf-004": {
+        "text": "Are traffic fines intended to improve road safety?",
+        "a": "Yes, they encourage safer driving",
+        "b": "No, they are only for revenue",
+        "c": "No, they replace driver training",
+        "d": "No, they are optional",
+        "explain": "Fines are designed to promote safer driving."
+      },
+      "tf-005": {
+        "text": "Minor traffic violations usually result in:",
+        "a": "Low fines",
+        "b": "Jail time",
+        "c": "License cancellation",
+        "d": "No action",
+        "explain": "Minor violations generally carry lower fines."
+      },
+      "tf-006": {
+        "text": "In practice, not wearing a seatbelt usually results in:",
+        "a": "A moderate fine",
+        "b": "No penalty",
+        "c": "Vehicle replacement",
+        "d": "License cancellation",
+        "explain": "Seatbelt violations are typically treated as moderate."
+      },
+      "tf-007": {
+        "text": "Using a hand-held mobile phone while driving usually results in:",
+        "a": "A moderate to high fine",
+        "b": "No penalty",
+        "c": "Warning only",
+        "d": "Vehicle replacement",
+        "explain": "Phone use while driving is treated as more serious."
+      },
+      "tf-008": {
+        "text": "Serious violations like running a red light are usually punished with:",
+        "a": "Higher fines",
+        "b": "Verbal warning only",
+        "c": "Fuel penalty",
+        "d": "No consequence",
+        "explain": "Dangerous behavior usually carries higher fines."
+      },
+      "tf-009": {
+        "text": "Light speeding is generally categorized as:",
+        "a": "A moderate violation",
+        "b": "A very serious violation",
+        "c": "A minor parking issue",
+        "d": "No violation",
+        "explain": "Light speeding is typically treated as moderate."
+      },
+      "tf-010": {
+        "text": "Parking issues are generally considered:",
+        "a": "Minor violations with lower fines",
+        "b": "Very serious violations",
+        "c": "Always criminal offenses",
+        "d": "No violation",
+        "explain": "Parking issues are usually categorized as minor."
+      },
+      "tf-011": {
+        "text": "Excessive speeding is generally considered:",
+        "a": "A serious violation with higher fines",
+        "b": "A minor violation",
+        "c": "No violation",
+        "d": "Only a warning",
+        "explain": "Excessive speeding is treated as serious."
+      },
+      "tf-012": {
+        "text": "Very serious violations usually lead to:",
+        "a": "Heavy fines and additional penalties",
+        "b": "No action",
+        "c": "Free training only",
+        "d": "Vehicle upgrades",
+        "explain": "Very serious violations can carry heavier fines and penalties."
+      }
+    }
+  },
+  "exam": {
+    "title": "Practice Test",
+    "description": "Theory practice session",
+    "duration": "अवधि",
+    "minutes": "मिनट",
+    "questions": "प्रश्न",
+    "passingScore": "लक्ष्य स्कोर",
+    "startExam": "Start Practice",
+    "endExam": "End Practice",
+    "confirmEnd": "Are you sure you want to end the practice session?",
+    "timeUp": "समय समाप्त!",
+    "review": "उत्तर समीक्षा",
+    "selectMode": "Select Practice Mode",
+    "selectModeDesc": "Choose the practice format that suits your preparation level",
+    "modes": {
+      "quick": "त्वरित",
+      "standard": "मानक",
+      "full": "पूर्ण"
+    },
+    "exam": "अभ्यास",
+    "passThreshold": "लक्ष्य",
+    "enableTimer": "टाइमर सक्षम करें",
+    "timerDesc": "टाइमर के साथ अभ्यास करें",
+    "submit": "अभ्यास जमा करें",
+    "results": "Practice Results",
+    "passed": "Great job! Practice complete.",
+    "failed": "Keep Practicing!",
+    "correctAnswers": "सही उत्तर",
+    "reviewAnswers": "उत्तर समीक्षा",
+    "tryAgain": "फिर से कोशिश करें",
+    "backToResults": "वापस",
+    "explanation": "व्याख्या"
+  },
+  "practice": {
+    "byMode": "मोड द्वारा",
+    "byCategory": "श्रेणी द्वारा",
+    "modes": {
+      "all": "सभी प्रश्न",
+      "allDesc": "पूर्ण प्रश्न बैंक से अभ्यास करें",
+      "mistakes": "मेरी गलतियां",
+      "mistakesDesc": "गलत उत्तर वाले प्रश्नों की समीक्षा करें",
+      "weak": "कमज़ोर क्षेत्र",
+      "weakDesc": "कम सटीकता वाली श्रेणियों पर ध्यान दें",
+      "review": "देय समीक्षाएं",
+      "reviewDesc": "अंतराल पुनरावृत्ति समीक्षा कतार",
+      "daily": "दैनिक अभ्यास",
+      "dailyDesc": "त्वरित दैनिक अभ्यास सेट"
+    },
+    "all": "सभी",
+    "accuracy": "सटीकता",
+    "learningStats": "Learning Stats",
+    "mistakeCount": "Mistakes",
+    "weakAreas": "Weak Areas",
+    "dueReviews": "Due Reviews",
+    "startDaily": "Start Daily",
+    "reviewMistakes": "Review Mistakes"
+  },
+  "results": {
+    "title": "Results",
+    "score": "Your Score",
+    "passed": "Great job! Practice complete.",
+    "failed": "Keep Practicing!",
+    "correct": "सही उत्तर",
+    "incorrect": "गलत उत्तर",
+    "accuracy": "सटीकता",
+    "time": "लिया गया समय",
+    "tryAgain": "फिर से कोशिश करें",
+    "reviewAnswers": "उत्तर समीक्षा",
+    "backHome": "Back to Home"
+  },
+  "learn": {
+    "title": "Learn Driving Theory",
+    "lessons": "पाठ",
+    "progress": "प्रगति",
+    "continue": "सीखना जारी रखें",
+    "completed": "पूर्ण",
+    "topics": {
+      "speedLimits": "गति सीमाएं",
+      "rightOfWay": "मार्ग का अधिकार",
+      "signals": "ट्रैफ़िक सिग्नल",
+      "markings": "सड़क चिह्न",
+      "safety": "सुरक्षा नियम"
+    }
+  },
+  "favorites": {
+    "title": "पसंदीदा",
+    "empty": "No favorites yet",
+    "emptyDesc": "Save questions and signs to review later",
+    "questions": "प्रश्न",
+    "signs": "साइन"
+  },
+  "stats": {
+    "title": "आपके आंकड़े",
+    "quizzesTaken": "क्विज़ लिए गए",
+    "bestScore": "सर्वश्रेष्ठ स्कोर",
+    "accuracy": "औसत सटीकता",
+    "streak": "वर्तमान स्ट्रीक",
+    "days": "दिन",
+    "noStats": "No statistics yet",
+    "noStatsDesc": "Complete quizzes to see your progress"
+  },
+  "settings": {
+    "title": "सेटिंग्स",
+    "language": "Language",
+    "theme": "Theme",
+    "themes": {
+      "light": "लाइट",
+      "dark": "डार्क",
+      "system": "सिस्टम"
+    },
+    "sound": "ध्वनि प्रभाव",
+    "vibration": "कंपन",
+    "removeAds": "विज्ञापन हटाएं",
+    "restorePurchase": "खरीदारी पुनर्स्थापित करें",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें",
+    "about": "About",
+    "version": "संस्करण"
+  },
+  "achievements": {
+    "title": "उपलब्धियां",
+    "level": "स्तर",
+    "nextLevel": "अगला स्तर",
+    "unlocked": "अनलॉक",
+    "locked": "लॉक",
+    "total": "कुल",
+    "progress": "प्रगति",
+    "badges": {
+      "first_steps": {
+        "name": "पहले कदम",
+        "desc": "अपना पहला क्विज़ पूरा करें"
+      },
+      "quiz_enthusiast": {
+        "name": "क्विज़ उत्साही",
+        "desc": "10 क्विज़ पूरा करें"
+      },
+      "quiz_master": {
+        "name": "क्विज़ मास्टर",
+        "desc": "50 क्विज़ पूरा करें"
+      },
+      "perfect_score": {
+        "name": "परफेक्ट स्कोर",
+        "desc": "किसी भी क्विज़ में 100% प्राप्त करें"
+      },
+      "sharp_shooter": {
+        "name": "शार्प शूटर",
+        "desc": "80%+ सटीकता बनाए रखें"
+      },
+      "precision_master": {
+        "name": "सटीकता मास्टर",
+        "desc": "90%+ सटीकता बनाए रखें"
+      },
+      "on_fire_3": {
+        "name": "आग में",
+        "desc": "3-दिन की सीखने की स्ट्रीक"
+      },
+      "dedicated_7": {
+        "name": "समर्पित सीखने वाला",
+        "desc": "7-दिन की सीखने की स्ट्रीक"
+      },
+      "champion_30": {
+        "name": "चैंपियन",
+        "desc": "30-दिन की सीखने की स्ट्रीक"
+      },
+      "signs_expert": {
+        "name": "साइन विशेषज्ञ",
+        "desc": "ट्रैफ़िक साइन में 90%+ सटीकता"
+      },
+      "rules_master": {
+        "name": "नियम मास्टर",
+        "desc": "सड़क नियमों में 90%+ सटीकता"
+      },
+      "safety_pro": {
+        "name": "सुरक्षा प्रो",
+        "desc": "सुरक्षा में 90%+ सटीकता"
+      },
+      "exam_ready": {
+        "name": "अभ्यास के लिए तैयार",
+        "desc": "अपना पहला अभ्यास सत्र पूरा करें"
+      },
+      "exam_ace": {
+        "name": "अभ्यास एस",
+        "desc": "5 अभ्यास सत्र पूरा करें"
+      },
+      "daily_champion": {
+        "name": "दैनिक चैंपियन",
+        "desc": "दैनिक लक्ष्य 7 बार पूरा करें"
+      },
+      "early_bird": {
+        "name": "अर्ली बर्ड",
+        "desc": "सुबह 7 बजे से पहले अभ्यास करें"
+      },
+      "night_owl": {
+        "name": "नाइट आउल",
+        "desc": "रात 10 बजे के बाद अभ्यास करें"
+      },
+      "quick_learner": {
+        "name": "तेज़ सीखने वाला",
+        "desc": "100 प्रश्नों के उत्तर दें"
+      },
+      "knowledge_seeker": {
+        "name": "ज्ञान की खोज",
+        "desc": "500 प्रश्नों के उत्तर दें"
+      },
+      "driving_expert": {
+        "name": "ड्राइविंग विशेषज्ञ",
+        "desc": "1000 प्रश्नों के उत्तर दें"
+      }
+    },
+    "empty": "इस श्रेणी में कोई उपलब्धियां नहीं",
+    "dailyGoal": "दैनिक लक्ष्य",
+    "dailyGoalDesc": "आज {{count}} प्रश्नों के उत्तर दें",
+    "dailyGoalComplete": "दैनिक लक्ष्य पूर्ण!",
+    "categories": {
+      "all": "सभी",
+      "progress": "प्रगति",
+      "accuracy": "सटीकता",
+      "streak": "स्ट्रीक",
+      "mastery": "महारत",
+      "exam": "अभ्यास",
+      "daily": "दैनिक",
+      "special": "विशेष"
+    },
+    "levels": {
+      "beginner": "शुरुआती",
+      "learner": "सीखने वाला",
+      "intermediate": "मध्यवर्ती",
+      "advanced": "उन्नत",
+      "expert": "विशेषज्ञ",
+      "master": "मास्टर",
+      "champion": "चैंपियन"
+    },
+    "badgesLabel": "Badges"
+  },
+  "violationPoints": {
+    "title": "ट्रैफिक उल्लंघन अंक प्रणाली (शैक्षिक)",
+    "intro": "अंक प्रणाली उन चालकों को दंडित करने के लिए बनाई गई है जो ट्रैफिक नियमों का उल्लंघन करते हैं। प्रत्येक उल्लंघन के लिए निर्धारित अंक होते हैं। जैसे-जैसे अंक बढ़ते हैं, दंड अधिक गंभीर होते जाते हैं। इसका उद्देश्य सुरक्षित ड्राइविंग को बढ़ावा देना और दुर्घटनाओं को कम करना है।",
+    "impactTitle": "24 अंक (हिजरी वर्ष) तक पहुंचने का प्रभाव:",
+    "penalties": {
+      "first": "पहली बार 24 अंक: 3 महीने के लिए लाइसेंस निलंबन।",
+      "second": "दूसरी बार 24 अंक: 6 महीने के लिए लाइसेंस निलंबन।",
+      "third": "तीसरी बार 24 अंक: 1 वर्ष के लिए लाइसेंस निलंबन।",
+      "fourth": "चौथी बार 24 अंक: ड्राइविंग लाइसेंस स्थायी रूप से रद्द।"
+    },
+    "closing": "यह प्रणाली चालकों को नियमों का पालन करने और जिम्मेदारी से वाहन चलाने के लिए प्रेरित करती है। सुरक्षित व्यवहार सभी सड़क उपयोगकर्ताओं की रक्षा करता है।",
+    "table": {
+      "number": "क्रमांक",
+      "violation": "उल्लंघन",
+      "points": "अंक"
+    }
+  },
+  "violations": {
+    "v01": "शराब/ड्रग्स के प्रभाव में वाहन चलाना",
+    "v02": "ड्रिफ्टिंग",
+    "v03": "लाल ट्रैफिक सिग्नल पार करना",
+    "v04": "यातायात की विपरीत दिशा में वाहन चलाना",
+    "v05": "सार्वजनिक सड़कों पर ट्रैफिक के बीच से टेढ़ा-मेढ़ा चलना",
+    "v06": "ट्रैफिक अधिकारी के हाथ के संकेत का पालन न करना",
+    "v07": "बिना ब्रेक या लाइट के वाहन चलाना",
+    "v08": "स्टॉप साइन पर पूरी तरह न रुकना",
+    "v09": "राइट-ऑफ-वे नियमों का पालन न करना",
+    "v10": "स्पीड लिमिट से 25 किमी/घंटा से अधिक बढ़ना",
+    "v11": "राउंडअबाउट में मौजूद वाहनों को रास्ता न देना",
+    "v12": "निषिद्ध क्षेत्रों में ओवरटेक करना",
+    "v13": "रेलवे ट्रैक पर रुकना",
+    "v14": "स्पीड लिमिट से 25 किमी/घंटा तक बढ़ना",
+    "v15": "वाहन के लिए निर्धारित नहीं लेन पर चलाना",
+    "v16": "छात्रों के चढ़ने/उतरने के दौरान स्कूल बस को ओवरटेक करना",
+    "v17": "परिवहन के दौरान लोड/कार्गो को ढंका नहीं रखना",
+    "v18": "अनुमति के बिना वाहन की संरचना या बॉडी में बदलाव",
+    "v19": "सीट बेल्ट न पहनना",
+    "v20": "ड्राइविंग के दौरान हाथ में मोबाइल फोन का उपयोग",
+    "v21": "मोटरबाइक चलाते समय हेलमेट न पहनना"
+  },
+  "trafficFines": {
+    "title": "सऊदी अरब में ट्रैफिक जुर्माने (शैक्षिक मार्गदर्शिका)",
+    "intro": "सऊदी अरब सुरक्षित ड्राइविंग को बढ़ावा देने और दुर्घटनाएं कम करने के लिए ट्रैफिक जुर्माने लागू करता है। उल्लंघनों को उनकी गंभीरता के आधार पर वर्गीकृत किया जाता है, और प्रत्येक वर्ग पर आम तौर पर वित्तीय जुर्माना होता है। अधिक गंभीर या बार-बार उल्लंघन पर अधिक जुर्माने और अतिरिक्त दंड हो सकते हैं।",
+    "categoriesTitle": "आम जुर्माना श्रेणियां:",
+    "categories": {
+      "minor": "मामूली उल्लंघन: कम जुर्माने, आमतौर पर पार्किंग या हल्की अवहेलना के लिए।",
+      "moderate": "मध्यम उल्लंघन: मध्यम जुर्माने, जैसे सीट बेल्ट न पहनना या हल्की गति बढ़ाना।",
+      "serious": "गंभीर उल्लंघन: अधिक जुर्माने, जैसे ड्राइविंग के दौरान मोबाइल फोन का उपयोग, रेड लाइट पार करना, या अत्यधिक गति।",
+      "verySerious": "बहुत गंभीर उल्लंघन: भारी जुर्माने और अतिरिक्त दंड जो जीवन को खतरे में डालते हैं।"
+    },
+    "closing": "ड्राइवरों को नियमों का पालन करने के लिए प्रोत्साहित किया जाता है ताकि जुर्मानों से बचा जा सके और सड़कें सुरक्षित रहें।"
+  },
+  "disclaimer": {
+    "educationalGovernment": "अस्वीकरण: यह सामग्री केवल शैक्षिक अभ्यास के लिए है और आधिकारिक सरकारी नियमों का प्रतिनिधित्व नहीं करती। यह ऐप किसी भी सरकारी संस्था से संबद्ध नहीं है।"
+  },
+  "ui": {
+    "trafficSign": "ट्रैफिक संकेत",
+    "signUnavailable": "संकेत की छवि उपलब्ध नहीं है"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "save": "सहेजें",
+    "back": "Back",
+    "close": "Close",
+    "yes": "हां",
+    "no": "नहीं",
+    "on": "चालू",
+    "off": "बंद",
+    "home": "होम",
+    "next": "Next",
+    "previous": "Previous",
+    "correct": "सही",
+    "incorrect": "गलत"
+  },
+  "pwa": {
+    "installTitle": "Install App",
+    "installDescription": "Install for offline access and a better experience",
+    "install": "Install",
+    "notNow": "Not now",
+    "offline": "You are offline. Some features may be limited."
+  }
+}

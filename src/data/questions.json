@@ -1,0 +1,1575 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q1.text",
+      "optionsKeys": [
+        "quiz.q.q1.a",
+        "quiz.q.q1.b",
+        "quiz.q.q1.c",
+        "quiz.q.q1.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q1.explain",
+      "tags": [
+        "stop",
+        "regulatory"
+      ],
+      "signId": "stop"
+    },
+    {
+      "id": "q2",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q2.text",
+      "optionsKeys": [
+        "quiz.q.q2.a",
+        "quiz.q.q2.b",
+        "quiz.q.q2.c",
+        "quiz.q.q2.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q2.explain",
+      "tags": [
+        "speed",
+        "residential"
+      ]
+    },
+    {
+      "id": "q3",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q3.text",
+      "optionsKeys": [
+        "quiz.q.q3.a",
+        "quiz.q.q3.b",
+        "quiz.q.q3.c",
+        "quiz.q.q3.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q3.explain",
+      "tags": [
+        "headlights",
+        "visibility"
+      ]
+    },
+    {
+      "id": "q4",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q4.text",
+      "optionsKeys": [
+        "quiz.q.q4.a",
+        "quiz.q.q4.b",
+        "quiz.q.q4.c",
+        "quiz.q.q4.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q4.explain",
+      "tags": [
+        "traffic-light",
+        "yellow"
+      ]
+    },
+    {
+      "id": "q5",
+      "categoryKey": "quiz.categories.markings",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q5.text",
+      "optionsKeys": [
+        "quiz.q.q5.a",
+        "quiz.q.q5.b",
+        "quiz.q.q5.c",
+        "quiz.q.q5.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q5.explain",
+      "tags": [
+        "lane",
+        "overtaking"
+      ]
+    },
+    {
+      "id": "q6",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q6.text",
+      "optionsKeys": [
+        "quiz.q.q6.a",
+        "quiz.q.q6.b",
+        "quiz.q.q6.c",
+        "quiz.q.q6.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q6.explain",
+      "tags": [
+        "speed",
+        "highway"
+      ]
+    },
+    {
+      "id": "q7",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q7.text",
+      "optionsKeys": [
+        "quiz.q.q7.a",
+        "quiz.q.q7.b",
+        "quiz.q.q7.c",
+        "quiz.q.q7.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q7.explain",
+      "tags": [
+        "seatbelt",
+        "passenger"
+      ]
+    },
+    {
+      "id": "q8",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q8.text",
+      "optionsKeys": [
+        "quiz.q.q8.a",
+        "quiz.q.q8.b",
+        "quiz.q.q8.c",
+        "quiz.q.q8.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q8.explain",
+      "tags": [
+        "yield",
+        "triangular"
+      ],
+      "signId": "yield"
+    },
+    {
+      "id": "q9",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q9.text",
+      "optionsKeys": [
+        "quiz.q.q9.a",
+        "quiz.q.q9.b",
+        "quiz.q.q9.c",
+        "quiz.q.q9.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q9.explain",
+      "tags": [
+        "roundabout",
+        "priority"
+      ]
+    },
+    {
+      "id": "q10",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q10.text",
+      "optionsKeys": [
+        "quiz.q.q10.a",
+        "quiz.q.q10.b",
+        "quiz.q.q10.c",
+        "quiz.q.q10.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q10.explain",
+      "tags": [
+        "distance",
+        "following"
+      ]
+    },
+    {
+      "id": "q11",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q11.text",
+      "optionsKeys": [
+        "quiz.q.q11.a",
+        "quiz.q.q11.b",
+        "quiz.q.q11.c",
+        "quiz.q.q11.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q11.explain",
+      "tags": [
+        "traffic-light",
+        "red"
+      ]
+    },
+    {
+      "id": "q12",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q12.text",
+      "optionsKeys": [
+        "quiz.q.q12.a",
+        "quiz.q.q12.b",
+        "quiz.q.q12.c",
+        "quiz.q.q12.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q12.explain",
+      "tags": [
+        "no-entry",
+        "regulatory"
+      ],
+      "signId": "no_entry"
+    },
+    {
+      "id": "q13",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q13.text",
+      "optionsKeys": [
+        "quiz.q.q13.a",
+        "quiz.q.q13.b",
+        "quiz.q.q13.c",
+        "quiz.q.q13.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q13.explain",
+      "tags": [
+        "overtaking",
+        "prohibited"
+      ]
+    },
+    {
+      "id": "q14",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q14.text",
+      "optionsKeys": [
+        "quiz.q.q14.a",
+        "quiz.q.q14.b",
+        "quiz.q.q14.c",
+        "quiz.q.q14.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q14.explain",
+      "tags": [
+        "emergency",
+        "vehicle"
+      ]
+    },
+    {
+      "id": "q15",
+      "categoryKey": "quiz.categories.markings",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q15.text",
+      "optionsKeys": [
+        "quiz.q.q15.a",
+        "quiz.q.q15.b",
+        "quiz.q.q15.c",
+        "quiz.q.q15.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q15.explain",
+      "tags": [
+        "zebra",
+        "crossing"
+      ]
+    },
+    {
+      "id": "q16",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q16.text",
+      "optionsKeys": [
+        "quiz.q.q16.a",
+        "quiz.q.q16.b",
+        "quiz.q.q16.c",
+        "quiz.q.q16.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q16.explain",
+      "tags": [
+        "parking",
+        "prohibited"
+      ]
+    },
+    {
+      "id": "q17",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q17.text",
+      "optionsKeys": [
+        "quiz.q.q17.a",
+        "quiz.q.q17.b",
+        "quiz.q.q17.c",
+        "quiz.q.q17.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q17.explain",
+      "tags": [
+        "hand-signal",
+        "turn"
+      ]
+    },
+    {
+      "id": "q18",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q18.text",
+      "optionsKeys": [
+        "quiz.q.q18.a",
+        "quiz.q.q18.b",
+        "quiz.q.q18.c",
+        "quiz.q.q18.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q18.explain",
+      "tags": [
+        "tire",
+        "blowout"
+      ]
+    },
+    {
+      "id": "q19",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q19.text",
+      "optionsKeys": [
+        "quiz.q.q19.a",
+        "quiz.q.q19.b",
+        "quiz.q.q19.c",
+        "quiz.q.q19.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q19.explain",
+      "tags": [
+        "speed-limit",
+        "regulatory"
+      ]
+    },
+    {
+      "id": "q20",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q20.text",
+      "optionsKeys": [
+        "quiz.q.q20.a",
+        "quiz.q.q20.b",
+        "quiz.q.q20.c",
+        "quiz.q.q20.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q20.explain",
+      "tags": [
+        "phone",
+        "driving"
+      ]
+    },
+    {
+      "id": "q21",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q21.text",
+      "optionsKeys": [
+        "quiz.q.q21.a",
+        "quiz.q.q21.b",
+        "quiz.q.q21.c",
+        "quiz.q.q21.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q21.explain",
+      "tags": [
+        "brakes",
+        "wet"
+      ]
+    },
+    {
+      "id": "q22",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q22.text",
+      "optionsKeys": [
+        "quiz.q.q22.a",
+        "quiz.q.q22.b",
+        "quiz.q.q22.c",
+        "quiz.q.q22.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q22.explain",
+      "tags": [
+        "roundabout",
+        "mandatory"
+      ],
+      "signId": "roundabout"
+    },
+    {
+      "id": "q23",
+      "categoryKey": "quiz.categories.markings",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q23.text",
+      "optionsKeys": [
+        "quiz.q.q23.a",
+        "quiz.q.q23.b",
+        "quiz.q.q23.c",
+        "quiz.q.q23.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q23.explain",
+      "tags": [
+        "arrow",
+        "lane"
+      ]
+    },
+    {
+      "id": "q24",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q24.text",
+      "optionsKeys": [
+        "quiz.q.q24.a",
+        "quiz.q.q24.b",
+        "quiz.q.q24.c",
+        "quiz.q.q24.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q24.explain",
+      "tags": [
+        "license",
+        "age"
+      ]
+    },
+    {
+      "id": "q25",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q25.text",
+      "optionsKeys": [
+        "quiz.q.q25.a",
+        "quiz.q.q25.b",
+        "quiz.q.q25.c",
+        "quiz.q.q25.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q25.explain",
+      "tags": [
+        "traffic-light",
+        "green"
+      ]
+    },
+    {
+      "id": "q26",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q26.text",
+      "optionsKeys": [
+        "quiz.q.q26.a",
+        "quiz.q.q26.b",
+        "quiz.q.q26.c",
+        "quiz.q.q26.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q26.explain",
+      "tags": [
+        "children",
+        "car-seat"
+      ]
+    },
+    {
+      "id": "q27",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q27.text",
+      "optionsKeys": [
+        "quiz.q.q27.a",
+        "quiz.q.q27.b",
+        "quiz.q.q27.c",
+        "quiz.q.q27.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q27.explain",
+      "tags": [
+        "warning",
+        "curve"
+      ],
+      "signId": "bend_to_left"
+    },
+    {
+      "id": "q28",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q28.text",
+      "optionsKeys": [
+        "quiz.q.q28.a",
+        "quiz.q.q28.b",
+        "quiz.q.q28.c",
+        "quiz.q.q28.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q28.explain",
+      "tags": [
+        "parking",
+        "hill"
+      ]
+    },
+    {
+      "id": "q29",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q29.text",
+      "optionsKeys": [
+        "quiz.q.q29.a",
+        "quiz.q.q29.b",
+        "quiz.q.q29.c",
+        "quiz.q.q29.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q29.explain",
+      "tags": [
+        "fatigue",
+        "drowsy"
+      ]
+    },
+    {
+      "id": "q30",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q30.text",
+      "optionsKeys": [
+        "quiz.q.q30.a",
+        "quiz.q.q30.b",
+        "quiz.q.q30.c",
+        "quiz.q.q30.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q30.explain",
+      "tags": [
+        "hazard",
+        "lights"
+      ]
+    },
+    {
+      "id": "q31",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q31.text",
+      "optionsKeys": [
+        "quiz.q.q31.a",
+        "quiz.q.q31.b",
+        "quiz.q.q31.c",
+        "quiz.q.q31.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q31.explain",
+      "tags": [
+        "no-parking",
+        "regulatory"
+      ],
+      "signId": "no_parking"
+    },
+    {
+      "id": "q32",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q32.text",
+      "optionsKeys": [
+        "quiz.q.q32.a",
+        "quiz.q.q32.b",
+        "quiz.q.q32.c",
+        "quiz.q.q32.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q32.explain",
+      "tags": [
+        "lane",
+        "overtaking"
+      ]
+    },
+    {
+      "id": "q33",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q33.text",
+      "optionsKeys": [
+        "quiz.q.q33.a",
+        "quiz.q.q33.b",
+        "quiz.q.q33.c",
+        "quiz.q.q33.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q33.explain",
+      "tags": [
+        "mirror",
+        "blind-spot"
+      ]
+    },
+    {
+      "id": "q34",
+      "categoryKey": "quiz.categories.markings",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q34.text",
+      "optionsKeys": [
+        "quiz.q.q34.a",
+        "quiz.q.q34.b",
+        "quiz.q.q34.c",
+        "quiz.q.q34.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q34.explain",
+      "tags": [
+        "bus",
+        "lane"
+      ]
+    },
+    {
+      "id": "q35",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q35.text",
+      "optionsKeys": [
+        "quiz.q.q35.a",
+        "quiz.q.q35.b",
+        "quiz.q.q35.c",
+        "quiz.q.q35.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q35.explain",
+      "tags": [
+        "school-zone",
+        "speed"
+      ]
+    },
+    {
+      "id": "q36",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q36.text",
+      "optionsKeys": [
+        "quiz.q.q36.a",
+        "quiz.q.q36.b",
+        "quiz.q.q36.c",
+        "quiz.q.q36.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q36.explain",
+      "tags": [
+        "horn",
+        "usage"
+      ]
+    },
+    {
+      "id": "q37",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q37.text",
+      "optionsKeys": [
+        "quiz.q.q37.a",
+        "quiz.q.q37.b",
+        "quiz.q.q37.c",
+        "quiz.q.q37.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q37.explain",
+      "tags": [
+        "railway",
+        "crossing"
+      ]
+    },
+    {
+      "id": "q38",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q38.text",
+      "optionsKeys": [
+        "quiz.q.q38.a",
+        "quiz.q.q38.b",
+        "quiz.q.q38.c",
+        "quiz.q.q38.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q38.explain",
+      "tags": [
+        "pedestrian",
+        "crossing"
+      ],
+      "signId": "pedestrian_crossing"
+    },
+    {
+      "id": "q39",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q39.text",
+      "optionsKeys": [
+        "quiz.q.q39.a",
+        "quiz.q.q39.b",
+        "quiz.q.q39.c",
+        "quiz.q.q39.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.q39.explain",
+      "tags": [
+        "alcohol",
+        "driving"
+      ]
+    },
+    {
+      "id": "q40",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q40.text",
+      "optionsKeys": [
+        "quiz.q.q40.a",
+        "quiz.q.q40.b",
+        "quiz.q.q40.c",
+        "quiz.q.q40.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q40.explain",
+      "tags": [
+        "airbag",
+        "safety"
+      ]
+    },
+    {
+      "id": "q41",
+      "categoryKey": "quiz.categories.markings",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q41.text",
+      "optionsKeys": [
+        "quiz.q.q41.a",
+        "quiz.q.q41.b",
+        "quiz.q.q41.c",
+        "quiz.q.q41.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q41.explain",
+      "tags": [
+        "broken",
+        "line"
+      ]
+    },
+    {
+      "id": "q42",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q42.text",
+      "optionsKeys": [
+        "quiz.q.q42.a",
+        "quiz.q.q42.b",
+        "quiz.q.q42.c",
+        "quiz.q.q42.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q42.explain",
+      "tags": [
+        "fog",
+        "lights"
+      ]
+    },
+    {
+      "id": "q43",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q43.text",
+      "optionsKeys": [
+        "quiz.q.q43.a",
+        "quiz.q.q43.b",
+        "quiz.q.q43.c",
+        "quiz.q.q43.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q43.explain",
+      "tags": [
+        "one-way",
+        "mandatory"
+      ]
+    },
+    {
+      "id": "q44",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q44.text",
+      "optionsKeys": [
+        "quiz.q.q44.a",
+        "quiz.q.q44.b",
+        "quiz.q.q44.c",
+        "quiz.q.q44.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q44.explain",
+      "tags": [
+        "aquaplaning",
+        "hydroplaning"
+      ]
+    },
+    {
+      "id": "q45",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q45.text",
+      "optionsKeys": [
+        "quiz.q.q45.a",
+        "quiz.q.q45.b",
+        "quiz.q.q45.c",
+        "quiz.q.q45.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q45.explain",
+      "tags": [
+        "pedestrian",
+        "priority"
+      ]
+    },
+    {
+      "id": "q46",
+      "categoryKey": "quiz.categories.signals",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q46.text",
+      "optionsKeys": [
+        "quiz.q.q46.a",
+        "quiz.q.q46.b",
+        "quiz.q.q46.c",
+        "quiz.q.q46.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q46.explain",
+      "tags": [
+        "indicator",
+        "turn"
+      ]
+    },
+    {
+      "id": "q47",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q47.text",
+      "optionsKeys": [
+        "quiz.q.q47.a",
+        "quiz.q.q47.b",
+        "quiz.q.q47.c",
+        "quiz.q.q47.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q47.explain",
+      "tags": [
+        "night",
+        "driving"
+      ]
+    },
+    {
+      "id": "q48",
+      "categoryKey": "quiz.categories.signs",
+      "difficultyKey": "quiz.difficulty.hard",
+      "questionKey": "quiz.q.q48.text",
+      "optionsKeys": [
+        "quiz.q.q48.a",
+        "quiz.q.q48.b",
+        "quiz.q.q48.c",
+        "quiz.q.q48.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q48.explain",
+      "tags": [
+        "end-restriction",
+        "regulatory"
+      ],
+      "signId": "end_of_all_restrictions"
+    },
+    {
+      "id": "q49",
+      "categoryKey": "quiz.categories.rules",
+      "difficultyKey": "quiz.difficulty.medium",
+      "questionKey": "quiz.q.q49.text",
+      "optionsKeys": [
+        "quiz.q.q49.a",
+        "quiz.q.q49.b",
+        "quiz.q.q49.c",
+        "quiz.q.q49.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.q49.explain",
+      "tags": [
+        "tunnel",
+        "driving"
+      ]
+    },
+    {
+      "id": "q50",
+      "categoryKey": "quiz.categories.safety",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.q50.text",
+      "optionsKeys": [
+        "quiz.q.q50.a",
+        "quiz.q.q50.b",
+        "quiz.q.q50.c",
+        "quiz.q.q50.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.q50.explain",
+      "tags": [
+        "maintenance",
+        "tire"
+      ]
+    },
+    {
+      "id": "vp-001",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-001.text",
+      "optionsKeys": [
+        "quiz.q.vp-001.a",
+        "quiz.q.vp-001.b",
+        "quiz.q.vp-001.c",
+        "quiz.q.vp-001.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.vp-001.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-002",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-002.text",
+      "optionsKeys": [
+        "quiz.q.vp-002.a",
+        "quiz.q.vp-002.b",
+        "quiz.q.vp-002.c",
+        "quiz.q.vp-002.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.vp-002.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-003",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-003.text",
+      "optionsKeys": [
+        "quiz.q.vp-003.a",
+        "quiz.q.vp-003.b",
+        "quiz.q.vp-003.c",
+        "quiz.q.vp-003.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.vp-003.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-004",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-004.text",
+      "optionsKeys": [
+        "quiz.q.vp-004.a",
+        "quiz.q.vp-004.b",
+        "quiz.q.vp-004.c",
+        "quiz.q.vp-004.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-004.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-005",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-005.text",
+      "optionsKeys": [
+        "quiz.q.vp-005.a",
+        "quiz.q.vp-005.b",
+        "quiz.q.vp-005.c",
+        "quiz.q.vp-005.d"
+      ],
+      "correctIndex": 2,
+      "explanationKey": "quiz.q.vp-005.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-006",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-006.text",
+      "optionsKeys": [
+        "quiz.q.vp-006.a",
+        "quiz.q.vp-006.b",
+        "quiz.q.vp-006.c",
+        "quiz.q.vp-006.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.vp-006.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-007",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-007.text",
+      "optionsKeys": [
+        "quiz.q.vp-007.a",
+        "quiz.q.vp-007.b",
+        "quiz.q.vp-007.c",
+        "quiz.q.vp-007.d"
+      ],
+      "correctIndex": 1,
+      "explanationKey": "quiz.q.vp-007.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-008",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-008.text",
+      "optionsKeys": [
+        "quiz.q.vp-008.a",
+        "quiz.q.vp-008.b",
+        "quiz.q.vp-008.c",
+        "quiz.q.vp-008.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-008.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-009",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-009.text",
+      "optionsKeys": [
+        "quiz.q.vp-009.a",
+        "quiz.q.vp-009.b",
+        "quiz.q.vp-009.c",
+        "quiz.q.vp-009.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-009.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-010",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-010.text",
+      "optionsKeys": [
+        "quiz.q.vp-010.a",
+        "quiz.q.vp-010.b",
+        "quiz.q.vp-010.c",
+        "quiz.q.vp-010.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-010.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-011",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-011.text",
+      "optionsKeys": [
+        "quiz.q.vp-011.a",
+        "quiz.q.vp-011.b",
+        "quiz.q.vp-011.c",
+        "quiz.q.vp-011.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-011.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-012",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-012.text",
+      "optionsKeys": [
+        "quiz.q.vp-012.a",
+        "quiz.q.vp-012.b",
+        "quiz.q.vp-012.c",
+        "quiz.q.vp-012.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-012.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-013",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-013.text",
+      "optionsKeys": [
+        "quiz.q.vp-013.a",
+        "quiz.q.vp-013.b",
+        "quiz.q.vp-013.c",
+        "quiz.q.vp-013.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-013.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-014",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-014.text",
+      "optionsKeys": [
+        "quiz.q.vp-014.a",
+        "quiz.q.vp-014.b",
+        "quiz.q.vp-014.c",
+        "quiz.q.vp-014.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-014.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-015",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-015.text",
+      "optionsKeys": [
+        "quiz.q.vp-015.a",
+        "quiz.q.vp-015.b",
+        "quiz.q.vp-015.c",
+        "quiz.q.vp-015.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-015.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-016",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-016.text",
+      "optionsKeys": [
+        "quiz.q.vp-016.a",
+        "quiz.q.vp-016.b",
+        "quiz.q.vp-016.c",
+        "quiz.q.vp-016.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-016.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-017",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-017.text",
+      "optionsKeys": [
+        "quiz.q.vp-017.a",
+        "quiz.q.vp-017.b",
+        "quiz.q.vp-017.c",
+        "quiz.q.vp-017.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-017.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-018",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-018.text",
+      "optionsKeys": [
+        "quiz.q.vp-018.a",
+        "quiz.q.vp-018.b",
+        "quiz.q.vp-018.c",
+        "quiz.q.vp-018.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-018.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-019",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-019.text",
+      "optionsKeys": [
+        "quiz.q.vp-019.a",
+        "quiz.q.vp-019.b",
+        "quiz.q.vp-019.c",
+        "quiz.q.vp-019.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-019.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-020",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-020.text",
+      "optionsKeys": [
+        "quiz.q.vp-020.a",
+        "quiz.q.vp-020.b",
+        "quiz.q.vp-020.c",
+        "quiz.q.vp-020.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-020.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-021",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-021.text",
+      "optionsKeys": [
+        "quiz.q.vp-021.a",
+        "quiz.q.vp-021.b",
+        "quiz.q.vp-021.c",
+        "quiz.q.vp-021.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-021.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-022",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-022.text",
+      "optionsKeys": [
+        "quiz.q.vp-022.a",
+        "quiz.q.vp-022.b",
+        "quiz.q.vp-022.c",
+        "quiz.q.vp-022.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-022.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-023",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-023.text",
+      "optionsKeys": [
+        "quiz.q.vp-023.a",
+        "quiz.q.vp-023.b",
+        "quiz.q.vp-023.c",
+        "quiz.q.vp-023.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-023.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-024",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-024.text",
+      "optionsKeys": [
+        "quiz.q.vp-024.a",
+        "quiz.q.vp-024.b",
+        "quiz.q.vp-024.c",
+        "quiz.q.vp-024.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-024.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-025",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-025.text",
+      "optionsKeys": [
+        "quiz.q.vp-025.a",
+        "quiz.q.vp-025.b",
+        "quiz.q.vp-025.c",
+        "quiz.q.vp-025.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-025.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-026",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-026.text",
+      "optionsKeys": [
+        "quiz.q.vp-026.a",
+        "quiz.q.vp-026.b",
+        "quiz.q.vp-026.c",
+        "quiz.q.vp-026.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-026.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "vp-027",
+      "categoryKey": "quiz.categories.violation_points",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.vp-027.text",
+      "optionsKeys": [
+        "quiz.q.vp-027.a",
+        "quiz.q.vp-027.b",
+        "quiz.q.vp-027.c",
+        "quiz.q.vp-027.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.vp-027.explain",
+      "tags": [
+        "violation_points"
+      ]
+    },
+    {
+      "id": "tf-001",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-001.text",
+      "optionsKeys": [
+        "quiz.q.tf-001.a",
+        "quiz.q.tf-001.b",
+        "quiz.q.tf-001.c",
+        "quiz.q.tf-001.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-001.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-002",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-002.text",
+      "optionsKeys": [
+        "quiz.q.tf-002.a",
+        "quiz.q.tf-002.b",
+        "quiz.q.tf-002.c",
+        "quiz.q.tf-002.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-002.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-003",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-003.text",
+      "optionsKeys": [
+        "quiz.q.tf-003.a",
+        "quiz.q.tf-003.b",
+        "quiz.q.tf-003.c",
+        "quiz.q.tf-003.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-003.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-004",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-004.text",
+      "optionsKeys": [
+        "quiz.q.tf-004.a",
+        "quiz.q.tf-004.b",
+        "quiz.q.tf-004.c",
+        "quiz.q.tf-004.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-004.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-005",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-005.text",
+      "optionsKeys": [
+        "quiz.q.tf-005.a",
+        "quiz.q.tf-005.b",
+        "quiz.q.tf-005.c",
+        "quiz.q.tf-005.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-005.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-006",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-006.text",
+      "optionsKeys": [
+        "quiz.q.tf-006.a",
+        "quiz.q.tf-006.b",
+        "quiz.q.tf-006.c",
+        "quiz.q.tf-006.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-006.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-007",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-007.text",
+      "optionsKeys": [
+        "quiz.q.tf-007.a",
+        "quiz.q.tf-007.b",
+        "quiz.q.tf-007.c",
+        "quiz.q.tf-007.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-007.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-008",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-008.text",
+      "optionsKeys": [
+        "quiz.q.tf-008.a",
+        "quiz.q.tf-008.b",
+        "quiz.q.tf-008.c",
+        "quiz.q.tf-008.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-008.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-009",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-009.text",
+      "optionsKeys": [
+        "quiz.q.tf-009.a",
+        "quiz.q.tf-009.b",
+        "quiz.q.tf-009.c",
+        "quiz.q.tf-009.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-009.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-010",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-010.text",
+      "optionsKeys": [
+        "quiz.q.tf-010.a",
+        "quiz.q.tf-010.b",
+        "quiz.q.tf-010.c",
+        "quiz.q.tf-010.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-010.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-011",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-011.text",
+      "optionsKeys": [
+        "quiz.q.tf-011.a",
+        "quiz.q.tf-011.b",
+        "quiz.q.tf-011.c",
+        "quiz.q.tf-011.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-011.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    },
+    {
+      "id": "tf-012",
+      "categoryKey": "quiz.categories.traffic_fines",
+      "difficultyKey": "quiz.difficulty.easy",
+      "questionKey": "quiz.q.tf-012.text",
+      "optionsKeys": [
+        "quiz.q.tf-012.a",
+        "quiz.q.tf-012.b",
+        "quiz.q.tf-012.c",
+        "quiz.q.tf-012.d"
+      ],
+      "correctIndex": 0,
+      "explanationKey": "quiz.q.tf-012.explain",
+      "tags": [
+        "traffic_fines"
+      ]
+    }
+  ]
+}

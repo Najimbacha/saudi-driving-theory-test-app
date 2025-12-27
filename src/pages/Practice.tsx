@@ -1,0 +1,758 @@
+import { useState, useMemo, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { 
+  ArrowLeft, 
+  Check, 
+  X, 
+  Brain, 
+  AlertTriangle, 
+  Clock, 
+  Layers,
+  BookOpen,
+  Star
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useApp } from '@/context/AppContext';
+import { useLearning } from '@/context/LearningContext';
+import { useFeedback } from '@/hooks/useFeedback';
+import BottomNav from '@/components/BottomNav';
+import questionsData from '@/data/questions.json';
+import { getSignSrc } from '@/data/signAssets';
+import Confetti from 'react-confetti';
+
+type PracticeMode = 'all' | 'mistakes' | 'weak' | 'review' | 'daily' | 'category';
+type QuizState = 'setup' | 'playing' | 'result';
+
+interface ModeConfig {
+  id: PracticeMode;
+  icon: React.ReactNode;
+  titleKey: string;
+  descKey: string;
+  color: string;
+}
+
+const PRACTICE_MODES: ModeConfig[] = [
+  { 
+    id: 'all', 
+    icon: <Layers className="h-5 w-5" />, 
+    titleKey: 'practice.modes.all', 
+    descKey: 'practice.modes.allDesc',
+    color: 'bg-primary/10 text-primary'
+  },
+  { 
+    id: 'mistakes', 
+    icon: <X className="h-5 w-5" />, 
+    titleKey: 'practice.modes.mistakes', 
+    descKey: 'practice.modes.mistakesDesc',
+    color: 'bg-destructive/10 text-destructive'
+  },
+  { 
+    id: 'weak', 
+    icon: <AlertTriangle className="h-5 w-5" />, 
+    titleKey: 'practice.modes.weak', 
+    descKey: 'practice.modes.weakDesc',
+    color: 'bg-orange-500/10 text-orange-500'
+  },
+  { 
+    id: 'review', 
+    icon: <Clock className="h-5 w-5" />, 
+    titleKey: 'practice.modes.review', 
+    descKey: 'practice.modes.reviewDesc',
+    color: 'bg-blue-500/10 text-blue-500'
+  },
+  { 
+    id: 'daily', 
+    icon: <Star className="h-5 w-5" />, 
+    titleKey: 'practice.modes.daily', 
+    descKey: 'practice.modes.dailyDesc',
+    color: 'bg-yellow-500/10 text-yellow-500'
+  },
+];
+
+const CATEGORIES = ['signs', 'rules', 'safety', 'signals', 'markings', 'violation_points', 'traffic_fines'];
+
+export default function Practice() {
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { updateStats, favorites, toggleFavorite } = useApp();
+  const { 
+    getMistakeQuestions, 
+    getWeakCategories, 
+    getDueReviews, 
+    recordAnswer,
+    categoryStats,
+    mistakes
+  } = useLearning();
+  const { triggerCorrectFeedback, triggerIncorrectFeedback, triggerSuccessFeedback, triggerFailFeedback } = useFeedback();
+
+  const [state, setState] = useState<QuizState>('setup');
+  const [mode, setMode] = useState<PracticeMode>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [questions, setQuestions] = useState<typeof questionsData.questions>([]);
+  const [current, setCurrent] = useState(0);
+  const [selected, setSelected] = useState<number | null>(null);
+  const [showAnswer, setShowAnswer] = useState(false);
+  const [score, setScore] = useState(0);
+  const [sessionWrongIds, setSessionWrongIds] = useState<string[]>([]);
+  const [sessionResults, setSessionResults] = useState<{ id: string; category: string; correct: boolean }[]>([]);
+  const [signError, setSignError] = useState(false);
+
+  const warnedLegacyRef = useRef(new Set<string>());
+
+  const getCategoryId = (question: any) =>
+    question.category || question.categoryId || question.categoryKey?.split('.').pop() || 'unknown';
+
+  const getDifficultyId = (question: any) =>
+    question.difficulty || question.difficultyId || question.difficultyKey?.split('.').pop() || 'unknown';
+
+  // Get available questions for each mode
+  const mistakeQuestionIds = useMemo(() => getMistakeQuestions(), [getMistakeQuestions]);
+  const weakCategories = useMemo(() => getWeakCategories(), [getWeakCategories]);
+  const dueReviewIds = useMemo(() => getDueReviews(), [getDueReviews]);
+
+  const mistakeQuestions = useMemo(() => 
+    questionsData.questions.filter(q => mistakeQuestionIds.includes(q.id)),
+    [mistakeQuestionIds]
+  );
+
+  const weakQuestions = useMemo(() =>
+    questionsData.questions.filter(q => weakCategories.includes(getCategoryId(q))),
+    [weakCategories]
+  );
+
+  const reviewQuestions = useMemo(() => 
+    questionsData.questions.filter(q => dueReviewIds.includes(q.id)),
+    [dueReviewIds]
+  );
+
+  // Get questions by category
+  const getQuestionsByCategory = (category: string) =>
+    questionsData.questions.filter(q => getCategoryId(q) === category);
+
+  // Start practice with selected mode
+  const startPractice = (practiceMode: PracticeMode, count: number, category?: string) => {
+    let pool: typeof questionsData.questions = [];
+
+    switch (practiceMode) {
+      case 'all':
+        pool = [...questionsData.questions];
+        break;
+      case 'mistakes':
+        pool = [...mistakeQuestions];
+        break;
+      case 'weak':
+        pool = [...weakQuestions];
+        break;
+      case 'review':
+        pool = [...reviewQuestions];
+        break;
+      case 'daily':
+        pool = [...questionsData.questions];
+        break;
+      case 'category':
+        pool = category ? getQuestionsByCategory(category) : [];
+        break;
+    }
+
+    if (pool.length === 0) {
+      return; // No questions available
+    }
+
+    const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, Math.min(count, pool.length));
+    setQuestions(shuffled);
+    setCurrent(0);
+    setScore(0);
+    setSelected(null);
+    setShowAnswer(false);
+    setMode(practiceMode);
+    setSessionWrongIds([]);
+    setSessionResults([]);
+    setState('playing');
+  };
+
+  const startPracticeWithIds = (ids: string[]) => {
+    const pool = questionsData.questions.filter(q => ids.includes(q.id));
+    if (pool.length === 0) return;
+
+    const shuffled = pool.sort(() => Math.random() - 0.5);
+    setQuestions(shuffled);
+    setCurrent(0);
+    setScore(0);
+    setSelected(null);
+    setShowAnswer(false);
+    setMode('mistakes');
+    setSessionWrongIds([]);
+    setSessionResults([]);
+    setState('playing');
+  };
+
+  const handleSelect = (idx: number) => {
+    if (showAnswer) return;
+    setSelected(idx);
+  };
+
+  const handleSubmit = () => {
+    if (selected === null) return;
+    setShowAnswer(true);
+    
+    const q = questions[current];
+    const correctIndex = q.correctIndex ?? q.correctAnswer ?? 0;
+    const isCorrect = selected === correctIndex;
+    
+    if (isCorrect) {
+      setScore(s => s + 1);
+      triggerCorrectFeedback();
+    } else {
+      setSessionWrongIds(prev => (prev.includes(q.id) ? prev : [...prev, q.id]));
+      triggerIncorrectFeedback();
+    }
+
+    // Record in learning engine
+    recordAnswer(
+      q.id,
+      selected,
+      correctIndex,
+      isCorrect,
+      getCategoryId(q),
+      getDifficultyId(q)
+    );
+
+    setSessionResults(prev => {
+      const next = [...prev];
+      const idx = next.findIndex(item => item.id === q.id);
+      const entry = { id: q.id, category: getCategoryId(q), correct: isCorrect };
+      if (idx === -1) {
+        next.push(entry);
+      } else {
+        next[idx] = entry;
+      }
+      return next;
+    });
+  };
+
+  const handleNext = () => {
+    if (current < questions.length - 1) {
+      setCurrent(c => c + 1);
+      setSelected(null);
+      setShowAnswer(false);
+    } else {
+      const currentCorrectIndex = questions[current].correctIndex ?? questions[current].correctAnswer ?? 0;
+      const finalScore = score + (selected === currentCorrectIndex ? 1 : 0);
+      updateStats(finalScore, questions.length);
+      const didPass = (finalScore / questions.length) * 100 >= 70;
+      if (didPass) {
+        triggerSuccessFeedback();
+      } else {
+        triggerFailFeedback();
+      }
+      setState('result');
+    }
+  };
+
+  const q = questions[current];
+  const correctIndex = q?.correctIndex ?? q?.correctAnswer ?? 0;
+  const passed = questions.length > 0 && (score / questions.length) * 100 >= 70;
+  const isFavorite = q ? favorites.questions.includes(q.id) : false;
+
+  useEffect(() => {
+    if (state === 'playing' && questions.length === 0) {
+      setState('setup');
+    }
+  }, [state, questions.length]);
+  useEffect(() => {
+    setSignError(false);
+  }, [q?.id]);
+  useEffect(() => {
+    if (!import.meta.env.DEV || !q || warnedLegacyRef.current.has(q.id)) return;
+    if (q.question || q.options || q.explanation || typeof q.correctAnswer === 'number') {
+      console.warn(`[quiz-i18n] Legacy fields detected for question ${q.id}`);
+      warnedLegacyRef.current.add(q.id);
+    }
+  }, [q]);
+
+  // Setup screen with modes
+  if (state === 'setup') {
+    return (
+      <div className="min-h-screen bg-background pb-20">
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+          <div className="container mx-auto px-4 py-4 flex items-center gap-4">
+            <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+            <h1 className="text-xl font-bold">{t('quiz.title', 'Practice')}</h1>
+          </div>
+        </header>
+
+        <main className="container mx-auto px-4 py-6">
+          <Tabs defaultValue="modes" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 mb-6">
+              <TabsTrigger value="modes">{t('practice.byMode', 'By Mode')}</TabsTrigger>
+              <TabsTrigger value="category">{t('practice.byCategory', 'By Category')}</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="modes" className="space-y-4">
+              {PRACTICE_MODES.map((modeConfig) => {
+                let count = 0;
+                let disabled = false;
+
+                switch (modeConfig.id) {
+                  case 'all':
+                    count = questionsData.questions.length;
+                    break;
+                  case 'mistakes':
+                    count = mistakeQuestions.length;
+                    disabled = count === 0;
+                    break;
+                  case 'weak':
+                    count = weakQuestions.length;
+                    disabled = count === 0;
+                    break;
+                  case 'review':
+                    count = reviewQuestions.length;
+                    disabled = count === 0;
+                    break;
+                  case 'daily':
+                    count = Math.min(5, questionsData.questions.length);
+                    disabled = count === 0;
+                    break;
+                }
+
+                return (
+                  <motion.div
+                    key={modeConfig.id}
+                    whileHover={{ scale: disabled ? 1 : 1.02 }}
+                    whileTap={{ scale: disabled ? 1 : 0.98 }}
+                  >
+                    <Card 
+                      className={`cursor-pointer transition-all ${disabled ? 'opacity-50' : ''}`}
+                      onClick={() => !disabled && setMode(modeConfig.id)}
+                    >
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className={`p-2 rounded-lg ${modeConfig.color}`}>
+                              {modeConfig.icon}
+                            </div>
+                            <div>
+                              <CardTitle className="text-base">
+                                {t(modeConfig.titleKey, modeConfig.id)}
+                              </CardTitle>
+                              <CardDescription className="text-sm">
+                                {t(modeConfig.descKey, '')}
+                              </CardDescription>
+                            </div>
+                          </div>
+                          <Badge variant="secondary">{count}</Badge>
+                        </div>
+                      </CardHeader>
+                      {mode === modeConfig.id && !disabled && (
+                        <CardContent className="pt-0">
+                          {modeConfig.id === 'daily' ? (
+                            <div className="flex gap-2">
+                              <Button
+                                variant="default"
+                                size="sm"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  startPractice('daily', count);
+                                }}
+                              >
+                                {t('practice.startDaily', 'Start Daily')} ({count})
+                              </Button>
+                            </div>
+                          ) : (
+                            <>
+                              <p className="text-sm text-muted-foreground mb-3">
+                                {t('quiz.selectQuestions', 'Select number of questions')}
+                              </p>
+                              <div className="flex gap-2">
+                                {[5, 10, 20].map(n => (
+                                  <Button 
+                                    key={n} 
+                                    variant="outline" 
+                                    size="sm"
+                                    disabled={n > count}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      startPractice(modeConfig.id, n);
+                                    }}
+                                  >
+                                    {Math.min(n, count)}
+                                  </Button>
+                                ))}
+                                {count > 0 && (
+                                  <Button 
+                                    variant="default" 
+                                    size="sm"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      startPractice(modeConfig.id, count);
+                                    }}
+                                  >
+                                    {t('practice.all', 'All')} ({count})
+                                  </Button>
+                                )}
+                              </div>
+                            </>
+                          )}
+                        </CardContent>
+                      )}
+                    </Card>
+                  </motion.div>
+                );
+              })}
+
+              {/* Learning Stats Summary */}
+              <Card className="mt-6 bg-muted/50">
+                <CardHeader>
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <Brain className="h-5 w-5" />
+                    {t('practice.learningStats', 'Learning Stats')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <p className="text-2xl font-bold text-destructive">{mistakes.length}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.mistakeCount', 'Mistakes')}</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-orange-500">{weakCategories.length}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.weakAreas', 'Weak Areas')}</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-blue-500">{dueReviewIds.length}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.dueReviews', 'Due Reviews')}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="category" className="space-y-4">
+              {CATEGORIES.map((category) => {
+                const categoryQuestions = getQuestionsByCategory(category);
+                const stats = categoryStats[category];
+                const accuracy = stats?.accuracy ?? 0;
+
+                return (
+                  <motion.div
+                    key={category}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Card 
+                      className={`cursor-pointer transition-all ${
+                        selectedCategory === category ? 'ring-2 ring-primary' : ''
+                      }`}
+                      onClick={() => setSelectedCategory(
+                        selectedCategory === category ? null : category
+                      )}
+                    >
+                      <CardHeader className="pb-3">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 rounded-lg bg-primary/10">
+                              <BookOpen className="h-5 w-5 text-primary" />
+                            </div>
+                            <div>
+                              <CardTitle className="text-base capitalize">
+                                {t(`quiz.categories.${category}`, category)}
+                              </CardTitle>
+                              {stats && (
+                                <CardDescription className="text-sm">
+                                  {t('practice.accuracy', 'Accuracy')}: {accuracy}%
+                                </CardDescription>
+                              )}
+                            </div>
+                          </div>
+                          <Badge variant="secondary">{categoryQuestions.length}</Badge>
+                        </div>
+                      </CardHeader>
+                      {selectedCategory === category && (
+                        <CardContent className="pt-0">
+                          <p className="text-sm text-muted-foreground mb-3">
+                            {t('quiz.selectQuestions', 'Select number of questions')}
+                          </p>
+                          <div className="flex gap-2">
+                            {[5, 10, 20].map(n => (
+                              <Button 
+                                key={n} 
+                                variant="outline" 
+                                size="sm"
+                                disabled={n > categoryQuestions.length}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  startPractice('category', n, category);
+                                }}
+                              >
+                                {Math.min(n, categoryQuestions.length)}
+                              </Button>
+                            ))}
+                            <Button 
+                              variant="default" 
+                              size="sm"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                startPractice('category', categoryQuestions.length, category);
+                              }}
+                            >
+                              {t('practice.all', 'All')}
+                            </Button>
+                          </div>
+                        </CardContent>
+                      )}
+                    </Card>
+                  </motion.div>
+                );
+              })}
+              {(selectedCategory === 'violation_points' || selectedCategory === 'traffic_fines') && (
+                <div className="bg-muted/60 rounded-xl p-4 text-xs text-muted-foreground">
+                  {t('disclaimer.educationalGovernment')}
+                </div>
+              )}
+            </TabsContent>
+          </Tabs>
+        </main>
+
+        <BottomNav />
+      </div>
+    );
+  }
+
+  // Result screen
+  if (state === 'result') {
+    const finalScore = Math.round((score / questions.length) * 100);
+    const byCategory = sessionResults.reduce<Record<string, { correct: number; total: number }>>((acc, result) => {
+      if (!acc[result.category]) acc[result.category] = { correct: 0, total: 0 };
+      acc[result.category].total += 1;
+      if (result.correct) acc[result.category].correct += 1;
+      return acc;
+    }, {});
+
+    return (
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 text-center">
+        {passed && <Confetti recycle={false} numberOfPieces={200} />}
+        <motion.div 
+          initial={{ scale: 0 }} 
+          animate={{ scale: 1 }} 
+          className={`w-32 h-32 rounded-full flex items-center justify-center text-4xl font-bold mb-6 ${
+            passed ? 'bg-green-100 dark:bg-green-900/30 text-green-600' : 'bg-red-100 dark:bg-red-900/30 text-red-600'
+          }`}
+        >
+          {finalScore}%
+        </motion.div>
+        <h2 className="text-2xl font-bold mb-2">
+          {passed ? t('results.passed', 'Great job!') : t('results.failed', 'Keep practicing!')}
+        </h2>
+        <p className="text-muted-foreground mb-2">
+          {score}/{questions.length} {t('results.correct', 'correct')}
+        </p>
+        {mode !== 'all' && (
+          <Badge variant="outline" className="mb-4">
+            {t(`practice.modes.${mode}`, mode)}
+          </Badge>
+        )}
+        <div className="flex gap-4 mt-4 flex-wrap justify-center">
+          {sessionWrongIds.length > 0 && (
+            <Button variant="secondary" onClick={() => startPracticeWithIds(sessionWrongIds)}>
+              {t('practice.reviewMistakes', 'Review Mistakes')}
+            </Button>
+          )}
+          <Button variant="outline" onClick={() => setState('setup')}>
+            {t('results.tryAgain', 'Practice Again')}
+          </Button>
+          <Button onClick={() => navigate('/')}>
+            {t('results.backHome', 'Home')}
+          </Button>
+        </div>
+
+        <div className="mt-6 w-full max-w-md bg-card rounded-xl p-4 text-left">
+          <h3 className="font-semibold text-card-foreground mb-3">
+            {t('quiz.categories.all', 'Topic Breakdown')}
+          </h3>
+          <div className="space-y-2 text-sm">
+            {Object.entries(byCategory).map(([category, stats]) => {
+              const accuracy = stats.total ? Math.round((stats.correct / stats.total) * 100) : 0;
+              return (
+                <div key={category} className="flex justify-between">
+                  <span className="text-muted-foreground">
+                    {t(`quiz.categories.${category}`, category)}
+                  </span>
+                  <span className="font-medium text-card-foreground">
+                    {stats.correct}/{stats.total} ({accuracy}%)
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Playing screen
+  return (
+    q ? (
+    <div className="min-h-screen bg-background flex flex-col">
+      <header className="p-4 flex items-center justify-between border-b border-border">
+        <Button variant="ghost" size="icon" onClick={() => setState('setup')}>
+          <ArrowLeft className="h-5 w-5" />
+        </Button>
+        <div className="flex items-center gap-2">
+          <span className="font-medium">
+            {current + 1} / {questions.length}
+          </span>
+          {mode !== 'all' && (
+            <Badge variant="outline" className="text-xs">
+              {t(`practice.modes.${mode}`, mode)}
+            </Badge>
+          )}
+        </div>
+        <Button 
+          variant="ghost" 
+          size="icon"
+          onClick={() => toggleFavorite('questions', q.id)}
+        >
+          <Star className={`h-5 w-5 ${isFavorite ? 'fill-yellow-500 text-yellow-500' : ''}`} />
+        </Button>
+      </header>
+
+      <div className="h-1 bg-muted">
+        <motion.div 
+          className="h-full bg-primary" 
+          initial={{ width: 0 }} 
+          animate={{ width: `${((current + 1) / questions.length) * 100}%` }} 
+        />
+      </div>
+
+      <main className="flex-1 p-4 flex flex-col">
+        <div className="flex gap-2 mb-4">
+          <Badge variant="outline">{t(q.categoryKey)}</Badge>
+          <Badge variant="secondary">{t(q.difficultyKey)}</Badge>
+        </div>
+
+        {q.signId && (
+          <div className="mb-6 flex justify-center">
+            <div className="bg-card border border-border rounded-2xl p-4 shadow-sm">
+              {getSignSrc(q.signId) && !signError ? (
+                <img
+                  src={getSignSrc(q.signId)}
+                  alt={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
+                  aria-label={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
+                  className="max-h-40 w-auto object-contain"
+                  onError={() => setSignError(true)}
+                />
+              ) : (
+                <div className="text-xs text-muted-foreground text-center min-w-[160px]">
+                  {t('ui.signUnavailable')}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        <h2 className="text-lg font-semibold mb-6">
+          {t(q.questionKey)}
+        </h2>
+
+        <div className="space-y-3 flex-1">
+          <AnimatePresence mode="wait">
+            {q.optionsKeys.map((optKey, idx) => {
+              const isCorrect = idx === correctIndex;
+              const isSelected = idx === selected;
+              
+              let className = 'w-full p-4 rounded-xl text-left border-2 transition-all ';
+              if (showAnswer) {
+                if (isCorrect) className += 'border-green-500 bg-green-50 dark:bg-green-900/20';
+                else if (isSelected) className += 'border-red-500 bg-red-50 dark:bg-red-900/20';
+                else className += 'border-border opacity-50';
+              } else if (isSelected) {
+                className += 'border-primary bg-primary/10';
+              } else {
+                className += 'border-border hover:border-primary/50';
+              }
+              
+              return (
+                <motion.button 
+                  key={idx} 
+                  onClick={() => handleSelect(idx)} 
+                  className={className} 
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex items-center gap-3">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+                      showAnswer && isCorrect 
+                        ? 'bg-green-500 text-white' 
+                        : showAnswer && isSelected && !isCorrect 
+                        ? 'bg-red-500 text-white'
+                        : isSelected 
+                        ? 'bg-primary text-primary-foreground' 
+                        : 'bg-muted'
+                    }`}>
+                      {showAnswer && isCorrect ? (
+                        <Check className="w-4 h-4" />
+                      ) : showAnswer && isSelected && !isCorrect ? (
+                        <X className="w-4 h-4" />
+                      ) : (
+                        String.fromCharCode(65 + idx)
+                      )}
+                    </div>
+                    <span>{t(optKey)}</span>
+                  </div>
+                </motion.button>
+              );
+            })}
+          </AnimatePresence>
+        </div>
+
+        {showAnswer && q.explanationKey && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            className="bg-muted rounded-xl p-4 my-4"
+          >
+            <p className="text-sm font-medium mb-1">{t('quiz.explanation', 'Explanation')}</p>
+            <p className="text-sm text-muted-foreground">
+              {t(q.explanationKey)}
+            </p>
+          </motion.div>
+        )}
+
+        <div className="pt-4 pb-safe">
+          {!showAnswer ? (
+            <Button 
+              onClick={handleSubmit} 
+              disabled={selected === null} 
+              className="w-full" 
+              size="lg"
+            >
+              {t('quiz.submit', 'Check Answer')}
+            </Button>
+          ) : (
+            <Button onClick={handleNext} className="w-full" size="lg">
+              {current < questions.length - 1 
+                ? t('quiz.next', 'Next Question') 
+                : t('results.title', 'See Results')}
+            </Button>
+          )}
+        </div>
+      </main>
+    </div>
+    ) : (
+      <div className="min-h-screen bg-background flex items-center justify-center p-6 text-center">
+        <div className="space-y-4">
+          <p className="text-muted-foreground">{t('common.error', 'Something went wrong')}</p>
+          <Button onClick={() => setState('setup')}>
+            {t('common.back', 'Back')}
+          </Button>
+        </div>
+      </div>
+    )
+  );
+}

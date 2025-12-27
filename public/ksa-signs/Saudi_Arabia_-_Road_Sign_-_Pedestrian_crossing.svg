@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg6382"
+   width="400"
+   height="400.00003"
+   viewBox="0 0 400 400.00003"
+   sodipodi:docname="Saudi_Arabia_-_Road_Sign_-_Pedestrian_crossing.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata6388">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6386" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     id="namedview6384"
+     showgrid="false"
+     inkscape:zoom="1.3111111"
+     inkscape:cx="77.033898"
+     inkscape:cy="188.38983"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6382"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <path
+     id="rect18"
+     style="fill:#042058;fill-opacity:1;fill-rule:evenodd;stroke-width:0.747661"
+     d="M 28.088556,0 C 12.527495,0 0,12.527495 0,28.088556 V 371.91147 c 0,15.56107 12.527495,28.08857 28.088556,28.08857 H 371.91149 c 15.5611,0 28.08851,-12.5275 28.08851,-28.08857 V 28.088556 C 400,12.527495 387.47259,0 371.91149,0 Z" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path818-8"
+     d="M 364.48901,334.47869 198.18248,46.427355 31.875951,334.4786 Z"
+     style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:55.6224;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <path
+     id="path2"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.14571"
+     d="m 185.75573,107.53949 c 7.4854,0 13.58858,6.10306 13.58858,13.58453 0,7.48537 -6.10318,13.59657 -13.58858,13.59657 -7.48547,0 -13.5845,-6.1112 -13.5845,-13.59657 0,-7.48147 6.09903,-13.58453 13.5845,-13.58453"
+     inkscape:connector-curvature="0" />
+  <path
+     id="path3"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.14571"
+     d="m 144.61544,193.23051 28.50281,-19.0005 c 1.31753,-5.56556 6.78213,-30.28923 17.74744,-36.0125 10.85642,-7.19435 50.89854,22.31484 51.12879,22.55326 v 43.02905 l -8.6858,-1.50759 -3.39111,-34.34722 c -3.27383,-0.66285 -6.54766,-1.31763 -9.81339,-1.9724 7.14585,18.47912 9.77308,36.28729 5.65849,48.02061 l 17.36356,70.95791 -11.70099,8.29782 -26.45673,-71.95299 -10.52982,18.73859 -16.2278,49.44338 -15.48013,-5.66259 13.96852,-52.08663 16.2278,-29.05655 -6.22031,-21.45792 -6.61244,8.62116 -30.94806,10.19343 z"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccccccccccccccccc" />
+  <path
+     id="path1085"
+     style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.494921px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 102.94727 279.11328 L 74.40625 316.76562 L 107.21289 316.76562 L 128.37305 279.11328 L 102.94727 279.11328 z M 158.65039 279.11328 L 140.77148 316.76562 L 173.33203 316.76562 L 182.8457 279.11328 L 158.65039 279.11328 z M 208.05273 279.11328 L 217.56641 316.76562 L 250.12695 316.76562 L 232.24805 279.11328 L 208.05273 279.11328 z M 266.48633 279.11328 L 287.64453 316.76562 L 320.45117 316.76562 L 291.91016 279.11328 L 266.48633 279.11328 z " />
+</svg>
