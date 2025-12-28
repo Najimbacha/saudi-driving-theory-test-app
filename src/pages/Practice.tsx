@@ -85,7 +85,7 @@ const PRACTICE_MODES: ModeConfig[] = [
 const CATEGORIES = ['signs', 'rules', 'safety', 'signals', 'markings', 'violation_points', 'traffic_fines'];
 
 export default function Practice() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { updateStats, favorites, toggleFavorite } = useApp();
   const { 
@@ -109,6 +109,10 @@ export default function Practice() {
   const [sessionWrongIds, setSessionWrongIds] = useState<string[]>([]);
   const [sessionResults, setSessionResults] = useState<{ id: string; category: string; correct: boolean }[]>([]);
   const [signError, setSignError] = useState(false);
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
+  const percentFormatter = new Intl.NumberFormat(i18n.language, { style: 'percent', maximumFractionDigits: 0 });
+  const getCategoryLabel = (category: string) =>
+    i18n.exists(`quiz.categories.${category}`) ? t(`quiz.categories.${category}`) : t('quiz.categories.unknown');
 
   const warnedLegacyRef = useRef(new Set<string>());
 
@@ -293,17 +297,17 @@ export default function Practice() {
         <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
           <div className="container mx-auto px-4 py-4 flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
-              <ArrowLeft className="h-5 w-5" />
+              <ArrowLeft className="h-5 w-5 rtl-flip" />
             </Button>
-            <h1 className="text-xl font-bold">{t('quiz.title', 'Practice')}</h1>
+            <h1 className="text-xl font-bold">{t('quiz.title')}</h1>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-6">
           <Tabs defaultValue="modes" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="modes">{t('practice.byMode', 'By Mode')}</TabsTrigger>
-              <TabsTrigger value="category">{t('practice.byCategory', 'By Category')}</TabsTrigger>
+              <TabsTrigger value="modes">{t('practice.byMode')}</TabsTrigger>
+              <TabsTrigger value="category">{t('practice.byCategory')}</TabsTrigger>
             </TabsList>
 
             <TabsContent value="modes" className="space-y-4">
@@ -355,14 +359,14 @@ export default function Practice() {
                             </div>
                             <div>
                               <CardTitle className="text-base">
-                                {t(modeConfig.titleKey, modeConfig.id)}
+                                {t(modeConfig.titleKey)}
                               </CardTitle>
                               <CardDescription className="text-sm">
-                                {t(modeConfig.descKey, '')}
+                                {t(modeConfig.descKey)}
                               </CardDescription>
                             </div>
                           </div>
-                          <Badge variant="secondary">{count}</Badge>
+                          <Badge variant="secondary">{numberFormatter.format(count)}</Badge>
                         </div>
                       </CardHeader>
                       {mode === modeConfig.id && !disabled && (
@@ -378,15 +382,15 @@ export default function Practice() {
                                 }}
                               >
                                 {modeConfig.id === 'daily'
-                                  ? t('practice.startDaily', 'Start Daily')
-                                  : t('practice.startQuick', 'Start Quick')
-                                } ({count})
+                                  ? t('practice.startDailyCount', { count, value: numberFormatter.format(count) })
+                                  : t('practice.startQuickCount', { count, value: numberFormatter.format(count) })
+                                }
                               </Button>
                             </div>
                           ) : (
                             <>
                               <p className="text-sm text-muted-foreground mb-3">
-                                {t('quiz.selectQuestions', 'Select number of questions')}
+                                {t('quiz.selectQuestions')}
                               </p>
                               <div className="flex gap-2">
                                 {[5, 10, 20].map(n => (
@@ -400,7 +404,7 @@ export default function Practice() {
                                       startPractice(modeConfig.id, n);
                                     }}
                                   >
-                                    {Math.min(n, count)}
+                                    {numberFormatter.format(Math.min(n, count))}
                                   </Button>
                                 ))}
                                 {count > 0 && (
@@ -412,7 +416,7 @@ export default function Practice() {
                                       startPractice(modeConfig.id, count);
                                     }}
                                   >
-                                    {t('practice.all', 'All')} ({count})
+                                    {t('practice.allCount', { count, value: numberFormatter.format(count) })}
                                   </Button>
                                 )}
                               </div>
@@ -430,22 +434,22 @@ export default function Practice() {
                 <CardHeader>
                   <CardTitle className="text-base flex items-center gap-2">
                     <Brain className="h-5 w-5" />
-                    {t('practice.learningStats', 'Learning Stats')}
+                    {t('practice.learningStats')}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-destructive">{mistakes.length}</p>
-                      <p className="text-xs text-muted-foreground">{t('practice.mistakeCount', 'Mistakes')}</p>
+                      <p className="text-2xl font-bold text-destructive">{numberFormatter.format(mistakes.length)}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.mistakeCount')}</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-orange-500">{weakCategories.length}</p>
-                      <p className="text-xs text-muted-foreground">{t('practice.weakAreas', 'Weak Areas')}</p>
+                      <p className="text-2xl font-bold text-orange-500">{numberFormatter.format(weakCategories.length)}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.weakAreas')}</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-blue-500">{dueReviewIds.length}</p>
-                      <p className="text-xs text-muted-foreground">{t('practice.dueReviews', 'Due Reviews')}</p>
+                      <p className="text-2xl font-bold text-blue-500">{numberFormatter.format(dueReviewIds.length)}</p>
+                      <p className="text-xs text-muted-foreground">{t('practice.dueReviews')}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -480,22 +484,22 @@ export default function Practice() {
                             </div>
                             <div>
                               <CardTitle className="text-base capitalize">
-                                {t(`quiz.categories.${category}`, category)}
+                                {getCategoryLabel(category)}
                               </CardTitle>
                               {stats && (
                                 <CardDescription className="text-sm">
-                                  {t('practice.accuracy', 'Accuracy')}: {accuracy}%
+                                  {t('practice.accuracyLabel', { value: percentFormatter.format(accuracy / 100) })}
                                 </CardDescription>
                               )}
                             </div>
                           </div>
-                          <Badge variant="secondary">{categoryQuestions.length}</Badge>
+                          <Badge variant="secondary">{numberFormatter.format(categoryQuestions.length)}</Badge>
                         </div>
                       </CardHeader>
                       {selectedCategory === category && (
                         <CardContent className="pt-0">
                           <p className="text-sm text-muted-foreground mb-3">
-                            {t('quiz.selectQuestions', 'Select number of questions')}
+                            {t('quiz.selectQuestions')}
                           </p>
                           <div className="flex gap-2">
                             {[5, 10, 20].map(n => (
@@ -509,7 +513,7 @@ export default function Practice() {
                                   startPractice('category', n, category);
                                 }}
                               >
-                                {Math.min(n, categoryQuestions.length)}
+                                {numberFormatter.format(Math.min(n, categoryQuestions.length))}
                               </Button>
                             ))}
                             <Button 
@@ -520,7 +524,7 @@ export default function Practice() {
                                 startPractice('category', categoryQuestions.length, category);
                               }}
                             >
-                              {t('practice.all', 'All')}
+                              {t('practice.all')}
                             </Button>
                           </div>
                         </CardContent>
@@ -563,36 +567,39 @@ export default function Practice() {
             passed ? 'bg-green-100 dark:bg-green-900/30 text-green-600' : 'bg-red-100 dark:bg-red-900/30 text-red-600'
           }`}
         >
-          {finalScore}%
+          {percentFormatter.format(finalScore / 100)}
         </motion.div>
         <h2 className="text-2xl font-bold mb-2">
-          {passed ? t('results.passed', 'Great job!') : t('results.failed', 'Keep practicing!')}
+          {passed ? t('results.passed') : t('results.failed')}
         </h2>
         <p className="text-muted-foreground mb-2">
-          {score}/{questions.length} {t('results.correct', 'correct')}
+          {t('results.scoreSummary', {
+            correct: numberFormatter.format(score),
+            total: numberFormatter.format(questions.length),
+          })}
         </p>
         {mode !== 'all' && (
           <Badge variant="outline" className="mb-4">
-            {t(`practice.modes.${mode}`, mode)}
+            {t(`practice.modes.${mode}`)}
           </Badge>
         )}
         <div className="flex gap-4 mt-4 flex-wrap justify-center">
           {sessionWrongIds.length > 0 && (
             <Button variant="secondary" onClick={() => startPracticeWithIds(sessionWrongIds)}>
-              {t('practice.reviewMistakes', 'Review Mistakes')}
+              {t('practice.reviewMistakes')}
             </Button>
           )}
           <Button variant="outline" onClick={() => setState('setup')}>
-            {t('results.tryAgain', 'Practice Again')}
+            {t('results.tryAgain')}
           </Button>
           <Button onClick={() => navigate('/')}>
-            {t('results.backHome', 'Home')}
+            {t('results.backHome')}
           </Button>
         </div>
 
         <div className="mt-6 w-full max-w-md bg-card rounded-xl p-4 text-left">
           <h3 className="font-semibold text-card-foreground mb-3">
-            {t('quiz.categories.all', 'Topic Breakdown')}
+            {t('results.topicBreakdown')}
           </h3>
           <div className="space-y-2 text-sm">
             {Object.entries(byCategory).map(([category, stats]) => {
@@ -600,10 +607,14 @@ export default function Practice() {
               return (
                 <div key={category} className="flex justify-between">
                   <span className="text-muted-foreground">
-                    {t(`quiz.categories.${category}`, category)}
+                    {getCategoryLabel(category)}
                   </span>
                   <span className="font-medium text-card-foreground">
-                    {stats.correct}/{stats.total} ({accuracy}%)
+                    {t('results.categoryBreakdownRow', {
+                      correct: numberFormatter.format(stats.correct),
+                      total: numberFormatter.format(stats.total),
+                      accuracy: percentFormatter.format(accuracy / 100),
+                    })}
                   </span>
                 </div>
               );
@@ -620,15 +631,18 @@ export default function Practice() {
     <div className="min-h-screen bg-background flex flex-col">
       <header className="p-4 flex items-center justify-between border-b border-border">
         <Button variant="ghost" size="icon" onClick={() => setState('setup')}>
-          <ArrowLeft className="h-5 w-5" />
+          <ArrowLeft className="h-5 w-5 rtl-flip" />
         </Button>
         <div className="flex items-center gap-2">
           <span className="font-medium">
-            {current + 1} / {questions.length}
+            {t('practice.progressCount', {
+              current: numberFormatter.format(current + 1),
+              total: numberFormatter.format(questions.length),
+            })}
           </span>
           {mode !== 'all' && (
             <Badge variant="outline" className="text-xs">
-              {t(`practice.modes.${mode}`, mode)}
+              {t(`practice.modes.${mode}`)}
             </Badge>
           )}
         </div>
@@ -735,7 +749,7 @@ export default function Practice() {
             animate={{ opacity: 1, y: 0 }} 
             className="bg-muted rounded-xl p-4 my-4"
           >
-            <p className="text-sm font-medium mb-1">{t('quiz.explanation', 'Explanation')}</p>
+            <p className="text-sm font-medium mb-1">{t('quiz.explanation')}</p>
             <p className="text-sm text-muted-foreground">
               {t(q.explanationKey)}
             </p>
@@ -750,13 +764,13 @@ export default function Practice() {
               className="w-full" 
               size="lg"
             >
-              {t('quiz.submit', 'Check Answer')}
+              {t('quiz.submit')}
             </Button>
           ) : (
             <Button onClick={handleNext} className="w-full" size="lg">
               {current < questions.length - 1 
-                ? t('quiz.next', 'Next Question') 
-                : t('results.title', 'See Results')}
+                ? t('quiz.next') 
+                : t('results.title')}
             </Button>
           )}
         </div>
@@ -765,9 +779,9 @@ export default function Practice() {
     ) : (
       <div className="min-h-screen bg-background flex items-center justify-center p-6 text-center">
         <div className="space-y-4">
-          <p className="text-muted-foreground">{t('common.error', 'Something went wrong')}</p>
+          <p className="text-muted-foreground">{t('common.error')}</p>
           <Button onClick={() => setState('setup')}>
-            {t('common.back', 'Back')}
+            {t('common.back')}
           </Button>
         </div>
       </div>

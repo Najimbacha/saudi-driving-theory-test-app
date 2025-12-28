@@ -7,7 +7,7 @@ import { useLearning } from '@/context/LearningContext';
 import { Progress } from '@/components/ui/progress';
 
 export default function Stats() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { stats } = useApp();
   const { categoryStats, streak, totalAnswered, totalCorrect, getOverallAccuracy, getMistakeQuestions, getWeakCategories, getDueReviews } = useLearning();
@@ -19,11 +19,16 @@ export default function Stats() {
 
   const hasStats = totalAnswered > 0 || stats.quizzesTaken > 0;
 
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
+  const percentFormatter = new Intl.NumberFormat(i18n.language, { style: 'percent', maximumFractionDigits: 0 });
+  const getCategoryLabel = (category: string) =>
+    i18n.exists(`quiz.categories.${category}`) ? t(`quiz.categories.${category}`) : t('quiz.categories.unknown');
+
   const statCards = [
-    { icon: BarChart3, label: t('stats.quizzesTaken'), value: stats.quizzesTaken, color: 'bg-blue-500' },
-    { icon: Trophy, label: t('stats.bestScore'), value: `${stats.bestScore}%`, color: 'bg-yellow-500' },
-    { icon: Target, label: t('stats.accuracy'), value: `${overallAccuracy}%`, color: 'bg-green-500' },
-    { icon: Flame, label: t('stats.streak'), value: `${streak.current} ${t('stats.days')}`, color: 'bg-orange-500' },
+    { icon: BarChart3, label: t('stats.quizzesTaken'), value: numberFormatter.format(stats.quizzesTaken), color: 'bg-blue-500' },
+    { icon: Trophy, label: t('stats.bestScore'), value: percentFormatter.format(stats.bestScore / 100), color: 'bg-yellow-500' },
+    { icon: Target, label: t('stats.accuracy'), value: percentFormatter.format(overallAccuracy / 100), color: 'bg-green-500' },
+    { icon: Flame, label: t('stats.streak'), value: t('stats.streakCount', { count: streak.current, value: numberFormatter.format(streak.current) }), color: 'bg-orange-500' },
   ];
 
   return (
@@ -31,7 +36,7 @@ export default function Stats() {
       <header className="bg-gradient-hero text-primary-foreground p-4 pb-6 sticky top-0 z-10">
         <div className="flex items-center gap-3">
           <button onClick={() => navigate('/')} className="p-2 rounded-full bg-primary-foreground/10">
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-5 h-5 rtl-flip" />
           </button>
           <h1 className="text-xl font-bold">{t('stats.title')}</h1>
         </div>
@@ -85,21 +90,21 @@ export default function Stats() {
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <span className="text-muted-foreground">{t('common.correct')}</span>
                   </div>
-                  <span className="font-semibold text-card-foreground">{totalCorrect}</span>
+                  <span className="font-semibold text-card-foreground">{numberFormatter.format(totalCorrect)}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <XCircle className="w-5 h-5 text-destructive" />
                     <span className="text-muted-foreground">{t('practice.mistakeCount')}</span>
                   </div>
-                  <span className="font-semibold text-card-foreground">{mistakeCount}</span>
+                  <span className="font-semibold text-card-foreground">{numberFormatter.format(mistakeCount)}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <TrendingUp className="w-5 h-5 text-yellow-500" />
                     <span className="text-muted-foreground">{t('practice.dueReviews')}</span>
                   </div>
-                  <span className="font-semibold text-card-foreground">{dueReviews}</span>
+                  <span className="font-semibold text-card-foreground">{numberFormatter.format(dueReviews)}</span>
                 </div>
               </div>
             </motion.div>
@@ -117,8 +122,8 @@ export default function Stats() {
                   {Object.entries(categoryStats).map(([category, stat]) => (
                     <div key={category}>
                       <div className="flex justify-between mb-1">
-                        <span className="text-sm text-muted-foreground capitalize">{t(`quiz.categories.${category}`) || category}</span>
-                        <span className="text-sm font-medium text-card-foreground">{stat.accuracy}%</span>
+                        <span className="text-sm text-muted-foreground capitalize">{getCategoryLabel(category)}</span>
+                        <span className="text-sm font-medium text-card-foreground">{percentFormatter.format(stat.accuracy / 100)}</span>
                       </div>
                       <Progress value={stat.accuracy} className="h-2" />
                     </div>
@@ -139,7 +144,7 @@ export default function Stats() {
                 <div className="flex flex-wrap gap-2">
                   {weakAreas.map(area => (
                     <span key={area} className="bg-destructive/20 text-destructive px-3 py-1 rounded-full text-sm capitalize">
-                      {t(`quiz.categories.${area}`) || area}
+                      {getCategoryLabel(area)}
                     </span>
                   ))}
                 </div>

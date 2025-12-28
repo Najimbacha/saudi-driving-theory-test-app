@@ -17,18 +17,18 @@ const DailyGoal: React.FC<DailyGoalProps> = ({ className }) => {
 
   return (
     <div className={cn(
-      'p-4 rounded-xl bg-gradient-card border border-border',
-      isDailyGoalCompleted && 'border-success/50 bg-success/5',
+      'rounded-2xl bg-card p-4 shadow-md border-t-4 border-secondary',
+      isDailyGoalCompleted && 'border-success/50',
       className
     )}>
       <div className="flex items-center gap-3 mb-3">
         {isDailyGoalCompleted ? (
-          <div className="p-2 rounded-lg bg-success/20">
+          <div className="p-2 rounded-xl bg-success/15">
             <CheckCircle2 className="h-5 w-5 text-success" />
           </div>
         ) : (
-          <div className="p-2 rounded-lg bg-accent/20">
-            <Target className="h-5 w-5 text-accent" />
+          <div className="p-2 rounded-xl bg-secondary/20">
+            <Target className="h-5 w-5 text-secondary" />
           </div>
         )}
         <div className="flex-1">
@@ -54,8 +54,8 @@ const DailyGoal: React.FC<DailyGoalProps> = ({ className }) => {
       <Progress 
         value={progressPercent} 
         className={cn(
-          'h-2',
-          isDailyGoalCompleted && '[&>div]:bg-success'
+          'h-2.5 bg-muted',
+          isDailyGoalCompleted ? '[&>div]:bg-success' : '[&>div]:bg-secondary'
         )}
       />
     </div>

@@ -49,10 +49,15 @@ interface Answer {
 }
 
 const Exam: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { recordAnswer } = useLearning();
   const { triggerSuccessFeedback, triggerFailFeedback } = useFeedback();
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
+  const percentFormatter = new Intl.NumberFormat(i18n.language, { style: 'percent', maximumFractionDigits: 0 });
+  const timeFormatter = new Intl.NumberFormat(i18n.language, { minimumIntegerDigits: 2 });
+  const getCategoryLabel = (category: string) =>
+    i18n.exists(`quiz.categories.${category}`) ? t(`quiz.categories.${category}`) : t('quiz.categories.unknown');
   
   const [examState, setExamState] = useState<ExamState>('selection');
   const [selectedMode, setSelectedMode] = useState<ExamMode>('standard');
@@ -94,7 +99,7 @@ const Exam: React.FC = () => {
   const formatTime = (seconds: number): string => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    return `${timeFormatter.format(mins)}:${timeFormatter.format(secs)}`;
   };
 
   // Select an answer
@@ -214,18 +219,18 @@ const Exam: React.FC = () => {
         <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
           <div className="container mx-auto px-4 py-4 flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
-              <ArrowLeft className="h-5 w-5" />
+              <ArrowLeft className="h-5 w-5 rtl-flip" />
             </Button>
-            <h1 className="text-xl font-bold">{t('exam.title', 'Practice Test')}</h1>
+            <h1 className="text-xl font-bold">{t('exam.title')}</h1>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-8">
           <div className="max-w-2xl mx-auto space-y-6">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">{t('exam.selectMode', 'Select Practice Mode')}</h2>
+              <h2 className="text-2xl font-bold mb-2">{t('exam.selectMode')}</h2>
               <p className="text-muted-foreground">
-                {t('exam.selectModeDesc', 'Choose the practice format that suits your preparation level')}
+                {t('exam.selectModeDesc')}
               </p>
             </div>
 
@@ -246,20 +251,20 @@ const Exam: React.FC = () => {
                     <CardHeader>
                       <div className="flex items-center justify-between">
                         <CardTitle className="capitalize">
-                          {t(`exam.modes.${mode}`, mode)} {t('exam.exam', 'Practice')}
+                          {t('exam.modeTitle', { mode: t(`exam.modes.${mode}`), exam: t('exam.exam') })}
                         </CardTitle>
                         <Badge variant={mode === 'quick' ? 'secondary' : mode === 'standard' ? 'default' : 'destructive'}>
-                          {config.questions} {t('exam.questions', 'questions')}
+                          {t('exam.questionsCount', { count: config.questions, value: numberFormatter.format(config.questions) })}
                         </Badge>
                       </div>
                       <CardDescription className="flex items-center gap-4 mt-2">
                         <span className="flex items-center gap-1">
                           <Clock className="h-4 w-4" />
-                          {config.timeMinutes} {t('exam.minutes', 'min')}
+                          {t('exam.minutesCount', { count: config.timeMinutes, value: numberFormatter.format(config.timeMinutes) })}
                         </span>
                         <span className="flex items-center gap-1">
                           <Trophy className="h-4 w-4" />
-                          {t('exam.passThreshold', 'Pass')}: {config.passThreshold}%
+                          {t('exam.passThresholdLabel', { value: percentFormatter.format(config.passThreshold / 100) })}
                         </span>
                       </CardDescription>
                     </CardHeader>
@@ -272,9 +277,9 @@ const Exam: React.FC = () => {
               <CardContent className="pt-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-medium">{t('exam.enableTimer', 'Enable Timer')}</p>
+                    <p className="font-medium">{t('exam.enableTimer')}</p>
                     <p className="text-sm text-muted-foreground">
-                      {t('exam.timerDesc', 'Practice with a timer')}
+                      {t('exam.timerDesc')}
                     </p>
                   </div>
                   <Button
@@ -282,8 +287,10 @@ const Exam: React.FC = () => {
                     size="sm"
                     onClick={() => setTimerEnabled(!timerEnabled)}
                   >
-                    <Clock className="h-4 w-4 mr-2" />
-                    {timerEnabled ? t('common.on', 'On') : t('common.off', 'Off')}
+                    <span className="flex items-center gap-2">
+                      <Clock className="h-4 w-4" />
+                      {timerEnabled ? t('common.on') : t('common.off')}
+                    </span>
                   </Button>
                 </div>
               </CardContent>
@@ -294,8 +301,10 @@ const Exam: React.FC = () => {
               className="w-full mt-6"
               onClick={() => startExam(selectedMode)}
             >
-              <Play className="h-5 w-5 mr-2" />
-              {t('exam.startExam', 'Start Practice')}
+              <span className="flex items-center gap-2">
+                <Play className="h-5 w-5" />
+                {t('exam.startExam')}
+              </span>
             </Button>
           </div>
         </main>
@@ -318,7 +327,10 @@ const Exam: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <span className="font-medium">
-                  {currentIndex + 1} / {examQuestions.length}
+                  {t('exam.progressCount', {
+                    current: numberFormatter.format(currentIndex + 1),
+                    total: numberFormatter.format(examQuestions.length),
+                  })}
                 </span>
                 {timerEnabled && (
                   <Badge variant={timeLeft < 60 ? 'destructive' : 'secondary'} className="font-mono">
@@ -328,7 +340,7 @@ const Exam: React.FC = () => {
                 )}
               </div>
               <Button variant="destructive" size="sm" onClick={submitExam}>
-                {t('exam.submit', 'Submit')}
+                {t('exam.submit')}
               </Button>
             </div>
             <Progress value={progress} className="mt-2 h-2" />
@@ -426,23 +438,27 @@ const Exam: React.FC = () => {
 
             {/* Prev/Next buttons */}
             <div className="flex justify-between gap-4">
-              <Button
-                variant="outline"
-                onClick={goPrev}
-                disabled={currentIndex === 0}
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {t('common.previous', 'Previous')}
-              </Button>
+                <Button
+                  variant="outline"
+                  onClick={goPrev}
+                  disabled={currentIndex === 0}
+                >
+                  <span className="flex items-center gap-2">
+                    <ArrowLeft className="h-4 w-4 rtl-flip" />
+                    {t('common.previous')}
+                  </span>
+                </Button>
               
               {currentIndex === examQuestions.length - 1 ? (
                 <Button onClick={submitExam}>
-                  {t('exam.submit', 'Submit Practice')}
+                  {t('exam.submit')}
                 </Button>
               ) : (
                 <Button onClick={goNext}>
-                  {t('common.next', 'Next')}
-                  <ArrowRight className="h-4 w-4 ml-2" />
+                  <span className="flex items-center gap-2">
+                    {t('common.next')}
+                    <ArrowRight className="h-4 w-4 rtl-flip" />
+                  </span>
                 </Button>
               )}
             </div>
@@ -460,7 +476,7 @@ const Exam: React.FC = () => {
         
         <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
           <div className="container mx-auto px-4 py-4">
-            <h1 className="text-xl font-bold text-center">{t('exam.results', 'Practice Results')}</h1>
+            <h1 className="text-xl font-bold text-center">{t('exam.results')}</h1>
           </div>
         </header>
 
@@ -484,17 +500,20 @@ const Exam: React.FC = () => {
               <h2 className={`text-4xl font-bold mb-2 ${
                 results.passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
               }`}>
-                {results.percentage}%
+                {percentFormatter.format(results.percentage / 100)}
               </h2>
               
               <p className="text-lg font-medium">
                 {results.passed 
-                  ? t('exam.passed', 'Great job! Practice complete.') 
-                  : t('exam.failed', 'Keep Practicing!')}
+                  ? t('exam.passed') 
+                  : t('exam.failed')}
               </p>
               
               <p className="text-muted-foreground mt-2">
-                {results.correct} / {results.total} {t('exam.correctAnswers', 'correct answers')}
+                {t('exam.scoreSummary', {
+                  correct: numberFormatter.format(results.correct),
+                  total: numberFormatter.format(results.total),
+                })}
               </p>
             </motion.div>
 
@@ -504,8 +523,10 @@ const Exam: React.FC = () => {
                 className="w-full"
                 onClick={() => setExamState('review')}
               >
-                <Eye className="h-4 w-4 mr-2" />
-                {t('exam.reviewAnswers', 'Review Answers')}
+                <span className="flex items-center gap-2">
+                  <Eye className="h-4 w-4" />
+                  {t('exam.reviewAnswers')}
+                </span>
               </Button>
               
               <Button 
@@ -513,8 +534,10 @@ const Exam: React.FC = () => {
                 className="w-full"
                 onClick={() => startExam(selectedMode)}
               >
-                <RotateCcw className="h-4 w-4 mr-2" />
-                {t('exam.tryAgain', 'Try Again')}
+                <span className="flex items-center gap-2">
+                  <RotateCcw className="h-4 w-4" />
+                  {t('exam.tryAgain')}
+                </span>
               </Button>
               
               <Button 
@@ -522,14 +545,16 @@ const Exam: React.FC = () => {
                 className="w-full"
                 onClick={() => navigate('/')}
               >
-                <Home className="h-4 w-4 mr-2" />
-                {t('common.home', 'Home')}
+                <span className="flex items-center gap-2">
+                  <Home className="h-4 w-4" />
+                  {t('common.home')}
+                </span>
               </Button>
             </div>
 
             <div className="mt-6 bg-card rounded-xl p-4">
               <h3 className="font-semibold text-card-foreground mb-3">
-                {t('quiz.categories.all', 'Topic Breakdown')}
+                {t('exam.topicBreakdown')}
               </h3>
               <div className="space-y-2 text-sm">
                 {Object.entries(results.byCategory).map(([category, stats]) => {
@@ -537,10 +562,14 @@ const Exam: React.FC = () => {
                   return (
                     <div key={category} className="flex justify-between">
                       <span className="text-muted-foreground">
-                        {t(`quiz.categories.${category}`, category)}
+                        {getCategoryLabel(category)}
                       </span>
                       <span className="font-medium text-card-foreground">
-                        {stats.correct}/{stats.total} ({accuracy}%)
+                        {t('exam.categoryBreakdownRow', {
+                          correct: numberFormatter.format(stats.correct),
+                          total: numberFormatter.format(stats.total),
+                          accuracy: percentFormatter.format(accuracy / 100),
+                        })}
                       </span>
                     </div>
                   );
@@ -564,11 +593,16 @@ const Exam: React.FC = () => {
           <div className="container mx-auto px-4 py-3">
             <div className="flex items-center justify-between">
               <Button variant="ghost" size="sm" onClick={() => setExamState('completed')}>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {t('exam.backToResults', 'Back')}
+                <span className="flex items-center gap-2">
+                  <ArrowLeft className="h-4 w-4 rtl-flip" />
+                  {t('exam.backToResults')}
+                </span>
               </Button>
               <span className="font-medium">
-                {t('exam.review', 'Review')}: {currentIndex + 1} / {examQuestions.length}
+                {t('exam.reviewProgress', {
+                  current: numberFormatter.format(currentIndex + 1),
+                  total: numberFormatter.format(examQuestions.length),
+                })}
               </span>
             </div>
           </div>
@@ -593,12 +627,12 @@ const Exam: React.FC = () => {
                     {reviewAnswer.isCorrect ? (
                       <Badge className="bg-green-600">
                         <CheckCircle2 className="h-3 w-3 mr-1" />
-                        {t('common.correct', 'Correct')}
+                        {t('common.correct')}
                       </Badge>
                     ) : (
                       <Badge variant="destructive">
                         <XCircle className="h-3 w-3 mr-1" />
-                        {t('common.incorrect', 'Incorrect')}
+                        {t('common.incorrect')}
                       </Badge>
                     )}
                   </div>
@@ -638,7 +672,7 @@ const Exam: React.FC = () => {
 
                   {reviewQuestion.explanationKey && (
                     <div className="mt-4 p-4 bg-muted rounded-lg">
-                      <p className="text-sm font-medium mb-1">{t('exam.explanation', 'Explanation')}:</p>
+                      <p className="text-sm font-medium mb-1">{t('exam.explanation')}:</p>
                       <p className="text-sm text-muted-foreground">
                         {t(reviewQuestion.explanationKey)}
                       </p>
@@ -653,12 +687,16 @@ const Exam: React.FC = () => {
         <div className="sticky bottom-0 bg-background border-t border-border">
           <div className="container mx-auto px-4 py-4 flex justify-between">
             <Button variant="outline" onClick={goPrev} disabled={currentIndex === 0}>
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              {t('common.previous', 'Previous')}
+              <span className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4 rtl-flip" />
+                {t('common.previous')}
+              </span>
             </Button>
             <Button onClick={goNext} disabled={currentIndex === examQuestions.length - 1}>
-              {t('common.next', 'Next')}
-              <ArrowRight className="h-4 w-4 ml-2" />
+              <span className="flex items-center gap-2">
+                {t('common.next')}
+                <ArrowRight className="h-4 w-4 rtl-flip" />
+              </span>
             </Button>
           </div>
         </div>

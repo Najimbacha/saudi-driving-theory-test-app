@@ -48,8 +48,9 @@ const categoryColors: Record<string, string> = {
 };
 
 const Achievements: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
   const {
     achievements,
     totalXP,
@@ -104,8 +105,8 @@ const Achievements: React.FC = () => {
             </div>
             <div className="flex items-center gap-2 bg-background/20 rounded-full px-4 py-2">
               <Star className="h-5 w-5" />
-              <span className="font-bold text-lg">{totalXP}</span>
-              <span className="text-sm opacity-80">XP</span>
+              <span className="font-bold text-lg">{numberFormatter.format(totalXP)}</span>
+              <span className="text-sm opacity-80">{t('common.xp')}</span>
             </div>
           </div>
 
@@ -113,7 +114,7 @@ const Achievements: React.FC = () => {
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
                 <span>{t('achievements.nextLevel')}: {t(`achievements.levels.${nextLevel.name}`)}</span>
-                <span>{xpToNextLevel} XP</span>
+                <span>{t('common.xpValue', { value: numberFormatter.format(xpToNextLevel) })}</span>
               </div>
               <Progress value={levelProgress} className="h-2 bg-background/30" />
             </div>
@@ -187,7 +188,7 @@ const Achievements: React.FC = () => {
                           </p>
                           <div className="flex items-center gap-1 mt-2 text-xs text-accent">
                             <Star className="h-3 w-3" />
-                            <span>+{achievement.points} XP</span>
+                            <span>{t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` })}</span>
                           </div>
                         </motion.div>
                       );
@@ -225,7 +226,7 @@ const Achievements: React.FC = () => {
                         </p>
                         <div className="flex items-center gap-1 mt-2 text-xs text-muted-foreground">
                           <Star className="h-3 w-3" />
-                          <span>+{achievement.points} XP</span>
+                          <span>{t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` })}</span>
                         </div>
                       </div>
                     );

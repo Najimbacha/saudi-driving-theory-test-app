@@ -58,10 +58,10 @@ export function PWAInstallPrompt() {
             </div>
             <div className="flex-1 min-w-0">
               <h3 className="font-semibold text-foreground text-sm">
-                {t('pwa.installTitle', 'Install App')}
+                {t('pwa.installTitle')}
               </h3>
               <p className="text-xs text-muted-foreground mt-1">
-                {t('pwa.installDescription', 'Install for offline access and a better experience')}
+                {t('pwa.installDescription')}
               </p>
               <div className="flex gap-2 mt-3">
                 <Button
@@ -69,7 +69,7 @@ export function PWAInstallPrompt() {
                   onClick={handleInstall}
                   className="text-xs"
                 >
-                  {t('pwa.install', 'Install')}
+                  {t('pwa.install')}
                 </Button>
                 <Button
                   size="sm"
@@ -77,7 +77,7 @@ export function PWAInstallPrompt() {
                   onClick={handleDismiss}
                   className="text-xs"
                 >
-                  {t('pwa.notNow', 'Not now')}
+                  {t('pwa.notNow')}
                 </Button>
               </div>
             </div>

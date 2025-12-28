@@ -41,7 +41,34 @@
     "violationPoints": "Traffic Violation Points",
     "violationPointsDesc": "Learn the point system",
     "trafficFines": "Traffic Fines & Penalties",
-    "trafficFinesDesc": "Educational guide"
+    "trafficFinesDesc": "Educational guide",
+    "quickNav": {
+      "signs": "Signs",
+      "rules": "Rules",
+      "quiz": "Quiz",
+      "points": "Points"
+    },
+    "continueLearning": {
+      "title": "Continue Learning",
+      "lessonLabel": "Lesson: {{lesson}}",
+      "progressLabel": "Progress: {{value}}%",
+      "cta": "Continue"
+    },
+    "mission": {
+      "title": "Today's Mission",
+      "items": {
+        "answer": "✓ Answer 10 practice questions",
+        "earn": "✓ Earn 20 XP",
+        "improve": "✓ Improve exam readiness"
+      },
+      "time": "~5 minutes",
+      "cta": "Start Mission"
+    },
+    "xpStrip": {
+      "xpLabel": "{{xp}} XP",
+      "streakLabel_one": "Streak: {{value}} day",
+      "streakLabel_other": "Streak: {{value}} days"
+    }
   },
   "signs": {
     "title": "Traffic Signs",
@@ -106,7 +133,8 @@
       "signals": "Signals",
       "markings": "Road Markings",
       "violation_points": "Traffic Violation Points (Practice)",
-      "traffic_fines": "Traffic Fines (Practice)"
+      "traffic_fines": "Traffic Fines (Practice)",
+      "unknown": "Other"
     },
     "start": "Start Quiz",
     "question": "Question",
@@ -863,7 +891,18 @@
     "reviewAnswers": "Review Answers",
     "tryAgain": "Try Again",
     "backToResults": "Back",
-    "explanation": "Explanation"
+    "explanation": "Explanation",
+    "modeTitle": "{{mode}} {{exam}}",
+    "questionsCount_one": "{{value}} question",
+    "questionsCount_other": "{{value}} questions",
+    "minutesCount_one": "{{value}} minute",
+    "minutesCount_other": "{{value}} minutes",
+    "passThresholdLabel": "Target: {{value}}",
+    "progressCount": "{{current}} / {{total}}",
+    "scoreSummary": "{{correct}} / {{total}} correct answers",
+    "topicBreakdown": "Topic Breakdown",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})",
+    "reviewProgress": "Review: {{current}} / {{total}}"
   },
   "practice": {
     "byMode": "By Mode",
@@ -890,7 +929,12 @@
     "dueReviews": "Due Reviews",
     "startDaily": "Start Daily",
     "reviewMistakes": "Review Mistakes",
-    "startQuick": "Start Quick"
+    "startQuick": "Start Quick",
+    "startDailyCount": "Start Daily ({{value}})",
+    "startQuickCount": "Start Quick ({{value}})",
+    "allCount": "All ({{value}})",
+    "accuracyLabel": "Accuracy: {{value}}",
+    "progressCount": "{{current}} / {{total}}"
   },
   "results": {
     "title": "Results",
@@ -903,7 +947,10 @@
     "time": "Time Taken",
     "tryAgain": "Try Again",
     "reviewAnswers": "Review Answers",
-    "backHome": "Back to Home"
+    "backHome": "Back to Home",
+    "scoreSummary": "{{correct}} / {{total}} correct",
+    "topicBreakdown": "Topic Breakdown",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
   "learn": {
     "title": "Learn Driving Theory",
@@ -911,20 +958,42 @@
     "progress": "Progress",
     "continue": "Continue Learning",
     "completed": "Completed",
+    "noResults": "No lessons found",
+    "lessonsCount_one": "{{value}} lesson",
+    "lessonsCount_other": "{{value}} lessons",
+    "categoriesCount_one": "{{value}} category",
+    "categoriesCount_other": "{{value}} categories",
+    "studyPlan": {
+      "title": "Study Plan",
+      "items": {
+        "reviewSigns": "Review traffic signs",
+        "readSafety": "Read safety rules",
+        "practiceMarkings": "Practice road markings",
+        "practiceTest": "Take a practice test"
+      }
+    },
     "topics": {
       "speedLimits": "Speed Limits",
       "rightOfWay": "Right of Way",
       "signals": "Traffic Signals",
       "markings": "Road Markings",
       "safety": "Safety Rules"
-    }
+    },
+    "relatedSignsTitle": "Related Traffic Signs",
+    "viewRelatedSigns": "View all related signs",
+    "relatedViolationsTitle": "Common Violations & Points",
+    "viewViolationSystem": "View full point system"
   },
   "favorites": {
     "title": "Favorites",
     "empty": "No favorites yet",
     "emptyDesc": "Save questions and signs to review later",
     "questions": "Questions",
-    "signs": "Signs"
+    "signs": "Signs",
+    "questionsCount_one": "{{value}} question",
+    "questionsCount_other": "{{value}} questions",
+    "signsCount_one": "{{value}} sign",
+    "signsCount_other": "{{value}} signs"
   },
   "stats": {
     "title": "Your Statistics",
@@ -932,6 +1001,8 @@
     "bestScore": "Best Score",
     "accuracy": "Average Accuracy",
     "streak": "Current Streak",
+    "streakCount_one": "{{value}} day",
+    "streakCount_other": "{{value}} days",
     "days": "days",
     "noStats": "No statistics yet",
     "noStatsDesc": "Complete quizzes to see your progress"
@@ -940,6 +1011,20 @@
     "title": "Settings",
     "language": "Language",
     "theme": "Theme",
+    "feedback": "Feedback",
+    "soundDesc": "Play sounds for correct/incorrect answers",
+    "vibrationDesc": "Haptic feedback on answers",
+    "versionLabel": "Version {{version}}",
+    "aboutDesc": "Educational app for learning driving theory. All content works offline.",
+    "disclaimer": "Disclaimer: This app is not affiliated with any government entity and is intended for educational practice only.",
+    "links": {
+      "trafficFinesTitle": "Traffic Fines & Penalties",
+      "trafficFinesDesc": "Educational guide",
+      "violationPointsTitle": "Traffic Violation Points",
+      "violationPointsDesc": "Educational reference",
+      "creditsTitle": "Credits & Attribution",
+      "creditsDesc": "Content sources and licenses"
+    },
     "themes": {
       "light": "Light",
       "dark": "Dark",
@@ -1077,21 +1162,42 @@
     "offline": "You are offline. Some features may be limited."
   },
   "violationPoints": {
-    "title": "Traffic Violation Point System (Educational)",
-    "intro": "The point system is designed to penalize drivers who commit traffic violations, with each infraction being assigned a specific number of points. As points accumulate, penalties become more severe. The purpose of this system is to encourage safer driving habits and reduce accidents.",
-    "impactTitle": "Understanding the Impact of Accumulating 24 Points (Hijri Year):",
-    "penalties": {
-      "first": "First time reaching 24 points: License suspension for 3 months.",
-      "second": "Second time reaching 24 points: License suspension for 6 months.",
-      "third": "Third time reaching 24 points: License suspension for 1 year.",
-      "fourth": "Fourth time reaching 24 points: Permanent revocation of the driving license."
+    "title": "Traffic Violation Point System",
+    "subtitle": "Educational guide for Saudi drivers",
+    "resetNote": "Points reset every Hijri year",
+    "summaryTitle": "Key Rule Summary",
+    "summaryLine1": "Points are added for traffic violations.",
+    "summaryLine2": "Reaching 24 points leads to license penalties.",
+    "summaryLine3": "The system encourages safer driving.",
+    "impactTitle": "24-Point Consequence Timeline",
+    "consequences": {
+      "first": {
+        "step": "First time (24 points)",
+        "text": "License suspended for 3 months"
+      },
+      "second": {
+        "step": "Second time (24 points)",
+        "text": "License suspended for 6 months"
+      },
+      "third": {
+        "step": "Third time (24 points)",
+        "text": "License suspended for 1 year"
+      },
+      "fourth": {
+        "step": "Fourth time (24 points)",
+        "text": "Permanent license revocation"
+      }
     },
-    "closing": "This system encourages drivers to follow traffic regulations and drive responsibly. Driving is a responsibility, and safe behavior helps protect all road users.",
-    "table": {
-      "number": "No.",
-      "violation": "Violation",
-      "points": "Points"
-    }
+    "violationsTitle": "Violations",
+    "severeTitle": "Severe Violations (12–24 Points)",
+    "majorTitle": "Major Violations (6–8 Points)",
+    "minorTitle": "Minor Violations (2–4 Points)",
+    "pointsLabel": "{{value}} Points",
+    "explainLine": "This violation reduces reaction time and increases risk on the road.",
+    "whyDangerousLine": "Why it’s dangerous: it increases collision risk for drivers and pedestrians.",
+    "tipBody": "Exam tip: follow road signs and keep a safe speed at all times.",
+    "educationalNote": "Knowing point values helps you avoid serious penalties and drive safely.",
+    "previewDescription": "{{violation}} can add points to your record."
   },
   "violations": {
     "v01": "Driving a vehicle under the influence (Alcohol/Drugs)",
@@ -1131,13 +1237,30 @@
   "disclaimer": {
     "educationalGovernment": "Disclaimer: This content is provided for educational practice only and does not represent official government regulations. This app is not affiliated with any government entity."
   },
+  "notFound": {
+    "message": "Oops! Page not found",
+    "backHome": "Return to Home"
+  },
   "ui": {
     "trafficSign": "Traffic sign",
     "signUnavailable": "Sign image unavailable"
   },
+  "credits": {
+    "title": "Credits & Attribution",
+    "signsTitle": "Traffic Sign Sources",
+    "signsLine1": "Traffic sign images used in this application are sourced from Wikimedia Commons.",
+    "signsLine2": "The images are licensed under Creative Commons licenses and are used for educational purposes only.",
+    "sourceLabel": "Source:",
+    "sourceName": "Wikimedia Commons – Saudi Arabia Road Signs",
+    "signsLine3": "Individual images may be subject to their respective Creative Commons licenses as specified on Wikimedia Commons.",
+    "signsLine4": "No affiliation with any government authority is implied.",
+    "disclaimerLabel": "Disclaimer:",
+    "disclaimerBody": "This application is not affiliated with any government entity and is intended for educational practice only."
+  },
   "common": {
     "loading": "Loading...",
     "error": "Something went wrong",
+    "reload": "Reload",
     "retry": "Retry",
     "cancel": "Cancel",
     "confirm": "Confirm",
@@ -1152,6 +1275,22 @@
     "next": "Next",
     "previous": "Previous",
     "correct": "Correct",
-    "incorrect": "Incorrect"
+    "incorrect": "Incorrect",
+    "more": "More",
+    "morePages": "More pages",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "toggleSidebar": "Toggle sidebar",
+    "breadcrumb": "Breadcrumb",
+    "goToPreviousPage": "Go to previous page",
+    "goToNextPage": "Go to next page",
+    "pagination": "Pagination",
+    "carousel": "Carousel",
+    "xp": "XP",
+    "xpValue": "{{value}} XP"
+  },
+  "index": {
+    "title": "Welcome to Your Blank App",
+    "subtitle": "Start building your amazing project here!"
   }
 }

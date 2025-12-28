@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft, Globe, Sun, Moon, Monitor, Volume2, VolumeX, Vibrate, Info, BookOpen, FileText } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Globe, Sun, Moon, Monitor, Volume2, VolumeX, Vibrate, Info, BookOpen, FileText } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { languages } from '@/i18n';
 import { Switch } from '@/components/ui/switch';
@@ -13,7 +13,7 @@ export default function Settings() {
   return (
     <div className="min-h-screen bg-background">
       <header className="p-4 flex items-center gap-3 border-b">
-        <button onClick={() => navigate('/')} className="p-2 rounded-full bg-muted"><ArrowLeft className="w-5 h-5" /></button>
+        <button onClick={() => navigate('/')} className="p-2 rounded-full bg-muted"><ArrowLeft className="w-5 h-5 rtl-flip" /></button>
         <h1 className="text-xl font-bold">{t('settings.title')}</h1>
       </header>
 
@@ -55,14 +55,14 @@ export default function Settings() {
         </section>
 
         <section>
-          <h2 className="text-sm font-medium text-muted-foreground mb-3">{t('settings.feedback', 'Feedback')}</h2>
+          <h2 className="text-sm font-medium text-muted-foreground mb-3">{t('settings.feedback')}</h2>
           <div className="bg-card rounded-xl overflow-hidden">
             <div className="p-4 flex items-center justify-between border-b">
               <div className="flex items-center gap-3">
                 {soundEnabled ? <Volume2 className="w-5 h-5 text-primary" /> : <VolumeX className="w-5 h-5 text-muted-foreground" />}
                 <div>
-                  <p className="font-medium">{t('settings.sound', 'Sound Effects')}</p>
-                  <p className="text-sm text-muted-foreground">{t('settings.soundDesc', 'Play sounds for correct/incorrect answers')}</p>
+                  <p className="font-medium">{t('settings.sound')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.soundDesc')}</p>
                 </div>
               </div>
               <Switch checked={soundEnabled} onCheckedChange={setSoundEnabled} />
@@ -71,8 +71,8 @@ export default function Settings() {
               <div className="flex items-center gap-3">
                 <Vibrate className={`w-5 h-5 ${vibrationEnabled ? 'text-primary' : 'text-muted-foreground'}`} />
                 <div>
-                  <p className="font-medium">{t('settings.vibration', 'Vibration')}</p>
-                  <p className="text-sm text-muted-foreground">{t('settings.vibrationDesc', 'Haptic feedback on answers')}</p>
+                  <p className="font-medium">{t('settings.vibration')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.vibrationDesc')}</p>
                 </div>
               </div>
               <Switch checked={vibrationEnabled} onCheckedChange={setVibrationEnabled} />
@@ -81,10 +81,12 @@ export default function Settings() {
         </section>
 
         <section className="bg-card rounded-xl p-4">
-          <p className="text-sm text-muted-foreground">{t('settings.version')} 1.0.0</p>
-          <p className="text-xs text-muted-foreground mt-2">Educational app for learning driving theory. All content works offline.</p>
+          <p className="text-sm text-muted-foreground">
+            {t('settings.versionLabel', { version: '1.0.0' })}
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">{t('settings.aboutDesc')}</p>
           <p className="text-xs text-muted-foreground mt-3">
-            Disclaimer: This app is not affiliated with any government entity and is intended for educational practice only.
+            {t('settings.disclaimer')}
           </p>
         </section>
 
@@ -97,11 +99,11 @@ export default function Settings() {
               <div className="flex items-center gap-3">
                 <FileText className="w-5 h-5 text-primary" />
                 <div className="text-left">
-                  <p className="font-medium">Traffic Fines & Penalties</p>
-                  <p className="text-sm text-muted-foreground">Educational guide</p>
+                  <p className="font-medium">{t('settings.links.trafficFinesTitle')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.links.trafficFinesDesc')}</p>
                 </div>
               </div>
-              <span className="text-muted-foreground">›</span>
+              <ChevronRight className="w-5 h-5 text-muted-foreground rtl-flip" />
             </button>
             <button
               onClick={() => navigate('/violation-points')}
@@ -110,11 +112,11 @@ export default function Settings() {
               <div className="flex items-center gap-3">
                 <BookOpen className="w-5 h-5 text-primary" />
                 <div className="text-left">
-                  <p className="font-medium">Traffic Violation Points</p>
-                  <p className="text-sm text-muted-foreground">Educational reference</p>
+                  <p className="font-medium">{t('settings.links.violationPointsTitle')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.links.violationPointsDesc')}</p>
                 </div>
               </div>
-              <span className="text-muted-foreground">›</span>
+              <ChevronRight className="w-5 h-5 text-muted-foreground rtl-flip" />
             </button>
             <button
               onClick={() => navigate('/credits')}
@@ -123,11 +125,11 @@ export default function Settings() {
               <div className="flex items-center gap-3">
                 <Info className="w-5 h-5 text-primary" />
                 <div className="text-left">
-                  <p className="font-medium">Credits & Attribution</p>
-                  <p className="text-sm text-muted-foreground">Content sources and licenses</p>
+                  <p className="font-medium">{t('settings.links.creditsTitle')}</p>
+                  <p className="text-sm text-muted-foreground">{t('settings.links.creditsDesc')}</p>
                 </div>
               </div>
-              <span className="text-muted-foreground">›</span>
+              <ChevronRight className="w-5 h-5 text-muted-foreground rtl-flip" />
             </button>
           </div>
         </section>

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { useTranslation } from "react-i18next";
 import { ThemeProvider } from "next-themes";
 import { AppProvider, useApp } from "@/context/AppContext";
 import { LearningProvider } from "@/context/LearningContext";
@@ -29,11 +30,14 @@ const TrafficFinesPenalties = lazy(() => import("@/pages/TrafficFinesPenalties")
 const LicenseGuide = lazy(() => import("@/pages/LicenseGuide"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
-const RouteFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
-    Loading...
-  </div>
-);
+const RouteFallback = () => {
+  const { t } = useTranslation();
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+      {t("common.loading")}
+    </div>
+  );
+};
 
 const queryClient = new QueryClient();
 

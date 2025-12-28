@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ArrowLeft, Search, Heart, Layers } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { ksaSigns, AppSign } from '@/data/ksaSigns';
@@ -134,11 +134,19 @@ const getPriorityIndexForTitle = (title: string) => {
 export default function Signs() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
   const { language, favorites, toggleFavorite } = useApp();
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState<typeof categories[number]>('all');
   const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
   const [page, setPage] = useState(1);
+  const relatedIds = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    const raw = params.get('ids');
+    if (!raw) return null;
+    const ids = raw.split(',').map((value) => value.trim()).filter(Boolean);
+    return ids.length ? new Set(ids) : null;
+  }, [location.search]);
 
   const masteryMap = useMemo(() => {
     return getSignMasteryMap(ksaSigns.map((sign) => sign.id));
@@ -175,11 +183,12 @@ export default function Signs() {
 
     return ksaSigns
       .filter((sign) => {
+        const matchesRelated = !relatedIds || relatedIds.has(sign.id);
         const matchesCategory = category === 'all' || sign.category === category;
         const searchValue =
           sign.title[language as keyof typeof sign.title] || sign.title.en;
         const matchesSearch = !query || searchValue.toLowerCase().includes(query);
-        return matchesCategory && matchesSearch;
+        return matchesRelated && matchesCategory && matchesSearch;
       })
       .sort((a, b) => {
         const titleA = a.title.en;
@@ -195,11 +204,19 @@ export default function Signs() {
 
         return titleA.localeCompare(titleB);
       });
-  }, [category, search, language]);
+  }, [category, search, language, relatedIds]);
 
   useEffect(() => {
     setPage(1);
   }, [category, search]);
+
+  useEffect(() => {
+    if (relatedIds) {
+      setCategory('all');
+      setSearch('');
+      setPage(1);
+    }
+  }, [relatedIds]);
 
   const pageCount = Math.max(1, Math.ceil(signs.length / pageSize));
   const currentPage = Math.min(page, pageCount);

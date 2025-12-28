@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignIcon from '@/components/signs/SignIcon';
 
 export default function Favorites() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { language, favorites, toggleFavorite } = useApp();
   const [activeTab, setActiveTab] = useState<'questions' | 'signs'>('questions');
@@ -20,12 +20,14 @@ export default function Favorites() {
 
   const isEmpty = favorites.questions.length === 0 && favorites.signs.length === 0;
 
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
+
   return (
     <div className="min-h-screen bg-background pb-20">
       <header className="bg-gradient-hero text-primary-foreground p-4 pb-6 sticky top-0 z-10">
         <div className="flex items-center gap-3">
           <button onClick={() => navigate('/')} className="p-2 rounded-full bg-primary-foreground/10">
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-5 h-5 rtl-flip" />
           </button>
           <h1 className="text-xl font-bold">{t('favorites.title')}</h1>
         </div>
@@ -49,11 +51,11 @@ export default function Favorites() {
             <TabsList className="grid w-full grid-cols-2 mb-4">
               <TabsTrigger value="questions" className="gap-2">
                 <HelpCircle className="w-4 h-4" />
-                {t('favorites.questions')} ({favorites.questions.length})
+                {t('favorites.questionsCount', { count: favorites.questions.length, value: numberFormatter.format(favorites.questions.length) })}
               </TabsTrigger>
               <TabsTrigger value="signs" className="gap-2">
                 <AlertTriangle className="w-4 h-4" />
-                {t('favorites.signs')} ({favorites.signs.length})
+                {t('favorites.signsCount', { count: favorites.signs.length, value: numberFormatter.format(favorites.signs.length) })}
               </TabsTrigger>
             </TabsList>
 

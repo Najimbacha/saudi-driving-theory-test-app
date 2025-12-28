@@ -204,6 +204,10 @@
     flex-direction: row-reverse;
   }
 
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
   [lang="ar"] {
     font-family: 'Noto Sans Arabic', sans-serif;
   }

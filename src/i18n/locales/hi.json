@@ -1,8 +1,8 @@
 {
   "app": {
     "name": "सऊदी ड्राइविंग थ्योरी टेस्ट",
-    "tagline": "Master driving theory with confidence",
-    "offline": "Works 100% Offline"
+    "tagline": "ड्राइविंग थ्योरी आत्मविश्वास से सीखें",
+    "offline": "100% ऑफलाइन काम करता है"
   },
   "nav": {
     "home": "होम",
@@ -16,36 +16,63 @@
     "achievements": "उपलब्धियां"
   },
   "onboarding": {
-    "welcome": "Welcome",
-    "selectLanguage": "Select Your Language",
-    "languageNote": "You can change this anytime in settings",
-    "getStarted": "Get Started",
-    "offlineReady": "Ready to learn offline!",
-    "offlineDesc": "All content works without internet connection"
+    "welcome": "स्वागत है",
+    "selectLanguage": "अपनी भाषा चुनें",
+    "languageNote": "आप इसे कभी भी सेटिंग्स में बदल सकते हैं",
+    "getStarted": "शुरू करें",
+    "offlineReady": "ऑफलाइन सीखने के लिए तैयार!",
+    "offlineDesc": "सारा कंटेंट इंटरनेट के बिना काम करता है"
   },
   "home": {
-    "greeting": "Ready to Learn?",
-    "subtitle": "Practice anytime, anywhere - no internet needed",
+    "greeting": "सीखने के लिए तैयार?",
+    "subtitle": "कभी भी, कहीं भी अभ्यास करें — इंटरनेट की जरूरत नहीं",
     "learnSigns": "ट्रैफ़िक साइन",
-    "learnSignsDesc": "Learn all traffic signs",
+    "learnSignsDesc": "सभी ट्रैफिक संकेत सीखें",
     "learnRules": "नियम और विनियम",
-    "learnRulesDesc": "Road rules and safety",
+    "learnRulesDesc": "सड़क नियम और सुरक्षा",
     "practice": "अभ्यास क्विज़",
-    "practiceDesc": "Test your knowledge",
+    "practiceDesc": "अपना ज्ञान परखें",
     "mockExam": "प्रैक्टिस टेस्ट",
-    "mockExamDesc": "Full theory practice",
+    "mockExamDesc": "पूरा थ्योरी अभ्यास",
     "favorites": "पसंदीदा",
-    "favoritesDesc": "Your saved items",
+    "favoritesDesc": "आपके सहेजे हुए आइटम",
     "stats": "आपकी प्रगति",
-    "statsDesc": "Track your learning",
+    "statsDesc": "अपनी प्रगति ट्रैक करें",
     "violationPoints": "ट्रैफिक उल्लंघन अंक",
-    "violationPointsDesc": "Learn the point system",
+    "violationPointsDesc": "पॉइंट सिस्टम सीखें",
     "trafficFines": "ट्रैफिक जुर्माने और दंड",
-    "trafficFinesDesc": "Educational guide"
+    "trafficFinesDesc": "शैक्षणिक मार्गदर्शिका",
+    "quickNav": {
+      "signs": "संकेत",
+      "rules": "नियम",
+      "quiz": "क्विज़",
+      "points": "पॉइंट्स"
+    },
+    "continueLearning": {
+      "title": "सीखना जारी रखें",
+      "lessonLabel": "पाठ: {{lesson}}",
+      "progressLabel": "प्रगति: {{value}}%",
+      "cta": "जारी रखें"
+    },
+    "mission": {
+      "title": "आज का मिशन",
+      "items": {
+        "answer": "✓ 10 अभ्यास प्रश्न हल करें",
+        "earn": "✓ 20 एक्सपी कमाएं",
+        "improve": "✓ परीक्षा की तैयारी सुधारें"
+      },
+      "time": "~5 मिनट",
+      "cta": "मिशन शुरू करें"
+    },
+    "xpStrip": {
+      "xpLabel": "{{xp}} एक्सपी",
+      "streakLabel_one": "स्ट्रीक: {{value}} दिन",
+      "streakLabel_other": "स्ट्रीक: {{value}} दिन"
+    }
   },
   "signs": {
     "title": "ट्रैफ़िक साइन",
-    "search": "Search signs...",
+    "search": "संकेत खोजें...",
     "categories": {
       "all": "सभी साइन",
       "warning": "चेतावनी",
@@ -70,10 +97,10 @@
     "related": "संबंधित साइन"
   },
   "quiz": {
-    "title": "Practice Quiz",
-    "selectCategory": "Select Category",
-    "selectDifficulty": "Select Difficulty",
-    "selectQuestions": "Number of Questions",
+    "title": "प्रैक्टिस क्विज़",
+    "selectCategory": "श्रेणी चुनें",
+    "selectDifficulty": "कठिनाई चुनें",
+    "selectQuestions": "प्रश्नों की संख्या",
     "difficulty": {
       "easy": "आसान",
       "medium": "मध्यम",
@@ -87,17 +114,18 @@
       "signals": "सिग्नल",
       "markings": "सड़क चिह्न",
       "violation_points": "ट्रैफिक उल्लंघन अंक (अभ्यास)",
-      "traffic_fines": "ट्रैफिक जुर्माने (अभ्यास)"
+      "traffic_fines": "ट्रैफिक जुर्माने (अभ्यास)",
+      "unknown": "अन्य"
     },
-    "start": "Start Quiz",
+    "start": "क्विज़ शुरू करें",
     "question": "प्रश्न",
     "of": "का",
     "next": "अगला",
-    "submit": "Submit Answer",
-    "correct": "Correct!",
-    "incorrect": "Incorrect",
-    "explanation": "Explanation",
-    "timeLeft": "Time Left",
+    "submit": "उत्तर जमा करें",
+    "correct": "सही!",
+    "incorrect": "गलत",
+    "explanation": "व्याख्या",
+    "timeLeft": "समय शेष",
     "q": {
       "q1": {
         "text": "लाल अष्टभुज चिन्ह का क्या अर्थ है?",
@@ -364,12 +392,12 @@
         "explain": "ब्लाइंड स्पॉट आपके वाहन के आसपास का वह क्षेत्र है जो मिरर में नहीं दिखता। हमेशा सिर घुमाकर जांचें।"
       },
       "q34": {
-        "text": "लेन में 'BUS' लिखा होने का क्या मतलब है?",
-        "a": "आगे बस स्टॉप",
+        "text": "लेन में 'बस' लिखा होने का क्या मतलब है?",
+        "a": "बस स्टॉप आगे है",
         "b": "केवल बसों के लिए आरक्षित लेन",
         "c": "बसों को प्राथमिकता है",
-        "d": "स्कूल क्षेत्र",
-        "explain": "लेन पर BUS का मतलब है कि यह ऑपरेटिंग घंटों में केवल बसों के लिए आरक्षित है।"
+        "d": "स्कूल ज़ोन",
+        "explain": "लेन पर बस लिखा होने का मतलब है कि यह संचालन समय में केवल बसों के लिए आरक्षित है।"
       },
       "q35": {
         "text": "बच्चों की मौजूदगी में स्कूल जोन में आमतौर पर गति सीमा क्या है?",
@@ -500,333 +528,333 @@
         "explain": "सुरक्षा और ईंधन दक्षता के लिए कम से कम मासिक और किसी भी लंबी यात्रा से पहले टायर प्रेशर चेक करें।"
       },
       "vp-001": {
-        "text": "According to traffic regulations, how many points can lead to license suspension within a Hijri year?",
-        "a": "12 points",
-        "b": "18 points",
-        "c": "24 points",
-        "d": "30 points",
-        "explain": "In general practice, accumulating 24 points can lead to suspension."
+        "text": "ट्रैफिक नियमों के अनुसार, हिजरी वर्ष के भीतर कितने अंक पर लाइसेंस निलंबित हो सकता है?",
+        "a": "12 अंक",
+        "b": "18 अंक",
+        "c": "24 अंक",
+        "d": "30 अंक",
+        "explain": "सामान्यतः 24 अंक जमा होने पर निलंबन हो सकता है।"
       },
       "vp-002": {
-        "text": "What happens the first time a driver reaches 24 points within a Hijri year?",
-        "a": "Warning only",
-        "b": "License suspension for 3 months",
-        "c": "License suspension for 6 months",
-        "d": "Permanent revocation",
-        "explain": "First time reaching 24 points results in a 3-month suspension."
+        "text": "हिजरी वर्ष के भीतर 24 अंक पहली बार होने पर क्या होता है?",
+        "a": "केवल चेतावनी",
+        "b": "3 महीने के लिए लाइसेंस निलंबन",
+        "c": "6 महीने के लिए लाइसेंस निलंबन",
+        "d": "स्थायी निरस्तीकरण",
+        "explain": "पहली बार 24 अंक पर 3 महीने का निलंबन होता है।"
       },
       "vp-003": {
-        "text": "What is the penalty the second time a driver reaches 24 points within a Hijri year?",
-        "a": "License suspension for 1 year",
-        "b": "License suspension for 6 months",
-        "c": "Permanent revocation",
-        "d": "Fine only",
-        "explain": "Second time reaching 24 points results in a 6-month suspension."
+        "text": "हिजरी वर्ष के भीतर दूसरी बार 24 अंक होने पर क्या दंड है?",
+        "a": "1 वर्ष के लिए लाइसेंस निलंबन",
+        "b": "6 महीने के लिए लाइसेंस निलंबन",
+        "c": "स्थायी निरस्तीकरण",
+        "d": "केवल जुर्माना",
+        "explain": "दूसरी बार 24 अंक पर 6 महीने का निलंबन होता है।"
       },
       "vp-004": {
-        "text": "What is the penalty the third time a driver reaches 24 points within a Hijri year?",
-        "a": "License suspension for 1 year",
-        "b": "License suspension for 6 months",
-        "c": "License suspension for 3 months",
-        "d": "Permanent revocation",
-        "explain": "Third time reaching 24 points results in a 1-year suspension."
+        "text": "हिजरी वर्ष के भीतर तीसरी बार 24 अंक होने पर क्या दंड है?",
+        "a": "1 वर्ष के लिए लाइसेंस निलंबन",
+        "b": "6 महीने के लिए लाइसेंस निलंबन",
+        "c": "3 महीने के लिए लाइसेंस निलंबन",
+        "d": "स्थायी निरस्तीकरण",
+        "explain": "तीसरी बार 24 अंक पर 1 वर्ष का निलंबन होता है।"
       },
       "vp-005": {
-        "text": "What happens the fourth time a driver reaches 24 points within a Hijri year?",
-        "a": "License suspension for 6 months",
-        "b": "License suspension for 1 year",
-        "c": "Permanent revocation of the license",
-        "d": "Warning only",
-        "explain": "Fourth time reaching 24 points leads to permanent revocation."
+        "text": "हिजरी वर्ष के भीतर चौथी बार 24 अंक होने पर क्या होता है?",
+        "a": "6 महीने के लिए लाइसेंस निलंबन",
+        "b": "1 वर्ष के लिए लाइसेंस निलंबन",
+        "c": "लाइसेंस का स्थायी निरस्तीकरण",
+        "d": "केवल चेतावनी",
+        "explain": "चौथी बार 24 अंक पर स्थायी निरस्तीकरण होता है।"
       },
       "vp-006": {
-        "text": "In general practice, the 24-point limit is calculated within which period?",
-        "a": "Calendar year (Gregorian)",
-        "b": "Hijri year",
-        "c": "Monthly cycle",
-        "d": "No time limit",
-        "explain": "The 24-point limit is calculated within a Hijri year."
+        "text": "सामान्यतः 24-अंक की सीमा किस अवधि में गिनी जाती है?",
+        "a": "ग्रेगोरियन कैलेंडर वर्ष",
+        "b": "हिजरी वर्ष",
+        "c": "मासिक चक्र",
+        "d": "कोई समय सीमा नहीं",
+        "explain": "24-अंक सीमा हिजरी वर्ष में गिनी जाती है।"
       },
       "vp-007": {
-        "text": "How many points are assigned for driving a vehicle under the influence (Alcohol/Drugs)?",
+        "text": "नशे (शराब/ड्रग्स) के प्रभाव में वाहन चलाने पर कितने अंक लगते हैं?",
         "a": "12",
         "b": "24",
         "c": "8",
         "d": "6",
-        "explain": "Driving under the influence carries 24 points."
+        "explain": "नशे में वाहन चलाने पर 24 अंक लगते हैं।"
       },
       "vp-008": {
-        "text": "How many points are assigned for drifting?",
+        "text": "ड्रिफ्टिंग पर कितने अंक लगते हैं?",
         "a": "24",
         "b": "12",
         "c": "8",
         "d": "6",
-        "explain": "Drifting carries 24 points."
+        "explain": "ड्रिफ्टिंग पर 24 अंक लगते हैं।"
       },
       "vp-009": {
-        "text": "How many points are assigned for running a red traffic light?",
+        "text": "लाल ट्रैफिक लाइट तोड़ने पर कितने अंक लगते हैं?",
         "a": "12",
         "b": "8",
         "c": "6",
         "d": "4",
-        "explain": "Running a red light carries 12 points."
+        "explain": "लाल लाइट तोड़ने पर 12 अंक लगते हैं।"
       },
       "vp-010": {
-        "text": "How many points are assigned for driving in the opposite direction of traffic?",
+        "text": "ट्रैफिक की विपरीत दिशा में चलाने पर कितने अंक लगते हैं?",
         "a": "12",
         "b": "8",
         "c": "6",
         "d": "4",
-        "explain": "Driving in the opposite direction carries 12 points."
+        "explain": "विपरीत दिशा में चलाने पर 12 अंक लगते हैं।"
       },
       "vp-011": {
-        "text": "How many points are assigned for weaving through traffic on public roads?",
+        "text": "सार्वजनिक सड़कों पर ट्रैफिक के बीच ज़िगज़ैग चलाने पर कितने अंक लगते हैं?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Weaving through traffic carries 8 points."
+        "explain": "ज़िगज़ैग चलाने पर 8 अंक लगते हैं।"
       },
       "vp-012": {
-        "text": "How many points are assigned for not complying with a traffic officer’s manual signal?",
+        "text": "ट्रैफिक अधिकारी के हाथ के संकेत का पालन न करने पर कितने अंक लगते हैं?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Not complying with the officer’s signal carries 8 points."
+        "explain": "हाथ के संकेत का पालन न करने पर 8 अंक लगते हैं।"
       },
       "vp-013": {
-        "text": "How many points are assigned for driving a vehicle without brakes or lights?",
+        "text": "बिना ब्रेक या लाइट के वाहन चलाने पर कितने अंक लगते हैं?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Driving without brakes or lights carries 8 points."
+        "explain": "बिना ब्रेक या लाइट के चलाने पर 8 अंक लगते हैं।"
       },
       "vp-014": {
-        "text": "How many points are assigned for not stopping completely at a stop sign?",
+        "text": "स्टॉप साइन पर पूरी तरह न रुकने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Not stopping at a stop sign carries 6 points."
+        "explain": "स्टॉप साइन पर न रुकने पर 6 अंक लगते हैं।"
       },
       "vp-015": {
-        "text": "Failing to observe right-of-way rules results in how many points?",
+        "text": "राइट-ऑफ-वे नियमों का पालन न करने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Failing to observe right-of-way carries 6 points."
+        "explain": "राइट-ऑफ-वे न मानने पर 6 अंक लगते हैं।"
       },
       "vp-016": {
-        "text": "Exceeding the speed limit by more than 25 km/h results in how many points?",
+        "text": "गति सीमा से 25 किमी/घं से अधिक होने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Speeding more than 25 km/h carries 6 points."
+        "explain": "25 किमी/घं से अधिक गति पर 6 अंक लगते हैं।"
       },
       "vp-017": {
-        "text": "Not yielding to cars inside a roundabout results in how many points?",
+        "text": "राउंडअबाउट में अंदर चल रही कारों को रास्ता न देने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Not yielding in roundabouts carries 6 points."
+        "explain": "राउंडअबाउट में रास्ता न देने पर 6 अंक लगते हैं।"
       },
       "vp-018": {
-        "text": "Overtaking in prohibited areas results in how many points?",
+        "text": "निषिद्ध स्थानों पर ओवरटेक करने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Overtaking in prohibited areas carries 6 points."
+        "explain": "निषिद्ध स्थानों पर ओवरटेक करने पर 6 अंक लगते हैं।"
       },
       "vp-019": {
-        "text": "Stopping on railway tracks results in how many points?",
+        "text": "रेलवे ट्रैक पर रुकने पर कितने अंक लगते हैं?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Stopping on railway tracks carries 6 points."
+        "explain": "रेलवे ट्रैक पर रुकने पर 6 अंक लगते हैं।"
       },
       "vp-020": {
-        "text": "Exceeding the speed limit by up to 25 km/h results in how many points?",
+        "text": "गति सीमा से 25 किमी/घं तक अधिक होने पर कितने अंक लगते हैं?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Speeding up to 25 km/h carries 4 points."
+        "explain": "25 किमी/घं तक अधिक गति पर 4 अंक लगते हैं।"
       },
       "vp-021": {
-        "text": "Driving on lanes not designated for the vehicle results in how many points?",
+        "text": "वाहन के लिए निर्धारित नहीं लेन में चलाने पर कितने अंक लगते हैं?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Driving on non-designated lanes carries 4 points."
+        "explain": "अनिर्धारित लेन में चलाने पर 4 अंक लगते हैं।"
       },
       "vp-022": {
-        "text": "Overtaking school buses while students are boarding or disembarking results in how many points?",
+        "text": "छात्रों के चढ़ने/उतरने के दौरान स्कूल बस को ओवरटेक करने पर कितने अंक लगते हैं?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Overtaking school buses carries 4 points."
+        "explain": "स्कूल बस को ओवरटेक करने पर 4 अंक लगते हैं।"
       },
       "vp-023": {
-        "text": "Not covering the load and cargo during transport results in how many points?",
+        "text": "परिवहन के दौरान माल ढकने में असफल होने पर कितने अंक लगते हैं?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Uncovered load carries 4 points."
+        "explain": "माल न ढकने पर 4 अंक लगते हैं।"
       },
       "vp-024": {
-        "text": "Modifying vehicle structure or body without proper authorization results in how many points?",
+        "text": "बिना अनुमति वाहन के ढांचे/बॉडी में बदलाव करने पर कितने अंक लगते हैं?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Unauthorized modification carries 4 points."
+        "explain": "बिना अनुमति बदलाव पर 4 अंक लगते हैं।"
       },
       "vp-025": {
-        "text": "Not wearing a seatbelt results in how many points?",
+        "text": "सीट बेल्ट न पहनने पर कितने अंक लगते हैं?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Not wearing a seatbelt carries 2 points."
+        "explain": "सीट बेल्ट न पहनने पर 2 अंक लगते हैं।"
       },
       "vp-026": {
-        "text": "Using a hand-held mobile phone while driving results in how many points?",
+        "text": "ड्राइविंग के दौरान हाथ में मोबाइल फोन का उपयोग करने पर कितने अंक लगते हैं?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Using a hand-held mobile phone carries 2 points."
+        "explain": "हाथ में मोबाइल उपयोग पर 2 अंक लगते हैं।"
       },
       "vp-027": {
-        "text": "Not wearing a helmet while riding motorized bikes results in how many points?",
+        "text": "मोटरसाइकिल चलाते समय हेलमेट न पहनने पर कितने अंक लगते हैं?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Not wearing a helmet carries 2 points."
+        "explain": "हेलमेट न पहनने पर 2 अंक लगते हैं।"
       },
       "tf-001": {
-        "text": "In general practice, what is the main purpose of traffic fines?",
-        "a": "To improve road safety and reduce accidents",
-        "b": "To increase vehicle sales",
-        "c": "To replace driving training",
-        "d": "To reward risky driving",
-        "explain": "Fines are intended to encourage safer driving habits."
+        "text": "सामान्य रूप से ट्रैफिक जुर्माने का मुख्य उद्देश्य क्या है?",
+        "a": "सड़क सुरक्षा बढ़ाना और दुर्घटनाएँ कम करना",
+        "b": "वाहनों की बिक्री बढ़ाना",
+        "c": "ड्राइविंग प्रशिक्षण की जगह लेना",
+        "d": "खतरनाक ड्राइविंग को पुरस्कृत करना",
+        "explain": "जुर्माने सुरक्षित ड्राइविंग आदतें बढ़ाने के लिए होते हैं।"
       },
       "tf-002": {
-        "text": "Which type of violation usually carries the highest fine?",
-        "a": "Very serious violations that endanger lives",
-        "b": "Minor parking issues",
-        "c": "Minor paperwork errors",
-        "d": "Temporary weather delays",
-        "explain": "Very serious violations typically carry the highest fines."
+        "text": "किस प्रकार की उल्लंघन पर आमतौर पर सबसे अधिक जुर्माना होता है?",
+        "a": "अत्यंत गंभीर उल्लंघन जो जीवन को खतरे में डालते हैं",
+        "b": "छोटी पार्किंग समस्याएँ",
+        "c": "छोटी कागजी त्रुटियाँ",
+        "d": "अस्थायी मौसम देरी",
+        "explain": "अत्यंत गंभीर उल्लंघन पर आमतौर पर सबसे अधिक जुर्माना होता है।"
       },
       "tf-003": {
-        "text": "Why can fines increase for repeated violations?",
-        "a": "To discourage repeated unsafe behavior",
-        "b": "To reduce road signs",
-        "c": "To shorten driving lessons",
-        "d": "To increase fuel use",
-        "explain": "Repeat violations usually lead to higher penalties to encourage compliance."
+        "text": "बार-बार उल्लंघन करने पर जुर्माने क्यों बढ़ सकते हैं?",
+        "a": "दोहराए जाने वाले असुरक्षित व्यवहार को रोकने के लिए",
+        "b": "सड़क संकेत कम करने के लिए",
+        "c": "ड्राइविंग पाठ कम करने के लिए",
+        "d": "ईंधन उपयोग बढ़ाने के लिए",
+        "explain": "दोहराए उल्लंघनों पर अनुपालन के लिए अधिक दंड होते हैं।"
       },
       "tf-004": {
-        "text": "Are traffic fines intended to improve road safety?",
-        "a": "Yes, they encourage safer driving",
-        "b": "No, they are only for revenue",
-        "c": "No, they replace driver training",
-        "d": "No, they are optional",
-        "explain": "Fines are designed to promote safer driving."
+        "text": "क्या ट्रैफिक जुर्माने सड़क सुरक्षा सुधारने के लिए होते हैं?",
+        "a": "हाँ, वे सुरक्षित ड्राइविंग को प्रोत्साहित करते हैं",
+        "b": "नहीं, वे केवल राजस्व के लिए हैं",
+        "c": "नहीं, वे ड्राइवर प्रशिक्षण की जगह हैं",
+        "d": "नहीं, वे वैकल्पिक हैं",
+        "explain": "जुर्माने सुरक्षित ड्राइविंग को बढ़ावा देने के लिए बनाए जाते हैं।"
       },
       "tf-005": {
-        "text": "Minor traffic violations usually result in:",
-        "a": "Low fines",
-        "b": "Jail time",
-        "c": "License cancellation",
-        "d": "No action",
-        "explain": "Minor violations generally carry lower fines."
+        "text": "छोटी ट्रैफिक उल्लंघन आमतौर पर परिणाम देते हैं:",
+        "a": "कम जुर्माने",
+        "b": "जेल",
+        "c": "लाइसेंस रद्द",
+        "d": "कोई कार्रवाई नहीं",
+        "explain": "छोटे उल्लंघन आमतौर पर कम जुर्माने के साथ होते हैं।"
       },
       "tf-006": {
-        "text": "In practice, not wearing a seatbelt usually results in:",
-        "a": "A moderate fine",
-        "b": "No penalty",
-        "c": "Vehicle replacement",
-        "d": "License cancellation",
-        "explain": "Seatbelt violations are typically treated as moderate."
+        "text": "व्यवहार में सीट बेल्ट न पहनने पर आमतौर पर होता है:",
+        "a": "मध्यम जुर्माना",
+        "b": "कोई दंड नहीं",
+        "c": "वाहन बदलना",
+        "d": "लाइसेंस रद्द",
+        "explain": "सीट बेल्ट उल्लंघन को आमतौर पर मध्यम श्रेणी माना जाता है।"
       },
       "tf-007": {
-        "text": "Using a hand-held mobile phone while driving usually results in:",
-        "a": "A moderate to high fine",
-        "b": "No penalty",
-        "c": "Warning only",
-        "d": "Vehicle replacement",
-        "explain": "Phone use while driving is treated as more serious."
+        "text": "ड्राइविंग के दौरान हाथ में मोबाइल फोन इस्तेमाल करने पर आमतौर पर होता है:",
+        "a": "मध्यम से उच्च जुर्माना",
+        "b": "कोई दंड नहीं",
+        "c": "केवल चेतावनी",
+        "d": "वाहन बदलना",
+        "explain": "ड्राइविंग के दौरान फोन उपयोग अधिक गंभीर माना जाता है।"
       },
       "tf-008": {
-        "text": "Serious violations like running a red light are usually punished with:",
-        "a": "Higher fines",
-        "b": "Verbal warning only",
-        "c": "Fuel penalty",
-        "d": "No consequence",
-        "explain": "Dangerous behavior usually carries higher fines."
+        "text": "लाल बत्ती तोड़ने जैसे गंभीर उल्लंघन आमतौर पर दंडित होते हैं:",
+        "a": "उच्च जुर्माने",
+        "b": "केवल मौखिक चेतावनी",
+        "c": "ईंधन दंड",
+        "d": "कोई परिणाम नहीं",
+        "explain": "खतरनाक व्यवहार आमतौर पर उच्च जुर्मानों के साथ होता है।"
       },
       "tf-009": {
-        "text": "Light speeding is generally categorized as:",
-        "a": "A moderate violation",
-        "b": "A very serious violation",
-        "c": "A minor parking issue",
-        "d": "No violation",
-        "explain": "Light speeding is typically treated as moderate."
+        "text": "हल्का स्पीडिंग आमतौर पर किस श्रेणी में आता है:",
+        "a": "मध्यम उल्लंघन",
+        "b": "बहुत गंभीर उल्लंघन",
+        "c": "छोटी पार्किंग समस्या",
+        "d": "कोई उल्लंघन नहीं",
+        "explain": "हल्का स्पीडिंग आमतौर पर मध्यम माना जाता है।"
       },
       "tf-010": {
-        "text": "Parking issues are generally considered:",
-        "a": "Minor violations with lower fines",
-        "b": "Very serious violations",
-        "c": "Always criminal offenses",
-        "d": "No violation",
-        "explain": "Parking issues are usually categorized as minor."
+        "text": "पार्किंग समस्याएँ आमतौर पर मानी जाती हैं:",
+        "a": "कम जुर्माने वाले छोटे उल्लंघन",
+        "b": "बहुत गंभीर उल्लंघन",
+        "c": "हमेशा आपराधिक अपराध",
+        "d": "कोई उल्लंघन नहीं",
+        "explain": "पार्किंग समस्याएँ आमतौर पर छोटी श्रेणी में आती हैं।"
       },
       "tf-011": {
-        "text": "Excessive speeding is generally considered:",
-        "a": "A serious violation with higher fines",
-        "b": "A minor violation",
-        "c": "No violation",
-        "d": "Only a warning",
-        "explain": "Excessive speeding is treated as serious."
+        "text": "अत्यधिक गति आमतौर पर मानी जाती है:",
+        "a": "उच्च जुर्माने वाला गंभीर उल्लंघन",
+        "b": "छोटा उल्लंघन",
+        "c": "कोई उल्लंघन नहीं",
+        "d": "केवल चेतावनी",
+        "explain": "अत्यधिक गति को गंभीर माना जाता है।"
       },
       "tf-012": {
-        "text": "Very serious violations usually lead to:",
-        "a": "Heavy fines and additional penalties",
-        "b": "No action",
-        "c": "Free training only",
-        "d": "Vehicle upgrades",
-        "explain": "Very serious violations can carry heavier fines and penalties."
+        "text": "बहुत गंभीर उल्लंघन आमतौर पर होते हैं:",
+        "a": "भारी जुर्माने और अतिरिक्त दंड",
+        "b": "कोई कार्रवाई नहीं",
+        "c": "केवल मुफ्त प्रशिक्षण",
+        "d": "वाहन अपग्रेड",
+        "explain": "बहुत गंभीर उल्लंघनों में भारी जुर्माने और अतिरिक्त दंड हो सकते हैं।"
       }
     }
   },
   "exam": {
-    "title": "Practice Test",
-    "description": "Theory practice session",
+    "title": "प्रैक्टिस टेस्ट",
+    "description": "थ्योरी अभ्यास सत्र",
     "duration": "अवधि",
     "minutes": "मिनट",
     "questions": "प्रश्न",
     "passingScore": "लक्ष्य स्कोर",
-    "startExam": "Start Practice",
-    "endExam": "End Practice",
-    "confirmEnd": "Are you sure you want to end the practice session?",
+    "startExam": "प्रैक्टिस शुरू करें",
+    "endExam": "प्रैक्टिस समाप्त करें",
+    "confirmEnd": "क्या आप प्रैक्टिस सत्र समाप्त करना चाहते हैं?",
     "timeUp": "समय समाप्त!",
-    "review": "उत्तर समीक्षा",
-    "selectMode": "Select Practice Mode",
-    "selectModeDesc": "Choose the practice format that suits your preparation level",
+    "review": "उत्तर देखें",
+    "selectMode": "प्रैक्टिस मोड चुनें",
+    "selectModeDesc": "अपनी तैयारी के अनुसार मोड चुनें",
     "modes": {
       "quick": "त्वरित",
       "standard": "मानक",
@@ -836,76 +864,117 @@
     "passThreshold": "लक्ष्य",
     "enableTimer": "टाइमर सक्षम करें",
     "timerDesc": "टाइमर के साथ अभ्यास करें",
-    "submit": "अभ्यास जमा करें",
-    "results": "Practice Results",
-    "passed": "Great job! Practice complete.",
-    "failed": "Keep Practicing!",
+    "submit": "प्रैक्टिस जमा करें",
+    "results": "प्रैक्टिस परिणाम",
+    "passed": "शानदार! प्रैक्टिस पूरी हुई।",
+    "failed": "अभ्यास जारी रखें!",
     "correctAnswers": "सही उत्तर",
-    "reviewAnswers": "उत्तर समीक्षा",
-    "tryAgain": "फिर से कोशिश करें",
+    "reviewAnswers": "उत्तर देखें",
+    "tryAgain": "फिर से प्रयास करें",
     "backToResults": "वापस",
-    "explanation": "व्याख्या"
+    "explanation": "व्याख्या",
+    "modeTitle": "{{mode}} {{exam}}",
+    "questionsCount_one": "{{value}} प्रश्न",
+    "questionsCount_other": "{{value}} प्रश्न",
+    "minutesCount_one": "{{value}} मिनट",
+    "minutesCount_other": "{{value}} मिनट",
+    "passThresholdLabel": "लक्ष्य: {{value}}",
+    "progressCount": "{{current}} / {{total}}",
+    "scoreSummary": "{{correct}} / {{total}} सही उत्तर",
+    "topicBreakdown": "विषय विभाजन",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})",
+    "reviewProgress": "समीक्षा: {{current}} / {{total}}"
   },
   "practice": {
-    "byMode": "मोड द्वारा",
-    "byCategory": "श्रेणी द्वारा",
+    "byMode": "मोड के अनुसार",
+    "byCategory": "श्रेणी के अनुसार",
     "modes": {
       "all": "सभी प्रश्न",
-      "allDesc": "पूर्ण प्रश्न बैंक से अभ्यास करें",
+      "allDesc": "पूरे प्रश्न बैंक से अभ्यास करें",
       "mistakes": "मेरी गलतियां",
-      "mistakesDesc": "गलत उत्तर वाले प्रश्नों की समीक्षा करें",
+      "mistakesDesc": "जो प्रश्न गलत हुए, उन्हें देखें",
       "weak": "कमज़ोर क्षेत्र",
       "weakDesc": "कम सटीकता वाली श्रेणियों पर ध्यान दें",
       "review": "देय समीक्षाएं",
-      "reviewDesc": "अंतराल पुनरावृत्ति समीक्षा कतार",
+      "reviewDesc": "स्पेस्ड रिपिटिशन रिव्यू कतार",
       "daily": "दैनिक अभ्यास",
       "dailyDesc": "त्वरित दैनिक अभ्यास सेट",
-      "quick": "????? 10",
-      "quickDesc": "10 ?????? ?? ???? ?????????"
+      "quick": "क्विक 10",
+      "quickDesc": "10 प्रश्नों का तेज़ मिश्रण"
     },
-    "all": "सभी",
+    "all": "सब",
     "accuracy": "सटीकता",
-    "learningStats": "Learning Stats",
-    "mistakeCount": "Mistakes",
-    "weakAreas": "Weak Areas",
-    "dueReviews": "Due Reviews",
-    "startDaily": "Start Daily",
-    "reviewMistakes": "Review Mistakes",
-    "startQuick": "????? ???? ????"
+    "learningStats": "सीखने के आँकड़े",
+    "mistakeCount": "गलतियाँ",
+    "weakAreas": "कमज़ोर क्षेत्र",
+    "dueReviews": "बकाया समीक्षा",
+    "startDaily": "डेली शुरू करें",
+    "reviewMistakes": "गलतियाँ देखें",
+    "startQuick": "क्विक शुरू करें",
+    "startDailyCount": "डेली शुरू करें ({{value}})",
+    "startQuickCount": "क्विक शुरू करें ({{value}})",
+    "allCount": "सब ({{value}})",
+    "accuracyLabel": "सटीकता: {{value}}",
+    "progressCount": "{{current}} / {{total}}"
   },
   "results": {
-    "title": "Results",
-    "score": "Your Score",
-    "passed": "Great job! Practice complete.",
-    "failed": "Keep Practicing!",
+    "title": "परिणाम",
+    "score": "आपका स्कोर",
+    "passed": "शानदार! प्रैक्टिस पूरी हुई।",
+    "failed": "अभ्यास जारी रखें!",
     "correct": "सही उत्तर",
     "incorrect": "गलत उत्तर",
     "accuracy": "सटीकता",
     "time": "लिया गया समय",
-    "tryAgain": "फिर से कोशिश करें",
+    "tryAgain": "फिर से प्रयास करें",
     "reviewAnswers": "उत्तर समीक्षा",
-    "backHome": "Back to Home"
+    "backHome": "होम पर वापस जाएँ",
+    "scoreSummary": "{{correct}} / {{total}} सही",
+    "topicBreakdown": "विषय विभाजन",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
   "learn": {
-    "title": "Learn Driving Theory",
+    "title": "ड्राइविंग थ्योरी सीखें",
     "lessons": "पाठ",
     "progress": "प्रगति",
     "continue": "सीखना जारी रखें",
     "completed": "पूर्ण",
+    "noResults": "कोई पाठ नहीं मिला",
+    "lessonsCount_one": "{{value}} पाठ",
+    "lessonsCount_other": "{{value}} पाठ",
+    "categoriesCount_one": "{{value}} श्रेणी",
+    "categoriesCount_other": "{{value}} श्रेणियाँ",
+    "studyPlan": {
+      "title": "अध्ययन योजना",
+      "items": {
+        "reviewSigns": "ट्रैफ़िक संकेत दोहराएँ",
+        "readSafety": "सुरक्षा नियम पढ़ें",
+        "practiceMarkings": "सड़क की मार्किंग्स का अभ्यास करें",
+        "practiceTest": "एक अभ्यास टेस्ट दें"
+      }
+    },
     "topics": {
       "speedLimits": "गति सीमाएं",
       "rightOfWay": "मार्ग का अधिकार",
       "signals": "ट्रैफ़िक सिग्नल",
       "markings": "सड़क चिह्न",
       "safety": "सुरक्षा नियम"
-    }
+    },
+    "relatedSignsTitle": "??????? ??????? ?????",
+    "viewRelatedSigns": "??? ??????? ????? ?????",
+    "relatedViolationsTitle": "??????? ??????? ?? ???",
+    "viewViolationSystem": "????? ????? ?????? ?????"
   },
   "favorites": {
     "title": "पसंदीदा",
-    "empty": "No favorites yet",
-    "emptyDesc": "Save questions and signs to review later",
+    "empty": "अभी कोई पसंदीदा नहीं",
+    "emptyDesc": "बाद में समीक्षा के लिए प्रश्न और संकेत सहेजें",
     "questions": "प्रश्न",
-    "signs": "साइन"
+    "signs": "साइन",
+    "questionsCount_one": "{{value}} प्रश्न",
+    "questionsCount_other": "{{value}} प्रश्न",
+    "signsCount_one": "{{value}} संकेत",
+    "signsCount_other": "{{value}} संकेत"
   },
   "stats": {
     "title": "आपके आंकड़े",
@@ -913,14 +982,30 @@
     "bestScore": "सर्वश्रेष्ठ स्कोर",
     "accuracy": "औसत सटीकता",
     "streak": "वर्तमान स्ट्रीक",
+    "streakCount_one": "{{value}} दिन",
+    "streakCount_other": "{{value}} दिन",
     "days": "दिन",
-    "noStats": "No statistics yet",
-    "noStatsDesc": "Complete quizzes to see your progress"
+    "noStats": "अभी कोई आँकड़े नहीं",
+    "noStatsDesc": "प्रगति देखने के लिए क्विज़ पूरा करें"
   },
   "settings": {
     "title": "सेटिंग्स",
-    "language": "Language",
-    "theme": "Theme",
+    "language": "भाषा",
+    "theme": "थीम",
+    "feedback": "फ़ीडबैक",
+    "soundDesc": "सही/गलत उत्तरों पर ध्वनि चलाएँ",
+    "vibrationDesc": "उत्तर पर हैप्टिक फीडबैक",
+    "versionLabel": "संस्करण {{version}}",
+    "aboutDesc": "ड्राइविंग थ्योरी सीखने के लिए शैक्षिक ऐप। सारा कंटेंट ऑफलाइन काम करता है।",
+    "disclaimer": "अस्वीकरण: यह ऐप किसी सरकारी संस्था से संबद्ध नहीं है और केवल शैक्षिक अभ्यास के लिए है।",
+    "links": {
+      "trafficFinesTitle": "ट्रैफिक जुर्माने और दंड",
+      "trafficFinesDesc": "शैक्षणिक मार्गदर्शिका",
+      "violationPointsTitle": "ट्रैफिक उल्लंघन अंक",
+      "violationPointsDesc": "शैक्षणिक संदर्भ",
+      "creditsTitle": "श्रेय और संदर्भ",
+      "creditsDesc": "सामग्री स्रोत और लाइसेंस"
+    },
     "themes": {
       "light": "लाइट",
       "dark": "डार्क",
@@ -932,7 +1017,7 @@
     "restorePurchase": "खरीदारी पुनर्स्थापित करें",
     "privacy": "गोपनीयता नीति",
     "terms": "सेवा की शर्तें",
-    "about": "About",
+    "about": "ऐप के बारे में",
     "version": "संस्करण"
   },
   "achievements": {
@@ -1028,7 +1113,7 @@
     "empty": "इस श्रेणी में कोई उपलब्धियां नहीं",
     "dailyGoal": "दैनिक लक्ष्य",
     "dailyGoalDesc": "आज {{count}} प्रश्नों के उत्तर दें",
-    "dailyGoalComplete": "दैनिक लक्ष्य पूर्ण!",
+    "dailyGoalComplete": "दैनिक लक्ष्य पूरा हुआ!",
     "categories": {
       "all": "सभी",
       "progress": "प्रगति",
@@ -1048,24 +1133,45 @@
       "master": "मास्टर",
       "champion": "चैंपियन"
     },
-    "badgesLabel": "Badges"
+    "badgesLabel": "बैज"
   },
   "violationPoints": {
-    "title": "ट्रैफिक उल्लंघन अंक प्रणाली (शैक्षिक)",
-    "intro": "अंक प्रणाली उन चालकों को दंडित करने के लिए बनाई गई है जो ट्रैफिक नियमों का उल्लंघन करते हैं। प्रत्येक उल्लंघन के लिए निर्धारित अंक होते हैं। जैसे-जैसे अंक बढ़ते हैं, दंड अधिक गंभीर होते जाते हैं। इसका उद्देश्य सुरक्षित ड्राइविंग को बढ़ावा देना और दुर्घटनाओं को कम करना है।",
-    "impactTitle": "24 अंक (हिजरी वर्ष) तक पहुंचने का प्रभाव:",
-    "penalties": {
-      "first": "पहली बार 24 अंक: 3 महीने के लिए लाइसेंस निलंबन।",
-      "second": "दूसरी बार 24 अंक: 6 महीने के लिए लाइसेंस निलंबन।",
-      "third": "तीसरी बार 24 अंक: 1 वर्ष के लिए लाइसेंस निलंबन।",
-      "fourth": "चौथी बार 24 अंक: ड्राइविंग लाइसेंस स्थायी रूप से रद्द।"
+    "title": "ट्रैफिक उल्लंघन अंक प्रणाली",
+    "subtitle": "सऊदी ड्राइवरों के लिए शैक्षिक गाइड",
+    "resetNote": "अंक हर हिजरी वर्ष रीसेट होते हैं",
+    "summaryTitle": "मुख्य नियम सारांश",
+    "summaryLine1": "ट्रैफिक उल्लंघनों पर अंक जोड़े जाते हैं।",
+    "summaryLine2": "24 अंक होने पर लाइसेंस दंड होता है।",
+    "summaryLine3": "यह प्रणाली सुरक्षित ड्राइविंग को बढ़ावा देती है।",
+    "impactTitle": "24-अंक परिणाम टाइमलाइन",
+    "consequences": {
+      "first": {
+        "step": "पहली बार (24 अंक)",
+        "text": "3 महीने के लिए लाइसेंस निलंबन"
+      },
+      "second": {
+        "step": "दूसरी बार (24 अंक)",
+        "text": "6 महीने के लिए लाइसेंस निलंबन"
+      },
+      "third": {
+        "step": "तीसरी बार (24 अंक)",
+        "text": "1 वर्ष के लिए लाइसेंस निलंबन"
+      },
+      "fourth": {
+        "step": "चौथी बार (24 अंक)",
+        "text": "लाइसेंस का स्थायी निरस्तीकरण"
+      }
     },
-    "closing": "यह प्रणाली चालकों को नियमों का पालन करने और जिम्मेदारी से वाहन चलाने के लिए प्रेरित करती है। सुरक्षित व्यवहार सभी सड़क उपयोगकर्ताओं की रक्षा करता है।",
-    "table": {
-      "number": "क्रमांक",
-      "violation": "उल्लंघन",
-      "points": "अंक"
-    }
+    "violationsTitle": "उल्लंघन",
+    "severeTitle": "गंभीर उल्लंघन (12–24 अंक)",
+    "majorTitle": "मुख्य उल्लंघन (6–8 अंक)",
+    "minorTitle": "छोटे उल्लंघन (2–4 अंक)",
+    "pointsLabel": "{{value}} अंक",
+    "explainLine": "यह उल्लंघन प्रतिक्रिया समय घटाता है और सड़क पर जोखिम बढ़ाता है।",
+    "whyDangerousLine": "क्यों खतरनाक: यह चालक और पैदल यात्रियों के लिए टकराव जोखिम बढ़ाता है।",
+    "tipBody": "परीक्षा टिप: संकेतों का पालन करें और हमेशा सुरक्षित गति रखें।",
+    "educationalNote": "अंक मान जानने से आप गंभीर दंड से बच सकते हैं और सुरक्षित ड्राइव कर सकते हैं।",
+    "previewDescription": "{{violation}} ???? ??????? ??? ??? ???? ???? ???"
   },
   "violations": {
     "v01": "शराब/ड्रग्स के प्रभाव में वाहन चलाना",
@@ -1110,33 +1216,81 @@
     "signUnavailable": "संकेत की छवि उपलब्ध नहीं है"
   },
   "common": {
-    "loading": "Loading...",
-    "error": "Something went wrong",
-    "retry": "Retry",
+    "loading": "लोड हो रहा है...",
+    "error": "कुछ गलत हो गया",
+    "reload": "रीलोड करें",
+    "retry": "फिर से कोशिश करें",
     "cancel": "रद्द करें",
     "confirm": "पुष्टि करें",
     "save": "सहेजें",
-    "back": "Back",
-    "close": "Close",
+    "back": "वापस",
+    "close": "बंद करें",
     "yes": "हां",
     "no": "नहीं",
     "on": "चालू",
     "off": "बंद",
     "home": "होम",
-    "next": "Next",
-    "previous": "Previous",
+    "next": "अगला",
+    "previous": "पिछला",
     "correct": "सही",
-    "incorrect": "गलत"
+    "incorrect": "गलत",
+    "more": "अधिक",
+    "morePages": "अधिक पेज",
+    "previousSlide": "पिछली स्लाइड",
+    "nextSlide": "अगली स्लाइड",
+    "toggleSidebar": "साइडबार टॉगल करें",
+    "breadcrumb": "ब्रेडक्रंब",
+    "goToPreviousPage": "पिछले पेज पर जाएँ",
+    "goToNextPage": "अगले पेज पर जाएँ",
+    "pagination": "पृष्ठांकन",
+    "carousel": "कैरोसेल",
+    "xp": "एक्सपी",
+    "xpValue": "{{value}} एक्सपी"
   },
   "pwa": {
-    "installTitle": "Install App",
-    "installDescription": "Install for offline access and a better experience",
-    "install": "Install",
-    "notNow": "Not now",
-    "offline": "You are offline. Some features may be limited."
+    "installTitle": "ऐप इंस्टॉल करें",
+    "installDescription": "ऑफलाइन एक्सेस और बेहतर अनुभव के लिए इंस्टॉल करें",
+    "install": "इंस्टॉल करें",
+    "notNow": "अभी नहीं",
+    "offline": "आप ऑफलाइन हैं। कुछ फीचर्स सीमित हो सकते हैं।"
   },
   "flashcards": {
-    "tapToFlip": "Tap to flip",
-    "tapToFlipBack": "Tap to flip back"
+    "title": "फ़्लैशकार्ड्स",
+    "sessionComplete": "सेशन पूरा!",
+    "accuracy": "सटीकता",
+    "correct": "सही",
+    "incorrect": "गलत",
+    "overallProgress": "कुल प्रगति",
+    "mastered": "मास्टर किया",
+    "reviewing": "समीक्षा",
+    "learning": "सीख रहे हैं",
+    "practiceMore": "और अभ्यास करें",
+    "allCaughtUp": "सब पूरा हो गया!",
+    "allCaughtUpDesc": "आपने सभी देय कार्ड देख लिए हैं। अधिक अभ्यास के लिए बाद में आएँ।",
+    "resetProgress": "प्रगति रीसेट करें",
+    "again": "फिर से",
+    "gotIt": "समझ गया",
+    "tapToFlip": "पलटने के लिए टैप करें",
+    "tapToFlipBack": "वापस पलटने के लिए टैप करें"
+  },
+  "notFound": {
+    "message": "अरे! पेज नहीं मिला",
+    "backHome": "होम पर लौटें"
+  },
+  "credits": {
+    "title": "श्रेय और श्रेयांकन",
+    "signsTitle": "ट्रैफिक संकेत स्रोत",
+    "signsLine1": "इस ऐप में प्रयुक्त ट्रैफिक संकेत चित्र Wikimedia Commons से लिए गए हैं।",
+    "signsLine2": "ये चित्र Creative Commons लाइसेंस के तहत हैं और केवल शैक्षिक उपयोग के लिए हैं।",
+    "sourceLabel": "स्रोत:",
+    "sourceName": "Wikimedia Commons – Saudi Arabia Road Signs",
+    "signsLine3": "कुछ चित्रों पर Wikimedia Commons के अनुसार अलग लाइसेंस लागू हो सकते हैं।",
+    "signsLine4": "किसी सरकारी प्राधिकरण से कोई संबद्धता नहीं है।",
+    "disclaimerLabel": "अस्वीकरण:",
+    "disclaimerBody": "यह ऐप किसी सरकारी संस्था से संबद्ध नहीं है और केवल शैक्षिक अभ्यास के लिए है।"
+  },
+  "index": {
+    "title": "आपके खाली ऐप में स्वागत है",
+    "subtitle": "अपना शानदार प्रोजेक्ट यहीं से बनाना शुरू करें!"
   }
 }

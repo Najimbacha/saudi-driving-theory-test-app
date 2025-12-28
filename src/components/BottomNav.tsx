@@ -9,11 +9,11 @@ const BottomNav: React.FC = () => {
   const location = useLocation();
 
   const navItems = [
-    { to: '/', icon: Home, label: t('nav.home', 'Home') },
-    { to: '/signs', icon: BookOpen, label: t('nav.signs', 'Signs') },
-    { to: '/practice', icon: FileQuestion, label: t('nav.practice', 'Practice') },
-    { to: '/exam', icon: GraduationCap, label: t('nav.exam', 'Exam') },
-    { to: '/settings', icon: Settings, label: t('nav.settings', 'Settings') },
+    { to: '/', icon: Home, label: t('nav.home') },
+    { to: '/signs', icon: BookOpen, label: t('nav.signs') },
+    { to: '/practice', icon: FileQuestion, label: t('nav.practice') },
+    { to: '/exam', icon: GraduationCap, label: t('nav.exam') },
+    { to: '/settings', icon: Settings, label: t('nav.settings') },
   ];
 
   return (

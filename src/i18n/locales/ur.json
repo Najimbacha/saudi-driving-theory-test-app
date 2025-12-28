@@ -41,7 +41,34 @@
     "violationPoints": "ٹریفک خلاف ورزی پوائنٹس",
     "violationPointsDesc": "پوائنٹس سسٹم سیکھیں",
     "trafficFines": "ٹریفک جرمانے اور سزائیں",
-    "trafficFinesDesc": "جرمانوں کی بنیادی رہنمائی"
+    "trafficFinesDesc": "جرمانوں کی بنیادی رہنمائی",
+    "quickNav": {
+      "signs": "نشانیاں",
+      "rules": "قواعد",
+      "quiz": "کوئز",
+      "points": "پوائنٹس"
+    },
+    "continueLearning": {
+      "title": "سیکھنا جاری رکھیں",
+      "lessonLabel": "سبق: {{lesson}}",
+      "progressLabel": "پیش رفت: {{value}}٪",
+      "cta": "جاری رکھیں"
+    },
+    "mission": {
+      "title": "آج کی مشن",
+      "items": {
+        "answer": "✓ 10 مشقی سوالات حل کریں",
+        "earn": "✓ 20 ایکس پی حاصل کریں",
+        "improve": "✓ امتحان کی تیاری بہتر کریں"
+      },
+      "time": "~5 منٹ",
+      "cta": "مشن شروع کریں"
+    },
+    "xpStrip": {
+      "xpLabel": "{{xp}} ایکس پی",
+      "streakLabel_one": "سلسلہ: {{value}} دن",
+      "streakLabel_other": "سلسلہ: {{value}} دن"
+    }
   },
   "signs": {
     "title": "ٹریفک نشانیاں",
@@ -87,7 +114,8 @@
       "signals": "سگنلز",
       "markings": "سڑک کی نشانیاں",
       "violation_points": "ٹریفک خلاف ورزی پوائنٹس (پریکٹس)",
-      "traffic_fines": "ٹریفک جرمانے (پریکٹس)"
+      "traffic_fines": "ٹریفک جرمانے (پریکٹس)",
+      "unknown": "دیگر"
     },
     "start": "شروع کریں",
     "question": "سوال",
@@ -364,12 +392,12 @@
         "explain": "بلائنڈ سپاٹ آپ کی گاڑی کے ارد گرد وہ جگہ ہے جو آئینوں میں نظر نہیں آتی۔ ہمیشہ سر گھما کر چیک کریں۔"
       },
       "q34": {
-        "text": "لین میں 'BUS' لکھا ہونے کا کیا مطلب ہے؟",
-        "a": "آگے بس اسٹاپ",
+        "text": "لین میں 'بس' لکھا ہونے کا کیا مطلب ہے؟",
+        "a": "بس اسٹاپ آگے ہے",
         "b": "صرف بسوں کے لیے مخصوص لین",
-        "c": "بسوں کو ترجیح ہے",
+        "c": "بسوں کو ترجیح حاصل ہے",
         "d": "اسکول زون",
-        "explain": "لین پر BUS کا مطلب ہے کہ یہ آپریٹنگ اوقات میں صرف بسوں کے لیے مخصوص ہے۔"
+        "explain": "لین پر بس لکھا ہونے کا مطلب ہے کہ یہ آپریٹنگ اوقات میں صرف بسوں کے لیے مخصوص ہے۔"
       },
       "q35": {
         "text": "بچوں کی موجودگی میں اسکول زون میں عام رفتار کی حد کیا ہے؟",
@@ -580,7 +608,7 @@
         "explain": "اس خلاف ورزی پر 12 پوائنٹس ہوتے ہیں۔"
       },
       "vp-011": {
-        "text": "عوامی سڑکوں پر ٹریفک کے درمیان سے zigzag چلنا پر کتنے پوائنٹس مقرر ہیں؟",
+        "text": "عوامی سڑکوں پر ٹریفک کے درمیان سے زگ زیگ چلنا پر کتنے پوائنٹس مقرر ہیں؟",
         "a": "8 پوائنٹس",
         "b": "6 پوائنٹس",
         "c": "4 پوائنٹس",
@@ -716,100 +744,100 @@
         "explain": "اس خلاف ورزی پر 2 پوائنٹس ہوتے ہیں۔"
       },
       "tf-001": {
-        "text": "In general practice, what is the main purpose of traffic fines?",
-        "a": "To improve road safety and reduce accidents",
-        "b": "To increase vehicle sales",
-        "c": "To replace driving training",
-        "d": "To reward risky driving",
-        "explain": "Fines are intended to encourage safer driving habits."
+        "text": "عمومی طور پر ٹریفک جرمانوں کا بنیادی مقصد کیا ہے؟",
+        "a": "سڑک کی حفاظت بہتر بنانا اور حادثات کم کرنا",
+        "b": "گاڑیوں کی فروخت بڑھانا",
+        "c": "ڈرائیونگ ٹریننگ کی جگہ لینا",
+        "d": "خطرناک ڈرائیونگ کی حوصلہ افزائی کرنا",
+        "explain": "جرمانوں کا مقصد محفوظ ڈرائیونگ عادات کو فروغ دینا ہے۔"
       },
       "tf-002": {
-        "text": "Which type of violation usually carries the highest fine?",
-        "a": "Very serious violations that endanger lives",
-        "b": "Minor parking issues",
-        "c": "Minor paperwork errors",
-        "d": "Temporary weather delays",
-        "explain": "Very serious violations typically carry the highest fines."
+        "text": "کون سی قسم کی خلاف ورزی عام طور پر سب سے زیادہ جرمانہ رکھتی ہے؟",
+        "a": "انتہائی سنگین خلاف ورزیاں جو جانوں کو خطرے میں ڈالتی ہیں",
+        "b": "معمولی پارکنگ مسائل",
+        "c": "معمولی کاغذی غلطیاں",
+        "d": "عارضی موسمی تاخیر",
+        "explain": "انتہائی سنگین خلاف ورزیوں پر عموماً سب سے زیادہ جرمانہ ہوتا ہے۔"
       },
       "tf-003": {
-        "text": "Why can fines increase for repeated violations?",
-        "a": "To discourage repeated unsafe behavior",
-        "b": "To reduce road signs",
-        "c": "To shorten driving lessons",
-        "d": "To increase fuel use",
-        "explain": "Repeat violations usually lead to higher penalties to encourage compliance."
+        "text": "بار بار خلاف ورزی پر جرمانے کیوں بڑھ سکتے ہیں؟",
+        "a": "بار بار غیر محفوظ رویہ روکنے کے لیے",
+        "b": "سڑک کے نشانات کم کرنے کے لیے",
+        "c": "ڈرائیونگ کے اسباق کم کرنے کے لیے",
+        "d": "ایندھن کا استعمال بڑھانے کے لیے",
+        "explain": "دہرائی جانے والی خلاف ورزیوں پر عموماً زیادہ سزا دی جاتی ہے تاکہ پابندی بڑھے۔"
       },
       "tf-004": {
-        "text": "Are traffic fines intended to improve road safety?",
-        "a": "Yes, they encourage safer driving",
-        "b": "No, they are only for revenue",
-        "c": "No, they replace driver training",
-        "d": "No, they are optional",
-        "explain": "Fines are designed to promote safer driving."
+        "text": "کیا ٹریفک جرمانے سڑک کی حفاظت بہتر بنانے کے لیے ہوتے ہیں؟",
+        "a": "ہاں، یہ محفوظ ڈرائیونگ کی حوصلہ افزائی کرتے ہیں",
+        "b": "نہیں، یہ صرف آمدنی کے لیے ہیں",
+        "c": "نہیں، یہ ڈرائیور ٹریننگ کی جگہ ہیں",
+        "d": "نہیں، یہ اختیاری ہیں",
+        "explain": "جرمانے محفوظ ڈرائیونگ کو فروغ دینے کے لیے بنائے جاتے ہیں۔"
       },
       "tf-005": {
-        "text": "Minor traffic violations usually result in:",
-        "a": "Low fines",
-        "b": "Jail time",
-        "c": "License cancellation",
-        "d": "No action",
-        "explain": "Minor violations generally carry lower fines."
+        "text": "معمولی ٹریفک خلاف ورزیوں کا نتیجہ عموماً ہوتا ہے:",
+        "a": "کم جرمانے",
+        "b": "قید",
+        "c": "لائسنس منسوخی",
+        "d": "کوئی کارروائی نہیں",
+        "explain": "معمولی خلاف ورزیوں پر عموماً کم جرمانہ ہوتا ہے۔"
       },
       "tf-006": {
-        "text": "In practice, not wearing a seatbelt usually results in:",
-        "a": "A moderate fine",
-        "b": "No penalty",
-        "c": "Vehicle replacement",
-        "d": "License cancellation",
-        "explain": "Seatbelt violations are typically treated as moderate."
+        "text": "عملی طور پر سیٹ بیلٹ نہ پہننے پر عموماً ہوتا ہے:",
+        "a": "درمیانہ جرمانہ",
+        "b": "کوئی سزا نہیں",
+        "c": "گاڑی کی تبدیلی",
+        "d": "لائسنس منسوخی",
+        "explain": "سیٹ بیلٹ کی خلاف ورزی عام طور پر درمیانی درجے میں شمار ہوتی ہے۔"
       },
       "tf-007": {
-        "text": "Using a hand-held mobile phone while driving usually results in:",
-        "a": "A moderate to high fine",
-        "b": "No penalty",
-        "c": "Warning only",
-        "d": "Vehicle replacement",
-        "explain": "Phone use while driving is treated as more serious."
+        "text": "ڈرائیونگ کے دوران ہاتھ میں موبائل فون استعمال کرنے پر عموماً ہوتا ہے:",
+        "a": "درمیانہ سے زیادہ جرمانہ",
+        "b": "کوئی سزا نہیں",
+        "c": "صرف وارننگ",
+        "d": "گاڑی کی تبدیلی",
+        "explain": "ڈرائیونگ کے دوران فون استعمال کرنا زیادہ سنگین سمجھا جاتا ہے۔"
       },
       "tf-008": {
-        "text": "Serious violations like running a red light are usually punished with:",
-        "a": "Higher fines",
-        "b": "Verbal warning only",
-        "c": "Fuel penalty",
-        "d": "No consequence",
-        "explain": "Dangerous behavior usually carries higher fines."
+        "text": "سنگین خلاف ورزیاں جیسے سرخ سگنل توڑنا عموماً کس سزا کے ساتھ ہوتی ہیں:",
+        "a": "زیادہ جرمانے",
+        "b": "صرف زبانی تنبیہ",
+        "c": "ایندھن کی سزا",
+        "d": "کوئی نتیجہ نہیں",
+        "explain": "خطرناک رویے پر عموماً زیادہ جرمانے ہوتے ہیں۔"
       },
       "tf-009": {
-        "text": "Light speeding is generally categorized as:",
-        "a": "A moderate violation",
-        "b": "A very serious violation",
-        "c": "A minor parking issue",
-        "d": "No violation",
-        "explain": "Light speeding is typically treated as moderate."
+        "text": "ہلکی رفتار سے زیادہ ہونا عموماً کس درجے میں آتا ہے:",
+        "a": "درمیانی خلاف ورزی",
+        "b": "انتہائی سنگین خلاف ورزی",
+        "c": "معمولی پارکنگ مسئلہ",
+        "d": "کوئی خلاف ورزی نہیں",
+        "explain": "ہلکی رفتار سے تجاوز عام طور پر درمیانی سمجھا جاتا ہے۔"
       },
       "tf-010": {
-        "text": "Parking issues are generally considered:",
-        "a": "Minor violations with lower fines",
-        "b": "Very serious violations",
-        "c": "Always criminal offenses",
-        "d": "No violation",
-        "explain": "Parking issues are usually categorized as minor."
+        "text": "پارکنگ کے مسائل عموماً شمار ہوتے ہیں:",
+        "a": "کم جرمانے والی معمولی خلاف ورزیاں",
+        "b": "انتہائی سنگین خلاف ورزیاں",
+        "c": "ہمیشہ فوجداری جرائم",
+        "d": "کوئی خلاف ورزی نہیں",
+        "explain": "پارکنگ کے مسائل عموماً معمولی شمار ہوتے ہیں۔"
       },
       "tf-011": {
-        "text": "Excessive speeding is generally considered:",
-        "a": "A serious violation with higher fines",
-        "b": "A minor violation",
-        "c": "No violation",
-        "d": "Only a warning",
-        "explain": "Excessive speeding is treated as serious."
+        "text": "زیادہ رفتار عموماً شمار ہوتی ہے:",
+        "a": "زیادہ جرمانے والی سنگین خلاف ورزی",
+        "b": "معمولی خلاف ورزی",
+        "c": "کوئی خلاف ورزی نہیں",
+        "d": "صرف وارننگ",
+        "explain": "زیادہ رفتار سنگین سمجھی جاتی ہے۔"
       },
       "tf-012": {
-        "text": "Very serious violations usually lead to:",
-        "a": "Heavy fines and additional penalties",
-        "b": "No action",
-        "c": "Free training only",
-        "d": "Vehicle upgrades",
-        "explain": "Very serious violations can carry heavier fines and penalties."
+        "text": "انتہائی سنگین خلاف ورزیاں عموماً کس کا سبب بنتی ہیں:",
+        "a": "بھاری جرمانے اور اضافی سزائیں",
+        "b": "کوئی کارروائی نہیں",
+        "c": "صرف مفت تربیت",
+        "d": "گاڑی کی اپ گریڈ",
+        "explain": "انتہائی سنگین خلاف ورزیوں پر بھاری جرمانے اور اضافی سزائیں ہو سکتی ہیں۔"
       }
     }
   },
@@ -844,7 +872,18 @@
     "reviewAnswers": "جوابات کا جائزہ",
     "tryAgain": "دوبارہ کوشش کریں",
     "backToResults": "واپس",
-    "explanation": "وضاحت"
+    "explanation": "وضاحت",
+    "modeTitle": "{{mode}} {{exam}}",
+    "questionsCount_one": "{{value}} سوال",
+    "questionsCount_other": "{{value}} سوالات",
+    "minutesCount_one": "{{value}} منٹ",
+    "minutesCount_other": "{{value}} منٹ",
+    "passThresholdLabel": "ہدف: {{value}}",
+    "progressCount": "{{current}} / {{total}}",
+    "scoreSummary": "{{correct}} / {{total}} درست جوابات",
+    "topicBreakdown": "موضوعات کی تقسیم",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})",
+    "reviewProgress": "جائزہ: {{current}} / {{total}}"
   },
   "practice": {
     "byMode": "موڈ کے مطابق",
@@ -871,7 +910,12 @@
     "dueReviews": "واجب جائزے",
     "startDaily": "روزانہ شروع کریں",
     "reviewMistakes": "غلطیوں کا جائزہ",
-    "startQuick": "??? ???? ????"
+    "startQuick": "فوری شروع کریں",
+    "startDailyCount": "روزانہ شروع کریں ({{value}})",
+    "startQuickCount": "فوری شروع کریں ({{value}})",
+    "allCount": "سب ({{value}})",
+    "accuracyLabel": "درستگی: {{value}}",
+    "progressCount": "{{current}} / {{total}}"
   },
   "results": {
     "title": "نتائج",
@@ -884,7 +928,10 @@
     "time": "لگا ہوا وقت",
     "tryAgain": "دوبارہ کوشش کریں",
     "reviewAnswers": "جوابات کا جائزہ",
-    "backHome": "ہوم پر جائیں"
+    "backHome": "ہوم پر جائیں",
+    "scoreSummary": "{{correct}} / {{total}} درست",
+    "topicBreakdown": "موضوعات کی تقسیم",
+    "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
   "learn": {
     "title": "سیکھیں اور تیار ہوں",
@@ -892,20 +939,42 @@
     "progress": "پیشرفت",
     "continue": "سیکھنا جاری رکھیں",
     "completed": "مکمل",
+    "noResults": "کوئی سبق نہیں ملا",
+    "lessonsCount_one": "{{value}} سبق",
+    "lessonsCount_other": "{{value}} اسباق",
+    "categoriesCount_one": "{{value}} زمرہ",
+    "categoriesCount_other": "{{value}} زمرے",
+    "studyPlan": {
+      "title": "مطالعہ کا منصوبہ",
+      "items": {
+        "reviewSigns": "ٹریفک نشانیاں دہرائیں",
+        "readSafety": "حفاظتی قواعد پڑھیں",
+        "practiceMarkings": "سڑک کی نشانیاں مشق کریں",
+        "practiceTest": "ایک مشقی ٹیسٹ دیں"
+      }
+    },
     "topics": {
       "speedLimits": "رفتار کی حدود",
       "rightOfWay": "راستے کا حق",
       "signals": "ٹریفک سگنلز",
       "markings": "سڑک کی نشانیاں",
       "safety": "حفاظتی قواعد"
-    }
+    },
+    "relatedSignsTitle": "?????? ????? ?????",
+    "viewRelatedSigns": "???? ?????? ????? ??????",
+    "relatedViolationsTitle": "??? ???? ?????? ??? ???????",
+    "viewViolationSystem": "???? ?????? ???? ??????"
   },
   "favorites": {
     "title": "پسندیدہ",
     "empty": "ابھی کچھ نہیں",
     "emptyDesc": "جو سوالات آپ پسند کریں گے وہ یہاں آئیں گے",
     "questions": "سوالات",
-    "signs": "نشانیاں"
+    "signs": "نشانیاں",
+    "questionsCount_one": "{{value}} سوال",
+    "questionsCount_other": "{{value}} سوالات",
+    "signsCount_one": "{{value}} نشانی",
+    "signsCount_other": "{{value}} نشانیاں"
   },
   "stats": {
     "title": "آپ کے اعداد و شمار",
@@ -913,6 +982,8 @@
     "bestScore": "بہترین سکور",
     "accuracy": "اوسط درستگی",
     "streak": "موجودہ سلسلہ",
+    "streakCount_one": "{{value}} دن",
+    "streakCount_other": "{{value}} دن",
     "days": "دن",
     "noStats": "ابھی کوئی اعداد نہیں",
     "noStatsDesc": "کچھ مشق کریں تاکہ اعداد دکھیں"
@@ -921,6 +992,20 @@
     "title": "ترتیبات",
     "language": "زبان",
     "theme": "تھیم",
+    "feedback": "فیڈبیک",
+    "soundDesc": "صحیح/غلط جواب پر آواز چلائیں",
+    "vibrationDesc": "جوابات پر ہاپٹک فیڈبیک",
+    "versionLabel": "ورژن {{version}}",
+    "aboutDesc": "ڈرائیونگ تھیوری سیکھنے کے لیے تعلیمی ایپ۔ تمام مواد آف لائن دستیاب ہے۔",
+    "disclaimer": "ڈسکلیمر: یہ ایپ کسی حکومتی ادارے سے منسلک نہیں اور صرف تعلیمی مشق کے لیے ہے۔",
+    "links": {
+      "trafficFinesTitle": "ٹریفک جرمانے اور سزائیں",
+      "trafficFinesDesc": "تعلیمی رہنمائی",
+      "violationPointsTitle": "ٹریفک خلاف ورزی پوائنٹس",
+      "violationPointsDesc": "تعلیمی حوالہ",
+      "creditsTitle": "کریڈٹس اور حوالہ",
+      "creditsDesc": "مواد کے ذرائع اور لائسنس"
+    },
     "themes": {
       "light": "ہلکا",
       "dark": "گہرا",
@@ -1051,28 +1136,49 @@
     "badgesLabel": "بیجز"
   },
   "violationPoints": {
-    "title": "ٹریفک خلاف ورزی پوائنٹس سسٹم (تعلیمی)",
-    "intro": "پوائنٹس کا نظام ان ڈرائیورز کو سزا دینے کے لیے ہے جو ٹریفک قوانین کی خلاف ورزی کرتے ہیں۔ ہر خلاف ورزی کے لیے مخصوص پوائنٹس ہوتے ہیں۔ پوائنٹس بڑھنے کے ساتھ سزائیں زیادہ سخت ہوتی جاتی ہیں۔ اس نظام کا مقصد محفوظ ڈرائیونگ کو فروغ دینا اور حادثات کم کرنا ہے۔",
-    "impactTitle": "24 پوائنٹس (ہجری سال) تک پہنچنے کے اثرات:",
-    "penalties": {
-      "first": "پہلی بار 24 پوائنٹس: لائسنس 3 ماہ کے لیے معطل۔",
-      "second": "دوسری بار 24 پوائنٹس: لائسنس 6 ماہ کے لیے معطل۔",
-      "third": "تیسری بار 24 پوائنٹس: لائسنس 1 سال کے لیے معطل۔",
-      "fourth": "چوتھی بار 24 پوائنٹس: ڈرائیونگ لائسنس مستقل منسوخ۔"
+    "title": "ٹریفک خلاف ورزی پوائنٹس سسٹم",
+    "subtitle": "سعودی ڈرائیورز کے لیے تعلیمی رہنمائی",
+    "resetNote": "پوائنٹس ہر ہجری سال ری سیٹ ہوتے ہیں",
+    "summaryTitle": "اہم خلاصہ",
+    "summaryLine1": "ٹریفک خلاف ورزیوں پر پوائنٹس لگتے ہیں۔",
+    "summaryLine2": "24 پوائنٹس پر لائسنس کی سزا لگتی ہے۔",
+    "summaryLine3": "یہ نظام محفوظ ڈرائیونگ کی حوصلہ افزائی کرتا ہے۔",
+    "impactTitle": "24 پوائنٹس کے نتائج",
+    "consequences": {
+      "first": {
+        "step": "پہلی بار (24 پوائنٹس)",
+        "text": "لائسنس 3 ماہ کے لیے معطل"
+      },
+      "second": {
+        "step": "دوسری بار (24 پوائنٹس)",
+        "text": "لائسنس 6 ماہ کے لیے معطل"
+      },
+      "third": {
+        "step": "تیسری بار (24 پوائنٹس)",
+        "text": "لائسنس 1 سال کے لیے معطل"
+      },
+      "fourth": {
+        "step": "چوتھی بار (24 پوائنٹس)",
+        "text": "لائسنس مستقل منسوخ"
+      }
     },
-    "closing": "یہ نظام ڈرائیورز کو قوانین پر عمل کرنے اور ذمہ داری سے گاڑی چلانے کی ترغیب دیتا ہے۔ محفوظ رویہ تمام سڑک استعمال کرنے والوں کی حفاظت کرتا ہے۔",
-    "table": {
-      "number": "نمبر",
-      "violation": "خلاف ورزی",
-      "points": "پوائنٹس"
-    }
+    "violationsTitle": "خلاف ورزیاں",
+    "severeTitle": "سنگین خلاف ورزیاں (12–24 پوائنٹس)",
+    "majorTitle": "اہم خلاف ورزیاں (6–8 پوائنٹس)",
+    "minorTitle": "معمولی خلاف ورزیاں (2–4 پوائنٹس)",
+    "pointsLabel": "{{value}} پوائنٹس",
+    "explainLine": "یہ خلاف ورزی ردعمل کا وقت کم کرتی اور خطرہ بڑھاتی ہے۔",
+    "whyDangerousLine": "کیوں خطرناک ہے: ڈرائیورز اور پیدل چلنے والوں کے لیے حادثے کا خطرہ بڑھتا ہے۔",
+    "tipBody": "امتحانی ٹپ: سائنز پر عمل کریں اور محفوظ رفتار رکھیں۔",
+    "educationalNote": "پوائنٹس جاننا آپ کو سنگین سزاؤں سے بچنے اور محفوظ ڈرائیونگ میں مدد دیتا ہے۔",
+    "previewDescription": "{{violation}} ?? ?? ?????? ??? ??????? ???? ???? ???"
   },
   "violations": {
     "v01": "شراب یا منشیات کے اثر میں گاڑی چلانا",
     "v02": "ڈرفٹنگ",
     "v03": "سرخ ٹریفک سگنل توڑنا",
     "v04": "ٹریفک کے خلاف سمت میں گاڑی چلانا",
-    "v05": "عوامی سڑکوں پر ٹریفک کے درمیان سے zigzag چلنا",
+    "v05": "عوامی سڑکوں پر ٹریفک کے درمیان سے زگ زیگ چلنا",
     "v06": "ٹریفک افسر کے دستی اشارے پر عمل نہ کرنا",
     "v07": "بغیر بریک یا لائٹس کے گاڑی چلانا",
     "v08": "اسٹوپ سائن پر مکمل نہ رکنا",
@@ -1109,9 +1215,26 @@
     "trafficSign": "ٹریفک نشانی",
     "signUnavailable": "نشانی کی تصویر دستیاب نہیں"
   },
+  "credits": {
+    "title": "کریڈٹس اور حوالہ",
+    "signsTitle": "ٹریفک نشانیوں کے ذرائع",
+    "signsLine1": "اس ایپ میں استعمال ہونے والی ٹریفک نشانیوں کی تصاویر ویکی میڈیا کامنز سے لی گئی ہیں۔",
+    "signsLine2": "یہ تصاویر کریئیٹو کامنز لائسنس کے تحت ہیں اور صرف تعلیمی مقصد کے لیے استعمال ہوتی ہیں۔",
+    "sourceLabel": "ماخذ:",
+    "sourceName": "ویکی میڈیا کامنز – سعودی عرب روڈ سائنز",
+    "signsLine3": "ہر تصویر اپنے متعلقہ کریئیٹو کامنز لائسنس کے تحت ہو سکتی ہے جیسا کہ ویکی میڈیا کامنز پر درج ہے۔",
+    "signsLine4": "کسی سرکاری ادارے سے وابستگی مراد نہیں ہے۔",
+    "disclaimerLabel": "ڈسکلیمر:",
+    "disclaimerBody": "یہ ایپ کسی حکومتی ادارے سے منسلک نہیں اور صرف تعلیمی مشق کے لیے ہے۔"
+  },
+  "notFound": {
+    "message": "معذرت، صفحہ نہیں ملا",
+    "backHome": "ہوم پر واپس جائیں"
+  },
   "common": {
     "loading": "لوڈ ہو رہا ہے",
     "error": "کچھ مسئلہ ہو گیا",
+    "reload": "دوبارہ لوڈ کریں",
     "retry": "دوبارہ کوشش کریں",
     "cancel": "منسوخ",
     "confirm": "تصدیق",
@@ -1126,7 +1249,19 @@
     "next": "اگلا",
     "previous": "پچھلا",
     "correct": "صحیح",
-    "incorrect": "غلط"
+    "incorrect": "غلط",
+    "more": "مزید",
+    "morePages": "مزید صفحات",
+    "previousSlide": "پچھلی سلائیڈ",
+    "nextSlide": "اگلی سلائیڈ",
+    "toggleSidebar": "سائڈ بار تبدیل کریں",
+    "breadcrumb": "بریڈ کرمب",
+    "goToPreviousPage": "پچھلے صفحے پر جائیں",
+    "goToNextPage": "اگلے صفحے پر جائیں",
+    "pagination": "صفحہ بندی",
+    "carousel": "کاروسیل",
+    "xp": "ایکس پی",
+    "xpValue": "{{value}} ایکس پی"
   },
   "pwa": {
     "installTitle": "ایپ انسٹال کریں",
@@ -1136,7 +1271,26 @@
     "offline": "آف لائن بھی دستیاب"
   },
   "flashcards": {
-    "tapToFlip": "Tap to flip",
-    "tapToFlipBack": "Tap to flip back"
+    "title": "فلیش کارڈز",
+    "sessionComplete": "سیشن مکمل!",
+    "accuracy": "درستگی",
+    "correct": "درست",
+    "incorrect": "غلط",
+    "overallProgress": "مجموعی پیش رفت",
+    "mastered": "ماہر",
+    "reviewing": "جائزہ",
+    "learning": "سیکھ رہے ہیں",
+    "practiceMore": "مزید پریکٹس کریں",
+    "allCaughtUp": "سب مکمل!",
+    "allCaughtUpDesc": "آپ نے تمام واجب کارڈز دیکھ لیے ہیں۔ مزید پریکٹس کے لیے بعد میں آئیں۔",
+    "resetProgress": "پیش رفت ری سیٹ کریں",
+    "again": "دوبارہ",
+    "gotIt": "سمجھ گیا",
+    "tapToFlip": "پلٹنے کے لیے ٹیپ کریں",
+    "tapToFlipBack": "واپس پلٹنے کے لیے ٹیپ کریں"
+  },
+  "index": {
+    "title": "آپ کی خالی ایپ میں خوش آمدید",
+    "subtitle": "اپنا شاندار پروجیکٹ یہیں سے بنانا شروع کریں!"
   }
 }

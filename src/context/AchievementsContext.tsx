@@ -95,7 +95,8 @@ const AchievementsContext = createContext<AchievementsContextType | undefined>(u
 export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, setState] = useState<AchievementsState>(getInitialState);
   const { toast } = useToast();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const numberFormatter = new Intl.NumberFormat(i18n.language);
 
   const achievements = achievementsData.achievements as Achievement[];
   const levels = achievementsData.levels as Level[];
@@ -204,11 +205,11 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
       if (achievement) {
         toast({
           title: `🏆 ${t(`achievements.badges.${id}.name`)}`,
-          description: `+${achievement.points} XP`,
+          description: t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` }),
         });
       }
     });
-  }, [achievements, toast, t]);
+  }, [achievements, numberFormatter, t, toast]);
 
   const updateStreak = useCallback((currentState: AchievementsState): AchievementsState => {
     const today = new Date().toISOString().split('T')[0];
@@ -269,7 +270,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
         bonusXP = dailyGoalBonusXP;
         toast({
           title: t('achievements.dailyGoalComplete'),
-          description: `+${dailyGoalBonusXP} XP`,
+          description: t('common.xpValue', { value: `+${numberFormatter.format(dailyGoalBonusXP)}` }),
         });
       }
 
@@ -297,7 +298,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
           if (achievement) {
             toast({
               title: `🏆 ${t(`achievements.badges.${id}.name`)}`,
-              description: `+${achievement.points} XP`,
+              description: t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` }),
             });
           }
         });
@@ -305,7 +306,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
 
       return newState;
     });
-  }, [achievements, checkAndUnlockAchievements, dailyGoalBonusXP, dailyGoalTarget, t, toast, updateStreak]);
+  }, [achievements, checkAndUnlockAchievements, dailyGoalBonusXP, dailyGoalTarget, numberFormatter, t, toast, updateStreak]);
 
   const recordQuizCompletion = useCallback((score: number, total: number, category?: string) => {
     setState(prev => {
@@ -330,7 +331,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
           if (achievement) {
             toast({
               title: `🏆 ${t(`achievements.badges.${id}.name`)}`,
-              description: `+${achievement.points} XP`,
+              description: t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` }),
             });
           }
         });
@@ -338,7 +339,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
 
       return newState;
     });
-  }, [achievements, checkAndUnlockAchievements, t, toast]);
+  }, [achievements, checkAndUnlockAchievements, numberFormatter, t, toast]);
 
   const recordExamPassed = useCallback(() => {
     setState(prev => {
@@ -358,7 +359,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
           if (achievement) {
             toast({
               title: `🏆 ${t(`achievements.badges.${id}.name`)}`,
-              description: `+${achievement.points} XP`,
+              description: t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` }),
             });
           }
         });
@@ -366,7 +367,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
 
       return newState;
     });
-  }, [achievements, checkAndUnlockAchievements, t, toast]);
+  }, [achievements, checkAndUnlockAchievements, numberFormatter, t, toast]);
 
   const checkTimeBasedAchievements = useCallback(() => {
     const hour = new Date().getHours();
@@ -396,7 +397,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
         if (achievement) {
           toast({
             title: `🏆 ${t(`achievements.badges.${id}.name`)}`,
-            description: `+${achievement.points} XP`,
+            description: t('common.xpValue', { value: `+${numberFormatter.format(achievement.points)}` }),
           });
         }
       });
@@ -407,7 +408,7 @@ export const AchievementsProvider: React.FC<{ children: ReactNode }> = ({ childr
         totalXP: prev.totalXP + xpGained,
       };
     });
-  }, [achievements, t, toast]);
+  }, [achievements, numberFormatter, t, toast]);
 
   return (
     <AchievementsContext.Provider value={{
