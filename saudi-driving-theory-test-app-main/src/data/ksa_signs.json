@@ -1,0 +1,1462 @@
+[
+  {
+    "id": "animal_crossing",
+    "name_en": "Animal Crossing",
+    "name_ar": "حيوان عبور",
+    "name_ur": "جانور گزرگاہ",
+    "name_hi": "जानवर क्रॉसिंग",
+    "name_bn": "প্রাণী পারাপার",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Animal_Crossing.svg"
+  },
+  {
+    "id": "bend_to_left",
+    "name_en": "Bend To Left",
+    "name_ar": "بيند اليسار",
+    "name_ur": "بیند بائیں",
+    "name_hi": "बएनद बाएं",
+    "name_bn": "বএনদ বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Bend_to_left.svg"
+  },
+  {
+    "id": "bend_to_right",
+    "name_en": "Bend To Right",
+    "name_ar": "بيند اليمين",
+    "name_ur": "بیند دائیں",
+    "name_hi": "बएनद दाएं",
+    "name_bn": "বএনদ ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Bend_to_right.svg"
+  },
+  {
+    "id": "bicycle_crossing",
+    "name_en": "Bicycle Crossing",
+    "name_ar": "دراجات عبور",
+    "name_ur": "سائیکل گزرگاہ",
+    "name_hi": "साइकिल क्रॉसिंग",
+    "name_bn": "সাইকেল পারাপার",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Bicycle_crossing.svg"
+  },
+  {
+    "id": "branch_road_2222",
+    "name_en": "Branch Road 2222",
+    "name_ar": "فرعي طريق 2222",
+    "name_ur": "شاخ سڑک 2222",
+    "name_hi": "शाखा सड़क 2222",
+    "name_bn": "শাখা রাস্তা 2222",
+    "category": "guide",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Branch_Road-2222.svg"
+  },
+  {
+    "id": "branch_road_5018",
+    "name_en": "Branch Road 5018",
+    "name_ar": "فرعي طريق 5018",
+    "name_ur": "شاخ سڑک 5018",
+    "name_hi": "शाखा सड़क 5018",
+    "name_bn": "শাখা রাস্তা 5018",
+    "category": "guide",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Branch_Road-5018.svg"
+  },
+  {
+    "id": "branch_road_blank",
+    "name_en": "Branch Road Blank",
+    "name_ar": "فرعي طريق فارغ",
+    "name_ur": "شاخ سڑک خالی",
+    "name_hi": "शाखा सड़क खाली",
+    "name_bn": "শাখা রাস্তা খালি",
+    "category": "guide",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Branch_Road_Blank.svg"
+  },
+  {
+    "id": "camels_crossing",
+    "name_en": "Camels Crossing",
+    "name_ar": "جمال عبور",
+    "name_ur": "اونٹ گزرگاہ",
+    "name_hi": "ऊंट क्रॉसिंग",
+    "name_bn": "উট পারাপার",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Camels_crossing.svg"
+  },
+  {
+    "id": "camping",
+    "name_en": "Camping",
+    "name_ar": "كامبينج",
+    "name_ur": "کامپینگ",
+    "name_hi": "कअमपइनग",
+    "name_bn": "কআমপইনগ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Camping.svg"
+  },
+  {
+    "id": "cbd",
+    "name_en": "CBD",
+    "name_ar": "كبد",
+    "name_ur": "کبد",
+    "name_hi": "कबद",
+    "name_bn": "কবদ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_CBD.svg"
+  },
+  {
+    "id": "crossroads",
+    "name_en": "Crossroads",
+    "name_ar": "كروسسروادس",
+    "name_ur": "کروسسروادس",
+    "name_hi": "करओससरओअदस",
+    "name_bn": "করওসসরওআদস",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Crossroads.svg"
+  },
+  {
+    "id": "crosswind",
+    "name_en": "Crosswind",
+    "name_ar": "كروسسويند",
+    "name_ur": "کروسسویند",
+    "name_hi": "करओससवइनद",
+    "name_bn": "করওসসওইনদ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Crosswind.svg"
+  },
+  {
+    "id": "customs",
+    "name_en": "Customs",
+    "name_ar": "جمارك",
+    "name_ur": "کسٹمز",
+    "name_hi": "सीमा शुल्क",
+    "name_bn": "শুল্ক",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Customs.svg"
+  },
+  {
+    "id": "cyclists_only",
+    "name_en": "Cyclists Only",
+    "name_ar": "دراجات فقط",
+    "name_ur": "سائیکل سوار صرف",
+    "name_hi": "साइकिल चालक केवल",
+    "name_bn": "সাইকেল আরোহী শুধু",
+    "category": "mandatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Cyclists_only.svg"
+  },
+  {
+    "id": "danger",
+    "name_en": "Danger",
+    "name_ar": "دانجير",
+    "name_ur": "دانگیر",
+    "name_hi": "दअनगएर",
+    "name_bn": "দআনগএর",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Danger.svg"
+  },
+  {
+    "id": "dead_end",
+    "name_en": "Dead End",
+    "name_ar": "نهاية الطريق",
+    "name_ur": "راستہ ختم",
+    "name_hi": "सड़क समाप्त",
+    "name_bn": "রাস্তা শেষ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Dead_end.svg"
+  },
+  {
+    "id": "detour_arrow",
+    "name_en": "Detour Arrow",
+    "name_ar": "تحويلة سهم",
+    "name_ur": "متبادل راستہ تیر",
+    "name_hi": "परिवर्तन मार्ग तीर",
+    "name_bn": "বিকল্প পথ তীর",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Detour_arrow_(Temporary_sign).svg"
+  },
+  {
+    "id": "dip",
+    "name_en": "Dip",
+    "name_ar": "ديب",
+    "name_ur": "دیپ",
+    "name_hi": "दइप",
+    "name_bn": "দইপ",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Dip.svg"
+  },
+  {
+    "id": "directional_sign",
+    "name_en": "Directional Sign",
+    "name_ar": "ديريكتيونال سيجن",
+    "name_ur": "دیریکتیونال سیگن",
+    "name_hi": "दइरएकतइओनअल सइगन",
+    "name_bn": "দইরএকতইওনআল সইগন",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Directional_Sign_(Type_I).svg"
+  },
+  {
+    "id": "downtown",
+    "name_en": "Downtown",
+    "name_ar": "دوونتوون",
+    "name_ur": "دوونتوون",
+    "name_hi": "दओवनतओवन",
+    "name_bn": "দওওনতওওন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Downtown.svg"
+  },
+  {
+    "id": "drop_shoulder_road",
+    "name_en": "Drop Shoulder Road",
+    "name_ar": "دروب شوولدير طريق",
+    "name_ur": "دروپ شوولدیر سڑک",
+    "name_hi": "दरओप शओउलदएर सड़क",
+    "name_bn": "দরওপ শওউলদএর রাস্তা",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Drop_shoulder_road.svg"
+  },
+  {
+    "id": "east_sign",
+    "name_en": "East Sign",
+    "name_ar": "ياست سيجن",
+    "name_ur": "یاست سیگن",
+    "name_hi": "एअसत सइगन",
+    "name_bn": "এআসত সইগন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_East_sign_(Type_I).svg"
+  },
+  {
+    "id": "electric_current",
+    "name_en": "Electric Current",
+    "name_ar": "يليكتريك كوررينت",
+    "name_ur": "یلیکتریک کوررینت",
+    "name_hi": "एलएकतरइक कउररएनत",
+    "name_bn": "এলএকতরইক কউররএনত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Electric_current.svg"
+  },
+  {
+    "id": "end_minimum_speed_limit_35",
+    "name_en": "End Minimum Speed Limit (35)",
+    "name_ar": "نهاية الحد الأدنى حد السرعة (35)",
+    "name_ur": "ختم کم از کم رفتار کی حد (35)",
+    "name_hi": "समाप्त न्यूनतम गति सीमा (35)",
+    "name_bn": "শেষ সর্বনিম্ন গতিসীমা (35)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_End_minimum_speed_limit_(35).svg"
+  },
+  {
+    "id": "end_motor_way",
+    "name_en": "End Motor Way",
+    "name_ar": "نهاية محرك اتجاه",
+    "name_ur": "ختم موٹر طرف",
+    "name_hi": "समाप्त मोटर दिशा",
+    "name_bn": "শেষ মোটর দিক",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_End_Motor_way.svg"
+  },
+  {
+    "id": "end_no_overtaking_vehicles",
+    "name_en": "End No Overtaking Vehicles",
+    "name_ar": "نهاية ممنوع التجاوز مركبات",
+    "name_ur": "ختم اوور ٹیک ممنوع گاڑیاں",
+    "name_hi": "समाप्त ओवरटेक निषेध वाहन",
+    "name_bn": "শেষ ওভারটেক নিষেধ যানবাহন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_End_No_Overtaking_Vehicles.svg"
+  },
+  {
+    "id": "end_of_all_restrictions",
+    "name_en": "End Of All Restrictions",
+    "name_ar": "نهاية الل قيود",
+    "name_ur": "ختم الل پابندیاں",
+    "name_hi": "समाप्त अलल प्रतिबंध",
+    "name_bn": "শেষ আলল নিষেধাজ্ঞা",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_End_of_all_restrictions.svg"
+  },
+  {
+    "id": "end_of_dual_carriageway",
+    "name_en": "End Of Dual Carriageway",
+    "name_ar": "نهاية دوال كاررياجيواي",
+    "name_ur": "ختم دوال کارریاگیوای",
+    "name_hi": "समाप्त दउअल कअररइअगएवअय",
+    "name_bn": "শেষ দউআল কআররইআগএওআয",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_End_of_dual_carriageway.svg"
+  },
+  {
+    "id": "end_of_no_overtaking",
+    "name_en": "End Of No Overtaking",
+    "name_ar": "نهاية ممنوع التجاوز",
+    "name_ur": "ختم اوور ٹیک ممنوع",
+    "name_hi": "समाप्त ओवरटेक निषेध",
+    "name_bn": "শেষ ওভারটেক নিষেধ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_End_of_No_Overtaking.svg"
+  },
+  {
+    "id": "end_of_speed_limit_45",
+    "name_en": "End Of Speed Limit (45)",
+    "name_ar": "نهاية حد السرعة (45)",
+    "name_ur": "رفتار کی حد ختم (45)",
+    "name_hi": "गति सीमा समाप्त (45)",
+    "name_bn": "গতিসীমা শেষ (45)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_End_of_Speed_Limit_(45).svg"
+  },
+  {
+    "id": "equestrian_path",
+    "name_en": "Equestrian Path",
+    "name_ar": "يقويستريان باث",
+    "name_ur": "یقویستریان پاتھ",
+    "name_hi": "एकउएसतरइअन पअथ",
+    "name_bn": "একউএসতরইআন পআথ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Equestrian_path.svg"
+  },
+  {
+    "id": "fallen_rocks",
+    "name_en": "Fallen Rocks",
+    "name_ar": "فاللين صخور",
+    "name_ur": "فاللین چٹانیں",
+    "name_hi": "फअललएन चट्टानें",
+    "name_bn": "ফআললএন পাথর",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Fallen_rocks.svg"
+  },
+  {
+    "id": "filling_station",
+    "name_en": "Filling Station",
+    "name_ar": "فيللينج محطة",
+    "name_ur": "فیللینگ اسٹیشن",
+    "name_hi": "फइललइनग स्टेशन",
+    "name_bn": "ফইললইনগ স্টেশন",
+    "category": "guide",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Filling_station.svg"
+  },
+  {
+    "id": "fire_station",
+    "name_en": "Fire Station",
+    "name_ar": "فيري محطة",
+    "name_ur": "فیری اسٹیشن",
+    "name_hi": "फइरए स्टेशन",
+    "name_bn": "ফইরএ স্টেশন",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Fire_Station.svg"
+  },
+  {
+    "id": "first_aid",
+    "name_en": "First Aid",
+    "name_ar": "فيرست ايد",
+    "name_ur": "فیرست اید",
+    "name_hi": "फइरसत अइद",
+    "name_bn": "ফইরসত আইদ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_First_aid.svg"
+  },
+  {
+    "id": "flagman_ahead",
+    "name_en": "Flagman Ahead",
+    "name_ar": "فلاجمان أمامك",
+    "name_ur": "فلاگمان آگے",
+    "name_hi": "फलअगमअन आगे",
+    "name_bn": "ফলআগমআন সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Flagman_Ahead_(Temporary_sign).svg"
+  },
+  {
+    "id": "give_way_to_oncoming_traffic",
+    "name_en": "Give Way To Oncoming Traffic",
+    "name_ar": "أعط الأولوية ونكومينج مرور",
+    "name_ur": "راستہ دیں ونکومینگ ٹریفک",
+    "name_hi": "रास्ता दें ओनकओमइनग यातायात",
+    "name_bn": "পথ দিন ওনকওমইনগ যানবাহন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Give_way_to_oncoming_traffic.svg"
+  },
+  {
+    "id": "go_straight",
+    "name_en": "Go Straight",
+    "name_ar": "اذهب مستقيم",
+    "name_ur": "جائیں سیدھا",
+    "name_hi": "जाएं सीधा",
+    "name_bn": "যান সোজা",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Go_straight.svg"
+  },
+  {
+    "id": "go_straight_or_turn_left",
+    "name_en": "Go Straight Or Turn Left",
+    "name_ar": "اذهب مستقيم ور انعطاف اليسار",
+    "name_ur": "جائیں سیدھا ور موڑ بائیں",
+    "name_hi": "जाएं सीधा ओर मुड़ें बाएं",
+    "name_bn": "যান সোজা ওর বাঁক বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Go_straight_or_turn_left.svg"
+  },
+  {
+    "id": "go_straight_or_turn_right",
+    "name_en": "Go Straight Or Turn Right",
+    "name_ar": "اذهب مستقيم ور انعطاف اليمين",
+    "name_ur": "جائیں سیدھا ور موڑ دائیں",
+    "name_hi": "जाएं सीधा ओर मुड़ें दाएं",
+    "name_bn": "যান সোজা ওর বাঁক ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Go_straight_or_turn_right.svg"
+  },
+  {
+    "id": "height_restriction_ahead",
+    "name_en": "Height Restriction Ahead",
+    "name_ar": "هييغت ريستريكتيون أمامك",
+    "name_ur": "ہییغت ریستریکتیون آگے",
+    "name_hi": "हएइघत रएसतरइकतइओन आगे",
+    "name_bn": "হএইঘত রএসতরইকতইওন সামনে",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Height_restriction_ahead.svg"
+  },
+  {
+    "id": "hospital",
+    "name_en": "Hospital",
+    "name_ar": "مستشفى",
+    "name_ur": "ہسپتال",
+    "name_hi": "अस्पताल",
+    "name_bn": "হাসপাতাল",
+    "category": "guide",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Hospital.svg"
+  },
+  {
+    "id": "hotel",
+    "name_en": "Hotel",
+    "name_ar": "هوتيل",
+    "name_ur": "ہوتیل",
+    "name_hi": "हओतएल",
+    "name_bn": "হওতএল",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Hotel.svg"
+  },
+  {
+    "id": "indicative",
+    "name_en": "Indicative",
+    "name_ar": "ينديكاتيفي",
+    "name_ur": "یندیکاتیوی",
+    "name_hi": "इनदइकअतइवए",
+    "name_bn": "ইনদইকআতইভএ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Indicative.svg"
+  },
+  {
+    "id": "intersection_left",
+    "name_en": "Intersection Left",
+    "name_ar": "ينتيرسيكتيون اليسار",
+    "name_ur": "ینتیرسیکتیون بائیں",
+    "name_hi": "इनतएरसएकतइओन बाएं",
+    "name_bn": "ইনতএরসএকতইওন বাম",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Intersection_left.svg"
+  },
+  {
+    "id": "intersection_right",
+    "name_en": "Intersection Right",
+    "name_ar": "ينتيرسيكتيون اليمين",
+    "name_ur": "ینتیرسیکتیون دائیں",
+    "name_hi": "इनतएरसएकतइओन दाएं",
+    "name_bn": "ইনতএরসএকতইওন ডান",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Intersection_right.svg"
+  },
+  {
+    "id": "kaaba",
+    "name_en": "Kaaba",
+    "name_ar": "كاابا",
+    "name_ur": "کاابا",
+    "name_hi": "कअअबअ",
+    "name_bn": "কআআবআ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Kaaba.svg"
+  },
+  {
+    "id": "keep_left",
+    "name_en": "Keep Left",
+    "name_ar": "الزم اليسار",
+    "name_ur": "رہیں بائیں",
+    "name_hi": "रहें बाएं",
+    "name_bn": "থাকুন বাম",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Keep_left.svg"
+  },
+  {
+    "id": "keep_right",
+    "name_en": "Keep Right",
+    "name_ar": "الزم اليمين",
+    "name_ur": "رہیں دائیں",
+    "name_hi": "रहें दाएं",
+    "name_bn": "থাকুন ডান",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Keep_right.svg"
+  },
+  {
+    "id": "left_turn",
+    "name_en": "Left Turn",
+    "name_ar": "اليسار انعطاف",
+    "name_ur": "بائیں موڑ",
+    "name_hi": "बाएं मुड़ें",
+    "name_bn": "বাম বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Left_Turn.svg"
+  },
+  {
+    "id": "low_flying_aircraft",
+    "name_en": "Low Flying Aircraft",
+    "name_ar": "لوو فليينج ايركرافت",
+    "name_ur": "لوو فلیینگ ایرکرافت",
+    "name_hi": "लओव फलयइनग अइरकरअफत",
+    "name_bn": "লওও ফলযইনগ আইরকরআফত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Low_flying_aircraft.svg"
+  },
+  {
+    "id": "mandatory_right_or_left_turn",
+    "name_en": "Mandatory Right Or Left Turn",
+    "name_ar": "إلزامي اليمين ور اليسار انعطاف",
+    "name_ur": "لازمی دائیں ور بائیں موڑ",
+    "name_hi": "अनिवार्य दाएं ओर बाएं मुड़ें",
+    "name_bn": "বাধ্যতামূলক ডান ওর বাম বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Mandatory_right_or_left_turn.svg"
+  },
+  {
+    "id": "mandatory_road_for_pedestrians",
+    "name_en": "Mandatory Road For Pedestrians",
+    "name_ar": "إلزامي طريق فور مشاة",
+    "name_ur": "لازمی سڑک فور پیدل",
+    "name_hi": "अनिवार्य सड़क फओर पैदल",
+    "name_bn": "বাধ্যতামূলক রাস্তা ফওর পথচারী",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Mandatory_road_for_pedestrians.svg"
+  },
+  {
+    "id": "mandatory_traffic_direction_in_the_roundabout",
+    "name_en": "Mandatory Traffic Direction In The Roundabout",
+    "name_ar": "إلزامي مرور اتجاه دوار",
+    "name_ur": "لازمی ٹریفک سمت گول چکر",
+    "name_hi": "अनिवार्य यातायात दिशा गोलचक्कर",
+    "name_bn": "বাধ্যতামূলক যানবাহন দিক রাউন্ডঅবাউট",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Mandatory_traffic_direction_in_the_roundabout.svg"
+  },
+  {
+    "id": "maximum_axle_weight",
+    "name_en": "Maximum Axle Weight",
+    "name_ar": "الحد الأقصى اكسلي وييغت",
+    "name_ur": "زیادہ سے زیادہ اکسلی وییغت",
+    "name_hi": "अधिकतम अक्सलए वएइघत",
+    "name_bn": "সর্বোচ্চ আক্সলএ ওএইঘত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_axle_weight.svg"
+  },
+  {
+    "id": "maximum_height",
+    "name_en": "Maximum Height",
+    "name_ar": "الحد الأقصى هييغت",
+    "name_ur": "زیادہ سے زیادہ ہییغت",
+    "name_hi": "अधिकतम हएइघत",
+    "name_bn": "সর্বোচ্চ হএইঘত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Height.svg"
+  },
+  {
+    "id": "maximum_speed_120",
+    "name_en": "Maximum Speed (120)",
+    "name_ar": "الحد الأقصى للسرعة (120)",
+    "name_ur": "زیادہ سے زیادہ رفتار (120)",
+    "name_hi": "अधिकतम गति (120)",
+    "name_bn": "সর্বোচ্চ গতি (120)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Speed_(120).svg"
+  },
+  {
+    "id": "maximum_speed_125",
+    "name_en": "Maximum Speed (125)",
+    "name_ar": "الحد الأقصى للسرعة (125)",
+    "name_ur": "زیادہ سے زیادہ رفتار (125)",
+    "name_hi": "अधिकतम गति (125)",
+    "name_bn": "সর্বোচ্চ গতি (125)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Speed_(125).svg"
+  },
+  {
+    "id": "maximum_speed_45",
+    "name_en": "Maximum Speed (45)",
+    "name_ar": "الحد الأقصى للسرعة (45)",
+    "name_ur": "زیادہ سے زیادہ رفتار (45)",
+    "name_hi": "अधिकतम गति (45)",
+    "name_bn": "সর্বোচ্চ গতি (45)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Speed_(45).svg"
+  },
+  {
+    "id": "maximum_vehicle_length",
+    "name_en": "Maximum Vehicle Length",
+    "name_ar": "الحد الأقصى مركبة لينجث",
+    "name_ur": "زیادہ سے زیادہ گاڑی لینگتھ",
+    "name_hi": "अधिकतम वाहन लएनगथ",
+    "name_bn": "সর্বোচ্চ যান লএনগথ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Maximum_vehicle_length.svg"
+  },
+  {
+    "id": "maximum_weight",
+    "name_en": "Maximum Weight",
+    "name_ar": "الحد الأقصى وييغت",
+    "name_ur": "زیادہ سے زیادہ وییغت",
+    "name_hi": "अधिकतम वएइघत",
+    "name_bn": "সর্বোচ্চ ওএইঘত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Weight.svg"
+  },
+  {
+    "id": "maximum_width",
+    "name_en": "Maximum Width",
+    "name_ar": "الحد الأقصى ويدث",
+    "name_ur": "زیادہ سے زیادہ ویدتھ",
+    "name_hi": "अधिकतम वइदथ",
+    "name_bn": "সর্বোচ্চ ওইদথ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Maximum_Width.svg"
+  },
+  {
+    "id": "mechanic",
+    "name_en": "Mechanic",
+    "name_ar": "ميتشانيك",
+    "name_ur": "میچانیک",
+    "name_hi": "मएचअनइक",
+    "name_bn": "মএচআনইক",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Mechanic.svg"
+  },
+  {
+    "id": "minimum_speed_limit_35",
+    "name_en": "Minimum Speed Limit (35)",
+    "name_ar": "الحد الأدنى حد السرعة (35)",
+    "name_ur": "کم از کم رفتار کی حد (35)",
+    "name_hi": "न्यूनतम गति सीमा (35)",
+    "name_bn": "সর্বনিম্ন গতিসীমা (35)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Minimum_speed_limit_(35).svg"
+  },
+  {
+    "id": "motor_way",
+    "name_en": "Motor Way",
+    "name_ar": "محرك اتجاه",
+    "name_ur": "موٹر طرف",
+    "name_hi": "मोटर दिशा",
+    "name_bn": "মোটর দিক",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Motor_way.svg"
+  },
+  {
+    "id": "museums_and_entertainment_centers_and_farms_saudi_aarbia",
+    "name_en": "Museums And Entertainment Centers And Farms (Saudi Aarbia )",
+    "name_ar": "موسيومس ينتيرتاينمينت كينتيرس فارمس (السعودية العربية )",
+    "name_ur": "موسیومس ینتیرتاینمینت کینتیرس فارمس (سعودی عربیہ )",
+    "name_hi": "मउसएउमस एनतएरतअइनमएनत कएनतएरस फअरमस (सऊदी अरबिया )",
+    "name_bn": "মউসএউমস এনতএরতআইনমএনত কএনতএরস ফআরমস (সৌদি আরবিয়া )",
+    "category": "guide",
+    "svg": "/ksa-signs/Museums_and_Entertainment_Centers_and_Farms_(Saudi_Aarbia_Road_Sign).svg"
+  },
+  {
+    "id": "narrow_bridge",
+    "name_en": "Narrow Bridge",
+    "name_ar": "جسر ضيق",
+    "name_ur": "تنگ پل",
+    "name_hi": "संकरी पुल",
+    "name_bn": "সরু সেতু",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Narrow_Bridge.svg"
+  },
+  {
+    "id": "no_agricultural_vehicles",
+    "name_en": "No Agricultural Vehicles",
+    "name_ar": "ممنوع اجريكولتورال مركبات",
+    "name_ur": "ممنوع اگریکولتورال گاڑیاں",
+    "name_hi": "निषेध अगरइकउलतउरअल वाहन",
+    "name_bn": "নিষেধ আগরইকউলতউরআল যানবাহন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_agricultural_vehicles.svg"
+  },
+  {
+    "id": "no_bicycles_allowed",
+    "name_en": "No Bicycles Allowed",
+    "name_ar": "ممنوع دراجات مسموح",
+    "name_ur": "ممنوع سائیکلیں اجازت",
+    "name_hi": "निषेध साइकिलें अनुमति",
+    "name_bn": "নিষেধ সাইকেল অনুমোদিত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_bicycles_allowed.svg"
+  },
+  {
+    "id": "no_buses_allowed",
+    "name_en": "No Buses Allowed",
+    "name_ar": "ممنوع بوسيس مسموح",
+    "name_ur": "ممنوع بوسیس اجازت",
+    "name_hi": "निषेध बउसएस अनुमति",
+    "name_bn": "নিষেধ বউসএস অনুমোদিত",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_No_buses_allowed.svg"
+  },
+  {
+    "id": "no_entry",
+    "name_en": "No Entry",
+    "name_ar": "ممنوع الدخول",
+    "name_ur": "داخلہ ممنوع",
+    "name_hi": "प्रवेश निषेध",
+    "name_bn": "প্রবেশ নিষেধ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_entry.svg"
+  },
+  {
+    "id": "no_entry_for_vehicles_except_motorcycles",
+    "name_en": "No Entry For Vehicles Except Motorcycles",
+    "name_ar": "ممنوع الدخول فور مركبات يكسكيبت موتوركيكليس",
+    "name_ur": "داخلہ ممنوع فور گاڑیاں یکسکیپت موتورکیکلیس",
+    "name_hi": "प्रवेश निषेध फओर वाहन एक्सकएपत मओतओरकयकलएस",
+    "name_bn": "প্রবেশ নিষেধ ফওর যানবাহন এক্সকএপত মওতওরকযকলএস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_entry_for_vehicles_except_motorcycles.svg"
+  },
+  {
+    "id": "no_freight_vehicles",
+    "name_en": "No Freight Vehicles",
+    "name_ar": "ممنوع فرييغت مركبات",
+    "name_ur": "ممنوع فرییغت گاڑیاں",
+    "name_hi": "निषेध फरएइघत वाहन",
+    "name_bn": "নিষেধ ফরএইঘত যানবাহন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_freight_vehicles.svg"
+  },
+  {
+    "id": "no_handcarts",
+    "name_en": "No Handcarts",
+    "name_ar": "ممنوع هاندكارتس",
+    "name_ur": "ممنوع ہاندکارتس",
+    "name_hi": "निषेध हअनदकअरतस",
+    "name_bn": "নিষেধ হআনদকআরতস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_handcarts.svg"
+  },
+  {
+    "id": "no_honking",
+    "name_en": "No Honking",
+    "name_ar": "ممنوع هونكينج",
+    "name_ur": "ممنوع ہونکینگ",
+    "name_hi": "निषेध हओनकइनग",
+    "name_bn": "নিষেধ হওনকইনগ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_honking.svg"
+  },
+  {
+    "id": "no_left_turn",
+    "name_en": "No Left Turn",
+    "name_ar": "ممنوع اليسار انعطاف",
+    "name_ur": "ممنوع بائیں موڑ",
+    "name_hi": "निषेध बाएं मुड़ें",
+    "name_bn": "নিষেধ বাম বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_No_Left_turn.svg"
+  },
+  {
+    "id": "no_motor_vehicles_allowed",
+    "name_en": "No Motor Vehicles Allowed",
+    "name_ar": "ممنوع محرك مركبات مسموح",
+    "name_ur": "ممنوع موٹر گاڑیاں اجازت",
+    "name_hi": "निषेध मोटर वाहन अनुमति",
+    "name_bn": "নিষেধ মোটর যানবাহন অনুমোদিত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_motor_vehicles_allowed.svg"
+  },
+  {
+    "id": "no_motorcycles",
+    "name_en": "No Motorcycles",
+    "name_ar": "ممنوع موتوركيكليس",
+    "name_ur": "ممنوع موتورکیکلیس",
+    "name_hi": "निषेध मओतओरकयकलएस",
+    "name_bn": "নিষেধ মওতওরকযকলএস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_motorcycles.svg"
+  },
+  {
+    "id": "no_overtaking",
+    "name_en": "No Overtaking",
+    "name_ar": "ممنوع التجاوز",
+    "name_ur": "اوور ٹیک ممنوع",
+    "name_hi": "ओवरटेक निषेध",
+    "name_bn": "ওভারটেক নিষেধ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_No_overtaking.svg"
+  },
+  {
+    "id": "no_overtaking_by_heavy_goods_vehicles",
+    "name_en": "No Overtaking By Heavy Goods Vehicles",
+    "name_ar": "ممنوع التجاوز بي هيافي جوودس مركبات",
+    "name_ur": "اوور ٹیک ممنوع بی ہیاوی گوودس گاڑیاں",
+    "name_hi": "ओवरटेक निषेध बय हएअवय गओओदस वाहन",
+    "name_bn": "ওভারটেক নিষেধ বয হএআভয গওওদস যানবাহন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_No_overtaking_by_heavy_goods_vehicles.svg"
+  },
+  {
+    "id": "no_parking",
+    "name_en": "No Parking",
+    "name_ar": "ممنوع الوقوف",
+    "name_ur": "پارکنگ ممنوع",
+    "name_hi": "पार्किंग निषेध",
+    "name_bn": "পার্কিং নিষেধ",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_No_parking.svg"
+  },
+  {
+    "id": "no_pedestrians",
+    "name_en": "No Pedestrians",
+    "name_ar": "ممنوع مشاة",
+    "name_ur": "ممنوع پیدل",
+    "name_hi": "निषेध पैदल",
+    "name_bn": "নিষেধ পথচারী",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_No_pedestrians.svg"
+  },
+  {
+    "id": "no_right_turn",
+    "name_en": "No Right Turn",
+    "name_ar": "ممنوع اليمين انعطاف",
+    "name_ur": "ممنوع دائیں موڑ",
+    "name_hi": "निषेध दाएं मुड़ें",
+    "name_bn": "নিষেধ ডান বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_No_Right_turn.svg"
+  },
+  {
+    "id": "no_stopping",
+    "name_en": "No Stopping",
+    "name_ar": "ممنوع التوقف",
+    "name_ur": "رکنا ممنوع",
+    "name_hi": "रुकना निषेध",
+    "name_bn": "থামা নিষেধ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_No_stopping.svg"
+  },
+  {
+    "id": "no_trailers_allowed",
+    "name_en": "No Trailers Allowed",
+    "name_ar": "ممنوع ترايليرس مسموح",
+    "name_ur": "ممنوع ترایلیرس اجازت",
+    "name_hi": "निषेध तरअइलएरस अनुमति",
+    "name_bn": "নিষেধ তরআইলএরস অনুমোদিত",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_trailers_allowed.svg"
+  },
+  {
+    "id": "no_turn_right_saudi_aarbia",
+    "name_en": "No Turn Right (Saudi Aarbia )",
+    "name_ar": "ممنوع انعطاف اليمين (السعودية العربية )",
+    "name_ur": "ممنوع موڑ دائیں (سعودی عربیہ )",
+    "name_hi": "निषेध मुड़ें दाएं (सऊदी अरबिया )",
+    "name_bn": "নিষেধ বাঁক ডান (সৌদি আরবিয়া )",
+    "category": "warning",
+    "svg": "/ksa-signs/No_Turn_Right_(Saudi_Aarbia_Road_Sign).svg"
+  },
+  {
+    "id": "no_u_turn",
+    "name_en": "No U Turn",
+    "name_ar": "ممنوع الدوران للخلف",
+    "name_ur": "یو ٹرن ممنوع",
+    "name_hi": "यू-टर्न निषेध",
+    "name_bn": "ইউ-টার্ন নিষেধ",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_No_U_Turn.svg"
+  },
+  {
+    "id": "no_vehicles_or_carts",
+    "name_en": "No Vehicles Or Carts",
+    "name_ar": "ممنوع مركبات ور كارتس",
+    "name_ur": "ممنوع گاڑیاں ور کارتس",
+    "name_hi": "निषेध वाहन ओर कअरतस",
+    "name_bn": "নিষেধ যানবাহন ওর কআরতস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_No_Vehicles_or_carts.svg"
+  },
+  {
+    "id": "no_vehicles_pulled_by_animals",
+    "name_en": "No Vehicles Pulled By Animals",
+    "name_ar": "ممنوع مركبات بولليد بي حيوانات",
+    "name_ur": "ممنوع گاڑیاں پوللید بی جانور",
+    "name_hi": "निषेध वाहन पउललएद बय जानवर",
+    "name_bn": "নিষেধ যানবাহন পউললএদ বয প্রাণী",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_No_vehicles_pulled_by_animals.svg"
+  },
+  {
+    "id": "north_sign",
+    "name_en": "North Sign",
+    "name_ar": "نورث سيجن",
+    "name_ur": "نورتھ سیگن",
+    "name_hi": "नओरथ सइगन",
+    "name_bn": "নওরথ সইগন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_North_sign_(Type_I).svg"
+  },
+  {
+    "id": "obstacles_ahead_red",
+    "name_en": "Obstacles Ahead(Red)",
+    "name_ar": "وبستاكليس أمامك(ريد)",
+    "name_ur": "وبستاکلیس آگے(رید)",
+    "name_hi": "ओबसतअकलएस आगे(रएद)",
+    "name_bn": "ওবসতআকলএস সামনে(রএদ)",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Obstacles_ahead(Red).svg"
+  },
+  {
+    "id": "obstacles_ahead_yellow",
+    "name_en": "Obstacles Ahead(Yellow)",
+    "name_ar": "وبستاكليس أمامك(ييللوو)",
+    "name_ur": "وبستاکلیس آگے(ییللوو)",
+    "name_hi": "ओबसतअकलएस आगे(यएललओव)",
+    "name_bn": "ওবসতআকলএস সামনে(যএললওও)",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Obstacles_ahead(Yellow).svg"
+  },
+  {
+    "id": "one_lane_bridge",
+    "name_en": "One Lane Bridge",
+    "name_ar": "واحد مسار جسر",
+    "name_ur": "ایک لین پل",
+    "name_hi": "एक लेन पुल",
+    "name_bn": "এক লেন সেতু",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_One-Lane_Bridge.svg"
+  },
+  {
+    "id": "open_water",
+    "name_en": "Open Water",
+    "name_ar": "وبين واتير",
+    "name_ur": "وپین واتیر",
+    "name_hi": "ओपएन वअतएर",
+    "name_bn": "ওপএন ওআতএর",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Open_water.svg"
+  },
+  {
+    "id": "park",
+    "name_en": "Park",
+    "name_ar": "بارك",
+    "name_ur": "پارک",
+    "name_hi": "पअरक",
+    "name_bn": "পআরক",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Park.svg"
+  },
+  {
+    "id": "pass_left_or_right",
+    "name_en": "Pass Left Or Right",
+    "name_ar": "باسس اليسار ور اليمين",
+    "name_ur": "پاسس بائیں ور دائیں",
+    "name_hi": "पअसस बाएं ओर दाएं",
+    "name_bn": "পআসস বাম ওর ডান",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Pass_Left_Or_Right.svg"
+  },
+  {
+    "id": "path_closed",
+    "name_en": "Path Closed",
+    "name_ar": "باث كلوسيد",
+    "name_ur": "پاتھ کلوسید",
+    "name_hi": "पअथ कलओसएद",
+    "name_bn": "পআথ কলওসএদ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Path_closed_(Temporary_sign).svg"
+  },
+  {
+    "id": "pedestrian_crossing",
+    "name_en": "Pedestrian Crossing",
+    "name_ar": "مشاة عبور",
+    "name_ur": "پیدل گزرگاہ",
+    "name_hi": "पैदल क्रॉसिंग",
+    "name_bn": "পথচারী পারাপার",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Pedestrian_crossing.svg"
+  },
+  {
+    "id": "pedestrian_crossing_ahead",
+    "name_en": "Pedestrian Crossing Ahead",
+    "name_ar": "مشاة عبور أمامك",
+    "name_ur": "پیدل گزرگاہ آگے",
+    "name_hi": "पैदल क्रॉसिंग आगे",
+    "name_bn": "পথচারী পারাপার সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Pedestrian_crossing_ahead.svg"
+  },
+  {
+    "id": "position",
+    "name_en": "Position",
+    "name_ar": "بوسيتيون",
+    "name_ur": "پوسیتیون",
+    "name_hi": "पओसइतइओन",
+    "name_bn": "পওসইতইওন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Position.svg"
+  },
+  {
+    "id": "priority_to_vehicles_coming_from_the_opposite_side_saudi_aarbia",
+    "name_en": "Priority To Vehicles Coming From The Opposite Side (Saudi Aarbia )",
+    "name_ar": "أولوية مركبات كومينج فروم وببوسيتي سيدي (السعودية العربية )",
+    "name_ur": "ترجیح گاڑیاں کومینگ فروم وپپوسیتی سیدی (سعودی عربیہ )",
+    "name_hi": "प्राथमिकता वाहन कओमइनग फरओम ओपपओसइतए सइदए (सऊदी अरबिया )",
+    "name_bn": "অগ্রাধিকার যানবাহন কওমইনগ ফরওম ওপপওসইতএ সইদএ (সৌদি আরবিয়া )",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Priority_to_Vehicles_Coming_from_the_Opposite_Side_(Saudi_Aarbia_Road_Sign).svg"
+  },
+  {
+    "id": "refreshments",
+    "name_en": "Refreshments",
+    "name_ar": "ريفريشمينتس",
+    "name_ur": "ریفریشمینتس",
+    "name_hi": "रएफरएशमएनतस",
+    "name_bn": "রএফরএশমএনতস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Refreshments.svg"
+  },
+  {
+    "id": "restaurant",
+    "name_en": "Restaurant",
+    "name_ar": "ريستاورانت",
+    "name_ur": "ریستاورانت",
+    "name_hi": "रएसतअउरअनत",
+    "name_bn": "রএসতআউরআনত",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Restaurant.svg"
+  },
+  {
+    "id": "reverse_curve_left",
+    "name_en": "Reverse Curve Left",
+    "name_ar": "ريفيرسي منعطف اليسار",
+    "name_ur": "ریویرسی موڑ بائیں",
+    "name_hi": "रएवएरसए मोड़ बाएं",
+    "name_bn": "রএভএরসএ বাঁক বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Reverse_curve_left.svg"
+  },
+  {
+    "id": "reverse_curve_right",
+    "name_en": "Reverse Curve Right",
+    "name_ar": "ريفيرسي منعطف اليمين",
+    "name_ur": "ریویرسی موڑ دائیں",
+    "name_hi": "रएवएरसए मोड़ दाएं",
+    "name_bn": "রএভএরসএ বাঁক ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Reverse_curve_right.svg"
+  },
+  {
+    "id": "right_turn",
+    "name_en": "Right Turn",
+    "name_ar": "اليمين انعطاف",
+    "name_ur": "دائیں موڑ",
+    "name_hi": "दाएं मुड़ें",
+    "name_bn": "ডান বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Right_Turn.svg"
+  },
+  {
+    "id": "road_narrows_on_both_sides",
+    "name_en": "Road Narrows On Both Sides",
+    "name_ar": "الطريق يضيق بوث سيديس",
+    "name_ur": "سڑک تنگ ہوتی ہے بوتھ سیدیس",
+    "name_hi": "सड़क संकरी होती है बओथ सइदएस",
+    "name_bn": "রাস্তা সরু হয় বওথ সইদএস",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Road_narrows_on_both_sides.svg"
+  },
+  {
+    "id": "road_narrows_on_the_left",
+    "name_en": "Road Narrows On The Left",
+    "name_ar": "الطريق يضيق اليسار",
+    "name_ur": "سڑک تنگ ہوتی ہے بائیں",
+    "name_hi": "सड़क संकरी होती है बाएं",
+    "name_bn": "রাস্তা সরু হয় বাম",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Road_narrows_on_the_left.svg"
+  },
+  {
+    "id": "road_narrows_on_the_right",
+    "name_en": "Road Narrows On The Right",
+    "name_ar": "الطريق يضيق اليمين",
+    "name_ur": "سڑک تنگ ہوتی ہے دائیں",
+    "name_hi": "सड़क संकरी होती है दाएं",
+    "name_bn": "রাস্তা সরু হয় ডান",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Road_narrows_on_the_right.svg"
+  },
+  {
+    "id": "roundabout",
+    "name_en": "Roundabout",
+    "name_ar": "دوار",
+    "name_ur": "گول چکر",
+    "name_hi": "गोलचक्कर",
+    "name_bn": "রাউন্ডঅবাউট",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Roundabout.svg"
+  },
+  {
+    "id": "sand_dunes",
+    "name_en": "Sand Dunes",
+    "name_ar": "ساند دونيس",
+    "name_ur": "ساند دونیس",
+    "name_hi": "सअनद दउनएस",
+    "name_bn": "সআনদ দউনএস",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Sand_dunes.svg"
+  },
+  {
+    "id": "scattered_pebbles",
+    "name_en": "Scattered Pebbles",
+    "name_ar": "سكاتتيريد بيببليس",
+    "name_ur": "سکاتتیرید پیببلیس",
+    "name_hi": "सकअततएरएद पएबबलएस",
+    "name_bn": "সকআততএরএদ পএববলএস",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Scattered_Pebbles.svg"
+  },
+  {
+    "id": "school_zone",
+    "name_en": "School Zone",
+    "name_ar": "مدرسة منطقة",
+    "name_ur": "اسکول زون",
+    "name_hi": "विद्यालय क्षेत्र",
+    "name_bn": "স্কুল এলাকা",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_School_zone.svg"
+  },
+  {
+    "id": "sharp_curves_first_to_the_left",
+    "name_en": "Sharp Curves First To The Left",
+    "name_ar": "شارب كورفيس فيرست اليسار",
+    "name_ur": "شارپ کورویس فیرست بائیں",
+    "name_hi": "शअरप कउरवएस फइरसत बाएं",
+    "name_bn": "শআরপ কউরভএস ফইরসত বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Sharp_curves_first_to_the_left.svg"
+  },
+  {
+    "id": "sharp_curves_first_to_the_right",
+    "name_en": "Sharp Curves First To The Right",
+    "name_ar": "شارب كورفيس فيرست اليمين",
+    "name_ur": "شارپ کورویس فیرست دائیں",
+    "name_hi": "शअरप कउरवएस फइरसत दाएं",
+    "name_bn": "শআরপ কউরভএস ফইরসত ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Sharp_curves_first_to_the_right.svg"
+  },
+  {
+    "id": "sharp_turn_left",
+    "name_en": "Sharp Turn Left",
+    "name_ar": "شارب انعطاف اليسار",
+    "name_ur": "شارپ موڑ بائیں",
+    "name_hi": "शअरप मुड़ें बाएं",
+    "name_bn": "শআরপ বাঁক বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Sharp_turn_left.svg"
+  },
+  {
+    "id": "sharp_turn_right",
+    "name_en": "Sharp Turn Right",
+    "name_ar": "شارب انعطاف اليمين",
+    "name_ur": "شارپ موڑ دائیں",
+    "name_hi": "शअरप मुड़ें दाएं",
+    "name_bn": "শআরপ বাঁক ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Sharp_turn_right.svg"
+  },
+  {
+    "id": "slippery_road",
+    "name_en": "Slippery Road",
+    "name_ar": "زلق طريق",
+    "name_ur": "پھسلن سڑک",
+    "name_hi": "फिसलन सड़क",
+    "name_bn": "পিচ্ছিল রাস্তা",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Slippery_Road.svg"
+  },
+  {
+    "id": "south_sign",
+    "name_en": "South Sign",
+    "name_ar": "سووث سيجن",
+    "name_ur": "سووتھ سیگن",
+    "name_hi": "सओउथ सइगन",
+    "name_bn": "সওউথ সইগন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_South_sign_(Type_I).svg"
+  },
+  {
+    "id": "speed_bump",
+    "name_en": "Speed Bump",
+    "name_ar": "السرعة مطب",
+    "name_ur": "رفتار مطب",
+    "name_hi": "गति स्पीड ब्रेकर",
+    "name_bn": "গতি স্পিড ব্রেকার",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Speed_bump.svg"
+  },
+  {
+    "id": "speed_bump_series",
+    "name_en": "Speed Bump Series",
+    "name_ar": "السرعة مطب سيرييس",
+    "name_ur": "رفتار مطب سیرییس",
+    "name_hi": "गति स्पीड ब्रेकर सएरइएस",
+    "name_bn": "গতি স্পিড ব্রেকার সএরইএস",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Speed_bump_series.svg"
+  },
+  {
+    "id": "start_of_dual_carriageway",
+    "name_en": "Start Of Dual Carriageway",
+    "name_ar": "ستارت دوال كاررياجيواي",
+    "name_ur": "ستارت دوال کارریاگیوای",
+    "name_hi": "सतअरत दउअल कअररइअगएवअय",
+    "name_bn": "সতআরত দউআল কআররইআগএওআয",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Start_of_dual_carriageway.svg"
+  },
+  {
+    "id": "steep_ascent",
+    "name_en": "Steep Ascent",
+    "name_ar": "حاد صعود",
+    "name_ur": "تیز چڑھائی",
+    "name_hi": "तीव्र चढ़ाई",
+    "name_bn": "খাড়া চড়াই",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Steep_ascent.svg"
+  },
+  {
+    "id": "steep_descent",
+    "name_en": "Steep Descent",
+    "name_ar": "حاد نزول",
+    "name_ur": "تیز ڈھلوان",
+    "name_hi": "तीव्र उतराई",
+    "name_bn": "খাড়া উতরাই",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Steep_descent.svg"
+  },
+  {
+    "id": "stop",
+    "name_en": "Stop",
+    "name_ar": "قف",
+    "name_ur": "رکیں",
+    "name_hi": "रुकें",
+    "name_bn": "থামুন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Stop_(Type_I).svg"
+  },
+  {
+    "id": "stop_sign_ahead",
+    "name_en": "Stop Sign Ahead",
+    "name_ar": "قف سيجن أمامك",
+    "name_ur": "رکیں سیگن آگے",
+    "name_hi": "रुकें सइगन आगे",
+    "name_bn": "থামুন সইগন সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Stop_sign_ahead.svg"
+  },
+  {
+    "id": "street_name_saudi_aarbia",
+    "name_en": "Street Name (Saudi Aarbia )",
+    "name_ar": "سترييت نامي (السعودية العربية )",
+    "name_ur": "سترییت نامی (سعودی عربیہ )",
+    "name_hi": "सतरएएत नअमए (सऊदी अरबिया )",
+    "name_bn": "সতরএএত নআমএ (সৌদি আরবিয়া )",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Street_Name_(Saudi_Aarbia_Road_Sign).svg"
+  },
+  {
+    "id": "telephone",
+    "name_en": "Telephone",
+    "name_ar": "تيليفوني",
+    "name_ur": "تیلیپھونی",
+    "name_hi": "तएलएफओनए",
+    "name_bn": "তএলএফওনএ",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Telephone.svg"
+  },
+  {
+    "id": "traffic_merges_from_right",
+    "name_en": "Traffic Merges From Right",
+    "name_ar": "مرور ميرجيس فروم اليمين",
+    "name_ur": "ٹریفک میرگیس فروم دائیں",
+    "name_hi": "यातायात मएरगएस फरओम दाएं",
+    "name_bn": "যানবাহন মএরগএস ফরওম ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Traffic_merges_from_right.svg"
+  },
+  {
+    "id": "traffic_merges_into_right",
+    "name_en": "Traffic Merges Into Right",
+    "name_ar": "مرور ميرجيس ينتو اليمين",
+    "name_ur": "ٹریفک میرگیس ینتو دائیں",
+    "name_hi": "यातायात मएरगएस इनतओ दाएं",
+    "name_bn": "যানবাহন মএরগএস ইনতও ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Traffic_merges_into_right.svg"
+  },
+  {
+    "id": "traffic_signals_ahead",
+    "name_en": "Traffic Signals Ahead",
+    "name_ar": "مرور سيجنالس أمامك",
+    "name_ur": "ٹریفک سیگنالس آگے",
+    "name_hi": "यातायात सइगनअलस आगे",
+    "name_bn": "যানবাহন সইগনআলস সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Traffic_signals_ahead_(Type_I).svg"
+  },
+  {
+    "id": "truck_limit_45",
+    "name_en": "Truck Limit (45)",
+    "name_ar": "شاحنة الحد (45)",
+    "name_ur": "ٹرک حد (45)",
+    "name_hi": "ट्रक सीमा (45)",
+    "name_bn": "ট্রাক সীমা (45)",
+    "category": "regulatory",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_Truck_limit_(45).svg"
+  },
+  {
+    "id": "trucks_keep_right",
+    "name_en": "Trucks Keep Right",
+    "name_ar": "شاحنات الزم اليمين",
+    "name_ur": "ٹرک رہیں دائیں",
+    "name_hi": "ट्रक रहें दाएं",
+    "name_bn": "ট্রাক থাকুন ডান",
+    "category": "mandatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Trucks_keep_right.svg"
+  },
+  {
+    "id": "tunnel",
+    "name_en": "Tunnel",
+    "name_ar": "توننيل",
+    "name_ur": "توننیل",
+    "name_hi": "तउननएल",
+    "name_bn": "তউননএল",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Tunnel.svg"
+  },
+  {
+    "id": "turn_left",
+    "name_en": "Turn Left",
+    "name_ar": "انعطاف اليسار",
+    "name_ur": "موڑ بائیں",
+    "name_hi": "मुड़ें बाएं",
+    "name_bn": "বাঁক বাম",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Turn_left.svg"
+  },
+  {
+    "id": "turn_on_lights",
+    "name_en": "Turn On Lights",
+    "name_ar": "انعطاف ليغتس",
+    "name_ur": "موڑ لیغتس",
+    "name_hi": "मुड़ें लइघतस",
+    "name_bn": "বাঁক লইঘতস",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Turn_on_lights.svg"
+  },
+  {
+    "id": "turn_right",
+    "name_en": "Turn Right",
+    "name_ar": "انعطاف اليمين",
+    "name_ur": "موڑ دائیں",
+    "name_hi": "मुड़ें दाएं",
+    "name_bn": "বাঁক ডান",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Turn_right.svg"
+  },
+  {
+    "id": "two_way_road",
+    "name_en": "Two Way Road",
+    "name_ar": "اثنان اتجاه طريق",
+    "name_ur": "دو طرف سڑک",
+    "name_hi": "दो दिशा सड़क",
+    "name_bn": "দুই দিক রাস্তা",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Two-way_road.svg"
+  },
+  {
+    "id": "u_turn",
+    "name_en": "U Turn",
+    "name_ar": "يو انعطاف",
+    "name_ur": "یو موڑ",
+    "name_hi": "यू मुड़ें",
+    "name_bn": "ইউ বাঁক",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_U-turn.svg"
+  },
+  {
+    "id": "u_turn_left_straight_ahead",
+    "name_en": "U Turn Left Straight Ahead",
+    "name_ar": "يو انعطاف اليسار مستقيم أمامك",
+    "name_ur": "یو موڑ بائیں سیدھا آگے",
+    "name_hi": "यू मुड़ें बाएं सीधा आगे",
+    "name_bn": "ইউ বাঁক বাম সোজা সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/Saudi_Arabia_-_Road_Sign_-_U-turn_left_straight_ahead.svg"
+  },
+  {
+    "id": "uneven_road",
+    "name_en": "Uneven Road",
+    "name_ar": "ونيفين طريق",
+    "name_ur": "ونیوین سڑک",
+    "name_hi": "उनएवएन सड़क",
+    "name_bn": "উনএভএন রাস্তা",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Uneven_road.svg"
+  },
+  {
+    "id": "water_crossing",
+    "name_en": "Water Crossing",
+    "name_ar": "واتير عبور",
+    "name_ur": "واتیر گزرگاہ",
+    "name_hi": "वअतएर क्रॉसिंग",
+    "name_bn": "ওআতএর পারাপার",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Water_crossing.svg"
+  },
+  {
+    "id": "west_sign",
+    "name_en": "West Sign",
+    "name_ar": "ويست سيجن",
+    "name_ur": "ویست سیگن",
+    "name_hi": "वएसत सइगन",
+    "name_bn": "ওএসত সইগন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_West_sign_(Type_I).svg"
+  },
+  {
+    "id": "workers_in_road_ahead",
+    "name_en": "Workers In Road Ahead",
+    "name_ar": "ووركيرس طريق أمامك",
+    "name_ur": "وورکیرس سڑک آگے",
+    "name_hi": "वओरकएरस सड़क आगे",
+    "name_bn": "ওওরকএরস রাস্তা সামনে",
+    "category": "guide",
+    "svg": "/ksa-signs/SA_road_sign_-_Workers_in_road_ahead_(Temporary_sign).svg"
+  },
+  {
+    "id": "yield",
+    "name_en": "Yield",
+    "name_ar": "أعط الأولوية",
+    "name_ur": "راستہ دیں",
+    "name_hi": "रास्ता दें",
+    "name_bn": "পথ দিন",
+    "category": "regulatory",
+    "svg": "/ksa-signs/SA_road_sign_-_Yield.svg"
+  },
+  {
+    "id": "yield_sign_ahead",
+    "name_en": "Yield Sign Ahead",
+    "name_ar": "أعط الأولوية سيجن أمامك",
+    "name_ur": "راستہ دیں سیگن آگے",
+    "name_hi": "रास्ता दें सइगन आगे",
+    "name_bn": "পথ দিন সইগন সামনে",
+    "category": "warning",
+    "svg": "/ksa-signs/SA_road_sign_-_Yield_sign_ahead.svg"
+  }
+]
