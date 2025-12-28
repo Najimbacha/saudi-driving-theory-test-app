@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# Saudi Driving Theory Test
 
-## Project info
+Offline-first web app for practicing the Saudi driving theory test with questions, traffic signs, and learning guides.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Highlights
 
-## How can I edit this code?
+- 100% offline practice with a PWA-ready setup.
+- Practice quizzes by topic and difficulty, plus timed practice sessions.
+- Traffic signs library with categories, search, and flashcards.
+- Learn road rules, safety topics, and key regulations.
+- Traffic violation points and fines guides for quick reference.
+- Favorites, progress stats, streaks, and achievements.
 
-There are several ways of editing your application.
+## Languages
 
-**Use Lovable**
+- English
+- Arabic
+- Urdu
+- Hindi
+- Bengali
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- Vite + React + TypeScript
+- Tailwind CSS + shadcn-ui
+- i18next for localization
+- Capacitor (Android configuration included)
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Prerequisites: Node.js and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build and preview:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## Useful Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `npm run lint` - Lint the codebase.
+- `npm run test` - Run unit tests with Vitest.
+- `npm run i18n:validate` - Validate translations.
+- `npm run i18n:audit` - Audit translation coverage.
 
-## What technologies are used for this project?
+## Content and Localization
 
-This project is built with:
+- App content and question bank live in `src/data`.
+- Translations live in `src/i18n/locales`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Disclaimer and Attribution
 
-## How can I deploy this project?
+This app is for educational practice only and is not affiliated with any government entity. Traffic sign images are sourced from Wikimedia Commons and used under their respective Creative Commons licenses.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## Contact
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Email: najimbacha1@gmail.com
