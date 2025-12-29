@@ -21,55 +21,91 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
+const safeGet = (key: string): string | null => {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.warn(`Failed to read ${key} from storage:`, error);
+    }
+    return null;
+  }
+};
+
+const safeSet = (key: string, value: string) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.warn(`Failed to write ${key} to storage:`, error);
+    }
+  }
+};
+
 export function AppProvider({ children }: { children: ReactNode }) {
   const { i18n } = useTranslation();
   
   const [language, setLanguageState] = useState<LanguageCode>(() => 
-    (localStorage.getItem('language') as LanguageCode) || 'en'
+    (safeGet('language') as LanguageCode) || 'en'
   );
   
   const [theme, setThemeState] = useState<'light' | 'dark' | 'system'>(() => 
-    (localStorage.getItem('theme') as 'light' | 'dark' | 'system') || 'light'
+    (safeGet('theme') as 'light' | 'dark' | 'system') || 'light'
   );
   
   const [hasSeenOnboarding, setHasSeenOnboardingState] = useState(() => 
-    localStorage.getItem('hasSeenOnboarding') === 'true'
+    safeGet('hasSeenOnboarding') === 'true'
   );
   
   const [favorites, setFavorites] = useState<{ questions: string[]; signs: string[] }>(() => {
-    const saved = localStorage.getItem('favorites');
-    return saved ? JSON.parse(saved) : { questions: [], signs: [] };
+    const saved = safeGet('favorites');
+    if (!saved) return { questions: [], signs: [] };
+    try {
+      return JSON.parse(saved);
+    } catch (error) {
+      if (import.meta.env.DEV) {
+        console.warn('Failed to parse favorites from storage:', error);
+      }
+      return { questions: [], signs: [] };
+    }
   });
   
   const [stats, setStats] = useState(() => {
-    const saved = localStorage.getItem('stats');
+    const saved = safeGet('stats');
     const fallback = { quizzesTaken: 0, bestScore: 0, totalCorrect: 0, totalAnswered: 0, totalScore: 0 };
     if (!saved) return fallback;
-    const parsed = JSON.parse(saved);
-    return { ...fallback, ...parsed };
+    try {
+      const parsed = JSON.parse(saved);
+      return { ...fallback, ...parsed };
+    } catch (error) {
+      if (import.meta.env.DEV) {
+        console.warn('Failed to parse stats from storage:', error);
+      }
+      return fallback;
+    }
   });
 
   const [soundEnabled, setSoundEnabledState] = useState(() => 
-    localStorage.getItem('soundEnabled') !== 'false'
+    safeGet('soundEnabled') !== 'false'
   );
 
   const [vibrationEnabled, setVibrationEnabledState] = useState(() => 
-    localStorage.getItem('vibrationEnabled') !== 'false'
+    safeGet('vibrationEnabled') !== 'false'
   );
 
   const setSoundEnabled = (enabled: boolean) => {
     setSoundEnabledState(enabled);
-    localStorage.setItem('soundEnabled', String(enabled));
+    safeSet('soundEnabled', String(enabled));
   };
 
   const setVibrationEnabled = (enabled: boolean) => {
     setVibrationEnabledState(enabled);
-    localStorage.setItem('vibrationEnabled', String(enabled));
+    safeSet('vibrationEnabled', String(enabled));
   };
 
   const setLanguage = (lang: LanguageCode) => {
     setLanguageState(lang);
-    localStorage.setItem('language', lang);
+    safeSet('language', lang);
     i18n.changeLanguage(lang);
     const langInfo = languages.find(l => l.code === lang);
     document.documentElement.dir = langInfo?.dir || 'ltr';
@@ -85,12 +121,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const setTheme = (newTheme: 'light' | 'dark' | 'system') => {
     setThemeState(newTheme);
-    localStorage.setItem('theme', newTheme);
+    safeSet('theme', newTheme);
   };
 
   const setHasSeenOnboarding = (seen: boolean) => {
     setHasSeenOnboardingState(seen);
-    localStorage.setItem('hasSeenOnboarding', String(seen));
+    safeSet('hasSeenOnboarding', String(seen));
   };
 
   const toggleFavorite = (type: 'questions' | 'signs', id: string) => {
@@ -98,7 +134,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       const list = prev[type];
       const newList = list.includes(id) ? list.filter(i => i !== id) : [...list, id];
       const newFavorites = { ...prev, [type]: newList };
-      localStorage.setItem('favorites', JSON.stringify(newFavorites));
+      safeSet('favorites', JSON.stringify(newFavorites));
       return newFavorites;
     });
   };
@@ -113,7 +149,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         totalAnswered: prev.totalAnswered + total,
         totalScore: (prev.totalScore ?? 0) + score,
       };
-      localStorage.setItem('stats', JSON.stringify(newStats));
+      safeSet('stats', JSON.stringify(newStats));
       return newStats;
     });
   };

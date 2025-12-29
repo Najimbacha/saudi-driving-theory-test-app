@@ -24,6 +24,34 @@
     "offlineDesc": "?? ??????? ???? ??? ????? ?????????"
   },
   "home": {
+    "badges": {
+      "offline": "غير متصل 100%",
+      "noLogin": "بدون تسجيل دخول",
+      "noInternet": "لا يحتاج إنترنت"
+    },
+    "hero": {
+      "startPractice": "ابدأ الممارسة",
+      "startExam": "ابدأ الاختبار",
+      "trafficSigns": "إشارات المرور",
+      "learnTheory": "تعلم النظري",
+      "pickMode": "اختر طريقة للبدء (بدون إنترنت)",
+      "continue": {
+        "practice": "اختبار تدريبي",
+        "exam": "جلسة اختبار"
+      },
+      "continueLine": "تابع: {{name}} \u2022 {{value}}%",
+      "continueLineSimple": "تابع: {{name}}",
+      "continueCta": "متابعة"
+    },
+    "primaryAction": {
+      "continueTitle": "واصل تعلّمك",
+      "continueSubtitle": "الدرس: {{lesson}}",
+      "continueCta": "متابعة",
+      "startTitle": "ابدأ الاستعداد لنظرية القيادة",
+      "startSubtitle": "تعلّم القواعد • تدرّب على الأسئلة • انجح بثقة",
+      "startCta": "ابدأ التعلم",
+      "progressLabel": "التقدم: {{value}}٪"
+    },
     "greeting": "???? ????????",
     "subtitle": "????? ?? ?? ??? ??? ???? ? ???? ??????",
     "learnSigns": "?????? ??????",
@@ -61,6 +89,12 @@
       "progress": "السؤال {{current}} من {{total}}",
       "cta": "متابعة"
     },
+    "focus": {
+      "title": "تركيز اليوم",
+      "subtitle": "مراجعة سريعة لتبقى جاهزاً للاختبار",
+      "value": "تعلّم أهم قاعدة اليوم وأهم الإشارات",
+      "cta": "ابدأ تركيز اليوم ←"
+    },
     "mission": {
       "title": "مهمة اليوم",
       "items": {
@@ -74,10 +108,23 @@
     "progressSummary": {
       "title": "ملخص التقدم",
       "tests": "الاختبارات",
+      "testsTaken": "الاختبارات",
       "bestScore": "أفضل نتيجة",
+      "bestScoreLabel": "أفضل نتيجة",
       "averageScore": "المتوسط",
+      "overallAccuracy": "الدقة الإجمالية",
       "weakTopics": "أضعف المواضيع",
       "noWeakTopics": "لا توجد مواضيع ضعيفة بعد."
+    },
+    "weakAreas": {
+      "title": "حسّن نقاط الضعف",
+      "none": "لا توجد مواضيع ضعيفة بعد.",
+      "cta": "تعلّم نقاط الضعف"
+    },
+    "signsSpotlight": {
+      "title": "إشارات المرور",
+      "subtitle": "شائعة في اختبار النظري",
+      "cta": "استكشف الإشارات ←"
     },
     "xpStrip": {
       "xpLabel": "{{xp}} نقطة خبرة",
@@ -907,6 +954,11 @@
   "practice": {
     "byMode": "??? ?????",
     "byCategory": "??? ?????",
+    "byModeHelper": "تدرّب حسب الهدف",
+    "byCategoryHelper": "تدرّب حسب الموضوع",
+    "helperDefault": "اختر طريقة التدريب المناسبة لك",
+    "helperResume": "تابع من حيث توقفت",
+    "recommended": "موصى به",
     "modes": {
       "all": "جميع الأسئلة",
       "allDesc": "تدرب من بنك الأسئلة الكامل",
@@ -932,8 +984,10 @@
     "startQuick": "ابدأ سريعًا",
     "startDailyCount": "ابدأ يوميًا ({{value}})",
     "startQuickCount": "ابدأ سريعًا ({{value}})",
-    "allCount": "الكل ({{value}})",
-    "accuracyLabel": "الدقة: {{value}}",
+    "allCount": "كل الأسئلة ({{value}})",
+    "accuracyLabel": "الدقة: {{value}} (بناءً على محاولاتك)",
+    "mistakesDetail": "الأسئلة التي أجبت عليها خطأ: {{value}}",
+    "unlockStats": "تدرّب لفتح الإحصاءات",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -952,13 +1006,29 @@
     "topicBreakdown": "توزيع المواضيع",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-  "learn": {
-    "title": "????? ????? ???????",
-    "lessons": "الدروس",
-    "progress": "التقدم",
-    "continue": "???? ???????",
-    "completed": "مكتمل",
-    "noResults": "لا توجد دروس مطابقة",
+    "learn": {
+      "title": "????? ????? ???????",
+      "lessons": "الدروس",
+      "progress": "التقدم",
+      "continue": "???? ???????",
+      "completed": "مكتمل",
+      "keyFact": {
+        "speedLimit": "حد السرعة",
+        "points": "نقاط",
+        "ruleType": "نوع القاعدة",
+        "priorityRule": "قاعدة الأولوية",
+        "keyRuleInside": "قاعدة أساسية بالداخل",
+        "prohibited": "ممنوع",
+        "required": "مطلوب"
+      },
+      "examSignToRecognize": "علامة الامتحان للتعرّف عليها",
+      "viewSimilarSigns": "عرض العلامات المشابهة",
+      "severity": {
+        "serious": "خطير",
+        "moderate": "متوسط",
+        "minor": "بسيط"
+      },
+      "noResults": "لا توجد دروس مطابقة",
     "lessonsCount_one": "{{value}} درس",
     "lessonsCount_other": "{{value}} دروس",
     "categoriesCount_one": "{{value}} فئة",

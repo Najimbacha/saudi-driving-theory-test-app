@@ -1,4 +1,4 @@
-{
+﻿{
   "app": {
     "name": "সৌদি ড্রাইভিং থিওরি টেস্ট",
     "tagline": "আত্মবিশ্বাসের সঙ্গে ড্রাইভিং থিওরি শিখুন",
@@ -24,6 +24,34 @@
     "offlineDesc": "সব কনটেন্ট ইন্টারনেট ছাড়াই কাজ করে"
   },
   "home": {
+    "badges": {
+      "offline": "100% অফলাইন",
+      "noLogin": "লগইন লাগবে না",
+      "noInternet": "ইন্টারনেট দরকার নেই"
+    },
+    "hero": {
+      "startPractice": "অনুশীলন শুরু করুন",
+      "startExam": "টেস্ট শুরু করুন",
+      "trafficSigns": "ট্রাফিক সাইন",
+      "learnTheory": "থিওরি শিখুন",
+      "pickMode": "শুরু করার জন্য একটি মোড বেছে নিন (অফলাইন)",
+      "continue": {
+        "practice": "প্র্যাকটিস কুইজ",
+        "exam": "পরীক্ষা সেশন"
+      },
+      "continueLine": "চালিয়ে যান: {{name}} \u2022 {{value}}%",
+      "continueLineSimple": "চালিয়ে যান: {{name}}",
+      "continueCta": "চালিয়ে যান"
+    },
+    "primaryAction": {
+      "continueTitle": "শেখা চালিয়ে যান",
+      "continueSubtitle": "পাঠ: {{lesson}}",
+      "continueCta": "চালিয়ে যান",
+      "startTitle": "ড্রাইভিং থিওরির প্রস্তুতি শুরু করুন",
+      "startSubtitle": "নিয়ম শিখুন • প্রশ্ন অনুশীলন করুন • আত্মবিশ্বাসের সাথে পাস করুন",
+      "startCta": "শুরু করুন",
+      "progressLabel": "অগ্রগতি: {{value}}%"
+    },
     "greeting": "শিখতে প্রস্তুত?",
     "subtitle": "যেকোনো সময়, যেকোনো জায়গায় অনুশীলন করুন — ইন্টারনেট দরকার নেই",
     "learnSigns": "ট্রাফিক সাইন",
@@ -52,6 +80,12 @@
       "time": "~৫ মিনিট",
       "cta": "মিশন শুরু করুন"
     },
+    "focus": {
+      "title": "আজকের ফোকাস",
+      "subtitle": "পরীক্ষার জন্য দ্রুত রিফ্রেশ",
+      "value": "আজকের গুরুত্বপূর্ণ নিয়ম এবং সাইন শিখুন",
+      "cta": "আজকের ফোকাস শুরু করুন →"
+    },
     "xpStrip": {
       "xpLabel": "{{xp}} এক্সপি",
       "streakLabel_one": "স্ট্রিক: {{value}} দিন",
@@ -79,10 +113,23 @@
     "progressSummary": {
       "title": "অগ্রগতির সারসংক্ষেপ",
       "tests": "টেস্ট",
+      "testsTaken": "নেওয়া টেস্ট",
       "bestScore": "সেরা",
+      "bestScoreLabel": "সেরা স্কোর",
       "averageScore": "গড়",
+      "overallAccuracy": "সামগ্রিক সঠিকতা",
       "weakTopics": "দুর্বল বিষয়",
       "noWeakTopics": "এখনও কোনো দুর্বল বিষয় নেই।"
+    },
+    "weakAreas": {
+      "title": "দুর্বল অংশগুলো উন্নত করুন",
+      "none": "এখনও কোনো দুর্বল বিষয় নেই।",
+      "cta": "দুর্বল বিষয় শিখুন"
+    },
+    "signsSpotlight": {
+      "title": "ট্রাফিক সাইন",
+      "subtitle": "থিওরি টেস্টে বেশি আসে",
+      "cta": "সাইন দেখুন →"
     }
   },
   "signs": {
@@ -907,6 +954,11 @@
   "practice": {
     "byMode": "মোড অনুযায়ী",
     "byCategory": "বিভাগ অনুযায়ী",
+    "byModeHelper": "উদ্দেশ্য অনুযায়ী অনুশীলন",
+    "byCategoryHelper": "বিষয় অনুযায়ী অনুশীলন",
+    "helperDefault": "যেভাবে অনুশীলন করতে চান তা বেছে নিন",
+    "helperResume": "যেখানে থেমেছিলেন সেখান থেকে চালিয়ে যান",
+    "recommended": "প্রস্তাবিত",
     "modes": {
       "all": "সমস্ত প্রশ্ন",
       "allDesc": "পুরো প্রশ্নভাণ্ডার থেকে অনুশীলন করুন",
@@ -932,8 +984,10 @@
     "startQuick": "কুইক শুরু করুন",
     "startDailyCount": "ডেইলি শুরু করুন ({{value}})",
     "startQuickCount": "কুইক শুরু করুন ({{value}})",
-    "allCount": "সব ({{value}})",
-    "accuracyLabel": "নির্ভুলতা: {{value}}",
+    "allCount": "সব প্রশ্ন ({{value}})",
+    "accuracyLabel": "সঠিকতা: {{value}} (আপনার চেষ্টার ভিত্তিতে)",
+    "mistakesDetail": "ভুল উত্তর দেওয়া প্রশ্ন: {{value}}",
+    "unlockStats": "পরিসংখ্যান দেখতে অনুশীলন করুন",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -952,13 +1006,29 @@
     "topicBreakdown": "বিষয়ভিত্তিক বিশ্লেষণ",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-  "learn": {
-    "title": "ড্রাইভিং থিওরি শিখুন",
-    "lessons": "পাঠ",
-    "progress": "অগ্রগতি",
-    "continue": "শেখা চালিয়ে যান",
-    "completed": "সম্পন্ন",
-    "topics": {
+    "learn": {
+      "title": "ড্রাইভিং থিওরি শিখুন",
+      "lessons": "পাঠ",
+      "progress": "অগ্রগতি",
+      "continue": "শেখা চালিয়ে যান",
+      "completed": "সম্পন্ন",
+      "keyFact": {
+        "speedLimit": "গতি সীমা",
+        "points": "পয়েন্ট",
+        "ruleType": "নিয়মের ধরন",
+        "priorityRule": "অগ্রাধিকার নিয়ম",
+        "keyRuleInside": "ভেতরে মূল নিয়ম",
+        "prohibited": "নিষিদ্ধ",
+        "required": "আবশ্যক"
+      },
+      "examSignToRecognize": "পরীক্ষায় চেনার সাইন",
+      "viewSimilarSigns": "একই ধরনের সাইন দেখুন",
+      "severity": {
+        "serious": "গুরুতর",
+        "moderate": "মাঝারি",
+        "minor": "হালকা"
+      },
+      "topics": {
       "speedLimits": "গতি সীমা",
       "rightOfWay": "পথের অধিকার",
       "signals": "ট্রাফিক সিগন্যাল",

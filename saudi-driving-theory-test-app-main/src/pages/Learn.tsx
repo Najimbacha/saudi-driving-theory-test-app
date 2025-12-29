@@ -57,6 +57,81 @@ export default function Learn() {
     if (!category) return categoryId;
     return category.title[language as keyof typeof category.title] || category.title.en;
   };
+  const getRuleTitle = (rule: typeof rulesData.rules[number]) =>
+    rule.title[language as keyof typeof rule.title] || rule.title.en;
+  const getRuleContent = (rule: typeof rulesData.rules[number]) =>
+    rule.content[language as keyof typeof rule.content] || rule.content.en;
+  const getShortDescription = (text: string) => {
+    const sentences = text.split(/(?<=[.!?؟])\s+/).filter(Boolean);
+    if (sentences.length <= 1) return text;
+    const keep = new Set<number>();
+    keep.add(0);
+    sentences.forEach((sentence, idx) => {
+      if (/[0-9٠-٩]/.test(sentence) || /km\/h/i.test(sentence)) {
+        keep.add(idx);
+      }
+      if (/unless otherwise posted/i.test(sentence)) {
+        keep.add(idx);
+      }
+    });
+    return Array.from(keep)
+      .sort((a, b) => a - b)
+      .map((idx) => sentences[idx])
+      .join(' ');
+  };
+  const getKeyFact = (rule: typeof rulesData.rules[number]) => {
+    const title = getRuleTitle(rule);
+    const content = getRuleContent(rule);
+    const extractText = `${content} ${rule.content.en || ''}`;
+    const speedMatch = extractText.match(/([0-9]+)\s*km\/h/i);
+    if (speedMatch) {
+      const speedValue = Number.parseInt(speedMatch[1], 10);
+      return {
+        type: 'speed',
+        label: t('learn.keyFact.speedLimit'),
+        value: `${numberFormatter.format(speedValue)} km/h`,
+      };
+    }
+
+    const pointsFromField = Array.isArray(rule.relatedViolationIds)
+      ? rule.relatedViolationIds.find((violation) => typeof violation.points === 'number')?.points
+      : undefined;
+    const pointsMatch = extractText.match(/([0-9]+)\s*points?/i);
+    const pointsValue = typeof pointsFromField === 'number'
+      ? pointsFromField
+      : pointsMatch
+      ? Number.parseInt(pointsMatch[1], 10)
+      : undefined;
+    if (typeof pointsValue === 'number' && !Number.isNaN(pointsValue)) {
+      return { type: 'points', label: t('learn.keyFact.points'), value: numberFormatter.format(pointsValue) };
+    }
+
+    const priorityMatch =
+      rule.category === 'rightOfWay' ||
+      /priority|right of way|roundabout|intersection/i.test(rule.title.en || '') ||
+      /priority|right of way|roundabout|intersection/i.test(title);
+    if (priorityMatch) {
+      return { type: 'priority', label: t('learn.keyFact.priorityRule') };
+    }
+
+    const prohibitedMatch =
+      /\bno\b|prohibit|forbid/i.test(rule.title.en || '') ||
+      /\bno\b|prohibit|forbid/i.test(title);
+    if (prohibitedMatch) {
+      return { type: 'ruleType', label: t('learn.keyFact.ruleType'), value: t('learn.keyFact.prohibited') };
+    }
+
+    const requiredMatch =
+      /must|required/i.test(rule.title.en || '') ||
+      /must|required/i.test(title);
+    if (requiredMatch) {
+      return { type: 'ruleType', label: t('learn.keyFact.ruleType'), value: t('learn.keyFact.required') };
+    }
+
+    return { type: 'fallback', label: t('learn.keyFact.keyRuleInside') };
+  };
+  const formatKeyFact = (fact: { label: string; value?: string }) =>
+    fact.value ? `${fact.label}: ${fact.value}` : fact.label;
 
   const handleLessonChange = (value: string) => {
     if (!value) {
@@ -142,45 +217,83 @@ export default function Learn() {
             </div>
           ) : (
             <Accordion type="single" collapsible className="space-y-3" onValueChange={handleLessonChange}>
-              {filteredRules.map((rule, i) => (
-                <motion.div
-                  key={rule.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.03 }}
-                >
-                  <AccordionItem value={rule.id} className="bg-card rounded-xl shadow-md border-0 overflow-hidden">
-                    <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                      <div className="flex items-center gap-3 text-left">
-                        <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
-                          {rule.icon}
+              {filteredRules.map((rule, i) => {
+                const showHeader = i === 0 || filteredRules[i - 1].category !== rule.category;
+                const title = getRuleTitle(rule);
+                const content = getRuleContent(rule);
+                const keyFact = getKeyFact(rule);
+                const keyFactText = formatKeyFact(keyFact);
+                const hasViolations = Array.isArray(rule.relatedViolationIds) && rule.relatedViolationIds.length > 0;
+                const pointsValue = hasViolations
+                  ? rule.relatedViolationIds.find((violation) => typeof violation.points === 'number')?.points
+                  : undefined;
+                const severityLabel =
+                  typeof pointsValue === 'number'
+                    ? pointsValue >= 6
+                      ? t('learn.severity.serious')
+                      : pointsValue >= 3
+                      ? t('learn.severity.moderate')
+                      : t('learn.severity.minor')
+                    : null;
+                const headlineValue = keyFact.type === 'speed' && keyFact.value ? keyFact.value : null;
+
+                return (
+                  <motion.div
+                    key={rule.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.03 }}
+                  >
+                    {showHeader && (
+                      <div className="px-2 pt-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                        {getCategoryTitle(rule.category)}
+                      </div>
+                    )}
+                    <AccordionItem value={rule.id} className="bg-card rounded-xl shadow-md border-0 overflow-hidden">
+                      <AccordionTrigger className="px-4 py-4 hover:no-underline">
+                        <div className="flex items-center gap-3 text-left">
+                          <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                            {rule.icon}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="font-semibold text-card-foreground">
+                              {title}
+                            </h3>
+                            <p className="text-xs text-muted-foreground mt-0.5">
+                              {getCategoryTitle(rule.category)}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-1 truncate">
+                              {keyFactText}
+                            </p>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-semibold text-card-foreground">
-                            {rule.title[language as keyof typeof rule.title] || rule.title.en}
-                          </h3>
-                          <p className="text-xs text-muted-foreground mt-0.5">
-                            {getCategoryTitle(rule.category)}
+                      </AccordionTrigger>
+                      <AccordionContent className="px-4 pb-4">
+                        <div className="bg-muted/50 rounded-lg p-4 text-sm text-card-foreground leading-relaxed space-y-2">
+                          {headlineValue && (
+                            <p className="text-2xl font-semibold text-card-foreground">
+                              {headlineValue}
+                            </p>
+                          )}
+                          <p className="text-sm font-semibold text-card-foreground">
+                            {title}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            {getShortDescription(content)}
                           </p>
                         </div>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="px-4 pb-4">
-                      <div className="bg-muted/50 rounded-lg p-4 text-sm text-card-foreground leading-relaxed">
-                        {rule.content[language as keyof typeof rule.content] || rule.content.en}
-                      </div>
                       {Array.isArray(rule.relatedSignIds) && rule.relatedSignIds.length > 0 && (
                         <div className="mt-4 space-y-3">
                           <div className="flex items-center justify-between gap-3">
                             <h4 className="text-sm font-semibold text-card-foreground">
-                              {t('learn.relatedSignsTitle')}
+                              {t('learn.examSignToRecognize')}
                             </h4>
                             <Button
                               variant="outline"
                               size="sm"
                               onClick={() => navigate(`/signs?ids=${rule.relatedSignIds.join(',')}`)}
                             >
-                              {t('learn.viewRelatedSigns')}
+                              {t('learn.viewSimilarSigns')}
                             </Button>
                           </div>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -214,7 +327,7 @@ export default function Learn() {
                           </div>
                         </div>
                       )}
-                      {Array.isArray(rule.relatedViolationIds) && rule.relatedViolationIds.length > 0 && (
+                      {hasViolations && typeof pointsValue === 'number' && (
                         <div className="mt-4 space-y-3">
                           <div className="flex items-center justify-between gap-3">
                             <h4 className="text-sm font-semibold text-card-foreground">
@@ -228,6 +341,11 @@ export default function Learn() {
                               {t('learn.viewViolationSystem')}
                             </Button>
                           </div>
+                          {severityLabel && (
+                            <p className="text-sm text-muted-foreground">
+                              {numberFormatter.format(pointsValue)} {t('learn.keyFact.points')} • {severityLabel}
+                            </p>
+                          )}
                           <div className="space-y-3">
                             {rule.relatedViolationIds.slice(0, 3).map((violation: { id: string; points: number }) => {
                               const key = `violations.${violation.id}`;
@@ -258,7 +376,8 @@ export default function Learn() {
                     </AccordionContent>
                   </AccordionItem>
                 </motion.div>
-              ))}
+              );
+            })}
             </Accordion>
           )}
         </div>

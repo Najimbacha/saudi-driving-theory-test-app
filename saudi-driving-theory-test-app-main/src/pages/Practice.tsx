@@ -96,12 +96,28 @@ export default function Practice() {
     getDueReviews, 
     recordAnswer,
     categoryStats,
-    mistakes
+    mistakes,
+    totalAnswered
   } = useLearning();
   const { triggerCorrectFeedback, triggerIncorrectFeedback, triggerSuccessFeedback, triggerFailFeedback } = useFeedback();
 
   const [state, setState] = useState<QuizState>('setup');
   const [mode, setMode] = useState<PracticeMode>('all');
+  const [resumeSession, setResumeSession] = useState(() => loadTestSession());
+  const [activeTab, setActiveTab] = useState<'modes' | 'category'>(() => {
+    const session = loadTestSession();
+    if (session?.type === 'practice' && session.payload.mode === 'category') {
+      return 'category';
+    }
+    return 'modes';
+  });
+  const [expandedModeId, setExpandedModeId] = useState<PracticeMode | null>(() => {
+    const session = loadTestSession();
+    if (session?.type === 'practice' && session.payload.mode !== 'category') {
+      return session.payload.mode as PracticeMode;
+    }
+    return 'all';
+  });
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [questions, setQuestions] = useState<typeof questionsData.questions>([]);
   const [current, setCurrent] = useState(0);
@@ -118,6 +134,16 @@ export default function Practice() {
 
   const warnedLegacyRef = useRef(new Set<string>());
   const didResumeRef = useRef(false);
+  const isNewUser = totalAnswered < 5;
+  const hasPracticeResume = resumeSession?.type === 'practice';
+  const primaryModeId: PracticeMode =
+    hasPracticeResume && resumeSession?.type === 'practice' && resumeSession.payload.mode !== 'category'
+      ? (resumeSession.payload.mode as PracticeMode)
+      : 'all';
+  const primaryCategoryId =
+    hasPracticeResume && resumeSession?.type === 'practice' && resumeSession.payload.mode === 'category'
+      ? resumeSession.payload.selectedCategory
+      : null;
 
   const getCategoryId = (question: any) =>
     question.category || question.categoryId || question.categoryKey?.split('.').pop() || 'unknown';
@@ -159,6 +185,22 @@ export default function Practice() {
     setState('playing');
     didResumeRef.current = true;
   }, [location, questionsById]);
+  useEffect(() => {
+    if (state !== 'setup') return;
+    const session = loadTestSession();
+    const next = session?.type === 'practice' ? session : null;
+    setResumeSession(next);
+    if (next?.type === 'practice' && next.payload.mode === 'category') {
+      setActiveTab('category');
+      setSelectedCategory(next.payload.selectedCategory ?? null);
+      setExpandedModeId(null);
+      return;
+    }
+    setActiveTab('modes');
+    setExpandedModeId(
+      next?.type === 'practice' ? (next.payload.mode as PracticeMode) : 'all'
+    );
+  }, [state]);
 
   // Get available questions for each mode
   const mistakeQuestionIds = useMemo(() => getMistakeQuestions(), [getMistakeQuestions]);
@@ -224,6 +266,7 @@ export default function Practice() {
     setSelected(null);
     setShowAnswer(false);
     setMode(practiceMode);
+    setSelectedCategory(practiceMode === 'category' ? category ?? null : null);
     setSessionWrongIds([]);
     setSessionResults([]);
     setState('playing');
@@ -348,7 +391,9 @@ export default function Practice() {
   useEffect(() => {
     if (!import.meta.env.DEV || !q || warnedLegacyRef.current.has(q.id)) return;
     if (q.question || q.options || q.explanation || typeof q.correctAnswer === 'number') {
-      console.warn(`[quiz-i18n] Legacy fields detected for question ${q.id}`);
+      if (import.meta.env.DEV) {
+        console.warn(`[quiz-i18n] Legacy fields detected for question ${q.id}`);
+      }
       warnedLegacyRef.current.add(q.id);
     }
   }, [q]);
@@ -362,16 +407,24 @@ export default function Practice() {
             <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
               <ArrowLeft className="h-5 w-5 rtl-flip" />
             </Button>
-            <h1 className="text-xl font-bold">{t('quiz.title')}</h1>
+            <div>
+              <h1 className="text-xl font-bold">{t('quiz.title')}</h1>
+              <p className="text-sm text-muted-foreground">
+                {hasPracticeResume ? t('practice.helperResume') : t('practice.helperDefault')}
+              </p>
+            </div>
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-6">
-          <Tabs defaultValue="modes" className="w-full">
+          <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'modes' | 'category')} className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
               <TabsTrigger value="modes">{t('practice.byMode')}</TabsTrigger>
               <TabsTrigger value="category">{t('practice.byCategory')}</TabsTrigger>
             </TabsList>
+            <p className="text-sm text-muted-foreground -mt-3 mb-4">
+              {activeTab === 'modes' ? t('practice.byModeHelper') : t('practice.byCategoryHelper')}
+            </p>
 
             <TabsContent value="modes" className="space-y-4">
               {PRACTICE_MODES.map((modeConfig) => {
@@ -404,6 +457,9 @@ export default function Practice() {
                     break;
                 }
 
+                const isPrimary = primaryModeId === modeConfig.id;
+                const isExpanded = expandedModeId === modeConfig.id;
+
                 return (
                   <motion.div
                     key={modeConfig.id}
@@ -411,8 +467,11 @@ export default function Practice() {
                     whileTap={{ scale: disabled ? 1 : 0.98 }}
                   >
                     <Card 
-                      className={`cursor-pointer transition-all ${disabled ? 'bg-muted/40 text-muted-foreground' : ''}`}
-                      onClick={() => !disabled && setMode(modeConfig.id)}
+                      className={`cursor-pointer transition-all ${disabled ? 'bg-muted/40 text-muted-foreground' : ''} ${!disabled && isPrimary ? 'border-accent/60 ring-1 ring-accent/20' : ''}`}
+                      onClick={() => {
+                        if (disabled) return;
+                        setExpandedModeId(prev => (prev === modeConfig.id ? null : modeConfig.id));
+                      }}
                     >
                       <CardHeader className="pb-3">
                         <div className="flex items-center justify-between">
@@ -429,10 +488,17 @@ export default function Practice() {
                               </CardDescription>
                             </div>
                           </div>
-                          <Badge variant="secondary">{numberFormatter.format(count)}</Badge>
+                          <div className="flex flex-col items-end gap-1">
+                            {isPrimary && !disabled && (
+                              <span className="text-[10px] font-semibold uppercase tracking-wide text-accent">
+                                {t('practice.recommended')}
+                              </span>
+                            )}
+                            <Badge variant="secondary">{numberFormatter.format(count)}</Badge>
+                          </div>
                         </div>
                       </CardHeader>
-                      {mode === modeConfig.id && !disabled && (
+                      {isExpanded && !disabled && (
                         <CardContent className="pt-0">
                           {modeConfig.id === 'daily' || modeConfig.id === 'quick' ? (
                             <div className="flex gap-2">
@@ -455,6 +521,11 @@ export default function Practice() {
                               <p className="text-sm text-muted-foreground mb-3">
                                 {t('quiz.selectQuestions')}
                               </p>
+                              {modeConfig.id === 'mistakes' && (
+                                <p className="text-xs text-muted-foreground mb-3">
+                                  {t('practice.mistakesDetail', { value: numberFormatter.format(count) })}
+                                </p>
+                              )}
                               <div className="flex gap-2">
                                 {[5, 10, 20].map(n => (
                                   <Button 
@@ -524,6 +595,8 @@ export default function Practice() {
                 const categoryQuestions = getQuestionsByCategory(category);
                 const stats = categoryStats[category];
                 const accuracy = stats?.accuracy ?? 0;
+                const isPrimary = primaryCategoryId === category;
+                const isExpanded = selectedCategory === category;
 
                 return (
                   <motion.div
@@ -534,7 +607,7 @@ export default function Practice() {
                     <Card 
                       className={`cursor-pointer transition-all ${
                         selectedCategory === category ? 'ring-2 ring-primary' : ''
-                      }`}
+                      } ${isPrimary ? 'border-accent/60 ring-1 ring-accent/20' : ''}`}
                       onClick={() => setSelectedCategory(
                         selectedCategory === category ? null : category
                       )}
@@ -549,17 +622,29 @@ export default function Practice() {
                               <CardTitle className="text-base capitalize">
                                 {getCategoryLabel(category)}
                               </CardTitle>
-                              {stats && (
+                              {!isNewUser && stats && (
                                 <CardDescription className="text-sm">
                                   {t('practice.accuracyLabel', { value: percentFormatter.format(accuracy / 100) })}
                                 </CardDescription>
                               )}
+                              {isNewUser && (
+                                <CardDescription className="text-sm">
+                                  {t('practice.unlockStats')}
+                                </CardDescription>
+                              )}
                             </div>
                           </div>
-                          <Badge variant="secondary">{numberFormatter.format(categoryQuestions.length)}</Badge>
+                          <div className="flex flex-col items-end gap-1">
+                            {isPrimary && (
+                              <span className="text-[10px] font-semibold uppercase tracking-wide text-accent">
+                                {t('practice.recommended')}
+                              </span>
+                            )}
+                            <Badge variant="secondary">{numberFormatter.format(categoryQuestions.length)}</Badge>
+                          </div>
                         </div>
                       </CardHeader>
-                      {selectedCategory === category && (
+                      {isExpanded && (
                         <CardContent className="pt-0">
                           <p className="text-sm text-muted-foreground mb-3">
                             {t('quiz.selectQuestions')}
@@ -587,7 +672,7 @@ export default function Practice() {
                                 startPractice('category', categoryQuestions.length, category);
                               }}
                             >
-                              {t('practice.all')}
+                              {t('practice.allCount', { count: categoryQuestions.length, value: numberFormatter.format(categoryQuestions.length) })}
                             </Button>
                           </div>
                         </CardContent>

@@ -24,6 +24,34 @@
     "offlineDesc": "सारा कंटेंट इंटरनेट के बिना काम करता है"
   },
   "home": {
+    "badges": {
+      "offline": "100% ऑफ़लाइन",
+      "noLogin": "लॉगिन की ज़रूरत नहीं",
+      "noInternet": "इंटरनेट की ज़रूरत नहीं"
+    },
+    "hero": {
+      "startPractice": "अभ्यास शुरू करें",
+      "startExam": "टेस्ट शुरू करें",
+      "trafficSigns": "ट्रैफिक साइन",
+      "learnTheory": "थ्योरी सीखें",
+      "pickMode": "शुरू करने के लिए एक मोड चुनें (ऑफलाइन)",
+      "continue": {
+        "practice": "प्रैक्टिस क्विज़",
+        "exam": "परीक्षा सत्र"
+      },
+      "continueLine": "जारी रखें: {{name}} \u2022 {{value}}%",
+      "continueLineSimple": "जारी रखें: {{name}}",
+      "continueCta": "जारी रखें"
+    },
+    "primaryAction": {
+      "continueTitle": "सीखना जारी रखें",
+      "continueSubtitle": "पाठ: {{lesson}}",
+      "continueCta": "जारी रखें",
+      "startTitle": "ड्राइविंग थ्योरी की तैयारी शुरू करें",
+      "startSubtitle": "नियम सीखें • प्रश्नों का अभ्यास करें • आत्मविश्वास से पास करें",
+      "startCta": "सीखना शुरू करें",
+      "progressLabel": "प्रगति: {{value}}%"
+    },
     "greeting": "सीखने के लिए तैयार?",
     "subtitle": "कभी भी, कहीं भी अभ्यास करें — इंटरनेट की जरूरत नहीं",
     "learnSigns": "ट्रैफ़िक साइन",
@@ -61,6 +89,12 @@
       "progress": "प्रश्न {{current}} / {{total}}",
       "cta": "जारी रखें"
     },
+    "focus": {
+      "title": "आज का फोकस",
+      "subtitle": "परीक्षा के लिए एक ताज़ा रिफ्रेश",
+      "value": "आज का सबसे महत्वपूर्ण नियम और संकेत सीखें",
+      "cta": "आज का फोकस शुरू करें →"
+    },
     "mission": {
       "title": "आज का मिशन",
       "items": {
@@ -74,10 +108,23 @@
     "progressSummary": {
       "title": "प्रगति सारांश",
       "tests": "टेस्ट",
+      "testsTaken": "किए गए टेस्ट",
       "bestScore": "सर्वश्रेष्ठ",
+      "bestScoreLabel": "सर्वश्रेष्ठ स्कोर",
       "averageScore": "औसत",
+      "overallAccuracy": "कुल सटीकता",
       "weakTopics": "कमजोर विषय",
       "noWeakTopics": "अभी कोई कमजोर विषय नहीं।"
+    },
+    "weakAreas": {
+      "title": "कमजोर हिस्सों को बेहतर करें",
+      "none": "अभी कोई कमजोर विषय नहीं।",
+      "cta": "कमजोर विषय सीखें"
+    },
+    "signsSpotlight": {
+      "title": "ट्रैफिक संकेत",
+      "subtitle": "थ्योरी टेस्ट में अक्सर पूछे जाते हैं",
+      "cta": "संकेत देखें →"
     },
     "xpStrip": {
       "xpLabel": "{{xp}} एक्सपी",
@@ -907,6 +954,11 @@
   "practice": {
     "byMode": "मोड के अनुसार",
     "byCategory": "श्रेणी के अनुसार",
+    "byModeHelper": "उद्देश्य के अनुसार अभ्यास करें",
+    "byCategoryHelper": "विषय के अनुसार अभ्यास करें",
+    "helperDefault": "जैसे आप अभ्यास करना चाहते हैं, चुनें",
+    "helperResume": "जहां छोड़ा था वहां से जारी रखें",
+    "recommended": "अनुशंसित",
     "modes": {
       "all": "सभी प्रश्न",
       "allDesc": "पूरे प्रश्न बैंक से अभ्यास करें",
@@ -932,8 +984,10 @@
     "startQuick": "क्विक शुरू करें",
     "startDailyCount": "डेली शुरू करें ({{value}})",
     "startQuickCount": "क्विक शुरू करें ({{value}})",
-    "allCount": "सब ({{value}})",
-    "accuracyLabel": "सटीकता: {{value}}",
+    "allCount": "सभी प्रश्न ({{value}})",
+    "accuracyLabel": "सटीकता: {{value}} (आपके प्रयासों पर आधारित)",
+    "mistakesDetail": "गलत उत्तर वाले प्रश्न: {{value}}",
+    "unlockStats": "आंकड़े देखने के लिए अभ्यास करें",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -952,13 +1006,29 @@
     "topicBreakdown": "विषय विभाजन",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-  "learn": {
-    "title": "ड्राइविंग थ्योरी सीखें",
-    "lessons": "पाठ",
-    "progress": "प्रगति",
-    "continue": "सीखना जारी रखें",
-    "completed": "पूर्ण",
-    "noResults": "कोई पाठ नहीं मिला",
+    "learn": {
+      "title": "ड्राइविंग थ्योरी सीखें",
+      "lessons": "पाठ",
+      "progress": "प्रगति",
+      "continue": "सीखना जारी रखें",
+      "completed": "पूर्ण",
+      "keyFact": {
+        "speedLimit": "गति सीमा",
+        "points": "अंक",
+        "ruleType": "नियम का प्रकार",
+        "priorityRule": "प्राथमिकता नियम",
+        "keyRuleInside": "मुख्य नियम अंदर है",
+        "prohibited": "निषिद्ध",
+        "required": "आवश्यक"
+      },
+      "examSignToRecognize": "परीक्षा में पहचानने वाली संकेत",
+      "viewSimilarSigns": "मिलते-जुलते संकेत देखें",
+      "severity": {
+        "serious": "गंभीर",
+        "moderate": "मध्यम",
+        "minor": "हल्का"
+      },
+      "noResults": "कोई पाठ नहीं मिला",
     "lessonsCount_one": "{{value}} पाठ",
     "lessonsCount_other": "{{value}} पाठ",
     "categoriesCount_one": "{{value}} श्रेणी",

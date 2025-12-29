@@ -24,6 +24,34 @@
     "offlineDesc": "All content works without internet connection"
   },
   "home": {
+    "badges": {
+      "offline": "100% Offline",
+      "noLogin": "No login required",
+      "noInternet": "No internet needed"
+    },
+    "hero": {
+      "startPractice": "Start Practice",
+      "startExam": "Start Exam",
+      "trafficSigns": "Traffic Signs",
+      "learnTheory": "Learn Theory",
+      "pickMode": "Pick a mode to begin (offline)",
+      "continue": {
+        "practice": "Practice quiz",
+        "exam": "Exam session"
+      },
+      "continueLine": "Continue: {{name}} \u2022 {{value}}%",
+      "continueLineSimple": "Continue: {{name}}",
+      "continueCta": "Continue"
+    },
+    "primaryAction": {
+      "continueTitle": "Continue your learning",
+      "continueSubtitle": "Lesson: {{lesson}}",
+      "continueCta": "Continue",
+      "startTitle": "Start your driving theory preparation",
+      "startSubtitle": "Learn rules • Practice questions • Pass confidently",
+      "startCta": "Start Learning",
+      "progressLabel": "Progress: {{value}}%"
+    },
     "greeting": "Ready to Learn?",
     "subtitle": "Practice anytime, anywhere - no internet needed",
     "learnSigns": "Traffic Signs",
@@ -61,6 +89,12 @@
       "progress": "Question {{current}} of {{total}}",
       "cta": "Continue"
     },
+    "focus": {
+      "title": "Today’s Focus",
+      "subtitle": "A quick refresh to stay exam-ready",
+      "value": "Learn today’s most important rule and signs",
+      "cta": "Start today’s focus →"
+    },
     "mission": {
       "title": "Today's Mission",
       "items": {
@@ -74,10 +108,23 @@
     "progressSummary": {
       "title": "Progress Summary",
       "tests": "Tests",
+      "testsTaken": "Tests taken",
       "bestScore": "Best",
+      "bestScoreLabel": "Best score",
       "averageScore": "Average",
+      "overallAccuracy": "Overall accuracy",
       "weakTopics": "Weak topics",
       "noWeakTopics": "No weak topics yet."
+    },
+    "weakAreas": {
+      "title": "Improve your weak areas",
+      "none": "No weak topics yet.",
+      "cta": "Learn weak topics"
+    },
+    "signsSpotlight": {
+      "title": "Traffic Signs",
+      "subtitle": "Frequently asked in the theory test",
+      "cta": "Explore signs →"
     },
     "xpStrip": {
       "xpLabel": "{{xp}} XP",
@@ -924,8 +971,13 @@
     "reviewProgress": "Review: {{current}} / {{total}}"
   },
   "practice": {
-    "byMode": "By Mode",
-    "byCategory": "By Category",
+      "byMode": "By Mode",
+      "byCategory": "By Category",
+      "byModeHelper": "Practice by purpose",
+      "byCategoryHelper": "Practice by topic",
+      "helperDefault": "Choose how you want to practice",
+      "helperResume": "Continue where you left off",
+      "recommended": "Recommended",
     "modes": {
       "all": "All Questions",
       "allDesc": "Practice from the complete question bank",
@@ -951,8 +1003,10 @@
     "startQuick": "Start Quick",
     "startDailyCount": "Start Daily ({{value}})",
     "startQuickCount": "Start Quick ({{value}})",
-    "allCount": "All ({{value}})",
-    "accuracyLabel": "Accuracy: {{value}}",
+      "allCount": "All questions ({{value}})",
+      "accuracyLabel": "Accuracy: {{value}} (based on your attempts)",
+      "mistakesDetail": "Questions you answered wrong: {{value}}",
+      "unlockStats": "Practice to unlock stats",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -971,13 +1025,29 @@
     "topicBreakdown": "Topic Breakdown",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-  "learn": {
-    "title": "Learn Driving Theory",
-    "lessons": "Lessons",
-    "progress": "Progress",
-    "continue": "Continue Learning",
-    "completed": "Completed",
-    "noResults": "No lessons found",
+    "learn": {
+      "title": "Learn Driving Theory",
+      "lessons": "Lessons",
+      "progress": "Progress",
+      "continue": "Continue Learning",
+      "completed": "Completed",
+      "keyFact": {
+        "speedLimit": "Speed limit",
+        "points": "Points",
+        "ruleType": "Rule type",
+        "priorityRule": "Priority rule",
+        "keyRuleInside": "Key rule inside",
+        "prohibited": "Prohibited",
+        "required": "Required"
+      },
+      "examSignToRecognize": "Exam sign to recognize",
+      "viewSimilarSigns": "View similar signs",
+      "severity": {
+        "serious": "Serious",
+        "moderate": "Moderate",
+        "minor": "Minor"
+      },
+      "noResults": "No lessons found",
     "lessonsCount_one": "{{value}} lesson",
     "lessonsCount_other": "{{value}} lessons",
     "categoriesCount_one": "{{value}} category",

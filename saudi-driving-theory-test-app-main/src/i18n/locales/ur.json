@@ -24,6 +24,34 @@
     "offlineDesc": "انٹرنیٹ کے بغیر بھی استعمال کریں"
   },
   "home": {
+    "badges": {
+      "offline": "100% آف لائن",
+      "noLogin": "لاگ اِن کی ضرورت نہیں",
+      "noInternet": "انٹرنیٹ کی ضرورت نہیں"
+    },
+    "hero": {
+      "startPractice": "مشق شروع کریں",
+      "startExam": "ٹیسٹ شروع کریں",
+      "trafficSigns": "ٹریفک نشانیاں",
+      "learnTheory": "نظریہ سیکھیں",
+      "pickMode": "شروع کرنے کے لیے ایک طریقہ منتخب کریں (آف لائن)",
+      "continue": {
+        "practice": "پریکٹس کوئز",
+        "exam": "امتحانی سیشن"
+      },
+      "continueLine": "جاری رکھیں: {{name}} \u2022 {{value}}%",
+      "continueLineSimple": "جاری رکھیں: {{name}}",
+      "continueCta": "جاری رکھیں"
+    },
+    "primaryAction": {
+      "continueTitle": "اپنی سیکھنا جاری رکھیں",
+      "continueSubtitle": "سبق: {{lesson}}",
+      "continueCta": "جاری رکھیں",
+      "startTitle": "ڈرائیونگ تھیوری کی تیاری شروع کریں",
+      "startSubtitle": "قواعد سیکھیں • سوالات کی مشق کریں • اعتماد سے کامیاب ہوں",
+      "startCta": "سیکھنا شروع کریں",
+      "progressLabel": "پیش رفت: {{value}}٪"
+    },
     "greeting": "آج کیا سیکھنا ہے؟",
     "subtitle": "کچھ منٹ مشق کریں، ہر دن بہتر ہوں",
     "learnSigns": "ٹریفک نشانیاں",
@@ -61,6 +89,12 @@
       "progress": "سوال {{current}} از {{total}}",
       "cta": "جاری رکھیں"
     },
+    "focus": {
+      "title": "آج کی توجہ",
+      "subtitle": "امتحان کے لیے تازہ یاد دہانی",
+      "value": "آج کا اہم اصول اور اہم نشانیاں سیکھیں",
+      "cta": "آج کی توجہ شروع کریں ←"
+    },
     "mission": {
       "title": "آج کی مشن",
       "items": {
@@ -74,10 +108,23 @@
     "progressSummary": {
       "title": "پیش رفت کا خلاصہ",
       "tests": "ٹیسٹ",
+      "testsTaken": "ٹیسٹ دیے گئے",
       "bestScore": "بہترین",
+      "bestScoreLabel": "بہترین اسکور",
       "averageScore": "اوسط",
+      "overallAccuracy": "مجموعی درستگی",
       "weakTopics": "کمزور موضوعات",
       "noWeakTopics": "ابھی کوئی کمزور موضوع نہیں۔"
+    },
+    "weakAreas": {
+      "title": "کمزور حصوں کو بہتر کریں",
+      "none": "ابھی کوئی کمزور موضوع نہیں۔",
+      "cta": "کمزور موضوعات سیکھیں"
+    },
+    "signsSpotlight": {
+      "title": "ٹریفک نشانیاں",
+      "subtitle": "تھیوری ٹیسٹ میں عام",
+      "cta": "نشانیاں دیکھیں ←"
     },
     "xpStrip": {
       "xpLabel": "{{xp}} ایکس پی",
@@ -907,6 +954,11 @@
   "practice": {
     "byMode": "موڈ کے مطابق",
     "byCategory": "زمرے کے مطابق",
+    "byModeHelper": "مقصد کے مطابق مشق کریں",
+    "byCategoryHelper": "موضوع کے مطابق مشق کریں",
+    "helperDefault": "جس طرح مشق کرنا چاہتے ہیں وہ منتخب کریں",
+    "helperResume": "جہاں چھوڑا تھا وہاں سے جاری رکھیں",
+    "recommended": "سفارش کردہ",
     "modes": {
       "all": "تمام سوالات",
       "allDesc": "مکمل سوال بینک سے مشق کریں",
@@ -932,8 +984,10 @@
     "startQuick": "فوری شروع کریں",
     "startDailyCount": "روزانہ شروع کریں ({{value}})",
     "startQuickCount": "فوری شروع کریں ({{value}})",
-    "allCount": "سب ({{value}})",
-    "accuracyLabel": "درستگی: {{value}}",
+    "allCount": "تمام سوالات ({{value}})",
+    "accuracyLabel": "درستگی: {{value}} (آپ کی کوششوں کی بنیاد پر)",
+    "mistakesDetail": "غلط جواب دیے گئے سوالات: {{value}}",
+    "unlockStats": "اعداد و شمار دیکھنے کے لئے مشق کریں",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -952,13 +1006,29 @@
     "topicBreakdown": "موضوعات کی تقسیم",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-  "learn": {
-    "title": "سیکھیں اور تیار ہوں",
-    "lessons": "اسباق",
-    "progress": "پیشرفت",
-    "continue": "سیکھنا جاری رکھیں",
-    "completed": "مکمل",
-    "noResults": "کوئی سبق نہیں ملا",
+    "learn": {
+      "title": "سیکھیں اور تیار ہوں",
+      "lessons": "اسباق",
+      "progress": "پیشرفت",
+      "continue": "سیکھنا جاری رکھیں",
+      "completed": "مکمل",
+      "keyFact": {
+        "speedLimit": "رفتار کی حد",
+        "points": "پوائنٹس",
+        "ruleType": "قاعدے کی قسم",
+        "priorityRule": "ترجیحی قاعدہ",
+        "keyRuleInside": "اہم قاعدہ موجود ہے",
+        "prohibited": "ممنوع",
+        "required": "ضروری"
+      },
+      "examSignToRecognize": "امتحان میں پہچانی جانے والی نشانی",
+      "viewSimilarSigns": "ملتی جلتی نشانیاں دیکھیں",
+      "severity": {
+        "serious": "سنگین",
+        "moderate": "درمیانہ",
+        "minor": "معمولی"
+      },
+      "noResults": "کوئی سبق نہیں ملا",
     "lessonsCount_one": "{{value}} سبق",
     "lessonsCount_other": "{{value}} اسباق",
     "categoriesCount_one": "{{value}} زمرہ",

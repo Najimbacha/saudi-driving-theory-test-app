@@ -214,7 +214,9 @@ const Exam: React.FC = () => {
   useEffect(() => {
     if (!import.meta.env.DEV || !currentQuestion || warnedLegacyRef.current.has(currentQuestion.id)) return;
     if (currentQuestion.question || currentQuestion.options || currentQuestion.explanation || typeof currentQuestion.correctAnswer === 'number') {
-      console.warn(`[quiz-i18n] Legacy fields detected for question ${currentQuestion.id}`);
+      if (import.meta.env.DEV) {
+        console.warn(`[quiz-i18n] Legacy fields detected for question ${currentQuestion.id}`);
+      }
       warnedLegacyRef.current.add(currentQuestion.id);
     }
   }, [currentQuestion]);
