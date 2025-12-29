@@ -1,7 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { ArrowLeft, Search, BookOpen, FileText } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import rulesData from '@/data/rules.json';
@@ -15,9 +15,12 @@ import SignDetailModal from '@/components/SignDetailModal';
 export default function Learn() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
   const { language } = useApp();
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [expandedRule, setExpandedRule] = useState<string | undefined>(() => searchParams.get('rule') ?? undefined);
   const [studyPlan, setStudyPlan] = useState<Record<string, boolean>>(() => {
     const saved = localStorage.getItem('studyPlan');
     return saved ? JSON.parse(saved) : {};
@@ -79,6 +82,10 @@ export default function Learn() {
       .map((idx) => sentences[idx])
       .join(' ');
   };
+  const getFirstSentence = (text: string) => {
+    const sentence = text.split(/(?<=[.!?؟])\s+/).filter(Boolean)[0] || text;
+    return sentence.length > 140 ? `${sentence.slice(0, 137).trim()}...` : sentence;
+  };
   const getKeyFact = (rule: typeof rulesData.rules[number]) => {
     const title = getRuleTitle(rule);
     const content = getRuleContent(rule);
@@ -135,13 +142,176 @@ export default function Learn() {
 
   const handleLessonChange = (value: string) => {
     if (!value) {
+      setExpandedRule(undefined);
       return;
     }
+    setExpandedRule(value);
     localStorage.setItem('lastLearnLessonId', value);
   };
 
   const numberFormatter = new Intl.NumberFormat(i18n.language);
   const signById = useMemo(() => new Map(ksaSigns.map((sign) => [sign.id, sign])), []);
+  const focusRuleId = searchParams.get('rule');
+  const focusStateRuleId = (location.state as { focusRuleId?: string } | null)?.focusRuleId;
+  const focusedRule = useMemo(() => {
+    const id = focusRuleId || focusStateRuleId;
+    return id ? rulesData.rules.find((rule) => rule.id === id) : null;
+  }, [focusRuleId, focusStateRuleId]);
+  const previousRule = useMemo(() => {
+    if (!focusedRule) return null;
+    const index = rulesData.rules.findIndex((rule) => rule.id === focusedRule.id);
+    if (index <= 0) return null;
+    return rulesData.rules[index - 1] ?? null;
+  }, [focusedRule]);
+  const nextRule = useMemo(() => {
+    if (!focusedRule) return null;
+    const index = rulesData.rules.findIndex((rule) => rule.id === focusedRule.id);
+    if (index < 0) return null;
+    return rulesData.rules[index + 1] ?? null;
+  }, [focusedRule]);
+  const relatedRules = useMemo(() => {
+    if (!focusedRule) return [];
+    return rulesData.rules
+      .filter((rule) => rule.category === focusedRule.category && rule.id !== focusedRule.id)
+      .slice(0, 3);
+  }, [focusedRule]);
+
+  useEffect(() => {
+    if (!focusedRule) return;
+    setSelectedCategory(focusedRule.category);
+    setExpandedRule(focusedRule.id);
+  }, [focusedRule]);
+
+  if (focusedRule) {
+    const title = getRuleTitle(focusedRule);
+    const content = getRuleContent(focusedRule);
+    const keyFact = getKeyFact(focusedRule);
+    const hasSigns = Array.isArray(focusedRule.relatedSignIds) && focusedRule.relatedSignIds.length > 0;
+    const hasViolations = Array.isArray(focusedRule.relatedViolationIds) && focusedRule.relatedViolationIds.length > 0;
+    const violations = hasViolations ? focusedRule.relatedViolationIds.slice(0, 5) : [];
+    const sentences = getRuleContent(focusedRule)
+      .split(/(?<=[.!?؟])\s+/)
+      .filter(Boolean);
+    const heroSentence = sentences[0] || getRuleContent(focusedRule);
+    const examSign = hasSigns ? signById.get(focusedRule.relatedSignIds[0]) : null;
+    const violationDetails = violations[0]
+      ? (() => {
+          const pointsValue = violations[0].points;
+          const severityLabel =
+            typeof pointsValue === 'number'
+              ? pointsValue >= 6
+                ? t('learn.severity.serious')
+                : pointsValue >= 3
+                ? t('learn.severity.moderate')
+                : t('learn.severity.minor')
+              : '';
+          return {
+            pointsValue: numberFormatter.format(pointsValue),
+            severityLabel,
+          };
+        })()
+      : null;
+
+    return (
+      <div className="min-h-screen bg-background pb-20" dir={language === 'ar' || language === 'ur' ? 'rtl' : 'ltr'}>
+        <header className="p-4 flex items-center gap-3 border-b bg-gradient-to-b from-background to-transparent">
+          <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
+            <ArrowLeft className="w-5 h-5 rtl-flip" />
+          </Button>
+          <div>
+            <h1 className="text-xl font-semibold text-card-foreground">{title}</h1>
+            <p className="text-xs text-muted-foreground">{getCategoryTitle(focusedRule.category)}</p>
+          </div>
+        </header>
+
+        <main className="p-6 space-y-9 max-w-xl mx-auto">
+          <section className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background px-6 py-8 text-center shadow-sm">
+            <p className="text-xl font-semibold text-card-foreground leading-relaxed">
+              {heroSentence}
+            </p>
+          </section>
+
+          {examSign && (
+            <section className="space-y-4">
+              <p className="text-sm font-semibold text-card-foreground">{t('learn.lessonExamSituation')}</p>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => setSelectedSign(examSign)}
+                  className="flex flex-col items-center gap-2 rounded-2xl bg-muted/60 border border-border/60 px-5 py-4 shadow-sm hover:bg-muted/70 active:scale-[0.98] transition"
+                  aria-label={examSign.title[language as keyof typeof examSign.title] || examSign.title.en}
+                >
+                  <SignIcon
+                    id={examSign.id}
+                    icon={examSign.icon}
+                    size={56}
+                    svg={examSign.svg}
+                    alt={examSign.title[language as keyof typeof examSign.title] || examSign.title.en}
+                  />
+                  <span className="text-[11px] text-muted-foreground">
+                    {t(`signs.categories.${examSign.category}`)}
+                  </span>
+                </button>
+              </div>
+            </section>
+          )}
+
+          {violationDetails && (
+            <section className="space-y-4">
+              <p className="text-sm font-semibold text-card-foreground">{t('learn.lessonPenaltyTitle')}</p>
+              <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background px-6 py-6 text-center shadow-sm">
+                <p className="text-6xl font-semibold text-primary">
+                  {violationDetails.pointsValue}
+                </p>
+                <p className="mt-2 text-lg font-semibold text-card-foreground">
+                  {t('learn.lessonPenaltyPoints')}
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">{t('learn.lessonPenaltyRecord')}</p>
+              </div>
+            </section>
+          )}
+
+          <div className="pt-6 flex flex-wrap gap-3">
+            {previousRule ? (
+              <button
+                onClick={() => navigate(`/learn?rule=${previousRule.id}`)}
+                className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary hover:bg-primary/20 transition"
+              >
+                {t('learn.lessonPrevRule')}
+              </button>
+            ) : (
+              <button
+                onClick={() => navigate('/learn')}
+                className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-primary/10 px-5 py-2 text-sm font-semibold text-primary hover:bg-primary/20 transition"
+              >
+                {t('learn.lessonBackToList')}
+              </button>
+            )}
+            <button
+              onClick={() => {
+                if (nextRule) {
+                  navigate(`/learn?rule=${nextRule.id}`);
+                  return;
+                }
+                navigate('/learn');
+              }}
+              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-md hover:bg-primary/90 transition"
+            >
+              {t('learn.lessonNextRule')}
+            </button>
+          </div>
+        </main>
+
+        {selectedSign && (
+          <SignDetailModal
+            sign={selectedSign}
+            isOpen={!!selectedSign}
+            onClose={() => setSelectedSign(null)}
+          />
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -216,7 +386,13 @@ export default function Learn() {
               {t('learn.noResults')}
             </div>
           ) : (
-            <Accordion type="single" collapsible className="space-y-3" onValueChange={handleLessonChange}>
+            <Accordion
+              type="single"
+              collapsible
+              className="space-y-3"
+              value={expandedRule}
+              onValueChange={handleLessonChange}
+            >
               {filteredRules.map((rule, i) => {
                 const showHeader = i === 0 || filteredRules[i - 1].category !== rule.category;
                 const title = getRuleTitle(rule);

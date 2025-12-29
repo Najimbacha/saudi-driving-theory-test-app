@@ -24,6 +24,8 @@ import { useFeedback } from '@/hooks/useFeedback';
 import BottomNav from '@/components/BottomNav';
 import questionsData from '@/data/questions.json';
 import { getSignSrc } from '@/data/signAssets';
+import { AppSign, ksaSigns } from '@/data/ksaSigns';
+import SignDetailModal from '@/components/SignDetailModal';
 import Confetti from 'react-confetti';
 import { clearTestSession, loadTestSession, saveTestSession } from '@/lib/testSession';
 
@@ -127,6 +129,8 @@ export default function Practice() {
   const [sessionWrongIds, setSessionWrongIds] = useState<string[]>([]);
   const [sessionResults, setSessionResults] = useState<{ id: string; category: string; correct: boolean }[]>([]);
   const [signError, setSignError] = useState(false);
+  const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
+  const signById = useMemo(() => new Map(ksaSigns.map((sign) => [sign.id, sign])), []);
   const numberFormatter = new Intl.NumberFormat(i18n.language);
   const percentFormatter = new Intl.NumberFormat(i18n.language, { style: 'percent', maximumFractionDigits: 0 });
   const getCategoryLabel = (category: string) =>
@@ -353,6 +357,7 @@ export default function Practice() {
   };
 
   const q = questions[current];
+  const signDetail = q?.signId ? signById.get(q.signId) : null;
   const correctIndex = q?.correctIndex ?? q?.correctAnswer ?? 0;
   const passed = questions.length > 0 && (score / questions.length) * 100 >= 70;
   const isFavorite = q ? favorites.questions.includes(q.id) : false;
@@ -690,6 +695,11 @@ export default function Practice() {
           </Tabs>
         </main>
 
+        <SignDetailModal
+          sign={selectedSign}
+          isOpen={Boolean(selectedSign)}
+          onClose={() => setSelectedSign(null)}
+        />
         <BottomNav />
       </div>
     );
@@ -817,25 +827,31 @@ export default function Practice() {
           <Badge variant="secondary">{t(q.difficultyKey)}</Badge>
         </div>
 
-        {q.signId && (
-          <div className="mb-6 flex justify-center">
-            <div className="bg-card border border-border rounded-2xl p-4 shadow-sm">
-              {getSignSrc(q.signId) && !signError ? (
-                <img
-                  src={getSignSrc(q.signId)}
-                  alt={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
-                  aria-label={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
-                  className="max-h-40 w-auto object-contain"
-                  onError={() => setSignError(true)}
-                />
-              ) : (
-                <div className="text-xs text-muted-foreground text-center min-w-[160px]">
-                  {t('ui.signUnavailable')}
-                </div>
-              )}
+          {q.signId && (
+            <div className="mb-6 flex justify-center">
+              <div className="bg-card border border-border rounded-2xl p-4 shadow-sm">
+                {getSignSrc(q.signId) && !signError ? (
+                  <button
+                    type="button"
+                    onClick={() => signDetail && setSelectedSign(signDetail)}
+                    className="block"
+                    aria-label={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
+                  >
+                    <img
+                      src={getSignSrc(q.signId)}
+                      alt={q.signAltKey ? t(q.signAltKey) : t(q.questionKey)}
+                      className="max-h-40 w-auto object-contain"
+                      onError={() => setSignError(true)}
+                    />
+                  </button>
+                ) : (
+                  <div className="text-xs text-muted-foreground text-center min-w-[160px]">
+                    {t('ui.signUnavailable')}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         <h2 className="text-lg font-semibold mb-6">
           {t(q.questionKey)}

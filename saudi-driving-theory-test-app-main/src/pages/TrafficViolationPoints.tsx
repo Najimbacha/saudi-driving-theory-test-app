@@ -77,6 +77,11 @@ export default function TrafficViolationPoints() {
       max: 4,
     },
   ];
+  const getSeverityLabel = (groupId: string) => {
+    if (groupId === "severe") return t("learn.severity.serious");
+    if (groupId === "major") return t("learn.severity.moderate");
+    return t("learn.severity.minor");
+  };
 
   const focusId = new URLSearchParams(location.search).get('focus');
   const focusKey = focusId ? `violations.${focusId}` : null;
@@ -161,10 +166,13 @@ export default function TrafficViolationPoints() {
                         {items.map((violation) => (
                           <AccordionItem key={violation.key} value={violation.key} className="bg-muted/30 rounded-xl border border-border">
                             <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                              <div className="flex items-center justify-between gap-3 w-full">
-                                <span className="font-semibold text-card-foreground text-left">{t(violation.key)}</span>
-                                <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold text-foreground">
-                                  {t("violationPoints.pointsLabel", { value: numberFormatter.format(violation.points) })}
+                              <div className="flex items-center gap-3 w-full">
+                                <span className="font-semibold text-card-foreground text-left">
+                                  {t("violationPoints.fullSentence", {
+                                    violation: t(violation.key),
+                                    value: numberFormatter.format(violation.points),
+                                    severity: getSeverityLabel(group.id),
+                                  })}
                                 </span>
                               </div>
                             </AccordionTrigger>

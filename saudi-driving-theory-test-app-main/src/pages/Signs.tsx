@@ -350,6 +350,7 @@ export default function Signs() {
         sign={selectedSign}
         isOpen={!!selectedSign}
         onClose={() => setSelectedSign(null)}
+        onSelectSign={setSelectedSign}
       />
     </div>
   );

@@ -25,6 +25,8 @@ import { useFeedback } from '@/hooks/useFeedback';
 import BottomNav from '@/components/BottomNav';
 import questionsData from '@/data/questions.json';
 import { getSignSrc } from '@/data/signAssets';
+import { AppSign, ksaSigns } from '@/data/ksaSigns';
+import SignDetailModal from '@/components/SignDetailModal';
 import Confetti from 'react-confetti';
 import { clearTestSession, loadTestSession, saveTestSession } from '@/lib/testSession';
 
@@ -73,6 +75,8 @@ const Exam: React.FC = () => {
   const [examQuestions, setExamQuestions] = useState<typeof questionsData.questions>([]);
   const [showConfetti, setShowConfetti] = useState(false);
   const [signError, setSignError] = useState(false);
+  const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
+  const signById = useMemo(() => new Map(ksaSigns.map((sign) => [sign.id, sign])), []);
   const warnedLegacyRef = useRef(new Set<string>());
   const didResumeRef = useRef(false);
 
@@ -207,6 +211,7 @@ const Exam: React.FC = () => {
 
   // Current question
   const currentQuestion = examQuestions[currentIndex];
+  const signDetail = currentQuestion?.signId ? signById.get(currentQuestion.signId) : null;
   const currentAnswer = answers[currentIndex];
   useEffect(() => {
     setSignError(false);
@@ -369,6 +374,11 @@ const Exam: React.FC = () => {
           </div>
         </main>
 
+        <SignDetailModal
+          sign={selectedSign}
+          isOpen={Boolean(selectedSign)}
+          onClose={() => setSelectedSign(null)}
+        />
         <BottomNav />
       </div>
     );
@@ -427,17 +437,23 @@ const Exam: React.FC = () => {
                     <div className="mb-4 flex justify-center">
                       <div className="bg-card border border-border rounded-2xl p-4 shadow-sm">
                         {getSignSrc(currentQuestion.signId) && !signError ? (
-                          <img
-                            src={getSignSrc(currentQuestion.signId)}
-                            alt={currentQuestion.signAltKey
-                              ? t(currentQuestion.signAltKey)
-                              : t(currentQuestion.questionKey)}
+                          <button
+                            type="button"
+                            onClick={() => signDetail && setSelectedSign(signDetail)}
+                            className="block"
                             aria-label={currentQuestion.signAltKey
                               ? t(currentQuestion.signAltKey)
                               : t(currentQuestion.questionKey)}
-                            className="max-h-40 w-auto object-contain"
-                            onError={() => setSignError(true)}
-                          />
+                          >
+                            <img
+                              src={getSignSrc(currentQuestion.signId)}
+                              alt={currentQuestion.signAltKey
+                                ? t(currentQuestion.signAltKey)
+                                : t(currentQuestion.questionKey)}
+                              className="max-h-40 w-auto object-contain"
+                              onError={() => setSignError(true)}
+                            />
+                          </button>
                         ) : (
                           <div className="text-xs text-muted-foreground text-center min-w-[160px]">
                             {t('ui.signUnavailable')}

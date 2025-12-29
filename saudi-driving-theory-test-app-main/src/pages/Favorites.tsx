@@ -4,16 +4,18 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Heart, HelpCircle, AlertTriangle } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
-import { ksaSigns } from '@/data/ksaSigns';
+import { AppSign, ksaSigns } from '@/data/ksaSigns';
 import questionsData from '@/data/questions.json';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SignIcon from '@/components/signs/SignIcon';
+import SignDetailModal from '@/components/SignDetailModal';
 
 export default function Favorites() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { language, favorites, toggleFavorite } = useApp();
   const [activeTab, setActiveTab] = useState<'questions' | 'signs'>('questions');
+  const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
 
   const favoriteQuestions = questionsData.questions.filter(q => favorites.questions.includes(q.id));
   const favoriteSigns = ksaSigns.filter(s => favorites.signs.includes(s.id));
@@ -106,7 +108,8 @@ export default function Favorites() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="bg-card rounded-xl p-4 shadow-md flex items-start gap-4"
+                    onClick={() => setSelectedSign(sign)}
+                    className="bg-card rounded-xl p-4 shadow-md flex items-start gap-4 cursor-pointer"
                   >
                     <div className="w-14 h-14 bg-muted rounded-xl flex items-center justify-center text-3xl flex-shrink-0">
                       <SignIcon id={sign.id} icon={sign.icon} svg={sign.svg} size={56} />
@@ -120,7 +123,10 @@ export default function Favorites() {
                       </p>
                     </div>
                     <button 
-                      onClick={() => toggleFavorite('signs', sign.id)}
+                      onClick={(event) => {
+                        event.stopPropagation();
+                        toggleFavorite('signs', sign.id);
+                      }}
                       className="p-2 shrink-0"
                     >
                       <Heart className="w-5 h-5 fill-destructive text-destructive" />
@@ -132,6 +138,11 @@ export default function Favorites() {
           </Tabs>
         )}
       </div>
+      <SignDetailModal
+        sign={selectedSign}
+        isOpen={Boolean(selectedSign)}
+        onClose={() => setSelectedSign(null)}
+      />
     </div>
   );
 }

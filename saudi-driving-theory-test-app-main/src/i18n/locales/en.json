@@ -39,7 +39,7 @@
         "practice": "Practice quiz",
         "exam": "Exam session"
       },
-      "continueLine": "Continue: {{name}} \u2022 {{value}}%",
+      "continueLine": "Continue: {{name}} • {{value}}%",
       "continueLineSimple": "Continue: {{name}}",
       "continueCta": "Continue"
     },
@@ -67,14 +67,14 @@
     "stats": "Your Progress",
     "statsDesc": "Track your learning",
     "violationPoints": "Traffic Violation Points",
-    "violationPointsDesc": "Learn the point system",
+    "violationPointsDesc": "Learn the violation point system",
     "trafficFines": "Traffic Fines & Penalties",
     "trafficFinesDesc": "Educational guide",
     "quickNav": {
       "signs": "Signs",
       "rules": "Rules",
       "quiz": "Quiz",
-      "points": "Points"
+      "points": "Violation Points"
     },
     "continueLearning": {
       "title": "Continue Learning",
@@ -94,6 +94,17 @@
       "subtitle": "A quick refresh to stay exam-ready",
       "value": "Learn today’s most important rule and signs",
       "cta": "Start today’s focus →"
+    },
+    "todayFocus": {
+      "title": "Learning Focus",
+      "subtitle": "Quick theory rule preview",
+      "collection": "From {{category}}",
+      "cta": "Explore more rules →",
+      "shuffle": "Shuffle rule",
+      "speedLimit": "Speed limit: {{value}}",
+      "points": "Violation points: {{value}}",
+      "categoryFallback": "Driving basics",
+      "empty": "No rules available right now."
     },
     "mission": {
       "title": "Today's Mission",
@@ -124,6 +135,7 @@
     "signsSpotlight": {
       "title": "Traffic Signs",
       "subtitle": "Frequently asked in the theory test",
+      "hint": "Updated each time",
       "cta": "Explore signs →"
     },
     "xpStrip": {
@@ -611,220 +623,220 @@
         "explain": "Check tire pressure at least monthly and before any long journey for safety and fuel efficiency."
       },
       "vp-001": {
-        "text": "According to traffic regulations, how many points can lead to license suspension within a Hijri year?",
-        "a": "12 points",
-        "b": "18 points",
-        "c": "24 points",
-        "d": "30 points",
-        "explain": "In general practice, accumulating 24 points can lead to suspension."
+        "text": "According to traffic regulations, how many violation points can lead to license suspension within a Hijri year?",
+        "a": "12 violation points",
+        "b": "18 violation points",
+        "c": "24 violation points",
+        "d": "30 violation points",
+        "explain": "In general practice, accumulating 24 violation points can lead to suspension."
       },
       "vp-002": {
-        "text": "What happens the first time a driver reaches 24 points within a Hijri year?",
+        "text": "What happens the first time a driver reaches 24 violation points within a Hijri year?",
         "a": "Warning only",
         "b": "License suspension for 3 months",
         "c": "License suspension for 6 months",
         "d": "Permanent revocation",
-        "explain": "First time reaching 24 points results in a 3-month suspension."
+        "explain": "First time reaching 24 violation points results in a 3-month suspension."
       },
       "vp-003": {
-        "text": "What is the penalty the second time a driver reaches 24 points within a Hijri year?",
+        "text": "What is the penalty the second time a driver reaches 24 violation points within a Hijri year?",
         "a": "License suspension for 1 year",
         "b": "License suspension for 6 months",
         "c": "Permanent revocation",
         "d": "Fine only",
-        "explain": "Second time reaching 24 points results in a 6-month suspension."
+        "explain": "Second time reaching 24 violation points results in a 6-month suspension."
       },
       "vp-004": {
-        "text": "What is the penalty the third time a driver reaches 24 points within a Hijri year?",
+        "text": "What is the penalty the third time a driver reaches 24 violation points within a Hijri year?",
         "a": "License suspension for 1 year",
         "b": "License suspension for 6 months",
         "c": "License suspension for 3 months",
         "d": "Permanent revocation",
-        "explain": "Third time reaching 24 points results in a 1-year suspension."
+        "explain": "Third time reaching 24 violation points results in a 1-year suspension."
       },
       "vp-005": {
-        "text": "What happens the fourth time a driver reaches 24 points within a Hijri year?",
+        "text": "What happens the fourth time a driver reaches 24 violation points within a Hijri year?",
         "a": "License suspension for 6 months",
         "b": "License suspension for 1 year",
         "c": "Permanent revocation of the license",
         "d": "Warning only",
-        "explain": "Fourth time reaching 24 points leads to permanent revocation."
+        "explain": "Fourth time reaching 24 violation points leads to permanent revocation."
       },
       "vp-006": {
-        "text": "In general practice, the 24-point limit is calculated within which period?",
+        "text": "In general practice, the 24-violation-point limit is calculated within which period?",
         "a": "Calendar year (Gregorian)",
         "b": "Hijri year",
         "c": "Monthly cycle",
         "d": "No time limit",
-        "explain": "The 24-point limit is calculated within a Hijri year."
+        "explain": "The 24-violation-point limit is calculated within a Hijri year."
       },
       "vp-007": {
-        "text": "How many points are assigned for driving a vehicle under the influence (Alcohol/Drugs)?",
+        "text": "How many violation points are assigned for driving a vehicle under the influence (Alcohol/Drugs)?",
         "a": "12",
         "b": "24",
         "c": "8",
         "d": "6",
-        "explain": "Driving under the influence carries 24 points."
+        "explain": "Driving under the influence carries 24 violation points."
       },
       "vp-008": {
-        "text": "How many points are assigned for drifting?",
+        "text": "How many violation points are assigned for drifting?",
         "a": "24",
         "b": "12",
         "c": "8",
         "d": "6",
-        "explain": "Drifting carries 24 points."
+        "explain": "Drifting carries 24 violation points."
       },
       "vp-009": {
-        "text": "How many points are assigned for running a red traffic light?",
+        "text": "How many violation points are assigned for running a red traffic light?",
         "a": "12",
         "b": "8",
         "c": "6",
         "d": "4",
-        "explain": "Running a red light carries 12 points."
+        "explain": "Running a red light carries 12 violation points."
       },
       "vp-010": {
-        "text": "How many points are assigned for driving in the opposite direction of traffic?",
+        "text": "How many violation points are assigned for driving in the opposite direction of traffic?",
         "a": "12",
         "b": "8",
         "c": "6",
         "d": "4",
-        "explain": "Driving in the opposite direction carries 12 points."
+        "explain": "Driving in the opposite direction carries 12 violation points."
       },
       "vp-011": {
-        "text": "How many points are assigned for weaving through traffic on public roads?",
+        "text": "How many violation points are assigned for weaving through traffic on public roads?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Weaving through traffic carries 8 points."
+        "explain": "Weaving through traffic carries 8 violation points."
       },
       "vp-012": {
-        "text": "How many points are assigned for not complying with a traffic officer’s manual signal?",
+        "text": "How many violation points are assigned for not complying with a traffic officer’s manual signal?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Not complying with the officer’s signal carries 8 points."
+        "explain": "Not complying with the officer’s signal carries 8 violation points."
       },
       "vp-013": {
-        "text": "How many points are assigned for driving a vehicle without brakes or lights?",
+        "text": "How many violation points are assigned for driving a vehicle without brakes or lights?",
         "a": "8",
         "b": "6",
         "c": "4",
         "d": "2",
-        "explain": "Driving without brakes or lights carries 8 points."
+        "explain": "Driving without brakes or lights carries 8 violation points."
       },
       "vp-014": {
-        "text": "How many points are assigned for not stopping completely at a stop sign?",
+        "text": "How many violation points are assigned for not stopping completely at a stop sign?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Not stopping at a stop sign carries 6 points."
+        "explain": "Not stopping at a stop sign carries 6 violation points."
       },
       "vp-015": {
-        "text": "Failing to observe right-of-way rules results in how many points?",
+        "text": "Failing to observe right-of-way rules results in how many violation points?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Failing to observe right-of-way carries 6 points."
+        "explain": "Failing to observe right-of-way carries 6 violation points."
       },
       "vp-016": {
-        "text": "Exceeding the speed limit by more than 25 km/h results in how many points?",
+        "text": "Exceeding the speed limit by more than 25 km/h results in how many violation points?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Speeding more than 25 km/h carries 6 points."
+        "explain": "Speeding more than 25 km/h carries 6 violation points."
       },
       "vp-017": {
-        "text": "Not yielding to cars inside a roundabout results in how many points?",
+        "text": "Not yielding to cars inside a roundabout results in how many violation points?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Not yielding in roundabouts carries 6 points."
+        "explain": "Not yielding in roundabouts carries 6 violation points."
       },
       "vp-018": {
-        "text": "Overtaking in prohibited areas results in how many points?",
+        "text": "Overtaking in prohibited areas results in how many violation points?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Overtaking in prohibited areas carries 6 points."
+        "explain": "Overtaking in prohibited areas carries 6 violation points."
       },
       "vp-019": {
-        "text": "Stopping on railway tracks results in how many points?",
+        "text": "Stopping on railway tracks results in how many violation points?",
         "a": "6",
         "b": "4",
         "c": "2",
         "d": "8",
-        "explain": "Stopping on railway tracks carries 6 points."
+        "explain": "Stopping on railway tracks carries 6 violation points."
       },
       "vp-020": {
-        "text": "Exceeding the speed limit by up to 25 km/h results in how many points?",
+        "text": "Exceeding the speed limit by up to 25 km/h results in how many violation points?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Speeding up to 25 km/h carries 4 points."
+        "explain": "Speeding up to 25 km/h carries 4 violation points."
       },
       "vp-021": {
-        "text": "Driving on lanes not designated for the vehicle results in how many points?",
+        "text": "Driving on lanes not designated for the vehicle results in how many violation points?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Driving on non-designated lanes carries 4 points."
+        "explain": "Driving on non-designated lanes carries 4 violation points."
       },
       "vp-022": {
-        "text": "Overtaking school buses while students are boarding or disembarking results in how many points?",
+        "text": "Overtaking school buses while students are boarding or disembarking results in how many violation points?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Overtaking school buses carries 4 points."
+        "explain": "Overtaking school buses carries 4 violation points."
       },
       "vp-023": {
-        "text": "Not covering the load and cargo during transport results in how many points?",
+        "text": "Not covering the load and cargo during transport results in how many violation points?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Uncovered load carries 4 points."
+        "explain": "Uncovered load carries 4 violation points."
       },
       "vp-024": {
-        "text": "Modifying vehicle structure or body without proper authorization results in how many points?",
+        "text": "Modifying vehicle structure or body without proper authorization results in how many violation points?",
         "a": "4",
         "b": "6",
         "c": "2",
         "d": "8",
-        "explain": "Unauthorized modification carries 4 points."
+        "explain": "Unauthorized modification carries 4 violation points."
       },
       "vp-025": {
-        "text": "Not wearing a seatbelt results in how many points?",
+        "text": "Not wearing a seatbelt results in how many violation points?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Not wearing a seatbelt carries 2 points."
+        "explain": "Not wearing a seatbelt carries 2 violation points."
       },
       "vp-026": {
-        "text": "Using a hand-held mobile phone while driving results in how many points?",
+        "text": "Using a hand-held mobile phone while driving results in how many violation points?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Using a hand-held mobile phone carries 2 points."
+        "explain": "Using a hand-held mobile phone carries 2 violation points."
       },
       "vp-027": {
-        "text": "Not wearing a helmet while riding motorized bikes results in how many points?",
+        "text": "Not wearing a helmet while riding motorized bikes results in how many violation points?",
         "a": "2",
         "b": "4",
         "c": "6",
         "d": "8",
-        "explain": "Not wearing a helmet carries 2 points."
+        "explain": "Not wearing a helmet carries 2 violation points."
       },
       "tf-001": {
         "text": "In general practice, what is the main purpose of traffic fines?",
@@ -971,13 +983,13 @@
     "reviewProgress": "Review: {{current}} / {{total}}"
   },
   "practice": {
-      "byMode": "By Mode",
-      "byCategory": "By Category",
-      "byModeHelper": "Practice by purpose",
-      "byCategoryHelper": "Practice by topic",
-      "helperDefault": "Choose how you want to practice",
-      "helperResume": "Continue where you left off",
-      "recommended": "Recommended",
+    "byMode": "By Mode",
+    "byCategory": "By Category",
+    "byModeHelper": "Practice by purpose",
+    "byCategoryHelper": "Practice by topic",
+    "helperDefault": "Choose how you want to practice",
+    "helperResume": "Continue where you left off",
+    "recommended": "Recommended",
     "modes": {
       "all": "All Questions",
       "allDesc": "Practice from the complete question bank",
@@ -1003,10 +1015,10 @@
     "startQuick": "Start Quick",
     "startDailyCount": "Start Daily ({{value}})",
     "startQuickCount": "Start Quick ({{value}})",
-      "allCount": "All questions ({{value}})",
-      "accuracyLabel": "Accuracy: {{value}} (based on your attempts)",
-      "mistakesDetail": "Questions you answered wrong: {{value}}",
-      "unlockStats": "Practice to unlock stats",
+    "allCount": "All questions ({{value}})",
+    "accuracyLabel": "Accuracy: {{value}} (based on your attempts)",
+    "mistakesDetail": "Questions you answered wrong: {{value}}",
+    "unlockStats": "Practice to unlock stats",
     "progressCount": "{{current}} / {{total}}"
   },
   "results": {
@@ -1025,29 +1037,38 @@
     "topicBreakdown": "Topic Breakdown",
     "categoryBreakdownRow": "{{correct}}/{{total}} ({{accuracy}})"
   },
-    "learn": {
-      "title": "Learn Driving Theory",
-      "lessons": "Lessons",
-      "progress": "Progress",
-      "continue": "Continue Learning",
-      "completed": "Completed",
-      "keyFact": {
-        "speedLimit": "Speed limit",
-        "points": "Points",
-        "ruleType": "Rule type",
-        "priorityRule": "Priority rule",
-        "keyRuleInside": "Key rule inside",
-        "prohibited": "Prohibited",
-        "required": "Required"
-      },
-      "examSignToRecognize": "Exam sign to recognize",
-      "viewSimilarSigns": "View similar signs",
-      "severity": {
-        "serious": "Serious",
-        "moderate": "Moderate",
-        "minor": "Minor"
-      },
-      "noResults": "No lessons found",
+  "learn": {
+    "title": "Learn Driving Theory",
+    "lessons": "Lessons",
+    "progress": "Progress",
+    "continue": "Continue Learning",
+    "completed": "Completed",
+    "keyFact": {
+      "speedLimit": "Speed limit",
+      "points": "Violation points",
+      "ruleType": "Rule type",
+      "priorityRule": "Priority rule",
+      "keyRuleInside": "Key rule inside",
+      "prohibited": "Prohibited",
+      "required": "Required"
+    },
+      "lessonExamSituation": "Exam situation",
+      "lessonRemember": "Remember",
+      "lessonPenaltyTitle": "If you break this rule",
+      "lessonPenaltyPoints": "penalty points",
+      "lessonPenaltyRecord": "These points are added to your driving record",
+      "lessonPrevRule": "← Previous rule",
+      "lessonNextRule": "Next rule →",
+      "lessonBackToList": "Back to learning list",
+      "lessonPointsUnit": "penalty points",
+    "examSignToRecognize": "Exam sign to recognize",
+    "viewSimilarSigns": "View similar signs",
+    "severity": {
+      "serious": "Serious",
+      "moderate": "Moderate",
+      "minor": "Minor"
+    },
+    "noResults": "No lessons found",
     "lessonsCount_one": "{{value}} lesson",
     "lessonsCount_other": "{{value}} lessons",
     "categoriesCount_one": "{{value}} category",
@@ -1254,40 +1275,41 @@
   "violationPoints": {
     "title": "Traffic Violation Point System",
     "subtitle": "Educational guide for Saudi drivers",
-    "resetNote": "Points reset every Hijri year",
+    "resetNote": "Violation points reset every Hijri year",
     "summaryTitle": "Key Rule Summary",
-    "summaryLine1": "Points are added for traffic violations.",
-    "summaryLine2": "Reaching 24 points leads to license penalties.",
+    "summaryLine1": "Violation points are added for traffic violations.",
+    "summaryLine2": "Reaching 24 violation points leads to license penalties.",
     "summaryLine3": "The system encourages safer driving.",
-    "impactTitle": "24-Point Consequence Timeline",
+    "impactTitle": "24 Violation Point Consequence Timeline",
     "consequences": {
       "first": {
-        "step": "First time (24 points)",
+        "step": "First time (24 violation points)",
         "text": "License suspended for 3 months"
       },
       "second": {
-        "step": "Second time (24 points)",
+        "step": "Second time (24 violation points)",
         "text": "License suspended for 6 months"
       },
       "third": {
-        "step": "Third time (24 points)",
+        "step": "Third time (24 violation points)",
         "text": "License suspended for 1 year"
       },
       "fourth": {
-        "step": "Fourth time (24 points)",
+        "step": "Fourth time (24 violation points)",
         "text": "Permanent license revocation"
       }
     },
     "violationsTitle": "Violations",
-    "severeTitle": "Severe Violations (12–24 Points)",
-    "majorTitle": "Major Violations (6–8 Points)",
-    "minorTitle": "Minor Violations (2–4 Points)",
-    "pointsLabel": "{{value}} Points",
+    "severeTitle": "Severe Violations (12–24 Violation Points)",
+    "majorTitle": "Major Violations (6–8 Violation Points)",
+    "minorTitle": "Minor Violations (2–4 Violation Points)",
+    "pointsLabel": "{{value}} Violation Points",
+    "fullSentence": "{{violation}} will result in {{value}} violation points ({{severity}})",
     "explainLine": "This violation reduces reaction time and increases risk on the road.",
     "whyDangerousLine": "Why it’s dangerous: it increases collision risk for drivers and pedestrians.",
     "tipBody": "Exam tip: follow road signs and keep a safe speed at all times.",
     "educationalNote": "Knowing point values helps you avoid serious penalties and drive safely.",
-    "previewDescription": "{{violation}} can add points to your record."
+    "previewDescription": "{{violation}} can add violation points to your record."
   },
   "violations": {
     "v01": "Driving a vehicle under the influence (Alcohol/Drugs)",

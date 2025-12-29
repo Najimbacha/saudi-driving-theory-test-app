@@ -2,13 +2,16 @@ import { useEffect, useMemo, useState } from 'react';
  
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Settings, Check, PlayCircle, ClipboardCheck, BookOpen, TrafficCone } from 'lucide-react';
+import { Settings, Check, PlayCircle, ClipboardCheck, BookOpen, TrafficCone, Shuffle } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import { useLearning } from '@/context/LearningContext';
 import rulesData from '@/data/rules.json';
 import { loadTestSession, TestSession } from '@/lib/testSession';
 import { ksaSigns } from '@/data/ksaSigns';
 import SignIcon from '@/components/signs/SignIcon';
+import SignDetailModal from '@/components/SignDetailModal';
+import { getSignMasteryMap } from '@/lib/signMastery';
+import { AppSign } from '@/data/ksaSigns';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -67,30 +70,96 @@ export default function Home() {
       : weakTopics[0]?.category === 'signs'
         ? '/signs'
         : '/learn';
-  const todayKey = new Date().toISOString().split('T')[0];
-  const signSpotlight = useMemo(() => {
-    if (!ksaSigns.length) return [];
-    const seed = todayKey.split('').reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
-    const wantCount = Math.min(3, ksaSigns.length);
-    const picked = new Set<number>();
-    const results: typeof ksaSigns = [];
-    let offset = 0;
-    while (results.length < Math.min(wantCount, ksaSigns.length)) {
-      const index = (seed + offset) % ksaSigns.length;
-      if (!picked.has(index)) {
-        picked.add(index);
-        results.push(ksaSigns[index]);
-      }
-      offset += 7;
+  const pickRandomRule = (rules: typeof rulesData.rules) => {
+    if (!rules.length) return null;
+    const index = Math.floor(Math.random() * rules.length);
+    return rules[index] ?? null;
+  };
+  const [focusRule, setFocusRule] = useState(() => pickRandomRule(rulesData.rules));
+  const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
+  const getRuleTitle = (rule: typeof rulesData.rules[number]) =>
+    rule.title[language as keyof typeof rule.title] || rule.title.en;
+  const getRuleContent = (rule: typeof rulesData.rules[number]) =>
+    rule.content[language as keyof typeof rule.content] || rule.content.en;
+  const getCategoryTitle = (categoryId: string) => {
+    const category = rulesData.categories.find((item) => item.id === categoryId);
+    if (!category) return t('home.todayFocus.categoryFallback');
+    return category.title[language as keyof typeof category.title] || category.title.en;
+  };
+  const getFocusKeyFact = (rule: typeof rulesData.rules[number]) => {
+    const content = getRuleContent(rule);
+    const source = `${content} ${rule.content.en || ''}`;
+    const speedMatch = source.match(/([0-9]+)\s*km\/h/i);
+    if (speedMatch) {
+      return t('home.todayFocus.speedLimit', { value: `${speedMatch[1]} km/h` });
     }
-    return results;
-  }, [todayKey, weakTopics]);
+    const pointsFromField = Array.isArray(rule.relatedViolationIds)
+      ? rule.relatedViolationIds.find((violation) => typeof violation.points === 'number')?.points
+      : undefined;
+    const pointsMatch = source.match(/([0-9]+)\s*points?/i);
+    const pointsValue = typeof pointsFromField === 'number'
+      ? pointsFromField
+      : pointsMatch
+      ? Number.parseInt(pointsMatch[1], 10)
+      : undefined;
+    if (typeof pointsValue === 'number' && !Number.isNaN(pointsValue)) {
+      return t('home.todayFocus.points', { value: numberFormatter.format(pointsValue) });
+    }
+    const sentence = content.split(/(?<=[.!?؟])\s+/).filter(Boolean)[0] || content;
+    return sentence.length > 80 ? `${sentence.slice(0, 77).trim()}...` : sentence;
+  };
+  const getFocusFacts = (rule: typeof rulesData.rules[number]) => {
+    const content = getRuleContent(rule);
+    const listMatch = content.match(/:\s*(.+)/);
+    if (listMatch) {
+      const items = listMatch[1]
+        .split(',')
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .slice(0, 3);
+      if (items.length) {
+        return items.join(' • ');
+      }
+    }
+    const keyFact = getFocusKeyFact(rule);
+    if (keyFact) {
+      return keyFact;
+    }
+    return getCategoryTitle(rule.category);
+  };
+  const pickRandomDistinctSigns = (signs: typeof ksaSigns, count = 3) => {
+    if (!signs.length) return [];
+    const picks: typeof ksaSigns = [];
+    const used = new Set<number>();
+    while (picks.length < Math.min(count, signs.length)) {
+      const index = Math.floor(Math.random() * signs.length);
+      if (used.has(index)) continue;
+      used.add(index);
+      picks.push(signs[index]);
+    }
+    return picks;
+  };
+  const [signSpotlight, setSignSpotlight] = useState<typeof ksaSigns>([]);
+  const masteryMap = useMemo(() => getSignMasteryMap(ksaSigns.map((sign) => sign.id)), []);
 
   useEffect(() => {
     const refresh = () => setLastSession(loadTestSession());
     window.addEventListener('focus', refresh);
     return () => window.removeEventListener('focus', refresh);
   }, []);
+
+  useEffect(() => {
+    if (!ksaSigns.length) {
+      setSignSpotlight([]);
+      return;
+    }
+    const weakSigns = ksaSigns.filter((sign) => {
+      const level = masteryMap.get(sign.id);
+      return level === 'new' || level === 'learning';
+    });
+    const pool = weakSigns.length ? weakSigns : ksaSigns;
+    setSignSpotlight(pickRandomDistinctSigns(pool, 3));
+  }, [masteryMap]);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -184,36 +253,92 @@ export default function Home() {
         </section>
 
         <div className="rounded-2xl p-6 shadow-md border border-border/70 bg-gradient-to-br from-card/90 via-card to-card/70">
-          <p className="text-sm font-semibold text-card-foreground">{t('home.focus.title')}</p>
-          <p className="mt-1 text-xs text-muted-foreground">{t('home.focus.subtitle')}</p>
-          <p className="mt-4 text-sm text-muted-foreground">{t('home.focus.value')}</p>
+          <div className="flex items-start justify-between gap-3 rtl-row">
+            <div>
+              <p className="text-sm font-semibold text-card-foreground">{t('home.todayFocus.title')}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setFocusRule(pickRandomRule(rulesData.rules))}
+              className="p-2 rounded-full border border-border/60 text-muted-foreground hover:text-foreground hover:bg-muted/40 transition"
+              aria-label={t('home.todayFocus.shuffle')}
+            >
+              <Shuffle className="h-4 w-4" />
+            </button>
+          </div>
+          {focusRule ? (
+            <>
+              <div className="mt-4 flex items-start gap-3 rtl-row">
+                <div className="h-12 w-12 rounded-2xl bg-muted/60 border border-border/60 flex items-center justify-center text-2xl">
+                  {focusRule.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-base font-semibold text-card-foreground">
+                    {getRuleTitle(focusRule)}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {getFocusFacts(focusRule)}
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <p className="mt-4 text-sm text-muted-foreground">{t('home.todayFocus.empty')}</p>
+          )}
           <button
-            onClick={() => navigate('/learn')}
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/20 active:scale-[0.98] transition"
+            onClick={() => {
+              if (!focusRule) {
+                navigate('/learn');
+                return;
+              }
+              navigate('/learn', { state: { focusRuleId: focusRule.id } });
+            }}
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md hover:bg-primary/90 active:scale-[0.98] transition"
           >
-            {t('home.focus.cta')}
+            {t('home.todayFocus.cta')}
           </button>
         </div>
 
         {signSpotlight.length > 0 && (
-          <div className="rounded-[1.75rem] p-6 shadow-md border border-primary/15 bg-gradient-to-br from-card/80 via-card to-card/60">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate('/signs')}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                navigate('/signs');
+              }
+            }}
+            className="rounded-[1.75rem] p-6 shadow-md border border-primary/15 bg-gradient-to-br from-card/80 via-card to-card/60 cursor-pointer"
+          >
             <p className="text-sm font-semibold text-card-foreground">{t('home.signsSpotlight.title')}</p>
-            <p className="mt-1 text-xs text-muted-foreground">{t('home.signsSpotlight.subtitle')}</p>
             <div className="mt-5 flex items-center justify-center gap-4">
               {signSpotlight.map((sign) => (
-                <div key={sign.id} className="h-20 w-20 rounded-2xl bg-muted/60 border border-border/60 flex items-center justify-center">
+                <button
+                  key={sign.id}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setSelectedSign(sign);
+                  }}
+                  className="h-24 w-24 rounded-2xl bg-muted/60 border border-border/60 flex items-center justify-center hover:bg-muted/80 active:scale-[0.98] transition"
+                  aria-label={sign.title[language] || sign.title.en}
+                >
                   <SignIcon
                     id={sign.id}
                     icon={sign.icon}
-                    size={52}
+                    size={64}
                     svg={sign.svg}
                     alt={sign.title[language] || sign.title.en}
                   />
-                </div>
+                </button>
               ))}
             </div>
             <button
-              onClick={() => navigate('/signs')}
+              onClick={(event) => {
+                event.stopPropagation();
+                navigate('/signs');
+              }}
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/20 active:scale-[0.98] transition"
             >
               {t('home.signsSpotlight.cta')}
@@ -221,6 +346,11 @@ export default function Home() {
           </div>
         )}
 
+        <SignDetailModal
+          sign={selectedSign}
+          isOpen={Boolean(selectedSign)}
+          onClose={() => setSelectedSign(null)}
+        />
         <div className="bg-card rounded-2xl p-5 shadow-md border border-border">
           <p className="text-xs uppercase tracking-wide text-muted-foreground">{t('home.progressSummary.title')}</p>
           <div className="mt-3 grid grid-cols-3 gap-3 text-center">

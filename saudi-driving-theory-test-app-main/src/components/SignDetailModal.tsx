@@ -1,36 +1,37 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Heart, Info } from 'lucide-react';
+import { ArrowLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useApp } from '@/context/AppContext';
 import SignIcon from '@/components/signs/SignIcon';
 import { AppSign, ksaSigns } from '@/data/ksaSigns';
-import { getSignMastery } from '@/lib/signMastery';
 
 interface SignDetailModalProps {
   sign: AppSign | null;
   isOpen: boolean;
   onClose: () => void;
+  onSelectSign?: (sign: AppSign) => void;
 }
 
 export const SignDetailModal: React.FC<SignDetailModalProps> = ({
   sign,
   isOpen,
   onClose,
+  onSelectSign,
 }) => {
   const { t } = useTranslation();
-  const { language, favorites, toggleFavorite } = useApp();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { language } = useApp();
 
   if (!sign) return null;
 
   const title = sign.title[language as keyof typeof sign.title] || sign.title.en;
   const meaning = sign.meaning[language as keyof typeof sign.meaning] || sign.meaning.en;
-  const tip = sign.tip?.[language as keyof typeof sign.tip] || sign.tip?.en;
-  const isFavorite = favorites.signs.includes(sign.id);
-  const mastery = getSignMastery(sign.id);
-  const masteryLabel = t(`signs.mastery.${mastery}`);
-
-  const related = ksaSigns.filter((item) => item.category === sign.category && item.id !== sign.id).slice(0, 3);
-
+  const currentIndex = ksaSigns.findIndex((item) => item.id === sign.id);
+  const previousSign = currentIndex > 0 ? ksaSigns[currentIndex - 1] : null;
+  const nextSign = currentIndex >= 0 && currentIndex < ksaSigns.length - 1 ? ksaSigns[currentIndex + 1] : null;
+  const isSignsPage = location.pathname === '/signs';
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'warning': return 'bg-warning/15 text-warning';
@@ -62,84 +63,78 @@ export const SignDetailModal: React.FC<SignDetailModalProps> = ({
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto bg-card rounded-2xl shadow-2xl z-50 overflow-hidden"
           >
-            {/* Header */}
-            <div className="relative p-6 pb-4 flex justify-between items-start">
-              <div className="flex flex-wrap gap-2">
+            <div className="p-6">
+              <div className="flex items-center justify-between gap-3">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(sign.category)}`}>
                   {t(`signs.categories.${sign.category}`)}
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-medium bg-muted text-muted-foreground">
-                  {masteryLabel}
-                </span>
-              </div>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => toggleFavorite('signs', sign.id)}
-                  className="p-2 rounded-full bg-muted hover:bg-muted/80 transition"
-                >
-                  <Heart className={`w-5 h-5 ${isFavorite ? 'fill-destructive text-destructive' : 'text-muted-foreground'}`} />
-                </button>
                 <button
                   onClick={onClose}
-                  className="p-2 rounded-full bg-muted hover:bg-muted/80 transition"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition"
                 >
-                  <X className="w-5 h-5 text-muted-foreground" />
+                  <ArrowLeft className="h-4 w-4 rtl-flip" />
+                  {t('common.back')}
                 </button>
               </div>
-            </div>
 
-            {/* Sign Display */}
-            <div className="flex justify-center py-6 bg-gradient-to-b from-muted/30 to-transparent">
-              <motion.div
-                initial={{ scale: 0.5, rotate: -10 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ type: 'spring', damping: 15, stiffness: 200, delay: 0.1 }}
-              >
-                <SignIcon
-                  id={sign.id}
-                  icon={sign.icon}
-                  svg={sign.svg}
-                  size={120}
-                />
-              </motion.div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 pt-4 space-y-4">
-              <div>
-                <h2 className="text-xl font-bold text-card-foreground">{title}</h2>
-                <p className="text-muted-foreground mt-2">{meaning}</p>
+              <div className="mt-6 flex justify-center">
+                <motion.div
+                  initial={{ scale: 0.6 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', damping: 18, stiffness: 200, delay: 0.05 }}
+                >
+                  <SignIcon
+                    id={sign.id}
+                    icon={sign.icon}
+                    svg={sign.svg}
+                    size={160}
+                  />
+                </motion.div>
               </div>
 
-              {tip && (
-                <div className="flex gap-3 p-4 rounded-xl bg-primary/10 border border-primary/20">
-                  <Info className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-xs font-medium text-primary uppercase tracking-wide">
-                      {t('signs.tip')}
-                    </span>
-                    <p className="text-sm text-card-foreground mt-1">{tip}</p>
-                  </div>
-                </div>
-              )}
+              <div className="mt-6 text-center space-y-2">
+                <h2 className="text-xl font-bold text-card-foreground">{title}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">{meaning}</p>
+              </div>
 
-              {related.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-semibold text-muted-foreground mb-2">
-                    {t('signs.related')}
-                  </h3>
-                  <div className="grid grid-cols-3 gap-3">
-                    {related.map((item) => (
-                      <div key={item.id} className="flex flex-col items-center gap-2">
-                        <SignIcon id={item.id} svg={item.svg} icon={item.icon} size={48} />
-                        <span className="text-[10px] text-center text-muted-foreground">
-                          {item.title[language as keyof typeof item.title] || item.title.en}
-                        </span>
-                      </div>
-                    ))}
+              <div className="mt-6 space-y-3">
+                <button
+                  onClick={onClose}
+                  className="w-full rounded-full bg-primary/10 text-primary font-semibold py-2.5 hover:bg-primary/20 transition"
+                >
+                  {t('common.back')}
+                </button>
+                {isSignsPage && onSelectSign ? (
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => previousSign && onSelectSign(previousSign)}
+                      disabled={!previousSign}
+                      className="flex-1 rounded-full border border-primary/30 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary/15 transition disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {t('common.previous')}
+                    </button>
+                    <button
+                      onClick={() => nextSign && onSelectSign(nextSign)}
+                      disabled={!nextSign}
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {t('common.next')}
+                      <ChevronRight className="h-4 w-4 rtl-flip" />
+                    </button>
                   </div>
-                </div>
-              )}
+                ) : (
+                  <button
+                    onClick={() => {
+                      onClose();
+                      navigate('/signs');
+                    }}
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary/15 transition"
+                  >
+                    {t('home.signsSpotlight.cta')}
+                    <ChevronRight className="h-4 w-4 rtl-flip" />
+                  </button>
+                )}
+              </div>
             </div>
           </motion.div>
         </>
