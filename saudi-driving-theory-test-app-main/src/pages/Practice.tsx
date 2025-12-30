@@ -70,13 +70,6 @@ const PRACTICE_MODES: ModeConfig[] = [
     color: 'bg-info/10 text-info'
   },
   { 
-    id: 'daily', 
-    icon: <Star className="h-5 w-5" />, 
-    titleKey: 'practice.modes.daily', 
-    descKey: 'practice.modes.dailyDesc',
-    color: 'bg-accent/10 text-accent'
-  },
-  { 
     id: 'quick', 
     icon: <Zap className="h-5 w-5" />, 
     titleKey: 'practice.modes.quick', 
@@ -407,7 +400,7 @@ export default function Practice() {
   if (state === 'setup') {
     return (
       <div className="min-h-screen bg-background pb-20">
-        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border safe-top">
           <div className="container mx-auto px-4 py-4 flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
               <ArrowLeft className="h-5 w-5 rtl-flip" />
@@ -421,7 +414,7 @@ export default function Practice() {
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-6">
+        <main className="container mx-auto px-4 py-6 pb-24 safe-bottom">
           <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'modes' | 'category')} className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
               <TabsTrigger value="modes">{t('practice.byMode')}</TabsTrigger>
@@ -450,10 +443,6 @@ export default function Practice() {
                     break;
                   case 'review':
                     count = reviewQuestions.length;
-                    disabled = count === 0;
-                    break;
-                  case 'daily':
-                    count = Math.min(5, questionsData.questions.length);
                     disabled = count === 0;
                     break;
                   case 'quick':
@@ -505,20 +494,18 @@ export default function Practice() {
                       </CardHeader>
                       {isExpanded && !disabled && (
                         <CardContent className="pt-0">
-                          {modeConfig.id === 'daily' || modeConfig.id === 'quick' ? (
-                            <div className="flex gap-2">
+                          {modeConfig.id === 'quick' ? (
+                            <div className="flex flex-wrap gap-2">
                               <Button
                                 variant="default"
                                 size="sm"
+                                className="w-full sm:w-auto"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   startPractice(modeConfig.id, count);
                                 }}
                               >
-                                {modeConfig.id === 'daily'
-                                  ? t('practice.startDailyCount', { count, value: numberFormatter.format(count) })
-                                  : t('practice.startQuickCount', { count, value: numberFormatter.format(count) })
-                                }
+                                {t('practice.startQuickCount', { count, value: numberFormatter.format(count) })}
                               </Button>
                             </div>
                           ) : (
@@ -531,13 +518,14 @@ export default function Practice() {
                                   {t('practice.mistakesDetail', { value: numberFormatter.format(count) })}
                                 </p>
                               )}
-                              <div className="flex gap-2">
+                              <div className="flex flex-wrap gap-2">
                                 {[5, 10, 20].map(n => (
                                   <Button 
                                     key={n} 
                                     variant="outline" 
                                     size="sm"
                                     disabled={n > count}
+                                    className="w-full sm:w-auto"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       startPractice(modeConfig.id, n);
@@ -550,6 +538,7 @@ export default function Practice() {
                                   <Button 
                                     variant="default" 
                                     size="sm"
+                                    className="w-full sm:w-auto"
                                     onClick={(e) => {
                                       e.stopPropagation();
                                       startPractice(modeConfig.id, count);
@@ -577,7 +566,7 @@ export default function Practice() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-3 gap-4 text-center">
+                  <div className="grid grid-cols-2 gap-4 text-center sm:grid-cols-3">
                     <div>
                       <p className="text-2xl font-bold text-destructive">{numberFormatter.format(mistakes.length)}</p>
                       <p className="text-xs text-muted-foreground">{t('practice.mistakeCount')}</p>
@@ -654,13 +643,14 @@ export default function Practice() {
                           <p className="text-sm text-muted-foreground mb-3">
                             {t('quiz.selectQuestions')}
                           </p>
-                          <div className="flex gap-2">
+                          <div className="flex flex-wrap gap-2">
                             {[5, 10, 20].map(n => (
                               <Button 
                                 key={n} 
                                 variant="outline" 
                                 size="sm"
                                 disabled={n > categoryQuestions.length}
+                                className="w-full sm:w-auto"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   startPractice('category', n, category);
@@ -672,6 +662,7 @@ export default function Practice() {
                             <Button 
                               variant="default" 
                               size="sm"
+                              className="w-full sm:w-auto"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 startPractice('category', categoryQuestions.length, category);
@@ -787,7 +778,7 @@ export default function Practice() {
   return (
     q ? (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="p-4 flex items-center justify-between border-b border-border">
+      <header className="p-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-border safe-top">
         <Button variant="ghost" size="icon" onClick={() => setState('setup')}>
           <ArrowLeft className="h-5 w-5 rtl-flip" />
         </Button>
@@ -845,7 +836,7 @@ export default function Practice() {
                     />
                   </button>
                 ) : (
-                  <div className="text-xs text-muted-foreground text-center min-w-[160px]">
+                  <div className="text-xs text-muted-foreground text-center w-full max-w-[220px]">
                     {t('ui.signUnavailable')}
                   </div>
                 )}
@@ -899,7 +890,7 @@ export default function Practice() {
                         String.fromCharCode(65 + idx)
                       )}
                     </div>
-                    <span>{t(optKey)}</span>
+                    <span className="break-words">{t(optKey)}</span>
                   </div>
                 </motion.button>
               );
@@ -923,7 +914,7 @@ export default function Practice() {
           </motion.div>
         )}
 
-        <div className="pt-4 pb-safe">
+        <div className="pt-4 safe-bottom">
           {!showAnswer ? (
             <Button 
               onClick={handleSubmit} 

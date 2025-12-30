@@ -95,17 +95,6 @@
       "value": "Learn today’s most important rule and signs",
       "cta": "Start today’s focus →"
     },
-    "todayFocus": {
-      "title": "Learning Focus",
-      "subtitle": "Quick theory rule preview",
-      "collection": "From {{category}}",
-      "cta": "Explore more rules →",
-      "shuffle": "Shuffle rule",
-      "speedLimit": "Speed limit: {{value}}",
-      "points": "Violation points: {{value}}",
-      "categoryFallback": "Driving basics",
-      "empty": "No rules available right now."
-    },
     "mission": {
       "title": "Today's Mission",
       "items": {
@@ -132,11 +121,21 @@
       "none": "No weak topics yet.",
       "cta": "Learn weak topics"
     },
-    "signsSpotlight": {
-      "title": "Traffic Signs",
-      "subtitle": "Frequently asked in the theory test",
-      "hint": "Updated each time",
-      "cta": "Explore signs →"
+    "roadKnowledge": {
+      "title": "Road Knowledge",
+      "signs": {
+        "title": "Traffic Signs",
+        "subtitle": "All official Saudi road signs"
+      },
+      "points": {
+        "title": "Violation Points",
+        "subtitle": "24 points rule · license suspension",
+        "badge": "24"
+      },
+      "rules": {
+        "title": "General Rules",
+        "subtitle": "Right of way · speed · safety"
+      }
     },
     "xpStrip": {
       "xpLabel": "{{xp}} XP",
@@ -1058,9 +1057,26 @@
       "lessonPenaltyPoints": "penalty points",
       "lessonPenaltyRecord": "These points are added to your driving record",
       "lessonPrevRule": "← Previous rule",
-      "lessonNextRule": "Next rule →",
-      "lessonBackToList": "Back to learning list",
-      "lessonPointsUnit": "penalty points",
+    "lessonNextRule": "Next rule →",
+    "lessonBackToList": "Back to learning list",
+    "lessonPointsUnit": "penalty points",
+    "relatedLearningTitle": "Related learning",
+    "relatedCards": {
+      "violationTitle": "Violation Points",
+      "pointsLabel": "{{value}} Points",
+      "violationLine": "{{violation}} adds points to your record. Stay within the limits.",
+      "viewDetails": "View details",
+      "signsTitle": "Traffic Signs",
+      "viewSigns": "View signs",
+      "rulesTitle": "General Rules",
+      "readRule": "Read rule"
+    },
+    "viewSimilarSignsLink": "View similar signs →",
+    "commonViolationsTitle": "Common violations & points",
+    "pointsBadge": "{{value}} Points",
+    "viewViolationSystemLink": "View full point system →",
+    "learnMoreTitle": "Learn more",
+    "viewRelatedSignsLink": "View related traffic signs →",
     "examSignToRecognize": "Exam sign to recognize",
     "viewSimilarSigns": "View similar signs",
     "severity": {
@@ -1131,6 +1147,8 @@
     "links": {
       "trafficFinesTitle": "Traffic Fines & Penalties",
       "trafficFinesDesc": "Educational guide",
+      "licenseGuideTitle": "How to apply for Driving license",
+      "licenseGuideDesc": "Simple steps for expats and residents",
       "violationPointsTitle": "Traffic Violation Points",
       "violationPointsDesc": "Educational reference",
       "creditsTitle": "Credits & Attribution",
@@ -1276,30 +1294,33 @@
     "title": "Traffic Violation Point System",
     "subtitle": "Educational guide for Saudi drivers",
     "resetNote": "Violation points reset every Hijri year",
-    "summaryTitle": "Key Rule Summary",
-    "summaryLine1": "Violation points are added for traffic violations.",
-    "summaryLine2": "Reaching 24 violation points leads to license penalties.",
-    "summaryLine3": "The system encourages safer driving.",
-    "impactTitle": "24 Violation Point Consequence Timeline",
+    "summaryTitle": "Key Rules",
+    "summaryLine1": "Points add up with each violation.",
+    "summaryLine2": "At 24 points, license penalties apply.",
+    "summaryLine3": "Goal: safer driving for everyone.",
+    "impactTitle": "24 Points: What Happens",
     "consequences": {
       "first": {
-        "step": "First time (24 violation points)",
+        "step": "First time",
         "text": "License suspended for 3 months"
       },
       "second": {
-        "step": "Second time (24 violation points)",
+        "step": "Second time",
         "text": "License suspended for 6 months"
       },
       "third": {
-        "step": "Third time (24 violation points)",
+        "step": "Third time",
         "text": "License suspended for 1 year"
       },
       "fourth": {
-        "step": "Fourth time (24 violation points)",
+        "step": "Fourth time",
         "text": "Permanent license revocation"
       }
     },
     "violationsTitle": "Violations",
+    "severeTab": "Severe (12–24)",
+    "majorTab": "Major (6–8)",
+    "minorTab": "Minor (2–4)",
     "severeTitle": "Severe Violations (12–24 Violation Points)",
     "majorTitle": "Major Violations (6–8 Violation Points)",
     "minorTitle": "Minor Violations (2–4 Violation Points)",

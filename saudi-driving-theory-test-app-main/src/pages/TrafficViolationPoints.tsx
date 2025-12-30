@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function TrafficViolationPoints() {
   const navigate = useNavigate();
@@ -92,106 +92,104 @@ export default function TrafficViolationPoints() {
 
   const numberFormatter = new Intl.NumberFormat(i18n.language);
 
+  const keyRules = [
+    t("violationPoints.summaryLine1"),
+    t("violationPoints.summaryLine2"),
+    t("violationPoints.resetNote"),
+  ];
+
   return (
     <div className="min-h-screen bg-background">
-      <header className="p-4 flex items-center gap-3 border-b">
+      <header className="p-4 flex items-center gap-3 border-b safe-top">
         <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
           <ArrowLeft className="w-5 h-5 rtl-flip" />
         </Button>
-        <div>
+        <div className="min-w-0">
           <h1 className="text-xl font-bold">
             {t("violationPoints.title")}
           </h1>
           <p className="text-xs text-muted-foreground">
             {t("violationPoints.subtitle")}
           </p>
-          <p className="text-xs text-muted-foreground">
-            {t("violationPoints.resetNote")}
-          </p>
         </div>
       </header>
 
-      <main className="p-6 space-y-4 text-sm leading-relaxed text-foreground">
-        <section className="bg-card rounded-2xl p-5 shadow-sm border border-border space-y-3">
-          <h2 className="text-base font-semibold">{t("violationPoints.summaryTitle")}</h2>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>{t("violationPoints.summaryLine1")}</li>
-            <li>{t("violationPoints.summaryLine2")}</li>
-            <li>{t("violationPoints.summaryLine3")}</li>
-          </ul>
-        </section>
-
+      <main className="p-4 sm:p-6 space-y-5 text-sm leading-relaxed text-foreground safe-bottom">
         <section className="space-y-3">
-          <h3 className="text-base font-semibold">{t("violationPoints.impactTitle")}</h3>
-          <div className="space-y-3">
-            {consequences.map((item) => (
-              <div key={item.step} className="rounded-xl border border-border bg-card p-4 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="h-9 w-9 rounded-full bg-muted flex items-center justify-center text-lg">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{item.step}</p>
-                    <p className="mt-1 text-sm font-semibold text-card-foreground">{item.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-3">
-          <h3 className="text-base font-semibold">{t("violationPoints.violationsTitle")}</h3>
-          <Accordion type="multiple" className="space-y-3" defaultValue={focusGroup ? [focusGroup] : undefined}>
+          <Tabs defaultValue={focusGroup ?? severityGroups[0].id}>
+            <div className="sticky top-0 z-10 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-2 pb-3 bg-background/95 backdrop-blur">
+              <h3 className="text-sm font-semibold text-card-foreground">{t("violationPoints.violationsTitle")}</h3>
+              <TabsList className="mt-3 grid w-full grid-cols-3">
+                <TabsTrigger value="severe">{t("violationPoints.severeTab")}</TabsTrigger>
+                <TabsTrigger value="major">{t("violationPoints.majorTab")}</TabsTrigger>
+                <TabsTrigger value="minor">{t("violationPoints.minorTab")}</TabsTrigger>
+              </TabsList>
+            </div>
             {severityGroups.map((group) => {
               const items = violations.filter(v => v.points >= group.min && v.points <= group.max);
-              if (items.length === 0) {
-                return null;
-              }
               return (
-                <AccordionItem key={group.id} value={group.id} className="bg-card rounded-xl shadow-sm border border-border overflow-hidden">
-                  <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                    <div className="flex items-center gap-3">
-                      <span className={`h-3 w-3 rounded-full ${group.color}`} />
-                      <span className="font-semibold text-card-foreground">{group.title}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4">
-                    <div className="space-y-3">
-                      <Accordion
-                        type="multiple"
-                        className="space-y-3"
-                        defaultValue={focusKey && focusGroup === group.id ? [focusKey] : undefined}
-                      >
-                        {items.map((violation) => (
-                          <AccordionItem key={violation.key} value={violation.key} className="bg-muted/30 rounded-xl border border-border">
-                            <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                              <div className="flex items-center gap-3 w-full">
-                                <span className="font-semibold text-card-foreground text-left">
-                                  {t("violationPoints.fullSentence", {
-                                    violation: t(violation.key),
-                                    value: numberFormatter.format(violation.points),
-                                    severity: getSeverityLabel(group.id),
-                                  })}
-                                </span>
-                              </div>
-                            </AccordionTrigger>
-                            <AccordionContent className="px-4 pb-4">
-                              <div className="text-xs text-muted-foreground space-y-2">
-                                <p>{t("violationPoints.explainLine")}</p>
-                                <p>{t("violationPoints.whyDangerousLine")}</p>
-                                <p>{t("violationPoints.tipBody")}</p>
-                              </div>
-                            </AccordionContent>
-                          </AccordionItem>
-                        ))}
-                      </Accordion>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
+                <TabsContent key={group.id} value={group.id} className="mt-3">
+                  <div className="space-y-2">
+                    {items.map((violation) => (
+                      <div key={violation.key} className="bg-card rounded-xl border border-border px-3 py-3">
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="font-semibold text-card-foreground text-left break-words min-w-0">
+                            {t(violation.key)}
+                          </span>
+                          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                            {t("learn.pointsBadge", { value: numberFormatter.format(violation.points) })}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </TabsContent>
               );
             })}
-          </Accordion>
+          </Tabs>
+        </section>
+
+        <section className="bg-card rounded-2xl p-4 shadow-sm border border-border space-y-4">
+          <div>
+            <h2 className="text-sm font-semibold text-card-foreground">
+              {t("violationPoints.summaryTitle")}
+            </h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {keyRules.map((rule) => (
+                <span
+                  key={rule}
+                  className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground"
+                >
+                  {rule}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-px bg-border/60" />
+
+          <div>
+            <h3 className="text-sm font-semibold text-card-foreground">
+              {t("violationPoints.impactTitle")}
+            </h3>
+            <div className="mt-3 space-y-2">
+              {consequences.map((item) => (
+                <div key={item.step} className="rounded-xl border border-border bg-muted/30 p-3">
+                  <div className="flex items-start gap-3">
+                    <div className="h-8 w-8 rounded-full bg-muted flex items-center justify-center text-base">
+                      {item.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-semibold text-muted-foreground">{item.step}</p>
+                      <p className="mt-1 text-sm font-semibold text-card-foreground break-words leading-snug">
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         <p className="text-xs text-muted-foreground">

@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -137,9 +137,11 @@ export default function Signs() {
   const location = useLocation();
   const { language, favorites, toggleFavorite } = useApp();
   const [search, setSearch] = useState('');
+  const [showSearch, setShowSearch] = useState(false);
   const [category, setCategory] = useState<typeof categories[number]>('all');
   const [selectedSign, setSelectedSign] = useState<AppSign | null>(null);
   const [page, setPage] = useState(1);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
   const relatedIds = useMemo(() => {
     const params = new URLSearchParams(location.search);
     const raw = params.get('ids');
@@ -218,6 +220,11 @@ export default function Signs() {
     }
   }, [relatedIds]);
 
+  useEffect(() => {
+    if (!showSearch) return;
+    searchInputRef.current?.focus();
+  }, [showSearch]);
+
   const pageCount = Math.max(1, Math.ceil(signs.length / pageSize));
   const currentPage = Math.min(page, pageCount);
   const visible = signs.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -226,37 +233,46 @@ export default function Signs() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-gradient-hero text-primary-foreground dark:text-foreground p-4 pb-6 sticky top-0 z-10">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
+      <header className="bg-gradient-hero text-primary-foreground dark:text-foreground p-4 pb-6 sticky top-0 z-10 safe-top">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4">
+          <div className="flex items-center gap-3 min-w-0">
             <button onClick={() => navigate('/')} className="p-2 rounded-full bg-primary-foreground/10">
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <h1 className="text-xl font-bold">{t('signs.title')}</h1>
+            <h1 className="text-xl font-bold break-words min-w-0">{t('signs.title')}</h1>
+            <button
+              onClick={() => setShowSearch((prev) => !prev)}
+              className="p-2 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 transition"
+              aria-label={t('signs.search')}
+            >
+              <Search className="w-4 h-4" />
+            </button>
           </div>
           <Button
             onClick={() => navigate('/flashcards')}
             variant="secondary"
             size="sm"
-            className="gap-2"
+            className="gap-2 w-full sm:w-auto"
           >
             <Layers className="w-4 h-4" />
             {t('signs.flashcards')}
           </Button>
         </div>
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground dark:text-foreground" />
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder={t('signs.search')}
-            className="w-full pl-10 pr-4 py-3 rounded-xl bg-primary-foreground/10 placeholder:text-primary-foreground dark:placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-          />
-        </div>
+        {showSearch && (
+          <div className="relative">
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder={t('signs.search')}
+              className="w-full px-4 py-3 rounded-xl bg-primary-foreground/10 placeholder:text-primary-foreground dark:placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+            />
+          </div>
+        )}
       </header>
 
-      <div className="p-4 pb-24">
+      <div className="p-4 pb-24 safe-bottom">
         <div className="flex gap-2 overflow-x-auto pb-3 no-scrollbar">
           {categories.map((cat) => (
             <button
@@ -269,11 +285,14 @@ export default function Signs() {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-muted-foreground mt-2">
-          <div>
+        <div className="grid gap-2 text-sm text-muted-foreground mt-2 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+          <div className="text-left">
             {t('signs.showing', { from: showingFrom, to: showingTo, total: signs.length })}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="text-center">
+            {t('signs.page', { current: currentPage, total: pageCount })}
+          </div>
+          <div className="flex justify-end">
             {category !== 'all' && (
               <Button
                 variant="secondary"
@@ -283,29 +302,10 @@ export default function Signs() {
                 {t('signs.practiceCategory')}
               </Button>
             )}
-            <Button
-              variant="outline"
-              size="sm"
-              disabled={currentPage === 1}
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-            >
-              {t('common.previous')}
-            </Button>
-            <span className="min-w-[90px] text-center">
-              {t('signs.page', { current: currentPage, total: pageCount })}
-            </span>
-            <Button
-              variant="outline"
-              size="sm"
-              disabled={currentPage === pageCount}
-              onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
-            >
-              {t('common.next')}
-            </Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-4">
           {visible.map((sign, i) => (
             <motion.div
               key={sign.id}
@@ -313,11 +313,12 @@ export default function Signs() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.03 }}
               onClick={() => setSelectedSign(sign)}
-              className="relative bg-card rounded-xl p-4 shadow-md flex flex-col items-center gap-3 cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all active:scale-[0.98]"
+              className="relative bg-card rounded-xl p-3 sm:p-4 shadow-md flex flex-col items-center gap-3 cursor-pointer hover:shadow-lg hover:scale-[1.02] transition-all active:scale-[0.98]"
             >
               <Badge
                 variant="outline"
-                className={`absolute left-2 top-2 text-[10px] ${getMasteryBadgeClass(masteryMap.get(sign.id) ?? 'new')}`}
+                className={`absolute top-2 text-[10px] ${getMasteryBadgeClass(masteryMap.get(sign.id) ?? 'new')}`}
+                style={{ insetInlineStart: '0.5rem' }}
               >
                 {getMasteryLabel(masteryMap.get(sign.id) ?? 'new')}
               </Badge>
@@ -328,7 +329,7 @@ export default function Signs() {
                 svg={sign.svg}
               />
               <div className="text-center w-full">
-                <h3 className="font-medium text-sm text-card-foreground">
+                <h3 className="font-medium text-sm text-card-foreground break-words leading-snug">
                   {sign.title[language as keyof typeof sign.title] || sign.title.en}
                 </h3>
               </div>
@@ -337,12 +338,34 @@ export default function Signs() {
                   e.stopPropagation();
                   toggleFavorite('signs', sign.id);
                 }}
-                className="absolute top-2 right-2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm"
+                className="absolute top-2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm"
+                style={{ insetInlineEnd: '0.5rem' }}
               >
                 <Heart className={`w-4 h-4 ${favorites.signs.includes(sign.id) ? 'fill-destructive text-destructive' : 'text-muted-foreground'}`} />
               </button>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-4 flex flex-col items-center gap-2">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage === 1}
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            className="w-full"
+          >
+            {t('common.previous')}
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={currentPage === pageCount}
+            onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+            className="w-full"
+          >
+            {t('common.next')}
+          </Button>
         </div>
       </div>
 

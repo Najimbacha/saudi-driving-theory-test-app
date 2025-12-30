@@ -400,6 +400,15 @@
     display: none;
   }
 
+  .input-with-icon {
+    padding-inline-start: 2.5rem;
+    padding-inline-end: 1rem;
+  }
+
+  .icon-inset-start {
+    inset-inline-start: 0.75rem;
+  }
+
   /* Tap highlight */
   .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;

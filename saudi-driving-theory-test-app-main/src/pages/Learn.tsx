@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { ArrowLeft, Search, BookOpen, FileText } from 'lucide-react';
+import { ArrowLeft, Search, BookOpen } from 'lucide-react';
 import { useApp } from '@/context/AppContext';
 import rulesData from '@/data/rules.json';
 import { ksaSigns, AppSign } from '@/data/ksaSigns';
@@ -64,23 +64,13 @@ export default function Learn() {
     rule.title[language as keyof typeof rule.title] || rule.title.en;
   const getRuleContent = (rule: typeof rulesData.rules[number]) =>
     rule.content[language as keyof typeof rule.content] || rule.content.en;
-  const getShortDescription = (text: string) => {
-    const sentences = text.split(/(?<=[.!?؟])\s+/).filter(Boolean);
-    if (sentences.length <= 1) return text;
-    const keep = new Set<number>();
-    keep.add(0);
-    sentences.forEach((sentence, idx) => {
-      if (/[0-9٠-٩]/.test(sentence) || /km\/h/i.test(sentence)) {
-        keep.add(idx);
-      }
-      if (/unless otherwise posted/i.test(sentence)) {
-        keep.add(idx);
-      }
-    });
-    return Array.from(keep)
-      .sort((a, b) => a - b)
-      .map((idx) => sentences[idx])
-      .join(' ');
+  const getCoreValue = (rule: typeof rulesData.rules[number]) => {
+    const coreValue = (rule as { coreValue?: Record<string, string> }).coreValue;
+    return coreValue?.[language] || coreValue?.en || '';
+  };
+  const getCoreSummary = (rule: typeof rulesData.rules[number]) => {
+    const coreSummary = (rule as { coreSummary?: Record<string, string> }).coreSummary;
+    return coreSummary?.[language] || coreSummary?.en || '';
   };
   const getFirstSentence = (text: string) => {
     const sentence = text.split(/(?<=[.!?؟])\s+/).filter(Boolean)[0] || text;
@@ -189,11 +179,28 @@ export default function Learn() {
     const hasSigns = Array.isArray(focusedRule.relatedSignIds) && focusedRule.relatedSignIds.length > 0;
     const hasViolations = Array.isArray(focusedRule.relatedViolationIds) && focusedRule.relatedViolationIds.length > 0;
     const violations = hasViolations ? focusedRule.relatedViolationIds.slice(0, 5) : [];
+    const primaryViolation = hasViolations ? focusedRule.relatedViolationIds[0] : null;
+    const violationName = primaryViolation ? t(`violations.${primaryViolation.id}`) : '';
     const sentences = getRuleContent(focusedRule)
       .split(/(?<=[.!?؟])\s+/)
       .filter(Boolean);
     const heroSentence = sentences[0] || getRuleContent(focusedRule);
     const examSign = hasSigns ? signById.get(focusedRule.relatedSignIds[0]) : null;
+    const relatedSignItems = hasSigns
+      ? focusedRule.relatedSignIds
+          .map((id: string) => signById.get(id))
+          .filter((sign): sign is AppSign => Boolean(sign))
+          .slice(0, 3)
+      : [];
+    const relatedRuleIds = Array.isArray((focusedRule as { relatedRuleIds?: string[] }).relatedRuleIds)
+      ? (focusedRule as { relatedRuleIds?: string[] }).relatedRuleIds
+      : null;
+    const relatedRuleCandidates = relatedRuleIds
+      ? relatedRuleIds
+          .map((id) => rulesData.rules.find((rule) => rule.id === id))
+          .filter((rule): rule is typeof rulesData.rules[number] => Boolean(rule))
+      : relatedRules;
+    const relatedRulePreview = relatedRuleCandidates[0] ?? null;
     const violationDetails = violations[0]
       ? (() => {
           const pointsValue = violations[0].points;
@@ -211,10 +218,14 @@ export default function Learn() {
           };
         })()
       : null;
+    const showRelatedLearning =
+      (primaryViolation && typeof primaryViolation.points === 'number') ||
+      relatedSignItems.length > 0 ||
+      relatedRulePreview;
 
     return (
       <div className="min-h-screen bg-background pb-20" dir={language === 'ar' || language === 'ur' ? 'rtl' : 'ltr'}>
-        <header className="p-4 flex items-center gap-3 border-b bg-gradient-to-b from-background to-transparent">
+        <header className="p-4 flex items-center gap-3 border-b bg-gradient-to-b from-background to-transparent safe-top">
           <Button variant="ghost" size="icon" onClick={() => navigate(-1)}>
             <ArrowLeft className="w-5 h-5 rtl-flip" />
           </Button>
@@ -224,7 +235,7 @@ export default function Learn() {
           </div>
         </header>
 
-        <main className="p-6 space-y-9 max-w-xl mx-auto">
+        <main className="p-4 sm:p-6 space-y-9 max-w-xl mx-auto safe-bottom">
           <section className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background px-6 py-8 text-center shadow-sm">
             <p className="text-xl font-semibold text-card-foreground leading-relaxed">
               {heroSentence}
@@ -234,7 +245,7 @@ export default function Learn() {
           {examSign && (
             <section className="space-y-4">
               <p className="text-sm font-semibold text-card-foreground">{t('learn.lessonExamSituation')}</p>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <button
                   type="button"
                   onClick={() => setSelectedSign(examSign)}
@@ -267,6 +278,96 @@ export default function Learn() {
                   {t('learn.lessonPenaltyPoints')}
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">{t('learn.lessonPenaltyRecord')}</p>
+              </div>
+            </section>
+          )}
+
+          {showRelatedLearning && (
+            <section className="space-y-4">
+              <p className="text-sm font-semibold text-card-foreground">{t('learn.relatedLearningTitle')}</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                {primaryViolation && typeof primaryViolation.points === 'number' && (
+                  <div className="rounded-2xl border border-border bg-card shadow-sm p-5 flex flex-col gap-4 min-h-[220px]">
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-card-foreground">
+                        {t('learn.relatedCards.violationTitle')}
+                      </p>
+                      <p className="text-3xl font-semibold text-primary">
+                        {t('learn.relatedCards.pointsLabel', {
+                          value: numberFormatter.format(primaryViolation.points),
+                        })}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {t('learn.relatedCards.violationLine', { violation: violationName })}
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="mt-auto w-full"
+                      onClick={() => navigate(`/violation-points?focus=${primaryViolation.id}`)}
+                    >
+                      {t('learn.relatedCards.viewDetails')}
+                    </Button>
+                  </div>
+                )}
+
+                {relatedSignItems.length > 0 && (
+                  <div className="rounded-2xl border border-border bg-card shadow-sm p-5 flex flex-col gap-4 min-h-[220px]">
+                    <div className="space-y-3">
+                      <p className="text-sm font-semibold text-card-foreground">
+                        {t('learn.relatedCards.signsTitle')}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-3">
+                        {relatedSignItems.map((sign) => (
+                          <div
+                            key={sign.id}
+                            className="h-16 w-16 rounded-xl bg-muted/60 border border-border/60 flex items-center justify-center"
+                          >
+                            <SignIcon
+                              id={sign.id}
+                              icon={sign.icon}
+                              size={44}
+                              svg={sign.svg}
+                              alt={sign.title[language as keyof typeof sign.title] || sign.title.en}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="mt-auto w-full"
+                      onClick={() =>
+                        navigate(`/signs?ids=${focusedRule.relatedSignIds.slice(0, 3).join(',')}`)
+                      }
+                    >
+                      {t('learn.relatedCards.viewSigns')}
+                    </Button>
+                  </div>
+                )}
+
+                {relatedRulePreview && (
+                  <div className="rounded-2xl border border-border bg-card shadow-sm p-5 flex flex-col gap-4 min-h-[220px]">
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-card-foreground">
+                        {t('learn.relatedCards.rulesTitle')}
+                      </p>
+                      <p className="text-sm text-card-foreground font-semibold">
+                        {getRuleTitle(relatedRulePreview)}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-5 break-words">
+                        {getFirstSentence(getRuleContent(relatedRulePreview))}
+                      </p>
+                    </div>
+                    <Button
+                      variant="outline"
+                      className="mt-auto w-full"
+                      onClick={() => navigate(`/learn?rule=${relatedRulePreview.id}`)}
+                    >
+                      {t('learn.relatedCards.readRule')}
+                    </Button>
+                  </div>
+                )}
               </div>
             </section>
           )}
@@ -315,7 +416,7 @@ export default function Learn() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <header className="bg-gradient-hero text-primary-foreground dark:text-foreground p-4 pb-6 sticky top-0 z-10">
+      <header className="bg-gradient-hero text-primary-foreground dark:text-foreground p-4 pb-6 sticky top-0 z-10 safe-top">
         <div className="flex items-center gap-3 mb-4">
           <button onClick={() => navigate('/')} className="p-2 rounded-full bg-primary-foreground/10">
             <ArrowLeft className="w-5 h-5 rtl-flip" />
@@ -323,42 +424,18 @@ export default function Learn() {
           <h1 className="text-xl font-bold">{t('learn.title')}</h1>
         </div>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground dark:text-foreground" />
+          <Search className="absolute top-1/2 -translate-y-1/2 w-5 h-5 text-primary-foreground dark:text-foreground icon-inset-start" />
           <input
             type="text"
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder={t('signs.search')}
-            className="w-full pl-10 pr-4 py-3 rounded-xl bg-primary-foreground/10 placeholder:text-primary-foreground dark:placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+            className="w-full input-with-icon py-3 rounded-xl bg-primary-foreground/10 placeholder:text-primary-foreground dark:placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </header>
 
-      <div className="p-4">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
-          className="bg-card rounded-2xl p-4 shadow-md border border-border mb-4"
-        >
-          <div className="flex items-start justify-between gap-4 rtl-row">
-            <div className="flex items-start gap-3 rtl-row">
-              <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                <FileText className="w-5 h-5" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-card-foreground">{guide.title}</h2>
-                <p className="text-sm text-muted-foreground mt-1">{guide.homeSubtitle}</p>
-              </div>
-            </div>
-            <button
-              onClick={() => navigate('/license-guide')}
-              className="self-start px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition whitespace-normal text-center"
-            >
-              {guide.cta}
-            </button>
-          </div>
-        </motion.div>
+      <div className="p-4 safe-bottom">
         {/* Category Pills */}
         <div className="flex gap-2 overflow-x-auto pb-3 no-scrollbar">
           <button
@@ -400,18 +477,19 @@ export default function Learn() {
                 const keyFact = getKeyFact(rule);
                 const keyFactText = formatKeyFact(keyFact);
                 const hasViolations = Array.isArray(rule.relatedViolationIds) && rule.relatedViolationIds.length > 0;
-                const pointsValue = hasViolations
-                  ? rule.relatedViolationIds.find((violation) => typeof violation.points === 'number')?.points
-                  : undefined;
-                const severityLabel =
-                  typeof pointsValue === 'number'
-                    ? pointsValue >= 6
-                      ? t('learn.severity.serious')
-                      : pointsValue >= 3
-                      ? t('learn.severity.moderate')
-                      : t('learn.severity.minor')
-                    : null;
+                const violations = hasViolations ? rule.relatedViolationIds.slice(0, 2) : [];
                 const headlineValue = keyFact.type === 'speed' && keyFact.value ? keyFact.value : null;
+                const coreValue = getCoreValue(rule) || headlineValue || keyFact.value || keyFact.label;
+                const coreSummary = getCoreSummary(rule) || getFirstSentence(content);
+                const relatedSigns = Array.isArray(rule.relatedSignIds)
+                  ? rule.relatedSignIds
+                      .map((id: string) => signById.get(id))
+                      .filter((sign): sign is AppSign => Boolean(sign))
+                      .slice(0, 3)
+                  : [];
+                const showSigns = relatedSigns.length > 0;
+                const showViolations = violations.length > 0;
+                const showLearnMore = showSigns || showViolations;
 
                 return (
                   <motion.div
@@ -427,132 +505,145 @@ export default function Learn() {
                     )}
                     <AccordionItem value={rule.id} className="bg-card rounded-xl shadow-md border-0 overflow-hidden">
                       <AccordionTrigger className="px-4 py-4 hover:no-underline">
-                        <div className="flex items-center gap-3 text-left">
+                        <div className="flex items-center gap-3 text-left min-w-0">
                           <div className="w-12 h-12 bg-muted rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
                             {rule.icon}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h3 className="font-semibold text-card-foreground">
+                            <h3 className="font-semibold text-card-foreground break-words">
                               {title}
                             </h3>
                             <p className="text-xs text-muted-foreground mt-0.5">
                               {getCategoryTitle(rule.category)}
                             </p>
-                            <p className="text-xs text-muted-foreground mt-1 truncate">
+                            <p className="text-xs text-muted-foreground mt-1 break-words leading-snug">
                               {keyFactText}
                             </p>
                           </div>
                         </div>
                       </AccordionTrigger>
                       <AccordionContent className="px-4 pb-4">
-                        <div className="bg-muted/50 rounded-lg p-4 text-sm text-card-foreground leading-relaxed space-y-2">
-                          {headlineValue && (
-                            <p className="text-2xl font-semibold text-card-foreground">
-                              {headlineValue}
-                            </p>
-                          )}
-                          <p className="text-sm font-semibold text-card-foreground">
-                            {title}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {getShortDescription(content)}
-                          </p>
-                        </div>
-                      {Array.isArray(rule.relatedSignIds) && rule.relatedSignIds.length > 0 && (
-                        <div className="mt-4 space-y-3">
-                          <div className="flex items-center justify-between gap-3">
-                            <h4 className="text-sm font-semibold text-card-foreground">
-                              {t('learn.examSignToRecognize')}
-                            </h4>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => navigate(`/signs?ids=${rule.relatedSignIds.join(',')}`)}
-                            >
-                              {t('learn.viewSimilarSigns')}
-                            </Button>
+                        <div className="rounded-2xl border border-border/70 bg-muted/30 p-4 space-y-4">
+                          <div className="space-y-2">
+                            <p className="text-3xl font-semibold text-card-foreground">{coreValue}</p>
+                            <p className="text-base font-semibold text-card-foreground">{title}</p>
+                            <p className="text-sm text-muted-foreground">{coreSummary}</p>
                           </div>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                            {rule.relatedSignIds
-                              .map((id: string) => signById.get(id))
-                              .filter((sign): sign is AppSign => Boolean(sign))
-                              .slice(0, 4)
-                              .map((sign) => (
-                                <button
-                                  key={sign.id}
-                                  type="button"
-                                  onClick={() => setSelectedSign(sign)}
-                                  className="bg-card rounded-xl p-3 shadow-sm border border-border text-left hover:shadow-md transition"
-                                >
-                                  <div className="flex items-center gap-3">
-                                    <div className="h-12 w-12 rounded-lg bg-muted flex items-center justify-center">
+
+                          {(showSigns || showViolations || showLearnMore) && (
+                            <div className="h-px bg-border/60" />
+                          )}
+
+                          {showSigns && (
+                            <div className="space-y-3">
+                              <p className="text-sm font-semibold text-card-foreground">
+                                {t('learn.examSignToRecognize')}
+                              </p>
+                              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                {relatedSigns.map((sign) => (
+                                  <button
+                                    key={sign.id}
+                                    type="button"
+                                    onClick={() => setSelectedSign(sign)}
+                                    className="bg-card rounded-xl p-3 border border-border/70 text-left rtl:text-right flex items-center gap-3 min-w-0"
+                                  >
+                                    <div className="h-14 w-14 rounded-xl bg-muted/60 border border-border/60 flex items-center justify-center">
                                       <SignIcon
                                         id={sign.id}
                                         icon={sign.icon}
-                                        size={36}
+                                        size={40}
                                         svg={sign.svg}
                                         alt={sign.title[language as keyof typeof sign.title] || sign.title.en}
                                       />
                                     </div>
-                                    <span className="text-sm font-medium text-card-foreground">
+                                    <span className="text-sm font-medium text-card-foreground break-words min-w-0">
                                       {sign.title[language as keyof typeof sign.title] || sign.title.en}
                                     </span>
-                                  </div>
-                                </button>
-                              ))}
-                          </div>
-                        </div>
-                      )}
-                      {hasViolations && typeof pointsValue === 'number' && (
-                        <div className="mt-4 space-y-3">
-                          <div className="flex items-center justify-between gap-3">
-                            <h4 className="text-sm font-semibold text-card-foreground">
-                              {t('learn.relatedViolationsTitle')}
-                            </h4>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => navigate('/violation-points')}
-                            >
-                              {t('learn.viewViolationSystem')}
-                            </Button>
-                          </div>
-                          {severityLabel && (
-                            <p className="text-sm text-muted-foreground">
-                              {numberFormatter.format(pointsValue)} {t('learn.keyFact.points')} • {severityLabel}
-                            </p>
+                                  </button>
+                                ))}
+                              </div>
+                              <button
+                                onClick={() => navigate(`/signs?ids=${rule.relatedSignIds.join(',')}`)}
+                                className="text-sm font-semibold text-primary hover:text-primary/80 transition"
+                              >
+                                {t('learn.viewSimilarSignsLink')}
+                              </button>
+                            </div>
                           )}
-                          <div className="space-y-3">
-                            {rule.relatedViolationIds.slice(0, 3).map((violation: { id: string; points: number }) => {
-                              const key = `violations.${violation.id}`;
-                              return (
-                                <button
-                                  key={violation.id}
-                                  type="button"
-                                  onClick={() => navigate(`/violation-points?focus=${violation.id}`)}
-                                  className="w-full text-left bg-card rounded-xl p-4 shadow-sm border border-border hover:shadow-md transition"
-                                >
-                                  <div className="flex items-center justify-between gap-3">
-                                    <span className="text-sm font-semibold text-card-foreground">
-                                      {t(key)}
-                                    </span>
-                                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold text-foreground">
-                                      {t('violationPoints.pointsLabel', { value: numberFormatter.format(violation.points) })}
-                                    </span>
-                                  </div>
-                                  <p className="mt-2 text-xs text-muted-foreground">
-                                    {t('violationPoints.previewDescription', { violation: t(key) })}
-                                  </p>
-                                </button>
-                              );
-                            })}
-                          </div>
+
+                          {showSigns && showViolations && <div className="h-px bg-border/60" />}
+
+                          {showViolations && (
+                            <div className="space-y-3">
+                              <p className="text-sm font-semibold text-card-foreground">
+                                {t('learn.commonViolationsTitle')}
+                              </p>
+                              <div className="space-y-3">
+                                {violations.map((violation: { id: string; points: number }) => {
+                                  const key = `violations.${violation.id}`;
+                                  return (
+                                    <button
+                                      key={violation.id}
+                                      type="button"
+                                      onClick={() => navigate(`/violation-points?focus=${violation.id}`)}
+                                      className="w-full text-left rtl:text-right bg-card rounded-xl p-4 border border-border/70"
+                                    >
+                                      <div className="flex items-center justify-between gap-3 rtl-row">
+                                        <span className="text-sm font-semibold text-card-foreground break-words min-w-0">
+                                          {t(key)}
+                                        </span>
+                                        <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-semibold text-amber-700 dark:text-amber-200">
+                                          {t('learn.pointsBadge', { value: numberFormatter.format(violation.points) })}
+                                        </span>
+                                      </div>
+                                      <p className="mt-2 text-xs text-muted-foreground">
+                                        {t('violationPoints.previewDescription', { violation: t(key) })}
+                                      </p>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                              <button
+                                onClick={() => navigate('/violation-points')}
+                                className="text-sm font-semibold text-primary hover:text-primary/80 transition"
+                              >
+                                {t('learn.viewViolationSystemLink')}
+                              </button>
+                            </div>
+                          )}
+
+                          {showLearnMore && <div className="h-px bg-border/60" />}
+
+                          {showLearnMore && (
+                            <div className="space-y-2">
+                              <p className="text-sm font-semibold text-card-foreground">
+                                {t('learn.learnMoreTitle')}
+                              </p>
+                              <div className="space-y-1">
+                                {showViolations && (
+                                  <button
+                                    onClick={() => navigate('/violation-points')}
+                                    className="w-full text-left rtl:text-right text-sm text-muted-foreground hover:text-foreground transition"
+                                  >
+                                    {t('learn.viewViolationSystemLink')}
+                                  </button>
+                                )}
+                                {showSigns && (
+                                  <button
+                                    onClick={() => navigate(`/signs?ids=${rule.relatedSignIds.join(',')}`)}
+                                    className="w-full text-left rtl:text-right text-sm text-muted-foreground hover:text-foreground transition"
+                                  >
+                                    {t('learn.viewRelatedSignsLink')}
+                                  </button>
+                                )}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </AccordionContent>
-                  </AccordionItem>
-                </motion.div>
-              );
+                      </AccordionContent>
+                    </AccordionItem>
+                  </motion.div>
+                );
             })}
             </Accordion>
           )}

@@ -61,9 +61,9 @@ export const SignDetailModal: React.FC<SignDetailModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto bg-card rounded-2xl shadow-2xl z-50 overflow-hidden"
+            className="fixed inset-x-4 top-1/2 -translate-y-1/2 max-w-md mx-auto bg-card rounded-2xl shadow-2xl z-50 overflow-hidden max-h-[85vh] overflow-y-auto"
           >
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <div className="flex items-center justify-between gap-3">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(sign.category)}`}>
                   {t(`signs.categories.${sign.category}`)}
@@ -130,7 +130,7 @@ export const SignDetailModal: React.FC<SignDetailModalProps> = ({
                     }}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-4 py-2.5 text-sm font-semibold text-primary hover:bg-primary/15 transition"
                   >
-                    {t('home.signsSpotlight.cta')}
+                    {t('signs.title')}
                     <ChevronRight className="h-4 w-4 rtl-flip" />
                   </button>
                 )}

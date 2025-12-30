@@ -105,6 +105,7 @@ const Exam: React.FC = () => {
     setCurrentIndex(0);
     setTimeLeft(timeMinutes * 60);
     setSelectedMode(mode);
+    setTimerEnabled(true);
     setExamState('in-progress');
   }, []);
 
@@ -247,7 +248,7 @@ const Exam: React.FC = () => {
     setAnswers(session.payload.answers);
     setCurrentIndex(Math.min(session.payload.currentIndex, ordered.length - 1));
     setTimeLeft(session.payload.timeLeft);
-    setTimerEnabled(session.payload.timerEnabled);
+    setTimerEnabled(true);
     setSelectedMode(session.payload.selectedMode as ExamMode);
     setExamState('in-progress');
     didResumeRef.current = true;
@@ -278,7 +279,7 @@ const Exam: React.FC = () => {
   if (examState === 'selection') {
     return (
       <div className="min-h-screen bg-background">
-        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border safe-top">
           <div className="container mx-auto px-4 py-4 flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={() => navigate('/')}>
               <ArrowLeft className="h-5 w-5 rtl-flip" />
@@ -287,7 +288,7 @@ const Exam: React.FC = () => {
           </div>
         </header>
 
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 pb-24 safe-bottom">
           <div className="max-w-2xl mx-auto space-y-6">
             <div className="text-center mb-8 space-y-2">
               <h2 className="text-2xl font-bold mb-2">{t('exam.selectMode')}</h2>
@@ -322,7 +323,7 @@ const Exam: React.FC = () => {
                           {t('exam.questionsCount', { count: config.questions, value: numberFormatter.format(config.questions) })}
                         </Badge>
                       </div>
-                      <CardDescription className="flex items-center gap-4 mt-2">
+                      <CardDescription className="flex flex-wrap items-center gap-2 mt-2">
                         <span className="flex items-center gap-1">
                           <Clock className="h-4 w-4" />
                           {t('exam.minutesCount', { count: config.timeMinutes, value: numberFormatter.format(config.timeMinutes) })}
@@ -337,29 +338,6 @@ const Exam: React.FC = () => {
                 </motion.div>
               );
             })}
-
-            <Card className="mt-6">
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="font-medium">{t('exam.enableTimer')}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {t('exam.timerDesc')}
-                    </p>
-                  </div>
-                  <Button
-                    variant={timerEnabled ? 'default' : 'outline'}
-                    size="sm"
-                    onClick={() => setTimerEnabled(!timerEnabled)}
-                  >
-                    <span className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
-                      {timerEnabled ? t('common.on') : t('common.off')}
-                    </span>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
 
             <Button 
               size="lg" 
@@ -392,9 +370,9 @@ const Exam: React.FC = () => {
     return (
       <div className="min-h-screen bg-background flex flex-col">
         {/* Header */}
-        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border safe-top">
           <div className="container mx-auto px-4 py-3">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <span className="font-medium">
                   {t('exam.progressCount', {
@@ -455,7 +433,7 @@ const Exam: React.FC = () => {
                             />
                           </button>
                         ) : (
-                          <div className="text-xs text-muted-foreground text-center min-w-[160px]">
+                          <div className="text-xs text-muted-foreground text-center w-full max-w-[220px]">
                             {t('ui.signUnavailable')}
                           </div>
                         )}
@@ -481,7 +459,7 @@ const Exam: React.FC = () => {
                       <span className="font-medium mr-2">
                         {String.fromCharCode(65 + idx)}.
                       </span>
-                      {t(optionKey)}
+                      <span className="break-words">{t(optionKey)}</span>
                     </motion.button>
                   ))}
                 </CardContent>
@@ -513,11 +491,12 @@ const Exam: React.FC = () => {
             </div>
 
             {/* Prev/Next buttons */}
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:gap-4">
                 <Button
                   variant="outline"
                   onClick={goPrev}
                   disabled={currentIndex === 0}
+                  className="w-full sm:w-auto"
                 >
                   <span className="flex items-center gap-2">
                     <ArrowLeft className="h-4 w-4 rtl-flip" />
@@ -526,11 +505,11 @@ const Exam: React.FC = () => {
                 </Button>
               
               {currentIndex === examQuestions.length - 1 ? (
-                <Button onClick={submitExam}>
+                <Button onClick={submitExam} className="w-full sm:w-auto">
                   {t('exam.submit')}
                 </Button>
               ) : (
-                <Button onClick={goNext}>
+                <Button onClick={goNext} className="w-full sm:w-auto">
                   <span className="flex items-center gap-2">
                     {t('common.next')}
                     <ArrowRight className="h-4 w-4 rtl-flip" />
@@ -550,7 +529,7 @@ const Exam: React.FC = () => {
       <div className="min-h-screen bg-background">
         {showConfetti && <Confetti recycle={false} numberOfPieces={300} />}
         
-        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border safe-top">
           <div className="container mx-auto px-4 py-4">
             <h1 className="text-xl font-bold text-center">{t('exam.results')}</h1>
           </div>
@@ -668,7 +647,7 @@ const Exam: React.FC = () => {
 
     return (
       <div className="min-h-screen bg-background flex flex-col">
-        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border safe-top">
           <div className="container mx-auto px-4 py-3">
             <div className="flex items-center justify-between">
               <Button variant="ghost" size="sm" onClick={() => setExamState('completed')}>
@@ -735,8 +714,8 @@ const Exam: React.FC = () => {
 
                     return (
                       <div key={idx} className={className}>
-                        <div className="flex items-center justify-between">
-                          <span>
+                        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                          <span className="break-words">
                             <span className="font-medium mr-2">
                               {String.fromCharCode(65 + idx)}.
                             </span>
@@ -767,14 +746,14 @@ const Exam: React.FC = () => {
         </main>
 
         <div className="sticky bottom-0 bg-background border-t border-border">
-          <div className="container mx-auto px-4 py-4 flex justify-between">
-            <Button variant="outline" onClick={goPrev} disabled={currentIndex === 0}>
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-3 sm:flex-row sm:justify-between">
+            <Button variant="outline" onClick={goPrev} disabled={currentIndex === 0} className="w-full sm:w-auto">
               <span className="flex items-center gap-2">
                 <ArrowLeft className="h-4 w-4 rtl-flip" />
                 {t('common.previous')}
               </span>
             </Button>
-            <Button onClick={goNext} disabled={currentIndex === examQuestions.length - 1}>
+            <Button onClick={goNext} disabled={currentIndex === examQuestions.length - 1} className="w-full sm:w-auto">
               <span className="flex items-center gap-2">
                 {t('common.next')}
                 <ArrowRight className="h-4 w-4 rtl-flip" />
